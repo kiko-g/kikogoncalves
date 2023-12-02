@@ -22,13 +22,7 @@ function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function ArticleLayout({
-  article,
-  children,
-}: {
-  article: ArticleWithSlug
-  children: React.ReactNode
-}) {
+export function ArticleLayout({ article, children }: { article: ArticleWithSlug; children: React.ReactNode }) {
   let router = useRouter()
   let { previousPathname } = useContext(AppContext)
 

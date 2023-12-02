@@ -2,3 +2,20 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
+
+html {
+  @apply scroll-smooth;
+}
+
+*::selection {
+  @apply dark:bg-primary/70 bg-primary-400/70 text-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-lexend;
+}
