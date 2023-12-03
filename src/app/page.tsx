@@ -5,7 +5,12 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
+import {
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
@@ -33,7 +38,10 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
         d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
         className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
       />
-      <path d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6" className="stroke-zinc-400 dark:stroke-zinc-500" />
+      <path
+        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
+        className="stroke-zinc-400 dark:stroke-zinc-500"
+      />
     </svg>
   )
 }
@@ -77,7 +85,9 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>{article.title}</Card.Title>
+      <Card.Title href={`/articles/${article.slug}`}>
+        {article.title}
+      </Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
       </Card.Eyebrow>
@@ -102,7 +112,10 @@ function SocialLink({
 
 function Newsletter() {
   return (
-    <form action="/thank-you" className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <form
+      action="/thank-you"
+      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+    >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Stay up to date</span>
@@ -116,7 +129,7 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 sm:text-sm"
+          className="focus:border-primary-500 focus:ring-primary-500/10 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:outline-none focus:ring-4 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 sm:text-sm"
         />
         <Button type="submit" className="ml-4 flex-none">
           Join
@@ -135,8 +148,10 @@ interface Role {
 }
 
 function Role({ role }: { role: Role }) {
-  let startLabel = typeof role.start === 'string' ? role.start : role.start.label
-  let startDate = typeof role.start === 'string' ? role.start : role.start.dateTime
+  let startLabel =
+    typeof role.start === 'string' ? role.start : role.start.label
+  let startDate =
+    typeof role.start === 'string' ? role.start : role.start.dateTime
 
   let endLabel = typeof role.end === 'string' ? role.end : role.end.label
   let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
@@ -148,12 +163,20 @@ function Role({ role }: { role: Role }) {
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">{role.company}</dd>
+        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          {role.company}
+        </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">{role.title}</dd>
+        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+          {role.title}
+        </dd>
         <dt className="sr-only">Date</dt>
-        <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label={`${startLabel} until ${endLabel}`}>
-          <time dateTime={startDate}>{startLabel}</time> <span aria-hidden="true">—</span>{' '}
+        <dd
+          className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+          aria-label={`${startLabel} until ${endLabel}`}
+        >
+          <time dateTime={startDate}>{startLabel}</time>{' '}
+          <span aria-hidden="true">—</span>{' '}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
       </dl>
@@ -250,17 +273,35 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Full-stack engineer and frontend afficionado.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of
-            Planetaria, where we develop technologies that empower regular people to explore space on their own terms.
+            I’m Francisco, a software engineer based in Porto, Portugal. I am
+            currently working at Jumpseller as a full-stack engineer, where we
+            develop a platform for clients to create and deeply customize online
+            stores.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="https://twitter.com" aria-label="Follow on Twitter" icon={TwitterIcon} />
-            <SocialLink href="https://instagram.com" aria-label="Follow on Instagram" icon={InstagramIcon} />
-            <SocialLink href="https://github.com" aria-label="Follow on GitHub" icon={GitHubIcon} />
-            <SocialLink href="https://linkedin.com" aria-label="Follow on LinkedIn" icon={LinkedInIcon} />
+            <SocialLink
+              href="https://twitter.com/kikogoncalves_"
+              aria-label="Follow on Twitter"
+              icon={TwitterIcon}
+            />
+            <SocialLink
+              href="https://instagram.com/kikogoncalves_"
+              aria-label="Follow on Instagram"
+              icon={InstagramIcon}
+            />
+            <SocialLink
+              href="https://github.com/kiko-g"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink
+              href="https://linkedin.com/in/kikogoncalves"
+              aria-label="Follow on LinkedIn"
+              icon={LinkedInIcon}
+            />
           </div>
         </div>
       </Container>
