@@ -1,16 +1,13 @@
 import { type Metadata } from 'next'
-
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
-import Head from 'next/head'
 
 export const metadata: Metadata = {
   title: {
     template: '%s - Francisco Gonçalves',
-    default:
-      'Francisco Gonçalves - Full-stack engineer and frontend afficionado',
+    default: 'Francisco Gonçalves - Full-stack engineer and frontend afficionado',
   },
   description:
     'I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.',
@@ -21,11 +18,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-zinc-950">
