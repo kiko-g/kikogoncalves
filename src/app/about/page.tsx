@@ -2,10 +2,11 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { calculateAge } from '@/lib/utilities'
 
+import portraitImage from '@/images/portrait.jpg'
 import { Container } from '@/components/Container'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
 
 function SocialLink({
   className,
@@ -56,37 +57,47 @@ export default function About() {
             <Image
               src={portraitImage}
               alt=""
-              sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
           </div>
         </div>
+
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Francisco Gonçalves. I live in Porto, Portugal where I cook up cool software projects.
+            I’m Francisco. I live in Porto, Portugal where I’m busy crafting cool software projects.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve loved making things for as long as I can remember, and wrote my first program when I was 6 years old,
-              just two weeks after my mom brought home the brand new Macintosh LC 550 that I taught myself to type on.
+              I’m a {calculateAge()} year old Software Engineer based in Porto. I have a Masters Degree in Informatics
+              and Computer Engineering, from FEUP, the Factulty of Engineering of the University of Porto (
+              <Link
+                className="outer-link"
+                href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
+                target="_blank"
+              >
+                FEUP-MEIC
+              </Link>
+              ).
             </p>
             <p>
-              The only thing I loved more than computers as a kid was space. When I was 8, I climbed the 40-foot oak
-              tree at the back of our yard while wearing my older sister’s motorcycle helmet, counted down from three,
-              and jumped — hoping the tree was tall enough that with just a bit of momentum I’d be able to get to orbit.
+              I have a great passion for software engineering as a whole with a special interest in frontend development
+              and data science. On the more personal side of things, I would describe myself as a passionate person, who
+              believes in getting better every day and finding zeal in things.
             </p>
             <p>
-              I spent the next few summers indoors working on a rocket design, while I recovered from the multiple
-              surgeries it took to fix my badly broken legs. It took nine iterations, but when I was 15 I sent my dad’s
-              Blackberry into orbit and was able to transmit a photo back down to our family computer from space.
+              I’m big on music, gaming, football, and pretty much anything media-related. When I’m not caught up in
+              that, I’m usually running, hanging out with friends, playing guitar, gaming, coding something cool, or
+              hitting the gym to stay in shape.
             </p>
             <p>
-              Today, I’m the founder of Planetaria, where we’re working on civilian space suits and manned shuttle kits
-              you can assemble at home so that the next generation of kids really <em>can</em> make it to orbit — from
-              the comfort of their own backyards.
+              My preferred and best technologies are <strong>React.js</strong>, <strong>Javascript</strong>,{' '}
+              <strong>Typescript</strong>, <strong>Next.js</strong> and <strong>Tailwind</strong>. If you’re interested
+              in my profile reach me on LinkedIn, as I’m always interested in hearing about opportunities for a frontend
+              or full-stack position, preferably using React with Typescript!
             </p>
           </div>
         </div>
+
         <div className="lg:pl-20">
           <ul role="list">
             <SocialLink href="#" icon={TwitterIcon}>

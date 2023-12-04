@@ -3,7 +3,7 @@ import { type Metadata } from 'next'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
+import { formatDate } from '@/lib/utilities'
 
 function Article({ article }: { article: ArticleWithSlug }) {
   return (

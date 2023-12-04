@@ -138,7 +138,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative block px-4 py-2 transition',
           isActive ? 'text-primary-500 dark:text-primary-400' : 'hover:text-primary-500 dark:hover:text-primary-400',
         )}
       >

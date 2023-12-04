@@ -3,12 +3,12 @@
 @import './prism.css';
 @import 'tailwindcss/utilities';
 
-html {
-  @apply scroll-smooth;
+*::selection {
+  @apply bg-primary-600/70 text-white dark:bg-primary-400/80;
 }
 
-*::selection {
-  @apply bg-primary-800/70 text-white dark:bg-primary-400/80;
+html {
+  @apply scroll-smooth;
 }
 
 h1,
@@ -18,4 +18,8 @@ h4,
 h5,
 h6 {
   @apply font-lexend;
+}
+
+.outer-link {
+  @apply text-primary-500 hover:text-primary-600 hover:underline dark:text-primary-400 dark:hover:text-primary-500;
 }

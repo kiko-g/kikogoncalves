@@ -7,7 +7,7 @@ import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { type ArticleWithSlug } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
+import { formatDate } from '@/lib/utilities'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
