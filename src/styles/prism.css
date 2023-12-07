@@ -1,47 +1,109 @@
+/* Base styles */
 pre[class*='language-'] {
   color: theme('colors.zinc.100');
+  background-color: theme('colors.gray.800');
+  padding: theme('spacing.4');
+  border-radius: theme('borderRadius.md');
+  overflow-x: auto;
 }
 
-.token.tag,
-.token.class-name,
-.token.selector,
-.token.selector .class,
-.token.selector.class,
-.token.function {
-  color: theme('colors.pink.400');
+/* Shared token styles */
+.token.comment {
+  color: theme('colors.zinc.400');
 }
 
-.token.attr-name,
-.token.keyword,
-.token.rule,
-.token.pseudo-class,
-.token.important {
-  color: theme('colors.zinc.300');
-}
-
-.token.module {
-  color: theme('colors.pink.400');
-}
-
-.token.attr-value,
-.token.class,
-.token.string,
-.token.property {
-  color: theme('colors.teal.300');
-}
-
-.token.punctuation,
-.token.attr-equals {
+.token.punctuation {
   color: theme('colors.zinc.500');
 }
 
-.token.unit,
-.language-css .token.function {
-  color: theme('colors.sky.200');
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: theme('colors.teal.300');
 }
 
-.token.comment,
 .token.operator,
-.token.combinator {
-  color: theme('colors.zinc.400');
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: theme('colors.zinc.300');
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: theme('colors.pink.400');
+}
+
+.token.function,
+.token.class-name {
+  color: theme('colors.yellow.400');
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: theme('colors.orange.400');
+}
+
+/* Specific styles for JavaScript and TypeScript */
+.language-javascript .token.function,
+.language-typescript .token.function,
+.language-jsx .token.function,
+.language-tsx .token.function {
+  color: theme('colors.green.400');
+}
+
+/* Specific styles for JSX and TSX */
+.language-jsx .token.punctuation,
+.language-tsx .token.punctuation {
+  color: theme('colors.blue.400');
+}
+
+.language-jsx .token.tag,
+.language-tsx .token.tag {
+  color: theme('colors.purple.400');
+}
+
+/* Specific styles for JSON */
+.language-json .token.property {
+  color: theme('colors.yellow.500');
+}
+
+.language-json .token.string {
+  color: theme('colors.green.500');
+}
+
+/* Specific styles for HTML */
+.language-html .token.tag {
+  color: theme('colors.blue.400');
+}
+
+/* Specific styles for CSS */
+.language-css .token.selector {
+  color: theme('colors.purple.400');
+}
+
+.language-css .token.property {
+  color: theme('colors.pink.500');
+}
+
+/* Line numbers and highlights */
+.line-numbers .line-numbers-rows {
+  border-right-color: theme('colors.gray.700');
+}
+
+pre[class*='language-'] > code[class*='language-'] .line-highlight {
+  background-color: theme('colors.gray.700');
 }
