@@ -215,11 +215,12 @@ function Resume() {
 
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let images = [image1, image2, image3, image4, image5]
 
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {images.map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
@@ -255,17 +256,29 @@ export default async function Home() {
             full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="https://twitter.com/kikogoncalves_" aria-label="Follow on Twitter" icon={TwitterIcon} />
+            <SocialLink
+              href="https://twitter.com/kikogoncalves_"
+              target="_blank"
+              aria-label="Follow on Twitter"
+              icon={TwitterIcon}
+            />
             <SocialLink
               href="https://instagram.com/kikogoncalves_"
+              target="_blank"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
-            <SocialLink href="https://github.com/kiko-g" aria-label="Follow on GitHub" icon={GitHubIcon} />
+            <SocialLink
+              href="https://github.com/kiko-g"
+              target="_blank"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
             <SocialLink
               href="https://linkedin.com/in/kikogoncalves"
-              aria-label="Follow on LinkedIn"
+              target="_blank"
               icon={LinkedInIcon}
+              aria-label="Follow on LinkedIn"
             />
           </div>
         </div>
