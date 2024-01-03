@@ -25,7 +25,7 @@ export function Card<T extends React.ElementType = 'div'>({
 Card.Link = function CardLink({ children, ...props }: React.ComponentPropsWithoutRef<typeof Link>) {
   return (
     <>
-      <div className="bg-navy-50 dark:bg-navy-800/50 absolute -inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-navy-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-navy-800/50 sm:-inset-x-6 sm:rounded-2xl" />
       <Link {...props}>
         <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -45,14 +45,14 @@ Card.Title = function CardTitle<T extends React.ElementType = 'h2'>({
   let Component = as ?? 'h2'
 
   return (
-    <Component className="text-navy-800 dark:text-navy-100 text-base font-semibold tracking-tight">
+    <Component className="text-base font-semibold tracking-tight text-navy-800 dark:text-navy-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   )
 }
 
 Card.Description = function CardDescription({ children }: { children: React.ReactNode }) {
-  return <p className="text-navy-600 dark:text-navy-400 relative z-10 mt-2 text-sm">{children}</p>
+  return <p className="relative z-10 mt-2 text-sm text-navy-600 dark:text-navy-400">{children}</p>
 }
 
 Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
@@ -80,14 +80,14 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = 'p'>({
     <Component
       className={clsx(
         className,
-        'text-navy-400 dark:text-navy-500 relative z-10 order-first mb-3 flex items-center text-sm',
+        'relative z-10 order-first mb-3 flex items-center text-sm text-navy-400 dark:text-navy-500',
         decorate && 'pl-3.5',
       )}
       {...props}
     >
       {decorate && (
         <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-          <span className="bg-navy-200 dark:bg-navy-500 h-4 w-0.5 rounded-full" />
+          <span className="h-4 w-0.5 rounded-full bg-navy-200 dark:bg-navy-500" />
         </span>
       )}
       {children}

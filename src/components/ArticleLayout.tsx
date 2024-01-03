@@ -35,21 +35,21 @@ export function ArticleLayout({ article, children }: { article: ArticleWithSlug;
               type="button"
               onClick={() => router.back()}
               aria-label="Go back to articles"
-              className="dark:bg-navy-800 dark:border-navy-700/50 dark:hover:border-navy-700 shadow-navy-800/5 ring-navy-900/5 group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md ring-1 transition dark:border dark:ring-0 dark:ring-white/10 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:-mt-2 lg:mb-0 xl:-top-1.5 xl:left-0 xl:mt-0"
+              className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-navy-800/5 ring-1 ring-navy-900/5 transition dark:border dark:border-navy-700/50 dark:bg-navy-800 dark:ring-0 dark:ring-white/10 dark:hover:border-navy-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:-mt-2 lg:mb-0 xl:-top-1.5 xl:left-0 xl:mt-0"
             >
-              <ArrowLeftIcon className="stroke-navy-500 group-hover:stroke-navy-700 dark:stroke-navy-500 dark:group-hover:stroke-navy-400 h-4 w-4 transition" />
+              <ArrowLeftIcon className="h-4 w-4 stroke-navy-500 transition group-hover:stroke-navy-700 dark:stroke-navy-500 dark:group-hover:stroke-navy-400" />
             </button>
           )}
           <article>
             <header className="flex flex-col">
-              <h1 className="text-navy-800 dark:text-navy-100 mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-navy-800 dark:text-navy-100 sm:text-5xl">
                 {article.title}
               </h1>
               <time
                 dateTime={article.date}
-                className="text-navy-400 dark:text-navy-500 order-first flex items-center text-base"
+                className="order-first flex items-center text-base text-navy-400 dark:text-navy-500"
               >
-                <span className="bg-navy-200 dark:bg-navy-500 h-4 w-0.5 rounded-full" />
+                <span className="h-4 w-0.5 rounded-full bg-navy-200 dark:bg-navy-500" />
                 <span className="ml-3">{formatDate(article.date)}</span>
               </time>
             </header>

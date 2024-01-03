@@ -24,9 +24,9 @@ function SocialLink({
       <Link
         href={href}
         target="_blank"
-        className="text-navy-800 dark:text-navy-200 group flex text-sm font-medium transition hover:text-primary-500 dark:hover:text-primary-500"
+        className="group flex text-sm font-medium text-navy-800 transition hover:text-primary-500 dark:text-navy-200 dark:hover:text-primary-500"
       >
-        <Icon className="fill-navy-500 h-6 w-6 flex-none transition group-hover:fill-primary-500" />
+        <Icon className="h-6 w-6 flex-none fill-navy-500 transition group-hover:fill-primary-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -58,16 +58,16 @@ export default function About() {
             <Image
               src={portraitImage}
               alt=""
-              className="bg-navy-100 dark:bg-navy-800 aspect-square rotate-3 rounded-2xl object-cover"
+              className="aspect-square rotate-3 rounded-2xl bg-navy-100 object-cover dark:bg-navy-800"
             />
           </div>
         </div>
 
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-navy-800 dark:text-navy-100 text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-navy-800 dark:text-navy-100 sm:text-5xl">
             I’m Francisco. I live in Porto, Portugal where I’m busy crafting cool software projects.
           </h1>
-          <div className="text-navy-600 dark:text-navy-400 mt-6 space-y-7 text-base">
+          <div className="mt-6 space-y-7 text-base text-navy-600 dark:text-navy-400">
             <p>
               I’m a {calculateAge()} year old Software Engineer based in Porto. I have a Masters Degree in Informatics
               and Computer Engineering, from FEUP, the Factulty of Engineering of the University of Porto (
@@ -116,7 +116,7 @@ export default function About() {
             <SocialLink
               href="mailto:kikojpgoncalves@gmail.com"
               icon={MailIcon}
-              className="border-navy-100 dark:border-navy-700/40 mt-8 border-t pt-8"
+              className="mt-8 border-t border-navy-100 pt-8 dark:border-navy-700/40"
             >
               kikogoncalves@gmail.com
             </SocialLink>

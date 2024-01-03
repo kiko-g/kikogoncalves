@@ -96,19 +96,19 @@ function SocialLink({
 }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="fill-navy-500 group-hover:fill-navy-600 dark:fill-navy-400 dark:group-hover:fill-navy-300 h-6 w-6 transition" />
+      <Icon className="h-6 w-6 fill-navy-500 transition group-hover:fill-navy-600 dark:fill-navy-400 dark:group-hover:fill-navy-300" />
     </Link>
   )
 }
 
 function Newsletter() {
   return (
-    <form action="/thank-you" className="border-navy-100 dark:border-navy-700/40 rounded-2xl border p-6">
-      <h2 className="text-navy-900 dark:text-navy-100 flex text-sm font-semibold">
+    <form action="/thank-you" className="rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40">
+      <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Stay up to date</span>
       </h2>
-      <p className="text-navy-600 dark:text-navy-400 mt-2 text-sm">
+      <p className="mt-2 text-sm text-navy-600 dark:text-navy-400">
         Get notified when I publish something new, and unsubscribe at any time.
       </p>
       <div className="mt-6 flex">
@@ -117,7 +117,7 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="dark:bg-navy-700/[0.15] border-navy-900/10 dark:border-navy-700 shadow-navy-800/5 placeholder:text-navy-400 dark:text-navy-200 dark:placeholder:text-navy-500 min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 sm:text-sm"
+          className="min-w-0 flex-auto appearance-none rounded-md border border-navy-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-navy-800/5 placeholder:text-navy-400 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10 dark:border-navy-700 dark:bg-navy-700/[0.15] dark:text-navy-200 dark:placeholder:text-navy-500 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 sm:text-sm"
         />
         <Button type="submit" className="ml-4 flex-none">
           Join
@@ -144,18 +144,18 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="dark:bg-navy-800 dark:border-navy-700/50 shadow-navy-800/5 ring-navy-900/5 relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 dark:border dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-navy-800/5 ring-1 ring-navy-900/5 dark:border dark:border-navy-700/50 dark:bg-navy-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
-        <dd className="text-navy-900 dark:text-navy-100 w-full flex-none text-sm font-medium tracking-tighter">
+        <dd className="w-full flex-none text-sm font-medium tracking-tighter text-navy-900 dark:text-navy-100">
           {role.company}
         </dd>
         <dt className="sr-only">Role</dt>
-        <dd className="text-navy-500 dark:text-navy-400 text-xs">{role.title}</dd>
+        <dd className="text-xs text-navy-500 dark:text-navy-400">{role.title}</dd>
         <dt className="sr-only">Date</dt>
-        <dd className="text-navy-400 dark:text-navy-500 ml-auto text-xs" aria-label={`${startLabel} until ${endLabel}`}>
+        <dd className="ml-auto text-xs text-navy-400 dark:text-navy-500" aria-label={`${startLabel} until ${endLabel}`}>
           <time dateTime={startDate}>{startLabel}</time> <span aria-hidden="true">—</span>{' '}
           <time dateTime={endDate}>{endLabel}</time>
         </dd>
@@ -193,8 +193,8 @@ function Resume() {
   ]
 
   return (
-    <div className="border-navy-100 dark:border-navy-700/40 rounded-2xl border p-6">
-      <h2 className="text-navy-900 dark:text-navy-100 flex text-sm font-semibold">
+    <div className="rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40">
+      <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
@@ -207,7 +207,7 @@ function Resume() {
 
       <Button target="_blank" href="/cv.pdf" variant="primary" className="group mt-6 w-full">
         Download CV
-        <ArrowDownIcon className="stroke-navy-400 group-active:stroke-navy-600 dark:group-hover:stroke-navy-50 dark:group-active:stroke-navy-50 h-4 w-4 transition" />
+        <ArrowDownIcon className="h-4 w-4 stroke-navy-400 transition group-active:stroke-navy-600 dark:group-hover:stroke-navy-50 dark:group-active:stroke-navy-50" />
       </Button>
     </div>
   )
@@ -224,7 +224,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'bg-navy-100 dark:bg-navy-800 relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl sm:w-72 sm:rounded-2xl',
+              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-navy-100 dark:bg-navy-800 sm:w-72 sm:rounded-2xl',
               rotations[imageIndex % rotations.length],
             )}
           >
@@ -248,10 +248,10 @@ export default async function Home() {
     <>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-navy-800 dark:text-navy-100 text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-navy-800 dark:text-navy-100 sm:text-5xl">
             Full-stack engineer and frontend afficionado.
           </h1>
-          <p className="text-navy-600 dark:text-navy-400 mt-6 text-base">
+          <p className="mt-6 text-base text-navy-600 dark:text-navy-400">
             I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a
             full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.
           </p>

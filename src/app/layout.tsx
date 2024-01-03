@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="bg-navy-50 dark:bg-navy-950 flex h-full">
+      <body className="flex h-full bg-navy-50 dark:bg-navy-950">
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

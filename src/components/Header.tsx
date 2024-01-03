@@ -88,7 +88,7 @@ function MobileNavItem({ href, children }: { href: string; children: React.React
 function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>) {
   return (
     <Popover {...props}>
-      <Popover.Button className="dark:bg-navy-800/90 text-navy-800 shadow-navy-800/5 ring-navy-900/5 dark:text-navy-200 group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium shadow-lg ring-1 backdrop-blur dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="text-navy-800 shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 dark:text-navy-200 group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium shadow-lg ring-1 backdrop-blur dark:ring-white/10 dark:hover:ring-white/20">
         Menu
         <ChevronDownIcon className="stroke-navy-500 group-hover:stroke-navy-700 dark:group-hover:stroke-navy-400 ml-3 h-auto w-2" />
       </Popover.Button>
@@ -115,7 +115,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
         >
           <Popover.Panel
             focus
-            className="dark:bg-navy-900 ring-navy-900/5 dark:ring-navy-800 fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1"
+            className="ring-navy-900/5 dark:bg-navy-900 dark:ring-navy-800 fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
@@ -163,7 +163,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="dark:bg-navy-800/90 text-navy-800 shadow-navy-800/5 ring-navy-900/5 dark:text-navy-200 flex rounded-full bg-white/90 px-3 text-sm font-medium shadow-lg ring-1 backdrop-blur dark:ring-white/10">
+      <ul className="text-navy-800 shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 dark:text-navy-200 flex rounded-full bg-white/90 px-3 text-sm font-medium shadow-lg ring-1 backdrop-blur dark:ring-white/10">
         {navigation.map((item) => (
           <NavItem href={item.href} key={item.href}>
             {item.name}
@@ -187,11 +187,11 @@ function ThemeToggle() {
     <button
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="dark:bg-navy-800/90 shadow-navy-800/5 ring-navy-900/5 group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 backdrop-blur transition dark:ring-white/10 dark:hover:ring-white/20"
+      className="shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className="fill-navy-100 stroke-navy-500 group-hover:fill-navy-200 group-hover:stroke-navy-700 h-6 w-6 transition dark:hidden [@media(prefers-color-scheme:dark)]:fill-primary-50 [@media(prefers-color-scheme:dark)]:stroke-primary-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-primary-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-600" />
-      <MoonIcon className="fill-navy-700 stroke-navy-500 [@media(prefers-color-scheme:dark)]:group-hover:stroke-navy-400 hidden h-6 w-6 transition dark:block [@media_not_(prefers-color-scheme:dark)]:fill-primary-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500" />
+      <SunIcon className="h-6 w-6 fill-orange-100 stroke-orange-500 transition group-hover:fill-orange-200 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-50 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600" />
+      <MoonIcon className="fill-navy-700 hidden h-6 w-6 stroke-violet-400 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-violet-400 [@media_not_(prefers-color-scheme:dark)]:fill-violet-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500" />
     </button>
   )
 }
@@ -207,7 +207,7 @@ function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef
     <div
       className={clsx(
         className,
-        'dark:bg-navy-800/90 shadow-navy-800/5 ring-navy-900/5 h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 backdrop-blur dark:ring-white/10',
+        'shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 backdrop-blur dark:ring-white/10',
       )}
       {...props}
     />
