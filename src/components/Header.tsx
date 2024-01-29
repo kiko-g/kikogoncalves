@@ -13,6 +13,7 @@ import avatarImageA from '@/images/avatar-a.jpg'
 import avatarImageB from '@/images/avatar-b.png'
 
 const navigation = [
+  { name: 'Home', href: '/', shown: true },
   { name: 'About', href: '/about', shown: true },
   { name: 'Articles', href: '/articles', shown: true },
   { name: 'Projects', href: '/projects', shown: true },
@@ -88,9 +89,9 @@ function MobileNavItem({ href, children }: { href: string; children: React.React
 function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>) {
   return (
     <Popover {...props}>
-      <Popover.Button className="text-navy-800 shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 dark:text-navy-200 group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium shadow-lg ring-1 backdrop-blur dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-navy-800 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:text-navy-200 dark:ring-white/10 dark:hover:ring-white/20">
         Menu
-        <ChevronDownIcon className="stroke-navy-500 group-hover:stroke-navy-700 dark:group-hover:stroke-navy-400 ml-3 h-auto w-2" />
+        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-navy-500 group-hover:stroke-navy-700 dark:group-hover:stroke-navy-400" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -102,7 +103,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="bg-navy-800/40 fixed inset-0 z-50 backdrop-blur-sm dark:bg-black/80" />
+          <Popover.Overlay className="fixed inset-0 z-50 bg-navy-800/40 backdrop-blur-sm dark:bg-black/80" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -115,16 +116,16 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
         >
           <Popover.Panel
             focus
-            className="ring-navy-900/5 dark:bg-navy-900 dark:ring-navy-800 fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-navy-900/5 dark:bg-navy-900 dark:ring-navy-800"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <CloseIcon className="text-navy-500 dark:text-navy-400 h-6 w-6" />
+                <CloseIcon className="h-6 w-6 text-navy-500 dark:text-navy-400" />
               </Popover.Button>
-              <h2 className="text-navy-600 dark:text-navy-400 text-sm font-medium">Navigation</h2>
+              <h2 className="text-sm font-medium text-navy-600 dark:text-navy-400">Navigation</h2>
             </div>
             <nav className="mt-6">
-              <ul className="divide-navy-100 text-navy-800 dark:divide-navy-100/5 dark:text-navy-300 -my-2 divide-y text-base">
+              <ul className="-my-2 divide-y divide-navy-100 text-base text-navy-800 dark:divide-navy-100/5 dark:text-navy-300">
                 {navigation.map((item) => (
                   <MobileNavItem href={item.href} key={item.href}>
                     {item.name}
@@ -163,7 +164,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="text-navy-800 shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 dark:text-navy-200 flex rounded-full bg-white/90 px-3 text-sm font-medium shadow-lg ring-1 backdrop-blur dark:ring-white/10">
+      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-navy-800 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:text-navy-200 dark:ring-white/10">
         {navigation.map((item) => (
           <NavItem href={item.href} key={item.href}>
             {item.name}
@@ -183,15 +184,17 @@ function ThemeToggle() {
     setMounted(true)
   }, [])
 
+  console.log(resolvedTheme, otherTheme)
+
   return (
     <button
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:bg-navy-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(otherTheme)}
     >
       <SunIcon className="h-6 w-6 fill-orange-100 stroke-orange-500 transition group-hover:fill-orange-200 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-50 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600" />
-      <MoonIcon className="fill-navy-700 hidden h-6 w-6 stroke-violet-400 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-violet-400 [@media_not_(prefers-color-scheme:dark)]:fill-violet-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500" />
+      <MoonIcon className="hidden h-6 w-6 fill-navy-700 stroke-primary-400 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-400 [@media_not_(prefers-color-scheme:dark)]:fill-primary-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500" />
     </button>
   )
 }
@@ -207,7 +210,7 @@ function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef
     <div
       className={clsx(
         className,
-        'shadow-navy-800/5 ring-navy-900/5 dark:bg-navy-800/90 h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 backdrop-blur dark:ring-white/10',
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:ring-white/10',
       )}
       {...props}
     />
@@ -228,7 +231,7 @@ function Avatar({
         alt="Description"
         width={large ? 640 : 360}
         height={large ? 640 : 360}
-        className={clsx('bg-navy-100 dark:bg-navy-800 rounded-full object-cover', large ? 'h-16 w-16' : 'h-9 w-9')}
+        className={clsx('rounded-full bg-navy-100 object-cover dark:bg-navy-800', large ? 'h-16 w-16' : 'h-9 w-9')}
         priority
       />
     </Link>

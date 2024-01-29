@@ -1,48 +1,13 @@
-import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 import clsx from 'clsx'
+import Link from 'next/link'
+import Image from 'next/image'
+import { type Metadata } from 'next'
 import { calculateAge } from '@/lib/utilities'
 
 import portraitImage from '@/images/portrait.jpg'
 import { Container } from '@/components/Container'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
-
-function SocialLink({
-  className,
-  href,
-  children,
-  icon: Icon,
-}: {
-  className?: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
-  children: React.ReactNode
-}) {
-  return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        target="_blank"
-        className="group flex text-sm font-medium text-navy-800 transition hover:text-primary-500 dark:text-navy-200 dark:hover:text-primary-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-navy-500 transition group-hover:fill-primary-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  )
-}
-
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  )
-}
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -115,7 +80,7 @@ export default function About() {
             </SocialLink>
             <SocialLink
               href="mailto:kikojpgoncalves@gmail.com"
-              icon={MailIcon}
+              icon={EnvelopeIcon}
               className="mt-8 border-t border-navy-100 pt-8 dark:border-navy-700/40"
             >
               kikogoncalves@gmail.com
@@ -123,6 +88,33 @@ export default function About() {
           </ul>
         </div>
       </div>
+
+      <div></div>
     </Container>
+  )
+}
+
+function SocialLink({
+  className,
+  href,
+  children,
+  icon: Icon,
+}: {
+  className?: string
+  href: string
+  icon: React.ComponentType<{ className?: string }>
+  children: React.ReactNode
+}) {
+  return (
+    <li className={clsx(className, 'flex')}>
+      <Link
+        href={href}
+        target="_blank"
+        className="group flex text-sm font-medium text-navy-800 transition hover:text-primary-500 dark:text-navy-200 dark:hover:text-primary-500"
+      >
+        <Icon className="h-6 w-6 flex-none fill-navy-500 transition group-hover:fill-primary-500" />
+        <span className="ml-4">{children}</span>
+      </Link>
+    </li>
   )
 }

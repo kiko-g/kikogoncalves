@@ -1,8 +1,10 @@
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/utilities'
+import * as React from 'react'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+
+import { formatDate } from '@/lib/utilities'
+import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -12,7 +14,6 @@ import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/componen
 import logoJumpseller from '@/images/logos/resume/jumpseller.svg'
 import logoCriticalManufacturing from '@/images/logos/resume/cmf.svg'
 import logoFeup from '@/images/logos/resume/feup.svg'
-
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -103,7 +104,10 @@ function SocialLink({
 
 function Newsletter() {
   return (
-    <form action="/thank-you" className="rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40">
+    <form
+      action="/thank-you"
+      className="rounded-2xl border border-navy-100 bg-navy-50/30 p-6 dark:border-navy-700/40 dark:bg-white/[3%]"
+    >
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Stay up to date</span>
@@ -144,7 +148,7 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-navy-800/5 ring-1 ring-navy-900/5 dark:border dark:border-navy-700/50 dark:bg-navy-800 dark:ring-0">
+      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-navy-800/5 ring-1 ring-navy-900/5 dark:border dark:border-navy-700/50 dark:bg-transparent dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
@@ -185,7 +189,7 @@ function Resume() {
     },
     {
       company: 'Faculty of Engineering of the University of Porto',
-      title: 'Computer Engineering Student',
+      title: 'Computer Engineering BSc/MSc Student',
       logo: logoFeup,
       start: '09/2018',
       end: '07/2023',
@@ -193,7 +197,7 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40">
+    <div className="rounded-2xl border border-navy-100 bg-navy-50/30 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -249,11 +253,13 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-navy-800 dark:text-navy-100 sm:text-5xl">
-            Full-stack engineer and frontend afficionado.
+            Francisco Gonçalves
           </h1>
           <p className="mt-6 text-base text-navy-600 dark:text-navy-400">
             I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a
             full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.
+            Parallel to that, I also ocasionally work as a freelancer or solopreneur, developing websites for clients or
+            useful cool projects.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -293,7 +299,7 @@ export default async function Home() {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
-            <Newsletter />
+            {/* <Newsletter /> */}
           </div>
         </div>
       </Container>
