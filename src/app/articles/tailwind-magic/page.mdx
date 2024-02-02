@@ -126,7 +126,7 @@ Now that we have the array defined we can create the component itself.
 ```tsx
 const Socials = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-1 text-gray-400 dark:text-gray-300 md:mt-0">
+    <div className="flex flex-wrap items-center justify-center gap-1 text-gray-400 md:mt-0 dark:text-gray-300">
       {socials
         .filter((social) => social.shown)
         .map((social, socialIdx) => (
@@ -144,12 +144,7 @@ const Socials = () => {
               aria-hidden="true"
             >
               {social.svg.map((d, dIdx) => (
-                <path
-                  fillRule="evenodd"
-                  d={d}
-                  clipRule="evenodd"
-                  key={`social-${socialIdx}-svg-${dIdx}`}
-                />
+                <path fillRule="evenodd" d={d} clipRule="evenodd" key={`social-${socialIdx}-svg-${dIdx}`} />
               ))}
             </svg>
           </a>
@@ -164,9 +159,9 @@ _Et voilà_. There you have it. A resuable component for the socials of any webs
 ```tsx
 const Socials = () => {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-1 text-gray-400 dark:text-gray-300 md:mt-0">
+    <div className="flex flex-wrap items-center justify-center gap-1 text-gray-400 md:mt-0 dark:text-gray-300">
       {socials
-        .filter(social => social.shown)
+        .filter((social) => social.shown)
         .map((social, socialIdx) => (
           <a
             target="_blank" // open in new tab
@@ -175,13 +170,10 @@ const Socials = () => {
             aria-labelledby={social.label}
             className={`transition ${social.label}`} // create a css class like twitter:hover and apply the styles you see fit
           >
-            <span>
-              {social.label}
-            </span>
+            <span>{social.label}</span>
           </a>
         ))}
     </div>
   )
 }
 ```
-

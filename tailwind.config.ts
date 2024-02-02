@@ -25,9 +25,6 @@ export default {
     },
     typography: typographyStyles,
     extend: {
-      fontFamily: {
-        lexend: ['Lexend', ...defaultTheme.fontFamily.sans],
-      },
       colors: {
         primary: {
           DEFAULT: '#3b82f6',

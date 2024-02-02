@@ -1,8 +1,22 @@
+import { Inter, Lexend } from 'next/font/google'
 import { type Metadata } from 'next'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const lexend = Lexend({
+  subsets: ['latin'],
+  variable: '--font-lexend',
+  display: 'swap',
+})
+
 import '@/styles/tailwind.css'
+import clsx from 'clsx'
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" className={clsx('h-full antialiased', inter.variable, lexend.variable)} suppressHydrationWarning>
       <body className="flex h-full bg-navy-50 dark:bg-navy-950">
         <Providers>
           <div className="flex w-full">
