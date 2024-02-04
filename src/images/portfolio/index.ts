@@ -1,3 +1,7 @@
-import BagrUI from './bagr-ui-screenshot.png'
+import BagrUIScreenshot from './bagr-ui/screenshot.png'
 
-export { BagrUI }
+export const media = {
+  bagrui: {
+    screenshot: BagrUIScreenshot,
+  },
+}

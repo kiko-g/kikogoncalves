@@ -8,9 +8,10 @@ import { LinkIcon } from '@heroicons/react/20/solid'
 
 export function ProjectCard({ project }: { project: Project }) {
   const cx = resolveProjectCardColors(project.color)
+  const useLinkColor = false
 
   return (
-    <div className={clsx('relative flex flex-col gap-6 rounded-2xl border p-6 lg:flex-row', cx.background, cx.border)}>
+    <div className={clsx('relative flex flex-col gap-4 rounded-2xl border p-6 lg:flex-row', cx.background, cx.border)}>
       <div className="order-2 flex flex-1 flex-col self-stretch lg:order-1">
         <div className="flex items-center gap-x-2">
           <h3 className="text-xl font-bold">{project.name}</h3>
@@ -40,7 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               className={clsx(
                 'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-3 tracking-tight transition hover:underline hover:opacity-80',
-                cx.textHover,
+                useLinkColor ? cx.textHover : '',
               )}
             >
               <LinkIcon className="h-5 w-5 fill-gray-700 dark:fill-white" strokeWidth={1.5} />
@@ -53,7 +54,7 @@ export function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               className={clsx(
                 'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-3 tracking-tight transition hover:underline hover:opacity-80',
-                cx.textHover,
+                useLinkColor ? cx.textHover : '',
               )}
             >
               <GitHubIcon className="h-5 w-5 fill-[#333333] dark:fill-white" />
@@ -63,8 +64,14 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="order-1 max-w-full lg:order-2 lg:max-w-sm">
-        <Image src={project.image} alt="" className={clsx('rounded-2xl border', cx.border)} />
+      <div className="order-1 max-w-full lg:order-2 lg:max-w-md">
+        {project.videoUrl ? (
+          <video controls className={clsx('rounded-2xl shadow dark:shadow-xl', cx.border)}>
+            <source src={project.videoUrl} type="video/mp4"></source>
+          </video>
+        ) : (
+          <Image src={project.image} alt="" className={clsx('rounded-2xl shadow dark:shadow-xl', cx.border)} />
+        )}
       </div>
     </div>
   )

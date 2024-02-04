@@ -4,7 +4,7 @@
 @import 'tailwindcss/utilities';
 
 *::selection {
-  @apply bg-primary-600/70 text-white dark:bg-primary-400/80;
+  @apply bg-slate-700/60 text-white dark:bg-orange-400/80;
 }
 
 html {

@@ -9,4 +9,13 @@ export type Project = {
   color: ProjectColor
   stack: string[]
   image: StaticImageData
+  videoUrl?: string
+}
+
+type ProjectCardColor = {
+  background: string
+  border: string
+  badge: string
+  bubble: string
+  textHover: string
 }

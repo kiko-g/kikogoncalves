@@ -97,7 +97,7 @@ function SocialLink({
 }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-navy-500 transition group-hover:fill-navy-600 dark:fill-navy-400 dark:group-hover:fill-navy-300" />
+      <Icon className="h-6 w-6 fill-navy-500 transition group-hover:fill-primary-500 dark:fill-navy-400 dark:group-hover:fill-white" />
     </Link>
   )
 }

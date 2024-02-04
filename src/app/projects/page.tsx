@@ -1,6 +1,6 @@
 import React from 'react'
 import { type Metadata } from 'next'
-import { projectsData } from '@/utils'
+import { projectsData } from '@/utils/data'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { ProjectCard } from '@/components/ProjectCard'
