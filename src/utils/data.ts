@@ -3,6 +3,7 @@ import type { Project } from '@/types'
 
 export const projectsData: Project[] = [
   {
+    relevant: true,
     name: 'Bagr UI',
     description:
       'Long stash of reusable and customizable React TSX components stashed from many projects. Inspired by RadixUI, HeadlessUI and TailwindUI.',
@@ -12,9 +13,10 @@ export const projectsData: Project[] = [
     color: 'teal',
     stack: ['React.js', 'Next.js', 'Typescript', 'Tailwind'],
     image: media.bagrui.screenshot,
-    videoUrl: '',
+    videoUrl: null,
   },
   {
+    relevant: true,
     name: "Analytics and Usability Dashboard for CMF's MES",
     description:
       "Dashboard with custom insights for components inside Critical Manufacturing's MES, an application used for managing industrial shop floors. The dashboard aims to identify user behavior patterns and improve usability based on evidence collected over time.",
@@ -27,6 +29,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/246076879-659c8170-4f10-42ec-a67f-03f66dc2e3e7.mp4',
   },
   {
+    relevant: true,
     name: 'Finishers Hub',
     description:
       'The place for all finisher related content: chaotic, outrageous, lawless on the fence of criminality. Perfectly unbalanced. As all things should be. The most amusing and most personal project I have ever worked on.',
@@ -37,5 +40,18 @@ export const projectsData: Project[] = [
     stack: ['React.js', 'Next.js', 'Typescript', 'Tailwind', 'AWS S3', 'Mongo DB'],
     image: media.bagrui.screenshot,
     videoUrl: 'https://user-images.githubusercontent.com/40745490/230927052-362d6bd0-0abe-495d-9cbf-bd2524354e6e.mp4',
+  },
+  {
+    relevant: true,
+    name: 'Guerner & Irmãos Website',
+    datespan: 'Jan 2023 - Aug 2023',
+    description:
+      'Website for Guerner & Irmãos, a textiles, technical fabrics, and building materials company, showcasing their products, mission, history and values.',
+    color: 'orange',
+    stack: ['React.js', 'Typescript', 'Tailwind', 'Gatsby.js', 'MDX', 'GraphQL'],
+    repo: 'https://github.com/kiko-g/guerner',
+    deployment: 'https://guerner.vercel.app',
+    image: media.guerner.screenshot,
+    videoUrl: null,
   },
 ]

@@ -20,11 +20,11 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'purple':
       return {
-        background: 'bg-violet-500/10 dark:bg-violet-400/[12%]',
-        border: 'border-violet-500/30 dark:border-violet-400/50',
-        badge: 'bg-violet-500 dark:bg-violet-400',
-        bubble: 'bg-violet-500/80 text-white dark:bg-violet-400/50',
-        textHover: 'hover:text-violet-500 dark:hover:text-violet-400',
+        background: 'bg-purple-500/10 dark:bg-purple-400/[12%]',
+        border: 'border-purple-500/30 dark:border-purple-400/50',
+        badge: 'bg-purple-500 dark:bg-purple-400',
+        bubble: 'bg-purple-500/80 text-white dark:bg-purple-400/50',
+        textHover: 'hover:text-purple-500 dark:hover:text-purple-400',
       }
     case 'pink':
       return {

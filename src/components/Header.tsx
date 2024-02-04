@@ -148,13 +148,15 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
       <Link
         href={href}
         className={clsx(
-          'relative block px-4 py-2 transition',
-          isActive ? 'text-primary-500 dark:text-primary-400' : 'hover:text-primary-500 dark:hover:text-primary-400',
+          'relative block rounded px-4 py-2 transition',
+          isActive
+            ? 'font-semibold text-primary-500 hover:opacity-80 dark:text-primary-500'
+            : 'hover:text-primary-500 dark:hover:text-primary-500',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary-500/0 via-primary-500/40 to-primary-500/0 dark:from-primary-400/0 dark:via-primary-400/40 dark:to-primary-400/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary-500/10 via-primary-500 to-primary-500/10 dark:from-primary-400/0 dark:via-primary-500/80 dark:to-primary-400/0" />
         )}
       </Link>
     </li>
@@ -164,7 +166,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-navy-800 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:text-navy-200 dark:ring-white/10">
+      <ul className="flex rounded-xl bg-white/90 px-1 text-sm font-medium text-navy-800 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:text-navy-200 dark:ring-white/10">
         {navigation.map((item) => (
           <NavItem href={item.href} key={item.href}>
             {item.name}

@@ -1,6 +1,7 @@
 export type ProjectColor = 'blue' | 'teal' | 'purple' | 'pink' | 'red' | 'orange'
 
 export type Project = {
+  relevant?: boolean
   name: string
   description: React.ReactNode
   repo: string
@@ -9,7 +10,7 @@ export type Project = {
   color: ProjectColor
   stack: string[]
   image: StaticImageData
-  videoUrl?: string
+  videoUrl: string | null
 }
 
 type ProjectCardColor = {
