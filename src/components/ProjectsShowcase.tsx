@@ -1,9 +1,12 @@
 'use client'
 
 import React, { useMemo, useState } from 'react'
+
 import { projectsData } from '@/utils/data'
+import { sortByRelevancyThenDateDesc } from '@/utils'
+
+import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
-import { Button } from './Button'
 
 export function ProjectsShowcase() {
   const [hideLessRelevant, setHideLessRelevant] = useState(true)
@@ -15,7 +18,7 @@ export function ProjectsShowcase() {
   return (
     <>
       <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-10">
-        {projects.map((project) => (
+        {projects.sort(sortByRelevancyThenDateDesc).map((project) => (
           <ProjectCard project={project} key={project.name} />
         ))}
       </ul>

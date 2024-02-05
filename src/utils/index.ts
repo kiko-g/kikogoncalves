@@ -1,4 +1,27 @@
-import type { ProjectColor, ProjectCardColor } from '@/types'
+import type { ProjectColor, ProjectCardColor, Project } from '@/types'
+
+export function getDatespan(startDate: string, endDate: string | 'present'): string {
+  const start = new Date(startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+  const end =
+    endDate === 'present'
+      ? 'Present'
+      : new Date(endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+  return `${start} - ${end}`
+}
+
+export function getStartDate(startDate: string): Date {
+  return new Date(startDate)
+}
+
+export function getEndDate(endDate: string | 'present'): Date | null {
+  return endDate === 'present' ? new Date() : new Date(endDate)
+}
+
+export function sortByRelevancyThenDateDesc(a: Project, b: Project): number {
+  if (a.relevant && !b.relevant) return -1
+  else if (!a.relevant && b.relevant) return 1
+  else return getStartDate(b.startDate).getTime() - getStartDate(a.startDate).getTime()
+}
 
 export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor {
   switch (color) {
@@ -26,6 +49,14 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         bubble: 'bg-purple-500/80 text-white dark:bg-purple-400/50',
         textHover: 'hover:text-purple-500 dark:hover:text-purple-400',
       }
+    case 'indigo':
+      return {
+        background: 'bg-indigo-500/10 dark:bg-indigo-400/[12%]',
+        border: 'border-indigo-500/30 dark:border-indigo-400/50',
+        badge: 'bg-indigo-500 dark:bg-indigo-400',
+        bubble: 'bg-indigo-500/80 text-white dark:bg-indigo-400/50',
+        textHover: 'hover:text-indigo-500 dark:hover:text-indigo-400',
+      }
     case 'pink':
       return {
         background: 'bg-pink-600/10 dark:bg-pink-600/[12%]',
@@ -44,11 +75,19 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'red':
       return {
-        background: 'bg-rose-600/10 dark:bg-rose-600/[12%]',
-        border: 'border-rose-600/30 dark:border-rose-600/50',
-        badge: 'bg-rose-600 dark:bg-rose-500',
-        bubble: 'bg-rose-600/80 text-white dark:bg-rose-500/50',
-        textHover: 'hover:text-rose-600 dark:hover:text-rose-600',
+        background: 'bg-emerald-700/10 dark:bg-emerald-700/[12%]',
+        border: 'border-emerald-700/30 dark:border-emerald-700/50',
+        badge: 'bg-emerald-700 dark:bg-rose-500',
+        bubble: 'bg-emerald-700/80 text-white dark:bg-rose-500/50',
+        textHover: 'hover:text-emerald-700 dark:hover:text-emerald-700',
+      }
+    case 'forest':
+      return {
+        background: 'bg-emerald-700/10 dark:bg-emerald-700/[12%]',
+        border: 'border-emerald-700/30 dark:border-emerald-700/50',
+        badge: 'bg-emerald-700 dark:bg-emerald-600',
+        bubble: 'bg-emerald-700/80 text-white dark:bg-emerald-600/50',
+        textHover: 'hover:text-emerald-700 dark:hover:text-emerald-700',
       }
     default:
       return {

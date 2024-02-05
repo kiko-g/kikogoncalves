@@ -4,13 +4,14 @@ import React from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { type Project } from '@/types'
-import { resolveProjectCardColors } from '@/utils'
+import { resolveProjectCardColors, getDatespan } from '@/utils'
 import { GitHubIcon } from '@/components/SocialIcons'
 import { LinkIcon } from '@heroicons/react/20/solid'
 
 export function ProjectCard({ project }: { project: Project }) {
-  const cx = resolveProjectCardColors(project.color)
   const useLinkColor = false
+  const cx = resolveProjectCardColors(project.color)
+  const datespan = getDatespan(project.startDate, project.endDate)
 
   return (
     <div className={clsx('relative flex flex-col gap-4 rounded-2xl border p-6 lg:flex-row', cx.background, cx.border)}>
@@ -19,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <h3 className="text-xl font-bold">{project.name}</h3>
           <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
         </div>
-        <p className="text-sm font-normal text-navy-700 dark:text-white/50">{project.datespan}</p>
+        <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
         <p className="mt-2">{project.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
