@@ -1,14 +1,24 @@
 type ISODateString = `${number}-${number}-${number}`
-export type ProjectColor = 'blue' | 'teal' | 'purple' | 'pink' | 'red' | 'orange' | 'forest' | 'indigo'
+export type ProjectColor =
+  | 'blue'
+  | 'teal'
+  | 'purple'
+  | 'pink'
+  | 'red'
+  | 'orange'
+  | 'forest'
+  | 'indigo'
+  | 'amber'
+  | 'slate'
 
 export type Project = {
   relevant?: boolean
   name: string
   description: React.ReactNode
-  repo: string
+  repo: string | null
+  deployment: string | null
   startDate: ISODateString
   endDate: ISODateString | 'present'
-  deployment: string
   color: ProjectColor
   stack: string[]
   image: StaticImageData | null
