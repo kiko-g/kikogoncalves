@@ -239,6 +239,7 @@ function Avatar({
 }
 
 export function Header() {
+  const useBackdropBlur = true
   let isHomePage = usePathname() === '/'
 
   let headerRef = useRef<React.ElementRef<'div'>>(null)
@@ -382,7 +383,7 @@ export function Header() {
         )}
         <div
           ref={headerRef}
-          className="top-0 z-10 h-16 pt-6"
+          className={useBackdropBlur ? 'top-0 z-50 h-[5.5rem] pb-6 pt-6 backdrop-blur' : 'top-0 z-10 h-16 pt-6'}
           style={{
             position: 'var(--header-position)' as React.CSSProperties['position'],
           }}

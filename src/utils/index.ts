@@ -27,7 +27,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
   switch (color) {
     case 'blue':
       return {
-        background: 'bg-blue-600/10 dark:bg-blue-600/20',
+        background: 'bg-blue-600/10 dark:bg-blue-600/10',
         border: 'border-blue-600/30 dark:border-blue-600/50',
         badge: 'bg-blue-600 dark:bg-blue-500',
         bubble: 'bg-blue-600/80 text-white dark:bg-blue-500/50',
@@ -35,7 +35,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'teal':
       return {
-        background: 'bg-teal-600/10 dark:bg-teal-600/20',
+        background: 'bg-teal-600/10 dark:bg-teal-600/10',
         border: 'border-teal-600/30 dark:border-teal-600/50',
         badge: 'bg-teal-600 dark:bg-teal-500',
         bubble: 'bg-teal-600/80 text-white dark:bg-teal-500/50',
@@ -43,7 +43,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'purple':
       return {
-        background: 'bg-purple-500/10 dark:bg-purple-400/20',
+        background: 'bg-purple-500/10 dark:bg-purple-400/10',
         border: 'border-purple-500/30 dark:border-purple-400/50',
         badge: 'bg-purple-500 dark:bg-purple-400',
         bubble: 'bg-purple-500/80 text-white dark:bg-purple-400/50',
@@ -51,7 +51,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'indigo':
       return {
-        background: 'bg-indigo-500/10 dark:bg-indigo-400/20',
+        background: 'bg-indigo-500/10 dark:bg-indigo-400/10',
         border: 'border-indigo-500/30 dark:border-indigo-400/50',
         badge: 'bg-indigo-500 dark:bg-indigo-400',
         bubble: 'bg-indigo-500/80 text-white dark:bg-indigo-400/50',
@@ -59,7 +59,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'pink':
       return {
-        background: 'bg-pink-600/10 dark:bg-pink-600/20',
+        background: 'bg-pink-600/10 dark:bg-pink-600/10',
         border: 'border-pink-600/30 dark:border-pink-600/50',
         badge: 'bg-pink-600 dark:bg-pink-500',
         bubble: 'bg-pink-600/80 text-white dark:bg-pink-500/50',
@@ -67,7 +67,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'orange':
       return {
-        background: 'bg-orange-600/10 dark:bg-orange-600/20',
+        background: 'bg-orange-600/10 dark:bg-orange-600/10',
         border: 'border-orange-600/30 dark:border-orange-600/50',
         badge: 'bg-orange-500 dark:bg-orange-400',
         bubble: 'bg-orange-500/80 text-white dark:bg-orange-400/80',
@@ -75,7 +75,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'amber':
       return {
-        background: 'bg-amber-600/10 dark:bg-amber-500/20',
+        background: 'bg-amber-600/10 dark:bg-amber-500/10',
         border: 'border-amber-600/30 dark:border-amber-500/50',
         badge: 'bg-amber-600 dark:bg-amber-500',
         bubble: 'bg-amber-600/80 text-white dark:bg-amber-500/50',
@@ -83,7 +83,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'red':
       return {
-        background: 'bg-red-700/10 dark:bg-red-700/20',
+        background: 'bg-red-700/10 dark:bg-red-700/[15%]',
         border: 'border-red-700/30 dark:border-red-700/50',
         badge: 'bg-red-700 dark:bg-red-500',
         bubble: 'bg-red-700/80 text-white dark:bg-red-500/50',
@@ -91,7 +91,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'forest':
       return {
-        background: 'bg-emerald-700/10 dark:bg-emerald-700/20',
+        background: 'bg-emerald-700/10 dark:bg-emerald-700/10',
         border: 'border-emerald-700/30 dark:border-emerald-700/50',
         badge: 'bg-emerald-700 dark:bg-emerald-600',
         bubble: 'bg-emerald-700/80 text-white dark:bg-emerald-600/50',
