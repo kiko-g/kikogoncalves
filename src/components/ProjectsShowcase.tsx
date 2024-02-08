@@ -6,7 +6,6 @@ import clsx from 'clsx'
 import { projectsData } from '@/utils/data'
 import { sortByRelevancyThenDateDesc } from '@/utils'
 
-import { Button } from '@/components/Button'
 import { ProjectCard } from '@/components/ProjectCard'
 import { Square3Stack3DIcon } from '@heroicons/react/24/outline'
 
@@ -25,7 +24,7 @@ export function ProjectsShowcase() {
         <input
           type="search"
           placeholder="Search by project name"
-          className="w-full flex-1 rounded border border-slate-300 bg-slate-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-slate-400 hover:border-slate-700/80 hover:bg-slate-700/5 focus:border-slate-700 focus:accent-slate-700 focus:ring-0 focus:ring-slate-700 focus:ring-offset-0 dark:border-slate-200/10  dark:bg-slate-100/5 dark:placeholder:text-slate-400 dark:hover:border-primary-700/70 dark:hover:bg-primary-700/5 dark:focus:border-primary-700/80 dark:focus:ring-0 dark:focus:ring-primary-700 lg:px-3 lg:py-2 lg:text-sm"
+          className="w-full flex-1 rounded border border-slate-300 bg-slate-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-slate-400 hover:border-primary-500/80 hover:bg-primary-500/10 focus:border-primary-500 focus:accent-primary-500 focus:ring-0 focus:ring-primary-500 focus:ring-offset-0 dark:border-slate-200/10  dark:bg-slate-100/5 dark:placeholder:text-slate-400 dark:hover:border-primary-500/70 dark:hover:bg-primary-500/10 dark:focus:border-primary-500/50 dark:focus:ring-0 dark:focus:ring-primary-500 lg:px-3 lg:py-2 lg:text-sm"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -37,7 +36,7 @@ export function ProjectsShowcase() {
             'self-stretch rounded border px-2.5 transition hover:opacity-80',
             hideLessRelevant
               ? 'border-slate-300 bg-slate-50 text-slate-500 dark:border-slate-200/10 dark:bg-slate-100/5 dark:text-slate-300'
-              : 'text border-primary-700 bg-primary-700/70 text-white dark:border-primary-500/50 dark:bg-primary-500/30 dark:text-slate-300',
+              : 'text border-primary-500 bg-primary-600/60 text-white dark:border-primary-500/50 dark:bg-primary-500/30 dark:text-slate-300',
           )}
         >
           <Square3Stack3DIcon className="h-5 w-5" />

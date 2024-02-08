@@ -2,6 +2,7 @@ import BagrUIScreenshot from './bagr-ui/screenshot.png'
 import GuernerScreenshot from './guerner/screenshot.jpg'
 import MafiaInTownScreenshot from './mafia-in-town/screenshot.png'
 import MafiaInTownScreenshot2 from './mafia-in-town/screenshot2.png'
+import PetNexusScreenshot from './pet-nexus/screenshot.png'
 
 export const media = {
   bagrui: {
@@ -13,5 +14,8 @@ export const media = {
   mafiaInTown: {
     screenshot: MafiaInTownScreenshot,
     screenshotAlt: MafiaInTownScreenshot2,
+  },
+  petNexus: {
+    screenshot: PetNexusScreenshot,
   },
 }
