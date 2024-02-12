@@ -78,11 +78,11 @@ pre[class*='language-'] {
 
 /* Specific styles for JSON */
 .language-json .token.property {
-  color: theme('colors.yellow.500');
+  color: theme('colors.blue.400');
 }
 
 .language-json .token.string {
-  color: theme('colors.green.500');
+  color: theme('colors.emerald.500');
 }
 
 /* Specific styles for HTML */

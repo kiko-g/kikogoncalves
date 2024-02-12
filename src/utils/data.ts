@@ -4,6 +4,20 @@ import type { Project } from '@/types'
 export const projectsData: Project[] = [
   {
     relevant: true,
+    name: 'Bagger Flow Vsce Theme',
+    description:
+      'Visual Studio Code Theme with a refined color palette combining elements of other pouplar themes and with a clean and minimal touch of the chef’s personal taste. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace.',
+    startDate: '2024-01-25',
+    endDate: 'present',
+    repo: 'https://github.com/kiko-g/bagger-flow-vscode',
+    deployment: 'https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow',
+    color: 'purple',
+    stack: ['Node.js', 'JSON'],
+    image: media.baggerFlow.screenshot,
+    videoUrl: null,
+  },
+  {
+    relevant: true,
     name: 'Bagr UI',
     description:
       'Long stash of reusable and customizable React TSX components stashed from many projects. Inspired by RadixUI, HeadlessUI and TailwindUI.',

@@ -43,7 +43,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.deployment}
               target="_blank"
               className={clsx(
-                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-3 tracking-tight transition hover:underline hover:opacity-80',
+                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
                 useLinkColor ? cx.textHover : '',
               )}
             >

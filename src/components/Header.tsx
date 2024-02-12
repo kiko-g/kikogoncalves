@@ -239,7 +239,7 @@ function Avatar({
 }
 
 export function Header() {
-  const useBackdropBlur = true
+  const useBackdropBlur = false
   let isHomePage = usePathname() === '/'
 
   let headerRef = useRef<React.ElementRef<'div'>>(null)
