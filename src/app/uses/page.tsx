@@ -24,76 +24,78 @@ function Tool({ title, href, children }: { title: string; href?: string; childre
 }
 
 export const metadata = {
-  title: 'Uses',
-  description: 'Software I use, gadgets I love, and other things I recommend.',
+  title: 'Setup',
+  description: 'Tools and software I use among other things I recommend.',
 }
 
 export default function Uses() {
   return (
     <SimpleLayout
-      title="Software I use, gadgets I love, and other things I recommend."
-      intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+      title="Software and tools I use and love among other things I recommend."
+      intro="Especially people new to Software Development ask me what tools I use and look up to me as if I did something special. I don't, but here is a list of tools I use and recommend that will certainly help."
     >
       <div className="space-y-20">
         <ToolsSection title="Workstation">
-          <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-            I was using an Intel-based 16” MacBook Pro prior to this and the difference is night and day. I’ve never
-            heard the fans turn on a single time, even under the incredibly heavy loads I put it through with our
-            various launch simulations.
-          </Tool>
-          <Tool title="Apple Pro Display XDR (Standard Glass)">
-            The only display on the market if you want something HiDPI and bigger than 27”. When you’re working at
-            planetary scale, every pixel you can get counts.
-          </Tool>
-          <Tool title="IBM Model M SSK Industrial Keyboard">
-            They don’t make keyboards the way they used to. I buy these any time I see them go up for sale and keep them
-            in storage in case I need parts or need to retire my main.
+          <Tool title="14”2 MacBook Pro, M2 Max, 16GB RAM (2023)">
+            I have become a huge fan of this laptop. It’s the perfect balance of power and portability for me. If you
+            have yet to change to a MacBook, first off, do it and secondly this is the one I recommend. After years of
+            struggle with Windows machines, I finally found peace and for so many reasons. It is a software and hardware
+            thing.
           </Tool>
           <Tool title="Apple Magic Trackpad">
-            Something about all the gestures makes me feel like a wizard with special powers. I really like feeling like
-            a wizard with special powers.
+            The built-in trackpad is generally amazing especially when put up against non Mac trackpads. If you&apos;re
+            looking for an external mouse, I would consider not getting one and going with this trackpad.
           </Tool>
-          <Tool title="Herman Miller Aeron Chair">
-            If I’m going to slouch in the worst ergonomic position imaginable all day, I might as well do it in an
-            expensive chair.
+          <Tool title="Logitech MX Anywhere 3 For Mac">
+            If you are a fan of the mouse, this is the one to get. It is hands down the best mouse I have ever used, but
+            I still find myself using the trackpad more often.
+          </Tool>
+          <Tool title={`AOC/LC 24" Monitor`}>
+            From a young age I have been a fan of external monitors. To be honest, I think with a big enough MacBook Pro
+            you can skip this, the workflow is really good with just the laptop. But for longer sessions, go with a
+            solid display with bright colors.
+          </Tool>
+          <Tool title="Langfjall IKEA Chair">
+            I am currently in love with this simple chair. It is comfortable and has a good back support. For me just
+            don&apos;t overthink this one. You&apos; spend time and money looking for the perfect chair and your
+            expectations might never be met.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
-          <Tool title="Sublime Text 4">
-            I don’t care if it’s missing all of the fancy IDE features everyone else relies on, Sublime Text is still
-            the best text editor ever made.
+          <Tool title="Visual Studio Code">
+            Visual Studio Code is hard to beat for me. The amount of customization I have put into it over the years has
+            made me very productive. I have tried other editors but I always come back to VS Code. If you&apos;re
+            interested check out my{' '}
+            <a className="outer-link" href="https://github.com/kiko-g/dotfiles/tree/main/vscode">
+              VS Code settings
+            </a>
+            .
           </Tool>
           <Tool title="iTerm2">
             I’m honestly not even sure what features I get with this that aren’t just part of the macOS Terminal but
             it’s what I use.
           </Tool>
-          <Tool title="TablePlus">
-            Great software for working with databases. Has saved me from building about a thousand admin interfaces for
-            my various projects over the years.
-          </Tool>
+          <Tool title="TablePlus">Great software for working with databases. Solid free version as well.</Tool>
         </ToolsSection>
         <ToolsSection title="Design">
           <Tool title="Figma">
-            We started using Figma as just a design tool but now it’s become our virtual whiteboard for the entire
-            company. Never would have expected the collaboration features to be the real hook.
+            The first time I used Figma I was just in awe. It is so clean, intuitve and fit for web design. Another tool
+            that has replaced pretty much everything else for me.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Productivity">
+          <Tool title="Rectangle">
+            I have used this app for a few years and I love it for window management on macOS.
+          </Tool>
           <Tool title="Alfred">
             It’s not the newest kid on the block but it’s still the fastest. The Sublime Text of the application
             launcher world.
           </Tool>
-          <Tool title="Reflect">
-            Using a daily notes system instead of trying to keep things organized by topics has been super powerful for
-            me. And with Reflect, it’s still easy for me to keep all of that stuff discoverable by topic even though all
-            of my writing happens in the daily note.
+          <Tool title="Notion">
+            Versatile note taking, task management, and wiki tool. I use it for work stuff to managing my personal life.
           </Tool>
-          <Tool title="SavvyCal">
-            Great tool for scheduling meetings while protecting my calendar and making sure I still have lots of time
-            for deep work during the week.
-          </Tool>
-          <Tool title="Focus">
-            Simple tool for blocking distracting websites when I need to just do the work and get some momentum going.
+          <Tool title="Obsidian">
+            Great alternative to Notion, especially if you are feeling like Notion is overkill for your needs.
           </Tool>
         </ToolsSection>
       </div>

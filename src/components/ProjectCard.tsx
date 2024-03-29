@@ -27,7 +27,9 @@ export function ProjectCard({ project }: { project: Project }) {
             <h3 className="text-xl font-bold">{project.name}</h3>
             <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
           </div>
-          {project.pinned && <StarIcon className="h-5 w-5 fill-amber-300 stroke-amber-600" />}
+          {project.pinned && (
+            <StarIcon className="h-5 w-5 fill-amber-300 stroke-amber-600 dark:fill-amber-500 dark:stroke-amber-500" />
+          )}
         </div>
         <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
         <p className="mt-2">{project.description}</p>

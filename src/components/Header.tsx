@@ -17,8 +17,8 @@ const navigation = [
   { name: 'About', href: '/about', shown: true },
   { name: 'Articles', href: '/articles', shown: true },
   { name: 'Projects', href: '/projects', shown: true },
+  { name: 'Uses', href: '/uses', shown: true },
   { name: 'Speaking', href: '/speaking', shown: false },
-  { name: 'Uses', href: '/uses', shown: false },
 ].filter((item) => item.shown)
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
