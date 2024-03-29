@@ -23,6 +23,12 @@ export function sortByRelevancyThenDateDesc(a: Project, b: Project): number {
   else return getStartDate(b.startDate).getTime() - getStartDate(a.startDate).getTime()
 }
 
+export function sortByPinned(a: Project, b: Project): number {
+  if (a.pinned && !b.pinned) return -1
+  else if (!a.pinned && b.pinned) return 1
+  else return sortByRelevancyThenDateDesc(a, b)
+}
+
 export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor {
   switch (color) {
     case 'blue':

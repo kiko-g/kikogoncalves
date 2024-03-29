@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { type Project } from '@/types'
 import { resolveProjectCardColors, getDatespan } from '@/utils'
 import { GitHubIcon } from '@/components/SocialIcons'
-import { LinkIcon } from '@heroicons/react/20/solid'
+import { LinkIcon, StarIcon } from '@heroicons/react/20/solid'
 
 export function ProjectCard({ project }: { project: Project }) {
   const useLinkColor = false
@@ -14,11 +14,20 @@ export function ProjectCard({ project }: { project: Project }) {
   const datespan = getDatespan(project.startDate, project.endDate)
 
   return (
-    <div className={clsx('relative flex flex-col gap-4 rounded-2xl border p-6 lg:flex-row', cx.background, cx.border)}>
+    <div
+      className={clsx(
+        'relative flex flex-col gap-4 rounded-md border p-4 lg:flex-row lg:rounded-xl lg:p-6',
+        cx.background,
+        cx.border,
+      )}
+    >
       <div className="order-2 flex flex-1 flex-col self-stretch lg:order-1">
-        <div className="flex items-center gap-x-2">
-          <h3 className="text-xl font-bold">{project.name}</h3>
-          <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
+        <div className="flex items-center justify-between gap-x-2">
+          <div className="flex items-center gap-x-2">
+            <h3 className="text-xl font-bold">{project.name}</h3>
+            <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
+          </div>
+          {project.pinned && <StarIcon className="h-5 w-5 fill-amber-500 dark:fill-amber-500" />}
         </div>
         <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
         <p className="mt-2">{project.description}</p>
@@ -69,11 +78,11 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="order-1 max-w-full lg:order-2 lg:max-w-md">
         {project.videoUrl ? (
-          <video controls className={clsx('rounded-2xl shadow dark:shadow-xl', cx.border)}>
+          <video controls className={clsx('rounded-md border lg:rounded-xl', cx.border)}>
             <source src={project.videoUrl} type="video/mp4"></source>
           </video>
         ) : (
-          <Image src={project.image} alt="" className={clsx('rounded-2xl shadow dark:shadow-xl', cx.border)} />
+          <Image src={project.image} alt="" className={clsx('rounded-md border lg:rounded-xl', cx.border)} />
         )}
       </div>
     </div>

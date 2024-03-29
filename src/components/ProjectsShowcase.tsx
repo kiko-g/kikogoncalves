@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 import clsx from 'clsx'
 
 import { projectsData } from '@/utils/data'
-import { sortByRelevancyThenDateDesc } from '@/utils'
+import { sortByPinned } from '@/utils'
 
 import { ProjectCard } from '@/components/ProjectCard'
 import { Square3Stack3DIcon } from '@heroicons/react/24/outline'
@@ -33,12 +33,13 @@ export function ProjectsShowcase() {
           title="Toggle projects relevancy"
           onClick={() => setHideLessRelevant(!hideLessRelevant)}
           className={clsx(
-            'self-stretch rounded border px-2.5 transition hover:opacity-80',
+            'flex items-center gap-2 self-stretch rounded border px-2.5 text-sm transition hover:opacity-80',
             hideLessRelevant
               ? 'border-slate-300 bg-slate-50 text-slate-500 dark:border-slate-200/10 dark:bg-slate-100/5 dark:text-slate-300'
               : 'text border-primary-500 bg-primary-600/60 text-white dark:border-primary-500/50 dark:bg-primary-500/30 dark:text-slate-300',
           )}
         >
+          <span className="hidden lg:inline-flex">Relevancy</span>
           <Square3Stack3DIcon className="h-5 w-5" />
         </button>
       </div>
@@ -46,7 +47,7 @@ export function ProjectsShowcase() {
       <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-10">
         {projects
           .filter((x) => x.name.toLowerCase().includes(query.toLowerCase()))
-          .sort(sortByRelevancyThenDateDesc)
+          .sort(sortByPinned)
           .map((project) => (
             <ProjectCard project={project} key={project.name} />
           ))}

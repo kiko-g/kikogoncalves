@@ -12,6 +12,7 @@ export type ProjectColor =
   | 'slate'
 
 export type Project = {
+  pinned?: boolean
   relevant?: boolean
   name: string
   description: React.ReactNode

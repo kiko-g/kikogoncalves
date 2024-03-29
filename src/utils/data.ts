@@ -3,6 +3,7 @@ import type { Project } from '@/types'
 
 export const projectsData: Project[] = [
   {
+    pinned: false,
     relevant: true,
     name: 'Bagger Flow Vsce Theme',
     description:
@@ -17,6 +18,7 @@ export const projectsData: Project[] = [
     videoUrl: null,
   },
   {
+    pinned: true,
     relevant: true,
     name: 'Bagr UI',
     description:
@@ -31,6 +33,7 @@ export const projectsData: Project[] = [
     videoUrl: null,
   },
   {
+    pinned: false,
     relevant: true,
     name: "Analytics and Usability Dashboard for CMF's MES",
     description:
@@ -45,6 +48,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/246076879-659c8170-4f10-42ec-a67f-03f66dc2e3e7.mp4',
   },
   {
+    pinned: true,
     relevant: true,
     name: 'Finishers Hub',
     description:
@@ -59,6 +63,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/230927052-362d6bd0-0abe-495d-9cbf-bd2524354e6e.mp4',
   },
   {
+    pinned: true,
     relevant: true,
     name: 'Guerner & Irmãos Website',
     startDate: '2023-01-15',
@@ -73,6 +78,7 @@ export const projectsData: Project[] = [
     videoUrl: null,
   },
   {
+    pinned: true,
     relevant: true,
     name: 'Time Table Selector',
     startDate: '2022-04-05',
@@ -87,6 +93,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/183784200-742c3556-ee0a-4eb7-9994-dcac6dffd440.mp4',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Rushing B (2D Game)',
     startDate: '2022-02-15',
@@ -101,6 +108,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://github.com/kiko-g/rushing-b/assets/40745490/d7493ab1-a4e7-450b-aba6-1b40eb1ef2b1',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Time Hopper (2D Game)',
     startDate: '2022-04-15',
@@ -115,6 +123,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://github.com/kiko-g/time-hopper/assets/40745490/a6b17eea-299a-4fcd-9df4-edb2335778ae',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Virtual Assistant for MES',
     startDate: '2022-03-01',
@@ -129,6 +138,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://robin-lgp.vercel.app/static/change-resource-state-auto-0acbdbc8d8cce72094f83810c41c7a4c.mp4',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Health Checker',
     startDate: '2021-11-01',
@@ -143,6 +153,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/150367733-d4e5b349-cae0-487e-9a82-685a3e376bd0.mp4',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Internet of Everything',
     startDate: '2021-10-25',
@@ -156,6 +167,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/153331805-e36c6bf9-d4c3-4521-aa1d-33d6f3f4a25d.mp4',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Mafia in Town',
     startDate: '2020-12-14',
@@ -170,6 +182,7 @@ export const projectsData: Project[] = [
     videoUrl: null,
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Tech Council',
     startDate: '2021-03-01',
@@ -184,6 +197,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/139429861-0b86db10-d1d3-46b5-814b-a8b5cc563da3.mp4',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Fuse 3D',
     startDate: '2019-09-25',
@@ -198,6 +212,7 @@ export const projectsData: Project[] = [
     videoUrl: 'https://user-images.githubusercontent.com/40745490/153338727-f14204bd-1ecb-488a-bc70-96896d111150.mp4',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'Pet Nexus',
     startDate: '2020-10-21',
@@ -211,6 +226,7 @@ export const projectsData: Project[] = [
     videoUrl: '',
   },
   {
+    pinned: false,
     relevant: false,
     name: 'P2P Timeline Twitter Clone',
     startDate: '2021-11-08',
