@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { formatDate } from '@/lib/utilities'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
+import { getColorContrast } from '@/utils'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -168,6 +169,64 @@ function Role({ role }: { role: Role }) {
   )
 }
 
+function TechSkills() {
+  let skills = [
+    { name: 'Git', experience: '4y', color: '#f1502f' },
+    { name: 'HTML', experience: '4y', color: '#e34c26' },
+    { name: 'CSS', experience: '4y', color: '#1572b6' },
+    { name: 'JS', experience: '4y', color: '#f7df1e' },
+    { name: 'TS', experience: '2.5y', color: '#007acc' },
+    { name: 'NodeJS', experience: '3y', color: '#68a063' },
+    { name: 'Python', experience: '3y', color: '#3776ab' },
+    { name: 'Ruby on Rails', experience: '0.5y', color: '#a01508' },
+    { name: 'Rust', experience: '3y', color: '#a0522e' },
+    { name: 'Java', experience: '3y', color: '#007396' },
+    { name: 'ReactJS', experience: '3y', color: '#61dafb' },
+    { name: 'Tailwind', experience: '2y', color: '#38b2ac' },
+    { name: 'Next.js', experience: '1.5y', color: '#000000' },
+    { name: 'Gatsby.js', experience: '1.5y', color: '#663399' },
+    { name: 'Angular', experience: '0.5y', color: '#dd0031' },
+    { name: 'PHP', experience: '2y', color: '#4f5b93' },
+    { name: 'Laravel', experience: '1y', color: '#ff2d20' },
+    { name: 'SQL', experience: '2y', color: '#4479a1' },
+    { name: 'Docker', experience: '2y', color: '#2496ed' },
+    { name: 'GraphQL', experience: '1y', color: '#e535ab' },
+    { name: 'React Native', experience: '0.5y', color: '#61dafb' },
+    { name: 'Flutter', experience: '0.5y', color: '#02569b' },
+    { name: 'C/C++', experience: '3y', color: '#00599c' },
+  ]
+
+  return (
+    <div className="rounded-2xl border border-navy-100 bg-navy-50/30 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
+      <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Tech Skills</span>
+      </h2>
+
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <li
+            key={skill.name}
+            className="flex items-center gap-1 rounded-full bg-slate-900/10 px-2 py-0"
+            style={{
+              // border: `1px solid ${skill.color}20`,
+              backgroundColor: `${skill.color}18`,
+            }}
+          >
+            <span
+              className="h-2 w-2 rounded-full"
+              style={{
+                backgroundColor: skill.color,
+              }}
+            />
+            <span className="text-xs font-normal tracking-tight">{skill.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 function Resume() {
   let resume: Array<Role> = [
     {
@@ -299,6 +358,7 @@ export default async function Home() {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
+            <TechSkills />
             {/* <Newsletter /> */}
           </div>
         </div>

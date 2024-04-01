@@ -221,7 +221,7 @@ export const projectsData: Project[] = [
     color: 'slate',
     stack: ['HTML', 'CSS', 'Javascript', 'PHP', 'SQLite'],
     repo: 'https://github.com/kiko-g/pet-nexus',
-    deployment: 'web.fe.up.pt/~up201704790/ltw/',
+    deployment: 'https://web.fe.up.pt/~up201704790/ltw/',
     image: media.petNexus.screenshot,
     videoUrl: '',
   },
