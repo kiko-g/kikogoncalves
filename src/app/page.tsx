@@ -207,10 +207,10 @@ function TechSkills() {
         {skills.map((skill) => (
           <li
             key={skill.name}
-            className="flex items-center gap-1 rounded-full bg-slate-900/10 px-2 py-0"
+            className="flex items-center gap-1 rounded-full px-2 py-0"
             style={{
-              // border: `1px solid ${skill.color}20`,
-              backgroundColor: `${skill.color}18`,
+              border: `1px solid ${skill.color}80`,
+              backgroundColor: `${skill.color}20`,
             }}
           >
             <span

@@ -1,0 +1,73 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+
+export const article = {
+  author: 'Francisco Gonçalves',
+  date: '2024-04-14',
+  title: 'Generating TailwindCSS Color Palettes',
+  description:
+    'Ever wanted to create aditional color palettes for your TailwindCSS project? This article will show you how to do it with a cool automation tool.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Sometimes you find yourself wanting to use a **color palette that is not available in TailwindCSS**. You can obviously just create one by hand and figure out the values but if you're like me, you'd rather automate this process.
+
+This is why I developed a handy tool that takes to colors and interpolates the values, generating the exact steps for a common TailwindCSS palette. You can try it out [here](https://bagr-ui.vercel.app/generator).
+
+![BagrUI Generator](https://i.imgur.com/C99bj6w.png)
+
+One general use case is to just pick a **very light color** and a **very dark color** of similar hue and let the computer do the rest. Copy the output generated in the [BagrUI generator](https://bagr-ui.vercel.app/generator) and paste it in your `tailwind.config.js` file.
+
+This is especially useful when you're working with a fancy design system, like having a **primary, secondary or tertiary** color palette. Here are is an example of a set of colors you can use as primary color palette:
+
+```js
+extend: {
+  colors: {
+    primary: {
+      DEFAULT: '#3b82f6',
+      50: '#eff6ff',
+      100: '#dbeafe',
+      200: '#bfdbfe',
+      300: '#93c5fd',
+      400: '#60a5fa',
+      500: '#3b82f6',
+      600: '#2563eb',
+      700: '#1d4ed8',
+      800: '#1e40af',
+      900: '#1e3a8a',
+      950: '#172554',
+    }
+  },
+}
+```
+
+> Notice how the `DEFAULT` key is used to define the main color of the palette. Normally you could set one of the middle values as the default color, but in this example I went with a custom value.
+
+Here is another great example of a useful color palette that is sometimes missing when working with a dark mode. The **navy color palette**:
+
+```js
+extend: {
+  colors: {
+    primary: {
+    navy: {
+      50: '#f9fafa',
+      100: '#f3f4f5',
+      200: '#e4e5e9',
+      300: '#d2d4d9',
+      400: '#9ea2ac',
+      500: '#6e717d',
+      600: '#4e535f',
+      700: '#3b404b',
+      800: '#232830',
+      900: '#141821',
+      950: '#0b0e18',
+    },
+  },
+}
+```

@@ -16,6 +16,11 @@ pre[class*='language-'] {
   color: theme('colors.zinc.500');
 }
 
+.token.string,
+.token.char {
+  color: theme('colors.emerald.400');
+}
+
 .token.property,
 .token.tag,
 .token.boolean,
@@ -25,11 +30,9 @@ pre[class*='language-'] {
 .token.deleted,
 .token.selector,
 .token.attr-name,
-.token.string,
-.token.char,
 .token.builtin,
 .token.inserted {
-  color: theme('colors.teal.300');
+  color: theme('colors.blue.400');
 }
 
 .token.operator,
