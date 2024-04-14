@@ -21,10 +21,13 @@ pre[class*='language-'] {
   color: theme('colors.emerald.400');
 }
 
+.token.boolean,
+.token.number {
+  color: theme('colors.rose.600');
+}
+
 .token.property,
 .token.tag,
-.token.boolean,
-.token.number,
 .token.constant,
 .token.symbol,
 .token.deleted,

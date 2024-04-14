@@ -20,6 +20,7 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+import { Skill } from '@/types'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -107,7 +108,7 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="rounded-2xl border border-navy-100 bg-navy-50/30 p-6 dark:border-navy-700/40 dark:bg-white/[3%]"
+      className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]"
     >
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <MailIcon className="h-6 w-6 flex-none" />
@@ -170,7 +171,7 @@ function Role({ role }: { role: Role }) {
 }
 
 function TechSkills() {
-  let skills = [
+  const skills: Skill[] = [
     { name: 'Git', experience: '4y', color: '#f1502f' },
     { name: 'HTML', experience: '4y', color: '#e34c26' },
     { name: 'CSS', experience: '4y', color: '#1572b6' },
@@ -197,7 +198,7 @@ function TechSkills() {
   ]
 
   return (
-    <div className="rounded-2xl border border-navy-100 bg-navy-50/30 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
+    <div className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Skills</span>
@@ -256,7 +257,7 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-navy-100 bg-navy-50/30 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
+    <div className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -358,8 +359,8 @@ export default async function Home() {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
+            <Newsletter />
             <TechSkills />
-            {/* <Newsletter /> */}
           </div>
         </div>
       </Container>

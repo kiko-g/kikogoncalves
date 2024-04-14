@@ -33,3 +33,9 @@ type ProjectCardColor = {
   bubble: string
   textHover: string
 }
+
+export type Skill = {
+  name: string
+  experience: string
+  color: string
+}
