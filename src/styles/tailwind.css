@@ -4,7 +4,7 @@
 @import './prism.css';
 
 *::selection {
-  @apply bg-slate-700/60 text-white dark:bg-blue-500/60;
+  @apply bg-slate-800 text-white dark:bg-rose-500/60;
 }
 
 html {

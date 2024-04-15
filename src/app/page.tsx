@@ -122,7 +122,7 @@ function TechSkills() {
     { name: 'TS', experience: '2.5y', color: '#007acc' },
     { name: 'NodeJS', experience: '3y', color: '#68a063' },
     { name: 'Python', experience: '3y', color: '#3776ab' },
-    { name: 'Ruby on Rails', experience: '0.5y', color: '#a01508' },
+    { name: 'Ruby/Rails', experience: '0.5y', color: '#a01508' },
     { name: 'Rust', experience: '3y', color: '#a0522e' },
     { name: 'Java', experience: '3y', color: '#007396' },
     { name: 'ReactJS', experience: '3y', color: '#61dafb' },
@@ -140,6 +140,41 @@ function TechSkills() {
     { name: 'C/C++', experience: '3y', color: '#00599c' },
   ]
 
+  function SkillBubble({
+    skill,
+    background,
+    bordered,
+    lowercase,
+    rounded,
+  }: {
+    skill: Skill
+    background?: boolean
+    bordered?: boolean
+    lowercase?: boolean
+    rounded?: boolean
+  }) {
+    return (
+      <li
+        className={clsx(
+          'flex items-center gap-1 bg-[#eef0f4] px-2 py-0 dark:bg-black/30',
+          rounded ? 'rounded-lg' : 'rounded-none',
+        )}
+        style={{
+          border: `1px solid ${bordered ? `${skill.color}80` : 'transparent'}`,
+          backgroundColor: background ? `${skill.color}10` : undefined,
+        }}
+      >
+        <span
+          className="h-2 w-2 rounded-full"
+          style={{
+            backgroundColor: skill.color,
+          }}
+        />
+        <span className={clsx('text-xs font-normal tracking-tight', lowercase && 'lowercase')}>{skill.name}</span>
+      </li>
+    )
+  }
+
   return (
     <div className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
@@ -149,22 +184,7 @@ function TechSkills() {
 
       <ul className="mt-6 flex flex-wrap gap-2">
         {skills.map((skill) => (
-          <li
-            key={skill.name}
-            className="flex items-center gap-1 rounded-full px-2 py-0"
-            style={{
-              border: `1px solid ${skill.color}80`,
-              backgroundColor: `${skill.color}20`,
-            }}
-          >
-            <span
-              className="h-2 w-2 rounded-full"
-              style={{
-                backgroundColor: skill.color,
-              }}
-            />
-            <span className="text-xs font-normal tracking-tight">{skill.name}</span>
-          </li>
+          <SkillBubble key={skill.name} skill={skill} rounded lowercase />
         ))}
       </ul>
     </div>
