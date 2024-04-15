@@ -80,7 +80,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="order-1 max-w-full lg:order-2 lg:max-w-md">
         {project.videoUrl ? (
-          <video controls className={clsx('rounded-md border lg:rounded-xl', cx.border)}>
+          <video controls muted className={clsx('rounded-md border lg:rounded-xl', cx.border)}>
             <source src={project.videoUrl} type="video/mp4"></source>
           </video>
         ) : (

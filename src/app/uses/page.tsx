@@ -1,6 +1,6 @@
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { LayoutSimple } from '@/components/LayoutSimple'
 
 function ToolsSection({ children, ...props }: React.ComponentPropsWithoutRef<typeof Section>) {
   return (
@@ -30,7 +30,7 @@ export const metadata = {
 
 export default function Uses() {
   return (
-    <SimpleLayout
+    <LayoutSimple
       title="Software and tools I use and love among other things I recommend."
       intro="Especially people new to Software Development ask me what tools I use and look up to me as if I did something special. I don't, but here is a list of tools I use and recommend that will certainly help."
     >
@@ -99,6 +99,6 @@ export default function Uses() {
           </Tool>
         </ToolsSection>
       </div>
-    </SimpleLayout>
+    </LayoutSimple>
   )
 }

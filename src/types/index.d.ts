@@ -1,4 +1,3 @@
-type ISODateString = `${number}-${number}-${number}`
 export type ProjectColor =
   | 'blue'
   | 'teal'
@@ -11,6 +10,7 @@ export type ProjectColor =
   | 'amber'
   | 'slate'
 
+type ISODateString = `${number}-${number}-${number}`
 export type Project = {
   pinned?: boolean
   relevant?: boolean
@@ -26,7 +26,7 @@ export type Project = {
   videoUrl: string | null
 }
 
-type ProjectCardColor = {
+export type ProjectCardColor = {
   background: string
   border: string
   badge: string

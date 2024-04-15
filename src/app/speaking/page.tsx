@@ -2,7 +2,7 @@ import { type Metadata } from 'next'
 
 import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { LayoutSimple } from '@/components/LayoutSimple'
 
 function SpeakingSection({ children, ...props }: React.ComponentPropsWithoutRef<typeof Section>) {
   return (
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function Speaking() {
   return (
-    <SimpleLayout
+    <LayoutSimple
       title="I’ve spoken at events all around the world and been interviewed for many podcasts."
       intro="One of my favorite ways to share my ideas is live on stage, where there’s so much more communication bandwidth than there is in writing, and I love podcast interviews because they give me the opportunity to answer questions instead of just present my opinions."
     >
@@ -89,6 +89,6 @@ export default function Speaking() {
           />
         </SpeakingSection>
       </div>
-    </SimpleLayout>
+    </LayoutSimple>
   )
 }

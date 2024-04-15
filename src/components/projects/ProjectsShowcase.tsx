@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { projectsData } from '@/utils/data'
 import { sortByPinned } from '@/utils'
 
-import { ProjectCard } from '@/components/ProjectCard'
+import { ProjectCard } from '@/components/projects/ProjectCard'
 import { Square3Stack3DIcon } from '@heroicons/react/24/outline'
 
 export function ProjectsShowcase() {
