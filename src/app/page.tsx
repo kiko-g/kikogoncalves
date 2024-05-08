@@ -45,7 +45,7 @@ function Newsletter() {
   return (
     <form
       action="/thank-you"
-      className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]"
+      className="rounded-2xl border border-navy-100 bg-navy-25 p-6 dark:border-navy-700/40 dark:bg-white/[3%]"
     >
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <MailIcon className="h-6 w-6 flex-none" />
@@ -155,10 +155,7 @@ function TechSkills() {
   }) {
     return (
       <li
-        className={clsx(
-          'flex items-center gap-1 bg-[#eef0f4] px-2 py-0 dark:bg-black/30',
-          rounded ? 'rounded-lg' : 'rounded-none',
-        )}
+        className={clsx('flex items-center gap-1 px-1 py-0', rounded ? 'rounded-lg' : 'rounded-none')}
         style={{
           border: `1px solid ${bordered ? `${skill.color}80` : 'transparent'}`,
           backgroundColor: background ? `${skill.color}10` : undefined,
@@ -176,13 +173,13 @@ function TechSkills() {
   }
 
   return (
-    <div className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
+    <div className="rounded-2xl border border-navy-100 bg-navy-25 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Tech Skills</span>
       </h2>
 
-      <ul className="mt-6 flex flex-wrap gap-2">
+      <ul className="mt-6 flex flex-wrap gap-1">
         {skills.map((skill) => (
           <SkillBubble key={skill.name} skill={skill} rounded lowercase />
         ))}
@@ -220,7 +217,7 @@ function Resume() {
   ]
 
   return (
-    <div className="bg-navy-25 rounded-2xl border border-navy-100 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
+    <div className="rounded-2xl border border-navy-100 bg-navy-25 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
