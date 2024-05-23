@@ -23,13 +23,20 @@ export function ProjectsShowcase() {
     [hideLessRelevant, query],
   )
 
+  function clearFilters() {
+    setQuery('')
+    setHideLessRelevant(false)
+  }
+
   return (
     <>
       <div className="mb-1 flex items-center justify-between gap-2 text-sm">
-        <span className="font-medium text-navy-600 dark:text-navy-400">
+        <span className="font-medium text-navy-500 dark:text-navy-400">
           Showing {filteredProjects.length}/{projectsData.length} projects
         </span>
-        <button className="hover:underline">Clear all</button>
+        <button onClick={clearFilters} className="hover:underline">
+          Clear
+        </button>
       </div>
 
       <div className="mb-4 flex w-full items-center justify-center gap-3">
