@@ -9,6 +9,7 @@ import { GitHubIcon } from '@/components/SocialIcons'
 import { LinkIcon, StarIcon } from '@heroicons/react/20/solid'
 
 export function ProjectCard({ project }: { project: Project }) {
+  const showStar = false
   const useLinkColor = false
   const cx = resolveProjectCardColors(project.color)
   const datespan = getDatespan(project.startDate, project.endDate)
@@ -16,7 +17,7 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <div
       className={clsx(
-        'relative flex flex-col gap-4 rounded-md border p-4 lg:flex-row lg:rounded-xl lg:p-6',
+        'relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6',
         cx.background,
         cx.border,
       )}
@@ -27,7 +28,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <h3 className="text-xl font-bold">{project.name}</h3>
             <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
           </div>
-          {project.pinned && (
+          {project.pinned && showStar && (
             <StarIcon className="h-5 w-5 fill-amber-300 stroke-amber-600 dark:fill-amber-500 dark:stroke-amber-500" />
           )}
         </div>
@@ -80,11 +81,11 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="order-1 max-w-full lg:order-2 lg:max-w-md">
         {project.videoUrl ? (
-          <video controls muted className={clsx('rounded-md border lg:rounded-xl', cx.border)}>
+          <video controls muted className={clsx('rounded-none shadow', cx.border)}>
             <source src={project.videoUrl} type="video/mp4"></source>
           </video>
         ) : (
-          <Image src={project.image} alt="" className={clsx('rounded-md border lg:rounded-xl', cx.border)} />
+          <Image src={project.image} alt="" className={clsx('rounded-none shadow', cx.border)} />
         )}
       </div>
     </div>
