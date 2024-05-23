@@ -14,8 +14,10 @@ type ISODateString = `${number}-${number}-${number}`
 export type Project = {
   pinned?: boolean
   relevant?: boolean
+  beta?: boolean
   name: string
   description: React.ReactNode
+  attachment?: string
   repo: string | null
   deployment: string | null
   startDate: ISODateString

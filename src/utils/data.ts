@@ -3,16 +3,17 @@ import type { Project } from '@/types'
 
 export const projectsData: Project[] = [
   {
-    pinned: false,
+    pinned: true,
     relevant: true,
-    name: 'Bagger Flow Vsce Theme',
+    beta: false,
+    name: 'Bagger Flow Visual Studio Code Theme',
     description:
-      'Visual Studio Code Theme with a refined color palette combining elements of other pouplar themes and with a clean and minimal touch of the chef’s personal taste. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace.',
+      'Visual Studio Code Theme with a refined color palette combining elements of other pouplar themes and with a clean and minimal touch of the chef’s personal taste. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace. Expanded language highlighting support and improved color scheme to cover all scenarios you might encounter.',
     startDate: '2024-01-25',
     endDate: 'present',
     repo: 'https://github.com/kiko-g/bagger-flow-vscode',
     deployment: 'https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow',
-    color: 'purple',
+    color: 'indigo',
     stack: ['Node.js', 'JSON'],
     image: media.baggerFlow.screenshot,
     videoUrl: null,
@@ -20,9 +21,10 @@ export const projectsData: Project[] = [
   {
     pinned: true,
     relevant: true,
+    beta: true,
     name: 'Bagr UI',
     description:
-      'Long stash of reusable and customizable React TSX components stashed from many projects. Inspired by RadixUI, HeadlessUI and TailwindUI.',
+      'Vast and growing collection of reusable, copiable and customizable ReactTSX components combined and saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and TailwindUI.',
     startDate: '2023-07-17',
     endDate: 'present',
     repo: 'https://github.com/kiko-g/bagr-ui',
@@ -35,11 +37,13 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: true,
+    beta: false,
     name: "Analytics and Usability Dashboard for CMF's MES",
     description:
-      "Dashboard with custom insights for components inside Critical Manufacturing's MES, an application used for managing industrial shop floors. The dashboard aims to identify user behavior patterns and improve usability based on evidence collected over time.",
+      "Dashboard with customized analyitical insights for web components inside Critical Manufacturing's MES, an application used for managing industrial shop floors. The dashboard presents organized data of user behavior patterns for developers to improve the usability of MES based on the evidence collected over time.",
     startDate: '2023-02-06',
     endDate: '2023-07-01',
+    attachment: 'https://kikogoncalves/dissertation.pdf',
     repo: 'https://github.com/kiko-g/usability-dashboard-mes',
     deployment: 'https://usability-dashboard-mes.vercel.app',
     color: 'blue',
@@ -50,6 +54,7 @@ export const projectsData: Project[] = [
   {
     pinned: true,
     relevant: true,
+    beta: false,
     name: 'Finishers Hub',
     description:
       'The place for all finisher related content: chaotic, outrageous, lawless on the fence of criminality. Perfectly unbalanced. As all things should be. The most amusing and most personal project I have ever worked on.',
@@ -65,6 +70,7 @@ export const projectsData: Project[] = [
   {
     pinned: true,
     relevant: true,
+    beta: false,
     name: 'Guerner & Irmãos Website',
     startDate: '2023-01-15',
     endDate: '2023-09-28',
@@ -80,6 +86,7 @@ export const projectsData: Project[] = [
   {
     pinned: true,
     relevant: true,
+    beta: false,
     name: 'Time Table Selector',
     startDate: '2022-04-05',
     endDate: '2022-08-25',
@@ -95,6 +102,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Rushing B (2D Game)',
     startDate: '2022-02-15',
     endDate: '2022-04-10',
@@ -110,6 +118,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Time Hopper (2D Game)',
     startDate: '2022-04-15',
     endDate: '2022-07-01',
@@ -125,6 +134,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Virtual Assistant for MES',
     startDate: '2022-03-01',
     endDate: '2022-06-15',
@@ -140,6 +150,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Health Checker',
     startDate: '2021-11-01',
     endDate: '2022-01-21',
@@ -155,6 +166,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Internet of Everything',
     startDate: '2021-10-25',
     endDate: '2022-01-30',
@@ -169,6 +181,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Mafia in Town',
     startDate: '2020-12-14',
     endDate: '2020-10-12',
@@ -184,6 +197,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Tech Council',
     startDate: '2021-03-01',
     endDate: '2021-06-18',
@@ -199,6 +213,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Fuse 3D',
     startDate: '2019-09-25',
     endDate: '2020-01-10',
@@ -214,6 +229,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'Pet Nexus',
     startDate: '2020-10-21',
     endDate: '2020-12-20',
@@ -228,6 +244,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
+    beta: false,
     name: 'P2P Timeline Twitter Clone',
     startDate: '2021-11-08',
     endDate: '2022-02-05',
