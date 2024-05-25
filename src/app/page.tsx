@@ -87,8 +87,8 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-navy-800/5 ring-1 ring-navy-900/5 dark:border dark:border-navy-700/50 dark:bg-transparent dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+      <div className="relative mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white p-[1px] shadow-md ring-1 ring-navy-900/5 dark:border dark:border-navy-500/40 dark:bg-white/10 dark:ring-0">
+        <Image src={role.logo} alt="" className="h-8 w-8" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -125,19 +125,20 @@ function TechSkills() {
     { name: 'Ruby/Rails', experience: '0.5y', color: '#a01508' },
     { name: 'Rust', experience: '3y', color: '#a0522e' },
     { name: 'Java', experience: '3y', color: '#007396' },
-    { name: 'ReactJS', experience: '3y', color: '#61dafb' },
+    { name: 'React.js', experience: '3y', color: '#61dafb' },
     { name: 'Tailwind', experience: '2y', color: '#38b2ac' },
-    { name: 'Next.js', experience: '1.5y', color: '#000000' },
-    { name: 'Gatsby.js', experience: '1.5y', color: '#663399' },
+    { name: 'Next.js', experience: '2y', color: '#000000' },
+    { name: 'Gatsby.js', experience: '2y', color: '#663399' },
+    { name: 'Vue.js', experience: '1y', color: '#3fb984' },
     { name: 'Angular', experience: '0.5y', color: '#dd0031' },
     { name: 'PHP', experience: '2y', color: '#4f5b93' },
-    { name: 'Laravel', experience: '1y', color: '#ff2d20' },
-    { name: 'SQL', experience: '2y', color: '#4479a1' },
+    { name: 'Laravel', experience: '0.5y', color: '#ff2d20' },
+    { name: 'SQL', experience: '2y', color: '#2255ff' },
     { name: 'Docker', experience: '2y', color: '#2496ed' },
     { name: 'GraphQL', experience: '1y', color: '#e535ab' },
     { name: 'React Native', experience: '0.5y', color: '#61dafb' },
-    { name: 'Flutter', experience: '0.5y', color: '#02569b' },
-    { name: 'C/C++', experience: '3y', color: '#00599c' },
+    { name: 'Flutter', experience: '0.5y', color: '#31b9f6' },
+    { name: 'C/C++', experience: '3y', color: '#00559c' },
   ]
 
   function SkillBubble({

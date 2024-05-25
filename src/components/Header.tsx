@@ -46,14 +46,7 @@ function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
+    <svg viewBox="0 0 24 24" {...props}>
       <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z" />
       <path
         d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061"
@@ -65,12 +58,11 @@ function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 24 24" {...props}>
       <path
-        d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fillRule="evenodd"
+        d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+        clipRule="evenodd"
       />
     </svg>
   )
@@ -89,7 +81,7 @@ function MobileNavItem({ href, children }: { href: string; children: React.React
 function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-navy-800 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:text-navy-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-navy-800 shadow-lg ring-1 ring-navy-900/5 backdrop-blur dark:bg-navy-800/90 dark:text-navy-200 dark:ring-white/10 dark:hover:ring-white/20">
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-navy-500 group-hover:stroke-navy-700 dark:group-hover:stroke-navy-400" />
       </Popover.Button>
@@ -193,8 +185,20 @@ function ThemeToggle() {
       className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-navy-800/5 ring-1 ring-navy-900/5 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:bg-navy-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className="h-6 w-6 fill-orange-100 stroke-orange-500 transition group-hover:fill-orange-200 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-50 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-navy-700 stroke-primary-400 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-400 [@media_not_(prefers-color-scheme:dark)]:fill-primary-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500" />
+      <SunIcon
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+        className="h-6 w-6 fill-orange-500 stroke-orange-500 p-[1px] transition group-hover:fill-orange-500 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-500 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-600 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600"
+      />
+      <MoonIcon
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+        className="hidden h-6 w-6 fill-primary-400 stroke-primary-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-400 [@media_not_(prefers-color-scheme:dark)]:fill-primary-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500"
+      />
     </button>
   )
 }
