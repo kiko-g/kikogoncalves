@@ -1,4 +1,4 @@
-import type { ProjectColor, ProjectCardColor, Project } from '@/types'
+import type { ProjectColor, ProjectCardColor, Project, Technology } from '@/types'
 
 export function getDatespan(startDate: string, endDate: string | 'present'): string {
   const start = new Date(startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
@@ -120,4 +120,20 @@ export function getColorContrast(hex: any) {
   const g = parseInt(hex.substr(3, 2), 16)
   const b = parseInt(hex.substr(5, 2), 16)
   return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? '#000000' : '#FFFFFF'
+}
+
+export function extractTechStackAndSortByFrequency(projects: Project[]): Technology[] {
+  return Object.entries(
+    projects
+      .flatMap((p) => p.stack)
+      .reduce(
+        (acc: Record<string, number>, tech) => {
+          acc[tech] = (acc[tech] || 0) + 1
+          return acc
+        },
+        {} as Record<string, number>,
+      ),
+  )
+    .map(([name, freq]) => ({ name, freq }))
+    .sort((a, b) => b.freq - a.freq)
 }

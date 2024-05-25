@@ -2,25 +2,29 @@
 
 import React, { useMemo, useState } from 'react'
 import clsx from 'clsx'
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
 
 import { projectsData } from '@/utils/data'
-import { sortByPinned } from '@/utils'
+import { extractTechStackAndSortByFrequency, sortByPinned } from '@/utils'
 
 import { ProjectCard } from '@/components/projects/ProjectCard'
-import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
 import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 
 export function ProjectsShowcase() {
+  const techs = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
+  const [selectedTechs, setSelectedTechs] = useState([techs[0], techs[1]])
+
   const [query, setQuery] = useState('')
   const [hideLessRelevant, setHideLessRelevant] = useState(false)
-
   const filteredProjects = useMemo(
     () =>
       projectsData
         .filter((p) => (hideLessRelevant ? p.relevant : true))
         .filter((x) => x.name.toLowerCase().includes(query.toLowerCase()))
+        .filter((p) => (selectedTechs.length > 0 ? selectedTechs.every((tech) => p.stack.includes(tech.name)) : true))
         .sort(sortByPinned),
-    [hideLessRelevant, query],
+    [query, hideLessRelevant, selectedTechs],
   )
 
   function clearFilters() {
@@ -32,7 +36,7 @@ export function ProjectsShowcase() {
     <>
       <div className="mb-1 flex items-center justify-between gap-2 text-sm">
         <span className="font-medium text-navy-500 dark:text-navy-400">
-          Showing {filteredProjects.length}/{projectsData.length} projects
+          Showing {filteredProjects.length} out of {projectsData.length} projects
         </span>
         <button onClick={clearFilters} className="hover:underline">
           Clear
@@ -43,10 +47,62 @@ export function ProjectsShowcase() {
         <input
           type="search"
           placeholder="Search by project name"
-          className="w-full flex-1 border border-slate-300 bg-slate-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-slate-400 hover:border-primary-500/80 hover:bg-primary-500/10 focus:border-primary-500 focus:accent-primary-500 focus:ring-0 focus:ring-primary-500 focus:ring-offset-0 dark:border-slate-200/10  dark:bg-slate-100/5 dark:placeholder:text-slate-400 dark:hover:border-primary-500/70 dark:hover:bg-primary-500/10 dark:focus:border-primary-500/50 dark:focus:ring-0 dark:focus:ring-primary-500 lg:px-3 lg:py-2 lg:text-sm"
+          className="w-full flex-1 border border-navy-400 bg-navy-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-navy-400 hover:border-primary-500/80 hover:bg-primary-500/10 focus:border-primary-500 focus:accent-primary-500 focus:ring-0 focus:ring-primary-500 focus:ring-offset-0 dark:border-navy-200/10  dark:bg-navy-100/5 dark:placeholder:text-navy-400 dark:hover:border-primary-500/70 dark:hover:bg-primary-500/10 dark:focus:border-primary-500/50 dark:focus:ring-0 dark:focus:ring-primary-500 lg:px-3 lg:py-2 lg:text-sm"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
+
+        <Listbox value={selectedTechs} onChange={setSelectedTechs} multiple>
+          <ListboxButton
+            className={clsx(
+              'flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-navy-300',
+              selectedTechs.length > 0
+                ? 'border-primary-600 bg-primary-600/60 text-white dark:border-primary-500/60 dark:bg-primary-500/20'
+                : 'border-navy-400 bg-navy-50 text-navy-700 dark:border-navy-200/10 dark:bg-navy-100/5',
+            )}
+          >
+            <span>Tags</span>
+            <ChevronDownIcon className="ml-2 h-4 w-4" />
+          </ListboxButton>
+
+          <Transition
+            enter="duration-200 ease-out"
+            enterFrom="scale-95 opacity-0"
+            enterTo="scale-100 opacity-100"
+            leave="duration-300 ease-out"
+            leaveFrom="scale-100 opacity-100"
+            leaveTo="scale-95 opacity-0"
+          >
+            <ListboxOptions
+              anchor="bottom end"
+              className="mt-2 flex w-52 flex-col gap-0.5 border border-navy-400 bg-navy-50 py-2 pl-2 pr-4 text-sm text-navy-800 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-300"
+            >
+              <div className="mb-1 flex items-center justify-between gap-2 border-b border-navy-400 pb-1 dark:border-navy-200/10">
+                <span className="text-xs">{selectedTechs.length} selected</span>
+                <button onClick={() => setSelectedTechs([])} className="text-xs hover:underline">
+                  Clear
+                </button>
+              </div>
+
+              {techs.map((tech) => {
+                const isSelected = selectedTechs.includes(tech)
+                return (
+                  <ListboxOption
+                    key={tech.name}
+                    value={tech}
+                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 transition data-[focus]:border-transparent data-[focus]:bg-navy-800/70 data-[focus]:text-white dark:data-[focus]:bg-navy-500/30"
+                  >
+                    <span className={clsx('block truncate', isSelected ? '' : '')}>
+                      {tech.name} ({tech.freq})
+                    </span>
+                    {isSelected && <CheckIcon className="h-4 w-4 data-[focus]:text-white" aria-hidden="true" />}
+                  </ListboxOption>
+                )
+              })}
+            </ListboxOptions>
+          </Transition>
+        </Listbox>
+
         <button
           type="button"
           title="Toggle starred projects"
@@ -54,8 +110,8 @@ export function ProjectsShowcase() {
           className={clsx(
             'flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80',
             hideLessRelevant
-              ? 'text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-slate-300'
-              : 'border-slate-300 bg-slate-50 text-slate-500 dark:border-slate-200/10 dark:bg-slate-100/5 dark:text-slate-300',
+              ? 'text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-navy-300'
+              : 'border-navy-400 bg-navy-50 text-navy-500 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
           )}
         >
           {hideLessRelevant ? <StarIconSolid className="h-5 w-5" /> : <StarIconOutline className="h-5 w-5" />}

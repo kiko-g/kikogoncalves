@@ -18,15 +18,15 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <div
       className={clsx(
-        'relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6',
+        'relative flex flex-col gap-4 rounded-none border p-4 xl:flex-row xl:p-6',
         cx.background,
         cx.border,
       )}
     >
-      <div className="order-2 flex flex-1 flex-col self-stretch lg:order-1">
+      <div className="order-2 flex flex-1 flex-col self-stretch xl:order-1">
         <div className="flex items-center justify-between gap-x-2">
           <div className="flex items-center gap-x-2">
-            <h3 className="text-xl font-bold">{project.name}</h3>
+            <h3 className="flex-1 text-xl font-bold">{project.name}</h3>
             <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
           </div>
           {project.beta && (
@@ -95,7 +95,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="relative order-1 max-w-full lg:order-2 lg:max-w-md">
+      <div className="relative order-1 max-w-full xl:order-2 xl:max-w-md">
         {project.videoUrl ? (
           <video controls muted className={clsx('rounded-none shadow', cx.border)}>
             <source src={project.videoUrl} type="video/mp4"></source>

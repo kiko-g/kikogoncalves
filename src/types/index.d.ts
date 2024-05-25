@@ -28,6 +28,11 @@ export type Project = {
   videoUrl: string | null
 }
 
+export type Technology = {
+  freq: number
+  name: string
+}
+
 export type ProjectCardColor = {
   background: string
   border: string
