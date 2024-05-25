@@ -6,9 +6,9 @@ export const projectsData: Project[] = [
     pinned: true,
     relevant: true,
     beta: false,
-    name: 'Bagger Flow Visual Studio Code Theme',
+    name: 'VS Code Theme: Bagger Flow',
     description:
-      'Visual Studio Code Theme with a refined color palette combining elements of other pouplar themes and with a clean and minimal touch of the chef’s personal taste. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace. Expanded language highlighting support and improved color scheme to cover all scenarios you might encounter.',
+      'Bagger Flow is a Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with a clean and minimal touch of the chef’s personal taste. Contains  carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace.',
     startDate: '2024-01-25',
     endDate: 'present',
     repo: 'https://github.com/kiko-g/bagger-flow-vscode',
