@@ -155,10 +155,10 @@ function TechSkills() {
   }) {
     return (
       <li
-        className={clsx('flex items-center gap-1 px-1 py-0', rounded ? 'rounded-lg' : 'rounded-none')}
+        className={clsx('flex items-center gap-1 px-1.5 py-0 leading-none', rounded ? 'rounded-full' : 'rounded-none')}
         style={{
           border: `1px solid ${bordered ? `${skill.color}80` : 'transparent'}`,
-          backgroundColor: background ? `${skill.color}10` : undefined,
+          backgroundColor: background ? `${skill.color}20` : undefined,
         }}
       >
         <span
@@ -179,9 +179,17 @@ function TechSkills() {
         <span className="ml-3">Tech Skills</span>
       </h2>
 
-      <ul className="mt-6 flex flex-wrap gap-1">
+      <p className="mt-2 text-sm text-navy-600 dark:text-navy-400">
+        Some of the technologies I have experience with. Visit the{' '}
+        <Link className="underline hover:opacity-80" href="/projects">
+          projects
+        </Link>{' '}
+        page to know more.
+      </p>
+
+      <ul className="mt-4 flex flex-wrap gap-3">
         {skills.map((skill) => (
-          <SkillBubble key={skill.name} skill={skill} rounded lowercase />
+          <SkillBubble key={skill.name} skill={skill} background rounded lowercase />
         ))}
       </ul>
     </div>
