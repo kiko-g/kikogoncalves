@@ -3,7 +3,7 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import { type Skill } from '@/types'
-import { skills } from '@/utils/data'
+import { skills } from '@/lib/data'
 import { BriefcaseIcon } from '@/components/Icons'
 
 export function TechSkills() {

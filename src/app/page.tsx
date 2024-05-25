@@ -6,7 +6,7 @@ import { Resume } from '@/components/home/Resume'
 import { Newsletter } from '@/components/home/Newsletter'
 import { TechSkills } from '@/components/home/TechSkills'
 import { ArticleCard } from '@/components/home/ArticleCard'
-import { SocialLinkHome } from '@/components/home/SocialLinkHome'
+import { SocialLink } from '@/components/home/SocialLink'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
 
 export default async function Home() {
@@ -26,25 +26,25 @@ export default async function Home() {
             useful cool projects.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLinkHome
+            <SocialLink
               href="https://twitter.com/kikogoncalves_"
               target="_blank"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
-            <SocialLinkHome
+            <SocialLink
               href="https://instagram.com/kikogoncalves_"
               target="_blank"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
-            <SocialLinkHome
+            <SocialLink
               href="https://github.com/kiko-g"
               target="_blank"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
-            <SocialLinkHome
+            <SocialLink
               href="https://linkedin.com/in/kikogoncalves"
               target="_blank"
               icon={LinkedInIcon}

@@ -6,8 +6,8 @@ import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } fro
 import { ProjectCard } from '@/components/projects/ProjectCard'
 
 import { type Technology } from '@/types'
-import { projectsData } from '@/utils/data'
-import { extractTechStackAndSortByFrequency, sortByPinned } from '@/utils'
+import { projectsData } from '@/lib/data'
+import { extractTechStackAndSortByFrequency, sortByPinned } from '@/lib/utilities'
 
 import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'

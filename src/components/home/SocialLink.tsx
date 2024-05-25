@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export function SocialLinkHome({
+export function SocialLink({
   icon: Icon,
   ...props
 }: React.ComponentPropsWithoutRef<typeof Link> & {
