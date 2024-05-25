@@ -10,6 +10,7 @@ export default {
   plugins: [typographyPlugin, formsPlugin],
   theme: {
     fontSize: {
+      xxs: ['0.725rem', { lineHeight: '1.25rem' }],
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
       base: ['1rem', { lineHeight: '1.75rem' }],
