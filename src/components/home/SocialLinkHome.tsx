@@ -1,0 +1,14 @@
+import Link from 'next/link'
+
+export function SocialLinkHome({
+  icon: Icon,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Link> & {
+  icon: React.ComponentType<{ className?: string }>
+}) {
+  return (
+    <Link className="group -m-1 p-1" {...props}>
+      <Icon className="h-6 w-6 fill-navy-500 transition group-hover:fill-primary-500 dark:fill-navy-400 dark:group-hover:fill-white" />
+    </Link>
+  )
+}

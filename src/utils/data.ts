@@ -1,5 +1,5 @@
 import { media } from '@/images/portfolio'
-import type { Project } from '@/types'
+import type { Project, Skill } from '@/types'
 
 export const projectsData: Project[] = [
   {
@@ -256,4 +256,31 @@ export const projectsData: Project[] = [
     stack: ['React', 'Tailwind', 'Python', 'Flask', 'Kademlia'],
     description: 'Peer to peer Twitter clone using Kademlia DHT.',
   },
+]
+
+export const skills: Skill[] = [
+  { name: 'Git', experience: '4y', color: '#f1502f' },
+  { name: 'HTML', experience: '4y', color: '#e34c26' },
+  { name: 'CSS', experience: '4y', color: '#1572b6' },
+  { name: 'JS', experience: '4y', color: '#f7df1e' },
+  { name: 'TS', experience: '2.5y', color: '#007acc' },
+  { name: 'NodeJS', experience: '3y', color: '#68a063' },
+  { name: 'Python', experience: '3y', color: '#3776ab' },
+  { name: 'Ruby/Rails', experience: '0.5y', color: '#a01508' },
+  { name: 'Rust', experience: '3y', color: '#a0522e' },
+  { name: 'Java', experience: '3y', color: '#007396' },
+  { name: 'React.js', experience: '3y', color: '#61dafb' },
+  { name: 'Tailwind', experience: '2y', color: '#38b2ac' },
+  { name: 'Next.js', experience: '2y', color: '#000000' },
+  { name: 'Gatsby.js', experience: '2y', color: '#663399' },
+  { name: 'Vue.js', experience: '1y', color: '#3fb984' },
+  { name: 'Angular', experience: '0.5y', color: '#dd0031' },
+  { name: 'PHP', experience: '2y', color: '#4f5b93' },
+  { name: 'Laravel', experience: '0.5y', color: '#ff2d20' },
+  { name: 'SQL', experience: '2y', color: '#2255ff' },
+  { name: 'Docker', experience: '2y', color: '#2496ed' },
+  { name: 'GraphQL', experience: '1y', color: '#e535ab' },
+  { name: 'React Native', experience: '0.5y', color: '#61dafb' },
+  { name: 'Flutter', experience: '0.5y', color: '#31b9f6' },
+  { name: 'C/C++', experience: '3y', color: '#00559c' },
 ]
