@@ -3,17 +3,18 @@
 import React, { useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
+import { ProjectCard } from '@/components/projects/ProjectCard'
 
+import { type Technology } from '@/types'
 import { projectsData } from '@/utils/data'
 import { extractTechStackAndSortByFrequency, sortByPinned } from '@/utils'
 
-import { ProjectCard } from '@/components/projects/ProjectCard'
-import { ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
 import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
+import { ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
-  const [selectedTags, setSelectedTags] = useState([tags[0], tags[1]])
+  const [selectedTags, setSelectedTags] = useState<Technology[]>([])
 
   const [query, setQuery] = useState('')
   const [hideLessRelevant, setHideLessRelevant] = useState(false)
@@ -75,10 +76,10 @@ export function ProjectsShowcase() {
           >
             <ListboxOptions
               anchor="bottom end"
-              className="mt-2 flex w-52 flex-col gap-0.5 border border-navy-400 bg-navy-50 py-2 pl-2 pr-4 text-sm text-navy-800 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-300"
+              className="mt-2 flex w-52 flex-col gap-0.5 border border-navy-400 bg-white py-2 pl-2 pr-4 text-sm text-navy-950 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-200"
             >
               <div className="mb-1 flex items-center justify-between gap-2 border-b border-navy-400 pb-1 dark:border-navy-200/10">
-                <span className="text-xs">{selectedTags.length} selected</span>
+                <span className="pl-1 text-xs">{selectedTags.length} selected</span>
                 <button onClick={() => setSelectedTags([])} className="text-xs hover:underline">
                   Clear
                 </button>
