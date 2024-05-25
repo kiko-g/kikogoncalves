@@ -2,27 +2,6 @@ import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import { LayoutSimple } from '@/components/LayoutSimple'
 
-function ToolsSection({ children, ...props }: React.ComponentPropsWithoutRef<typeof Section>) {
-  return (
-    <Section {...props}>
-      <ul role="list" className="space-y-16">
-        {children}
-      </ul>
-    </Section>
-  )
-}
-
-function Tool({ title, href, children }: { title: string; href?: string; children: React.ReactNode }) {
-  return (
-    <Card as="li">
-      <Card.Title as="h3" href={href}>
-        {title}
-      </Card.Title>
-      <Card.Description>{children}</Card.Description>
-    </Card>
-  )
-}
-
 export const metadata = {
   title: 'Setup',
   description: 'Tools and software I use among other things I recommend.',
@@ -100,5 +79,26 @@ export default function Uses() {
         </ToolsSection>
       </div>
     </LayoutSimple>
+  )
+}
+
+function ToolsSection({ children, ...props }: React.ComponentPropsWithoutRef<typeof Section>) {
+  return (
+    <Section {...props}>
+      <ul role="list" className="space-y-16">
+        {children}
+      </ul>
+    </Section>
+  )
+}
+
+function Tool({ title, href, children }: { title: string; href?: string; children: React.ReactNode }) {
+  return (
+    <Card as="li">
+      <Card.Title as="h3" href={href}>
+        {title}
+      </Card.Title>
+      <Card.Description>{children}</Card.Description>
+    </Card>
   )
 }
