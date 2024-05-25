@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 @import './prism.css';
 
+:root {
+  --anchor-max-height: 280px;
+}
+
 *::selection {
   @apply bg-slate-800 text-white dark:bg-rose-500/60;
 }
