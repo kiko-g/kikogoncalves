@@ -12,8 +12,8 @@ import { ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicon
 import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 
 export function ProjectsShowcase() {
-  const techs = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
-  const [selectedTechs, setSelectedTechs] = useState([techs[0], techs[1]])
+  const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
+  const [selectedTags, setSelectedTags] = useState([tags[0], tags[1]])
 
   const [query, setQuery] = useState('')
   const [hideLessRelevant, setHideLessRelevant] = useState(false)
@@ -22,9 +22,9 @@ export function ProjectsShowcase() {
       projectsData
         .filter((p) => (hideLessRelevant ? p.relevant : true))
         .filter((x) => x.name.toLowerCase().includes(query.toLowerCase()))
-        .filter((p) => (selectedTechs.length > 0 ? selectedTechs.every((tech) => p.stack.includes(tech.name)) : true))
+        .filter((p) => (selectedTags.length > 0 ? selectedTags.every((tag) => p.stack.includes(tag.name)) : true))
         .sort(sortByPinned),
-    [query, hideLessRelevant, selectedTechs],
+    [query, hideLessRelevant, selectedTags],
   )
 
   function clearFilters() {
@@ -52,11 +52,11 @@ export function ProjectsShowcase() {
           onChange={(e) => setQuery(e.target.value)}
         />
 
-        <Listbox value={selectedTechs} onChange={setSelectedTechs} multiple>
+        <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
           <ListboxButton
             className={clsx(
               'flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-navy-300',
-              selectedTechs.length > 0
+              selectedTags.length > 0
                 ? 'border-primary-600 bg-primary-600/60 text-white dark:border-primary-500/60 dark:bg-primary-500/20'
                 : 'border-navy-400 bg-navy-50 text-navy-700 dark:border-navy-200/10 dark:bg-navy-100/5',
             )}
@@ -78,22 +78,22 @@ export function ProjectsShowcase() {
               className="mt-2 flex w-52 flex-col gap-0.5 border border-navy-400 bg-navy-50 py-2 pl-2 pr-4 text-sm text-navy-800 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-300"
             >
               <div className="mb-1 flex items-center justify-between gap-2 border-b border-navy-400 pb-1 dark:border-navy-200/10">
-                <span className="text-xs">{selectedTechs.length} selected</span>
-                <button onClick={() => setSelectedTechs([])} className="text-xs hover:underline">
+                <span className="text-xs">{selectedTags.length} selected</span>
+                <button onClick={() => setSelectedTags([])} className="text-xs hover:underline">
                   Clear
                 </button>
               </div>
 
-              {techs.map((tech) => {
-                const isSelected = selectedTechs.includes(tech)
+              {tags.map((tag) => {
+                const isSelected = selectedTags.includes(tag)
                 return (
                   <ListboxOption
-                    key={tech.name}
-                    value={tech}
+                    key={tag.name}
+                    value={tag}
                     className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 transition data-[focus]:border-transparent data-[focus]:bg-navy-800/70 data-[focus]:text-white dark:data-[focus]:bg-navy-500/30"
                   >
                     <span className={clsx('block truncate', isSelected ? '' : '')}>
-                      {tech.name} ({tech.freq})
+                      {tag.name} ({tag.freq})
                     </span>
                     {isSelected && <CheckIcon className="h-4 w-4 data-[focus]:text-white" aria-hidden="true" />}
                   </ListboxOption>
