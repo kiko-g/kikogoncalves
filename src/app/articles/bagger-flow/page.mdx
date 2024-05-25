@@ -1,0 +1,35 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+
+export const article = {
+  author: 'Francisco Gonçalves',
+  date: '2024-05-29',
+  title: 'Launching my VS Code Theme: Bagger Flow',
+  description:
+    'For the longest time I have been expanding my settings and customizing my VS Code to make it feel like home. I finally took the time to package it all up and share it with the world. From my perspective I have created the most visually appealing and sensible theme for VS Code.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+I'm thrilled to share my latest creation, the **Bagger Flow Theme** for Visual Studio Code. This theme offers a modern, colorful, and slick interface designed to enhance your coding experience with a clean and minimal dark aesthetic. Inspired by Tailwind Moon and GitHub Dark Mode, it ensures an eye-pleasing workspace for extended coding sessions.
+
+## Installation
+
+To install, launch VS Code Quick Open (`Ctrl+P`), paste the following command:
+
+```
+ext install kikogoncalves.bagger-flow
+```
+
+Press enter when the prompt is ready. Check it out on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow). I'm committed to continuously improving this theme, so your feedback is invaluable. Happy coding!
+
+## Key Features
+
+- **Enhanced Syntax Highlighting**: Carefully refined colors to distinguish syntax elements clearly.
+- **Frequent Updates**: Regularly updated with community feedback to ensure the best experience.
+- **Wide Language Support**: Initial support includes HTML, CSS, JS/TS, JSX/TSX, and Ruby, with plans to expand further.
