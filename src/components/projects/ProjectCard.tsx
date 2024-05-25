@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
   const datespan = getDatespan(project.startDate, project.endDate)
 
   return (
-    <div
+    <li
       className={clsx(
         'relative flex flex-col gap-4 rounded-none border p-4 xl:flex-row xl:p-6',
         cx.background,
@@ -107,6 +107,6 @@ export function ProjectCard({ project }: { project: Project }) {
           <StarIcon className="absolute right-4 top-4 h-5 w-5 fill-amber-300 stroke-amber-600 dark:fill-amber-500 dark:stroke-amber-500" />
         )}
       </div>
-    </div>
+    </li>
   )
 }
