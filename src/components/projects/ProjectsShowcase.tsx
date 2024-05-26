@@ -11,29 +11,30 @@ import { extractTechStackAndSortByFrequency, sortByPinned } from '@/lib/utilitie
 
 import { Squares2X2Icon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 import { Bars4Icon, ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { useLocalStorageBoolean } from '@/lib/hooks'
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
   const [selectedTags, setSelectedTags] = useState<Technology[]>([])
 
   const [query, setQuery] = useState('')
-  const [compact, setCompact] = useState(false)
-  const [hideLessRelevant, setHideLessRelevant] = useState(false)
+  const [compact, setCompact] = useLocalStorageBoolean('kikogoncalves.projects.compact', false)
+  const [showOnlyStarred, setShowOnlyStarred] = useLocalStorageBoolean('kikogoncalves.projects.starred', false)
   const filteredProjects = useMemo(
     () =>
       projectsData
-        .filter((p) => (hideLessRelevant ? p.relevant : true))
+        .filter((p) => (showOnlyStarred ? p.relevant : true))
         .filter((x) => x.name.toLowerCase().includes(query.toLowerCase()))
         .filter((p) => (selectedTags.length > 0 ? selectedTags.every((tag) => p.stack.includes(tag.name)) : true))
         .sort(sortByPinned),
-    [query, hideLessRelevant, selectedTags],
+    [query, showOnlyStarred, selectedTags],
   )
 
   function clearFilters() {
     setQuery('')
     setSelectedTags([])
     setCompact(false)
-    setHideLessRelevant(false)
+    setShowOnlyStarred(false)
   }
 
   function onTagClickToggle(tagName: string) {
@@ -138,15 +139,15 @@ export function ProjectsShowcase() {
         <button
           type="button"
           title="Toggle starred projects"
-          onClick={() => setHideLessRelevant((prev) => !prev)}
+          onClick={() => setShowOnlyStarred((prev) => !prev)}
           className={clsx(
             'flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80',
-            hideLessRelevant
+            showOnlyStarred
               ? 'text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-navy-300'
               : 'border-navy-400 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
           )}
         >
-          {hideLessRelevant ? <StarIconSolid className="h-5 w-5" /> : <StarIconOutline className="h-5 w-5" />}
+          {showOnlyStarred ? <StarIconSolid className="h-5 w-5" /> : <StarIconOutline className="h-5 w-5" />}
         </button>
       </div>
 
