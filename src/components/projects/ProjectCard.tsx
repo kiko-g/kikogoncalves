@@ -3,13 +3,19 @@
 import React from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { type Project } from '@/types'
+import type { Technology, Project } from '@/types'
 import { resolveProjectCardColors, getDatespan } from '@/lib/utilities'
 import { GitHubIcon } from '@/components/SocialIcons'
 import { LinkIcon } from '@heroicons/react/20/solid'
 import { StarIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline'
 
-export function ProjectCard({ project, compact }: { project: Project; compact?: boolean }) {
+type Props = {
+  project: Project
+  compact?: boolean
+  tagClickCallback?: (tagName: string) => void
+}
+
+export function ProjectCard({ project, tagClickCallback, compact }: Props) {
   const showStar = true
   const useLinkColor = false
   const cx = resolveProjectCardColors(project.color)
@@ -40,15 +46,16 @@ export function ProjectCard({ project, compact }: { project: Project; compact?: 
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
-            <span
+            <button
               key={tech}
+              onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
               className={clsx(
                 cx.bubble,
-                'rounded px-1.5 py-1 text-xs font-normal lowercase leading-tight tracking-tight',
+                'rounded px-1.5 py-1 text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
               )}
             >
               {tech}
-            </span>
+            </button>
           ))}
         </div>
 

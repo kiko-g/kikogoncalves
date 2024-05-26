@@ -34,6 +34,20 @@ export function ProjectsShowcase() {
     setHideLessRelevant(false)
   }
 
+  function onTagClickToggle(tagName: string) {
+    setSelectedTags((prev) => {
+      let isTagPresent = false
+      for (let i = 0; i < prev.length; i++) {
+        if (prev[i].name === tagName) {
+          isTagPresent = true
+          break
+        }
+      }
+      const tag = tags.find((t) => t.name === tagName)!
+      return isTagPresent ? prev.filter((t) => t.name !== tag.name) : [...prev, tag]
+    })
+  }
+
   return (
     <>
       <div className="mb-1 flex items-center justify-between gap-2 text-sm">
@@ -139,7 +153,7 @@ export function ProjectsShowcase() {
         className={clsx('grid', compact ? 'grid-cols-2 gap-x-5 gap-y-5' : 'grid-cols-1 gap-x-6 gap-y-10')}
       >
         {filteredProjects.map((project) => (
-          <ProjectCard project={project} compact={compact} key={project.name} />
+          <ProjectCard project={project} compact={compact} key={project.name} tagClickCallback={onTagClickToggle} />
         ))}
       </ul>
 
