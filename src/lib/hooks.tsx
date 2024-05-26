@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 export function useLocalStorageBoolean(key: string, defaultValue: boolean) {
   const [value, setValue] = useState(() => {
-    if (typeof window !== 'undefined') return defaultValue
+    if (typeof localStorage === 'undefined') return defaultValue
 
     const storedValue = localStorage.getItem(key)
     return storedValue !== null ? JSON.parse(storedValue) : defaultValue
