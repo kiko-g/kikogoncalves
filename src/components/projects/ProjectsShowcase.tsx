@@ -31,6 +31,8 @@ export function ProjectsShowcase() {
 
   function clearFilters() {
     setQuery('')
+    setSelectedTags([])
+    setCompact(false)
     setHideLessRelevant(false)
   }
 
@@ -55,7 +57,7 @@ export function ProjectsShowcase() {
           Showing {filteredProjects.length} out of {projectsData.length} projects
         </span>
         <button onClick={clearFilters} className="hover:underline">
-          Clear
+          Reset
         </button>
       </div>
 
