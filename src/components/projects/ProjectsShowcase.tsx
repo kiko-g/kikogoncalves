@@ -9,14 +9,15 @@ import { type Technology } from '@/types'
 import { projectsData } from '@/lib/data'
 import { extractTechStackAndSortByFrequency, sortByPinned } from '@/lib/utilities'
 
-import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { Squares2X2Icon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
+import { Bars4Icon, ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
   const [selectedTags, setSelectedTags] = useState<Technology[]>([])
 
   const [query, setQuery] = useState('')
+  const [compact, setCompact] = useState(false)
   const [hideLessRelevant, setHideLessRelevant] = useState(false)
   const filteredProjects = useMemo(
     () =>
@@ -36,7 +37,7 @@ export function ProjectsShowcase() {
   return (
     <>
       <div className="mb-1 flex items-center justify-between gap-2 text-sm">
-        <span className="font-medium text-navy-500 dark:text-navy-400">
+        <span className="font-medium text-navy-600 dark:text-navy-400">
           Showing {filteredProjects.length} out of {projectsData.length} projects
         </span>
         <button onClick={clearFilters} className="hover:underline">
@@ -91,7 +92,7 @@ export function ProjectsShowcase() {
                   <ListboxOption
                     key={tag.name}
                     value={tag}
-                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 transition data-[focus]:border-transparent data-[focus]:bg-navy-800/70 data-[focus]:text-white dark:data-[focus]:bg-navy-500/30"
+                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-navy-800 data-[focus]:text-white dark:data-[focus]:bg-white/5"
                   >
                     <span className={clsx('block truncate', isSelected ? '' : '')}>
                       {tag.name} ({tag.freq})
@@ -106,22 +107,39 @@ export function ProjectsShowcase() {
 
         <button
           type="button"
+          title="Toggle compact view"
+          onClick={() => setCompact((prev) => !prev)}
+          className={clsx(
+            'hidden items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80 lg:flex',
+            compact
+              ? 'border-primary-600 bg-primary-600/60 text-white dark:border-primary-500/60 dark:bg-primary-500/20'
+              : 'border-navy-400 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
+          )}
+        >
+          {compact ? <Bars4Icon className="h-5 w-5 stroke-2" /> : <Squares2X2Icon className="h-5 w-5 stroke-2" />}
+        </button>
+
+        <button
+          type="button"
           title="Toggle starred projects"
-          onClick={() => setHideLessRelevant(!hideLessRelevant)}
+          onClick={() => setHideLessRelevant((prev) => !prev)}
           className={clsx(
             'flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80',
             hideLessRelevant
               ? 'text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-navy-300'
-              : 'border-navy-400 bg-navy-50 text-navy-500 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
+              : 'border-navy-400 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
           )}
         >
           {hideLessRelevant ? <StarIconSolid className="h-5 w-5" /> : <StarIconOutline className="h-5 w-5" />}
         </button>
       </div>
 
-      <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-10">
+      <ul
+        role="list"
+        className={clsx('grid', compact ? 'grid-cols-2 gap-x-5 gap-y-5' : 'grid-cols-1 gap-x-6 gap-y-10')}
+      >
         {filteredProjects.map((project) => (
-          <ProjectCard project={project} key={project.name} />
+          <ProjectCard project={project} compact={compact} key={project.name} />
         ))}
       </ul>
 

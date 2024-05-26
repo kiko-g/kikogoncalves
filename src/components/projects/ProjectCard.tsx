@@ -6,11 +6,11 @@ import Image from 'next/image'
 import { type Project } from '@/types'
 import { resolveProjectCardColors, getDatespan } from '@/lib/utilities'
 import { GitHubIcon } from '@/components/SocialIcons'
-import { LinkIcon, StarIcon } from '@heroicons/react/20/solid'
-import { DocumentArrowDownIcon } from '@heroicons/react/24/outline'
+import { LinkIcon } from '@heroicons/react/20/solid'
+import { StarIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline'
 
-export function ProjectCard({ project }: { project: Project }) {
-  const showStar = false
+export function ProjectCard({ project, compact }: { project: Project; compact?: boolean }) {
+  const showStar = true
   const useLinkColor = false
   const cx = resolveProjectCardColors(project.color)
   const datespan = getDatespan(project.startDate, project.endDate)
@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="order-2 flex flex-1 flex-col self-stretch xl:order-1">
         <div className="flex items-center justify-between gap-x-2">
           <div className="flex items-center gap-x-2">
-            <h3 className="flex-1 text-xl font-bold">{project.name}</h3>
+            <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
             <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
           </div>
           {project.beta && (
@@ -36,7 +36,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
         <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
-        <p className="mt-2">{project.description}</p>
+        <p className={clsx('mt-2', compact ? 'text-sm leading-snug' : 'text-base')}>{project.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
@@ -58,7 +58,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.attachment}
               target="_blank"
               className={clsx(
-                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-3 tracking-tight transition hover:underline hover:opacity-80',
+                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
                 useLinkColor ? cx.textHover : '',
               )}
             >
@@ -84,7 +84,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.repo}
               target="_blank"
               className={clsx(
-                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-3 tracking-tight transition hover:underline hover:opacity-80',
+                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
                 useLinkColor ? cx.textHover : '',
               )}
             >
@@ -95,18 +95,22 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="relative order-1 max-w-full xl:order-2 xl:max-w-md">
-        {project.videoUrl ? (
-          <video controls muted className={clsx('rounded-none shadow', cx.border)}>
-            <source src={project.videoUrl} type="video/mp4"></source>
-          </video>
-        ) : (
-          <Image src={project.image} alt="" className={clsx('rounded-none shadow', cx.border)} />
-        )}
-        {project.pinned && showStar && (
-          <StarIcon className="absolute right-4 top-4 h-5 w-5 fill-amber-300 stroke-amber-600 dark:fill-amber-500 dark:stroke-amber-500" />
-        )}
-      </div>
+      {!compact && (
+        <div className="group relative order-1 max-w-full xl:order-2 xl:max-w-md">
+          {project.videoUrl ? (
+            <video controls muted className={clsx('rounded-none shadow', cx.border)}>
+              <source src={project.videoUrl} type="video/mp4"></source>
+            </video>
+          ) : (
+            <Image src={project.image} alt="" className={clsx('rounded-none shadow', cx.border)} />
+          )}
+          {project.relevant && showStar && (
+            <div className="absolute right-2 top-0 rounded-b-xl bg-amber-700 p-2 opacity-0 shadow-xl transition-all group-hover:opacity-100">
+              <StarIcon className="h-4 w-4 stroke-white stroke-2" />
+            </div>
+          )}
+        </div>
+      )}
     </li>
   )
 }
