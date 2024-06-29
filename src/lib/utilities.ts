@@ -103,6 +103,14 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         bubble: 'bg-emerald-700/80 text-white dark:bg-emerald-600/50',
         textHover: 'hover:text-emerald-700 dark:hover:text-emerald-700',
       }
+    case 'jumpseller':
+      return {
+        background: 'bg-jumpseller-800/10 dark:bg-jumpseller-800/10',
+        border: 'border-jumpseller-800/50 dark:border-jumpseller-800/70',
+        badge: 'bg-jumpseller-800 dark:bg-jumpseller-700',
+        bubble: 'bg-jumpseller-800/80 text-white dark:bg-jumpseller-700/50',
+        textHover: 'hover:text-jumpseller-800 dark:hover:text-jumpseller-800',
+      }
     case 'slate':
     default:
       return {

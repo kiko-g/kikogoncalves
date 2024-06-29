@@ -30,6 +30,7 @@ export type ProjectColor =
   | 'indigo'
   | 'amber'
   | 'slate'
+  | 'jumpseller'
 
 type ISODateString = `${number}-${number}-${number}`
 export type Project = {

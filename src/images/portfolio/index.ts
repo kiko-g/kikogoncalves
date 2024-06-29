@@ -4,6 +4,7 @@ import GuernerScreenshot from './guerner/screenshot.jpg'
 import MafiaInTownScreenshot from './mafia-in-town/screenshot.png'
 import MafiaInTownScreenshot2 from './mafia-in-town/screenshot2.png'
 import PetNexusScreenshot from './pet-nexus/screenshot.png'
+import JumpsellerScreenshot from './jumpseller/screenshot.png'
 
 export const media = {
   baggerFlow: {
@@ -21,5 +22,8 @@ export const media = {
   },
   petNexus: {
     screenshot: PetNexusScreenshot,
+  },
+  jumpseller: {
+    screenshot: JumpsellerScreenshot,
   },
 }

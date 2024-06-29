@@ -6,6 +6,23 @@ export const projectsData: Project[] = [
     pinned: true,
     relevant: true,
     beta: false,
+    name: 'Jumpseller Developer - Themes',
+    description:
+      'Although not a project per se, I have been working on the Jumpseller platform as a developer, creating and maintaining themes and their infrastructure for the platform. Jumpseller is an e-commerce platform that allows users to create their online store without the need for technical knowledge. Collaborated on storefront themes, and developed a Visual Editor and Code Editor for seamless customization as part of the Themes Team. Enhanced storefront themes architecture, driving e-commerce innovation with an adaptable system for theme creation and detailed customization. As you can imagine, the code for this project is private and company-owned.',
+    startDate: '2023-10-02',
+    endDate: 'present',
+    repo: null,
+    deployment: 'https://jumpseller.com',
+    attachment: 'https://jumpseller.com/support',
+    color: 'jumpseller',
+    stack: ['Ruby', 'Rails', 'React.js', 'Javascript', 'MySQL', 'Liquid', 'AWS S3'],
+    image: media.jumpseller.screenshot,
+    videoUrl: null,
+  },
+  {
+    pinned: true,
+    relevant: true,
+    beta: false,
     name: 'VS Code Theme: Bagger Flow',
     description:
       'Bagger Flow is a Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with a clean and minimal touch of the chef’s personal taste. Contains  carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace.',
