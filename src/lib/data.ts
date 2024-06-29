@@ -22,7 +22,7 @@ export const projectsData: Project[] = [
     pinned: true,
     relevant: true,
     beta: true,
-    name: 'Bagr UI',
+    name: 'BaggerUI',
     description:
       'Vast and growing collection of reusable, copiable and customizable ReactTSX components combined and saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and TailwindUI.',
     startDate: '2023-07-17',
