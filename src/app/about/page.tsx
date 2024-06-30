@@ -122,13 +122,14 @@ function SocialLink({
 
 function Skillset({ useProgressBarColor = true }) {
   return (
-    <section id="skillset" className="mt-12 border-t border-navy-100 py-8 dark:border-navy-700/40 sm:mt-24">
+    <section id="skillset" className="mt-10 border-t border-navy-100 py-12 dark:border-navy-700/40 sm:mt-20">
       <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
         Skillset
       </h2>
       <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
         Here’s a breakdown of my skills and experience in the tech field. I’m always learning new things and
-        experimenting with new technologies, so this list is always changing.
+        experimenting with new technologies, so this list is always changing. The progress bars are a rough estimate of
+        my experience and familiriaty with each technology.
       </p>
       <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {skills.map((skill, skillIdx) => (
