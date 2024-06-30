@@ -8,6 +8,7 @@ import { TechSkills } from '@/components/home/TechSkills'
 import { ArticleCard } from '@/components/home/ArticleCard'
 import { SocialLink } from '@/components/home/SocialLink'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
+import Link from 'next/link'
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
@@ -21,10 +22,23 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-navy-600 dark:text-navy-400">
             I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a
-            full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.
-            Parallel to that, I also ocasionally work as a freelancer or solopreneur, developing websites for clients or
-            useful cool projects.
+            full-stack engineer, where we develop a platform for clients to create and deeply customize online stores. I
+            also occasionally work as a freelancer or solopreneur, developing websites for clients or useful cool
+            projects.{' '}
+            <Link href="/about" className="inner-link">
+              Read more about me
+            </Link>{' '}
+            or check out my{' '}
+            <Link href="/about#skillset" className="inner-link">
+              skills
+            </Link>{' '}
+            and{' '}
+            <Link href="/projects" className="inner-link">
+              projects
+            </Link>
+            .
           </p>
+
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://twitter.com/kikogoncalves_"

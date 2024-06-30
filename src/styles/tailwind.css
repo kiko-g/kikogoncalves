@@ -26,3 +26,11 @@ html {
 .outer-link {
   @apply text-primary-500 hover:text-primary-600 hover:underline dark:text-primary-500 dark:hover:text-primary-500;
 }
+
+.inner-link {
+  @apply font-medium text-navy-800 hover:underline dark:text-navy-300;
+}
+
+.bg-skillbar {
+  background-image: linear-gradient(90deg, var(--color-start), var(--color-mid), var(--color-end));
+}
