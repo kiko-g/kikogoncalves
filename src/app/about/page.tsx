@@ -47,20 +47,15 @@ export default function About() {
               ).
             </p>
             <p>
-              I have a great passion for software engineering as a whole with a special interest in frontend development
-              and data science. On the more personal side of things, I would describe myself as a passionate person, who
-              believes in getting better every day and finding zeal in things.
+              I have a passion for software engineering as a whole with a fond interest in full-stack development. My
+              preferred and best technologies or frameworks are React.js, Next.js, Javascript, Typescript and Tailwind.
             </p>
             <p>
-              I’m big on music, gaming, football, and pretty much anything media-related. When I’m not caught up in
-              that, I’m usually running, hanging out with friends, playing guitar, gaming, coding something cool, or
-              hitting the gym to stay in shape.
-            </p>
-            <p>
-              My preferred and best technologies are <strong>React.js</strong>, <strong>Javascript</strong>,{' '}
-              <strong>Typescript</strong>, <strong>Next.js</strong> and <strong>Tailwind</strong>. If you’re interested
-              in my profile reach me on LinkedIn, as I’m always interested in hearing about opportunities for a frontend
-              or full-stack position, preferably using React with Typescript!
+              If you’re interested in my profile reach me on{' '}
+              <Link href="https://linkedin.com/in/kikogoncalves" className="outer-link" target="_blank">
+                LinkedIn
+              </Link>
+              , as I’m always interested in hearing about opportunities for a full-stack or frontend position.
             </p>
           </div>
         </div>
@@ -91,6 +86,7 @@ export default function About() {
       </div>
 
       <Skillset />
+      <CurriculumVitae />
     </Container>
   )
 }
@@ -122,7 +118,7 @@ function SocialLink({
 
 function Skillset({ useProgressBarColor = true }) {
   return (
-    <section id="skillset" className="mt-10 border-t border-navy-100 py-12 dark:border-navy-700/40 sm:mt-20">
+    <section id="skillset" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
       <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
         Skillset
       </h2>
@@ -162,6 +158,20 @@ function Skillset({ useProgressBarColor = true }) {
           </li>
         ))}
       </ul>
+    </section>
+  )
+}
+
+function CurriculumVitae() {
+  return (
+    <section id="cv" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
+      <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
+        Resume
+      </h2>
+      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
+        Here’s a brief overview of my professional experience and education. I’m always looking for new opportunities
+        and challenges, so feel free to reach out if you think I’d be a good fit for your team.
+      </p>
     </section>
   )
 }
