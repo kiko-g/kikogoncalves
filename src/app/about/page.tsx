@@ -90,41 +90,7 @@ export default function About() {
         </div>
       </div>
 
-      <section id="skillset" className="mt-12 border-t border-navy-100 py-8 dark:border-navy-700/40 sm:mt-24">
-        <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
-          Skillset
-        </h2>
-        <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
-          Here’s a breakdown of my skills and experience in the tech field. I’m always learning new things and
-          experimenting with new technologies, so this list is always changing.
-        </p>
-        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill, skillIdx) => (
-            <li key={`skill-${skillIdx}`} className="flex flex-col gap-1.5">
-              <div className="mb-0 flex w-full items-center gap-1">
-                <span className="block h-2 w-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
-                <span className="text-xs font-medium leading-none tracking-tight text-navy-600 dark:text-navy-300">
-                  {skill.name}
-                </span>
-              </div>
-              <div className="h-3 w-full rounded-none bg-navy-200 dark:bg-white/[3%]">
-                <div
-                  className="bg-skillbar h-full rounded-none"
-                  style={
-                    {
-                      width: `${skill.score}%`,
-                      border: `1px solid ${skill.color}f0`,
-                      '--color-start': `${skill.color}b0`,
-                      '--color-mid': `${skill.color}a0`,
-                      '--color-end': `${skill.color}90`,
-                    } as React.CSSProperties
-                  }
-                ></div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Skillset />
     </Container>
   )
 }
@@ -151,5 +117,50 @@ function SocialLink({
         <span className="ml-4">{children}</span>
       </Link>
     </li>
+  )
+}
+
+function Skillset({ useProgressBarColor = true }) {
+  return (
+    <section id="skillset" className="mt-12 border-t border-navy-100 py-8 dark:border-navy-700/40 sm:mt-24">
+      <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
+        Skillset
+      </h2>
+      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
+        Here’s a breakdown of my skills and experience in the tech field. I’m always learning new things and
+        experimenting with new technologies, so this list is always changing.
+      </p>
+      <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {skills.map((skill, skillIdx) => (
+          <li key={`skill-${skillIdx}`} className="flex flex-col gap-1.5">
+            <div className="mb-0 flex w-full items-center gap-1">
+              <span className="block h-2 w-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
+              <span className="text-xs font-medium leading-none tracking-tight text-navy-600 dark:text-navy-300">
+                {skill.name}
+              </span>
+            </div>
+            <div className="h-3 w-full rounded-none bg-navy-200 dark:bg-white/[3%]">
+              <div
+                className="bg-skillbar h-full rounded-none"
+                style={
+                  {
+                    width: `${skill.score}%`,
+
+                    ...(useProgressBarColor
+                      ? {
+                          border: `1px solid ${skill.color}f0`,
+                          '--color-start': `${skill.color}b0`,
+                          '--color-mid': `${skill.color}a0`,
+                          '--color-end': `${skill.color}90`,
+                        }
+                      : { border: `1px solid #232830`, backgroundColor: '#3b404b' }),
+                  } as React.CSSProperties
+                }
+              ></div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
   )
 }
