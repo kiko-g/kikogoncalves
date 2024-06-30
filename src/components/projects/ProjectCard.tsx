@@ -50,7 +50,7 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
               key={tech}
               onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
               className={clsx(
-                cx.bubble,
+                tech === 'FEUP' ? 'bg-feup/80 dark:bg-feup/50 text-white' : cx.bubble,
                 'rounded px-1.5 py-1 text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
               )}
             >
