@@ -172,6 +172,45 @@ function CurriculumVitae() {
         Here’s a brief overview of my professional experience and education. I’m always looking for new opportunities
         and challenges, so feel free to reach out if you think I’d be a good fit for your team.
       </p>
+
+      <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
+          Education
+        </h4>
+        <h5 className="mb-0 flex-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+          Faculty of Engineering of the University of Porto (FEUP)
+        </h5>
+        <p className="text-base font-normal text-navy-700 dark:text-navy-200">
+          <Link
+            target="_blank"
+            href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31224&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
+            className="outer-link"
+          >
+            Bachelor
+          </Link>{' '}
+          and{' '}
+          <Link
+            target="_blank"
+            href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
+            className="outer-link"
+          >
+            Master
+          </Link>{' '}
+          in Informatics and Computer Engineering
+        </p>
+
+        <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+          <li>Completed both the bachelor and master degrees, finishing the masters’ averaging 18/20</li>
+          <li>
+            Relevant <strong>bachelor coursework</strong>: Web App Development, Algorithms and Data Structures,
+            Databases, Artificial Intelligence.
+          </li>
+          <li>
+            Relevant <strong>master coursework</strong>: Full Stack Development, IOT factory management, AI Assistant
+            Web Navigator, P2P Timeline, Semantic Web App Development
+          </li>
+        </ul>
+      </div>
     </section>
   )
 }

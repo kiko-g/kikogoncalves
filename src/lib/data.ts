@@ -30,7 +30,7 @@ export const projectsData: Project[] = [
     endDate: 'present',
     repo: 'https://github.com/kiko-g/bagger-flow-vscode',
     deployment: 'https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow',
-    color: 'indigo',
+    color: 'purple',
     stack: ['Node.js', 'JSON'],
     image: media.baggerFlow.screenshot,
     videoUrl: null,
