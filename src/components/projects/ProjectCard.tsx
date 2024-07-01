@@ -1,13 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import type { Technology, Project } from '@/types'
 import { resolveProjectCardColors, getDatespan } from '@/lib/utilities'
 import { GitHubIcon } from '@/components/SocialIcons'
 import { LinkIcon } from '@heroicons/react/20/solid'
-import { StarIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline'
+import { StarIcon, DocumentArrowDownIcon, ArrowLongRightIcon, ArrowLongLeftIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   project: Project
@@ -16,8 +16,9 @@ type Props = {
 }
 
 export function ProjectCard({ project, tagClickCallback, compact }: Props) {
-  const showStar = true
-  const useLinkColor = false
+  const [selectedMediaIdx, setSelectedMediaIdx] = useState(0)
+  const media = useMemo(() => project.media[selectedMediaIdx], [selectedMediaIdx, project.media])
+
   const cx = resolveProjectCardColors(project.color)
   const datespan = getDatespan(project.startDate, project.endDate)
 
@@ -41,8 +42,11 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
             </div>
           )}
         </div>
+
         <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
-        <p className={clsx('mt-2', compact ? 'text-sm leading-snug' : 'text-base')}>{project.description}</p>
+        <p className={clsx('mt-2', compact ? 'text-sm leading-snug' : 'text-base leading-normal')}>
+          {project.description}
+        </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
@@ -65,8 +69,8 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
               href={project.attachment}
               target="_blank"
               className={clsx(
+                cx.textHover,
                 'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
-                useLinkColor ? cx.textHover : '',
               )}
             >
               <DocumentArrowDownIcon className="h-5 w-5 stroke-gray-700 dark:stroke-white" />
@@ -78,8 +82,8 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
               href={project.deployment}
               target="_blank"
               className={clsx(
+                cx.textHover,
                 'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
-                useLinkColor ? cx.textHover : '',
               )}
             >
               <LinkIcon className="h-5 w-5 fill-gray-700 dark:fill-white" strokeWidth={1.5} />
@@ -91,8 +95,8 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
               href={project.repo}
               target="_blank"
               className={clsx(
+                cx.textHover,
                 'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
-                useLinkColor ? cx.textHover : '',
               )}
             >
               <GitHubIcon className="h-5 w-5 fill-[#333333] dark:fill-white" />
@@ -108,16 +112,57 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
           'group relative order-1 max-w-full xl:order-2 xl:max-w-md',
         )}
       >
-        {project.videoUrl ? (
-          <video controls muted className={clsx('rounded-none shadow', cx.border)}>
-            <source src={project.videoUrl} type="video/mp4"></source>
-          </video>
-        ) : (
-          <Image src={project.image} alt="" className={clsx('rounded-none shadow', cx.border)} />
-        )}
-        {project.relevant && showStar && (
+        {project.relevant && (
           <div className="absolute right-2 top-0 rounded-b-xl bg-amber-700 p-2 opacity-0 shadow-xl transition-all group-hover:opacity-100">
             <StarIcon className="h-4 w-4 stroke-white stroke-2" />
+          </div>
+        )}
+
+        <div className={clsx('relative rounded-none shadow', cx.border)}>
+          {media.type === 'image' && (
+            <Image
+              src={media.src}
+              alt={`${project.name}: Media ${selectedMediaIdx + 1}`}
+              className="rounded-none shadow"
+            />
+          )}
+          {media.type === 'video' && (
+            <video controls muted className={clsx('rounded-none shadow', cx.border)}>
+              <source src={media.src} type="video/mp4"></source>
+            </video>
+          )}
+        </div>
+
+        {project.media.length > 1 && (
+          <div className="mt-3 flex w-full items-center gap-2">
+            <button
+              className="disabled:cursor-not-allowed disabled:opacity-25"
+              disabled={selectedMediaIdx === 0}
+              onClick={() => setSelectedMediaIdx(selectedMediaIdx - 1)}
+            >
+              <ArrowLongLeftIcon className="h-5 w-5" />
+            </button>
+            <div className="mt-[1px] flex flex-1 items-center justify-center gap-2.5">
+              {project.media.map((_, mediaIdx) => (
+                <button
+                  onClick={() => setSelectedMediaIdx(mediaIdx)}
+                  key={`${project.name}-indicator-${mediaIdx}`}
+                  title={`Show media ${mediaIdx + 1} for ${project.name}`}
+                  className={clsx(
+                    'h-3 w-3 rounded-full hover:opacity-80',
+                    cx.badge,
+                    selectedMediaIdx === mediaIdx ? `ring-offset-white dark:ring-offset-navy-800 ${cx.ring}` : '',
+                  )}
+                />
+              ))}
+            </div>
+            <button
+              className="disabled:cursor-not-allowed disabled:opacity-25"
+              disabled={selectedMediaIdx === project.media.length - 1}
+              onClick={() => setSelectedMediaIdx(selectedMediaIdx + 1)}
+            >
+              <ArrowLongRightIcon className="h-5 w-5" />
+            </button>
           </div>
         )}
       </div>

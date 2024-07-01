@@ -33,6 +33,10 @@ export type ProjectColor =
   | 'slate'
   | 'jumpseller'
 
+type Media = {
+  type: 'image' | 'video'
+  src: StaticImageData | string | null
+}
 type ISODateString = `${number}-${number}-${number}`
 export type Project = {
   pinned?: boolean
@@ -47,8 +51,7 @@ export type Project = {
   endDate: ISODateString | 'present'
   color: ProjectColor
   stack: string[]
-  image: StaticImageData | null
-  videoUrl: string | null
+  media: Media[]
 }
 
 export type ProjectCardColor = {
@@ -57,4 +60,5 @@ export type ProjectCardColor = {
   badge: string
   bubble: string
   textHover: string
+  ring: string
 }

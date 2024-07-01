@@ -16,8 +16,12 @@ export const projectsData: Project[] = [
     attachment: 'https://jumpseller.com/support',
     color: 'jumpseller',
     stack: ['Ruby', 'Ruby on Rails', 'React.js', 'Javascript', 'MySQL', 'Liquid', 'AWS S3'],
-    image: media.jumpseller.screenshot,
-    videoUrl: null,
+    media: [
+      {
+        type: 'image',
+        src: media.jumpseller.screenshot,
+      },
+    ],
   },
   {
     pinned: true,
@@ -32,8 +36,16 @@ export const projectsData: Project[] = [
     deployment: 'https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow',
     color: 'purple',
     stack: ['Node.js', 'JSON'],
-    image: media.baggerFlow.screenshot,
-    videoUrl: null,
+    media: [
+      {
+        type: 'image',
+        src: media.baggerFlow.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.baggerFlow.screenshot2,
+      },
+    ],
   },
   {
     pinned: true,
@@ -48,8 +60,12 @@ export const projectsData: Project[] = [
     deployment: 'https://bagger-ui.vercel.app',
     color: 'teal',
     stack: ['React.js', 'Next.js', 'Typescript', 'Tailwind'],
-    image: media.bagrui.screenshot,
-    videoUrl: null,
+    media: [
+      {
+        type: 'image',
+        src: media.bagrui.screenshot,
+      },
+    ],
   },
   {
     pinned: false,
@@ -65,8 +81,12 @@ export const projectsData: Project[] = [
     deployment: 'https://usability-dashboard-mes.vercel.app',
     color: 'blue',
     stack: ['FEUP', 'React.js', 'Next.js', 'Typescript', 'Tailwind', 'Angular', 'Docker', 'Matomo', 'MySQL'],
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/246076879-659c8170-4f10-42ec-a67f-03f66dc2e3e7.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/246076879-659c8170-4f10-42ec-a67f-03f66dc2e3e7.mp4',
+      },
+    ],
   },
   {
     pinned: true,
@@ -81,8 +101,12 @@ export const projectsData: Project[] = [
     deployment: 'https://finishershub.vercel.app',
     color: 'indigo',
     stack: ['React.js', 'Next.js', 'Typescript', 'Tailwind', 'AWS S3', 'Mongo DB'],
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/230927052-362d6bd0-0abe-495d-9cbf-bd2524354e6e.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/230927052-362d6bd0-0abe-495d-9cbf-bd2524354e6e.mp4',
+      },
+    ],
   },
   {
     pinned: true,
@@ -97,8 +121,12 @@ export const projectsData: Project[] = [
     stack: ['React.js', 'Typescript', 'Tailwind', 'Gatsby.js', 'MDX', 'GraphQL'],
     repo: 'https://github.com/kiko-g/guerner',
     deployment: 'https://guerner.vercel.app',
-    image: media.guerner.screenshot,
-    videoUrl: null,
+    media: [
+      {
+        type: 'video',
+        src: media.guerner.screenshot,
+      },
+    ],
   },
   {
     pinned: true,
@@ -113,8 +141,12 @@ export const projectsData: Project[] = [
     stack: ['React.js', 'Typescript', 'Tailwind', 'Docker', 'PostgreSQL'],
     repo: 'https://github.com/NIAEFEUP/tts-revamp-fe',
     deployment: 'https://ni.fe.up.pt/tts',
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/183784200-742c3556-ee0a-4eb7-9994-dcac6dffd440.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/183784200-742c3556-ee0a-4eb7-9994-dcac6dffd440.mp4',
+      },
+    ],
   },
   {
     pinned: false,
@@ -129,8 +161,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'Unity', 'C#'],
     repo: 'https://github.com/kiko-g/rushing-b',
     deployment: 'https://miguelams.itch.io/rushing-b',
-    image: null,
-    videoUrl: 'https://github.com/kiko-g/rushing-b/assets/40745490/d7493ab1-a4e7-450b-aba6-1b40eb1ef2b1',
+    media: [
+      {
+        type: 'video',
+        src: 'https://github.com/kiko-g/rushing-b/assets/40745490/d7493ab1-a4e7-450b-aba6-1b40eb1ef2b1',
+      },
+    ],
   },
   {
     pinned: false,
@@ -145,8 +181,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'Unity', 'C#'],
     repo: 'https://github.com/kiko-g/time-hopper',
     deployment: 'https://supertommc.itch.io/time-hopper',
-    image: null,
-    videoUrl: 'https://github.com/kiko-g/time-hopper/assets/40745490/a6b17eea-299a-4fcd-9df4-edb2335778ae',
+    media: [
+      {
+        type: 'video',
+        src: 'https://github.com/kiko-g/time-hopper/assets/40745490/a6b17eea-299a-4fcd-9df4-edb2335778ae',
+      },
+    ],
   },
   {
     pinned: false,
@@ -161,8 +201,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'Gatsby.js', 'Typescript', 'Angular', 'Python', 'SpaCy', 'Docker'],
     repo: 'https://github.com/kiko-g/robin-lgp',
     deployment: 'https://robin-lgp.vercel.app/about#showcase',
-    image: null,
-    videoUrl: 'https://robin-lgp.vercel.app/static/change-resource-state-auto-0acbdbc8d8cce72094f83810c41c7a4c.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://robin-lgp.vercel.app/static/change-resource-state-auto-0acbdbc8d8cce72094f83810c41c7a4c.mp4',
+      },
+    ],
   },
   {
     pinned: false,
@@ -177,8 +221,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'React.js', 'Express', 'Javascript', 'Tailwind', 'SPARQL'],
     repo: 'https://github.com/kiko-g/health-checker',
     deployment: '',
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/150367733-d4e5b349-cae0-487e-9a82-685a3e376bd0.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/150367733-d4e5b349-cae0-487e-9a82-685a3e376bd0.mp4',
+      },
+    ],
   },
   {
     pinned: false,
@@ -192,8 +240,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'React.js', 'Tailwind', 'Javascript', 'Java', 'Python', 'MQTT', 'Docker'],
     repo: 'https://github.com/kiko-g/internet-of-everything',
     deployment: null,
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/153331805-e36c6bf9-d4c3-4521-aa1d-33d6f3f4a25d.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/153331805-e36c6bf9-d4c3-4521-aa1d-33d6f3f4a25d.mp4',
+      },
+    ],
   },
   {
     pinned: false,
@@ -208,8 +260,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'Java', 'JADE', 'SAJaS', 'Repast'],
     repo: 'https://github.com/kiko-g/feup-aiad',
     deployment: null,
-    image: media.mafiaInTown.screenshot,
-    videoUrl: null,
+    media: [
+      {
+        type: 'image',
+        src: media.mafiaInTown.screenshot,
+      },
+    ],
   },
   {
     pinned: false,
@@ -224,8 +280,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'Laravel', 'Bootstrap', 'HTML', 'CSS', 'Javascript', 'PostgreSQL', 'Docker'],
     repo: 'https://github.com/kiko-g/tech-council',
     deployment: null,
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/139429861-0b86db10-d1d3-46b5-814b-a8b5cc563da3.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/139429861-0b86db10-d1d3-46b5-814b-a8b5cc563da3.mp4',
+      },
+    ],
   },
   {
     pinned: false,
@@ -240,8 +300,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'Javascript', 'WebGL', 'Prolog'],
     repo: 'https://github.com/kiko-g/feup-laig',
     deployment: 'https://github.com/kiko-g/feup-laig#demo',
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/153338727-f14204bd-1ecb-488a-bc70-96896d111150.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/153338727-f14204bd-1ecb-488a-bc70-96896d111150.mp4',
+      },
+    ],
   },
   {
     pinned: false,
@@ -255,8 +319,12 @@ export const projectsData: Project[] = [
     stack: ['FEUP', 'HTML', 'CSS', 'Javascript', 'PHP', 'SQLite'],
     repo: 'https://github.com/kiko-g/pet-nexus',
     deployment: 'https://web.fe.up.pt/~up201704790/ltw/',
-    image: media.petNexus.screenshot,
-    videoUrl: '',
+    media: [
+      {
+        type: 'image',
+        src: media.petNexus.screenshot,
+      },
+    ],
   },
   {
     pinned: false,
@@ -267,8 +335,12 @@ export const projectsData: Project[] = [
     endDate: '2022-02-05',
     repo: 'https://github.com/kiko-g/feup-sdle/tree/master/p2p_timeline',
     deployment: 'https://github.com/kiko-g/feup-sdle/tree/master#feup-sdle',
-    image: null,
-    videoUrl: 'https://user-images.githubusercontent.com/40745490/153337905-d65b4866-5cb3-4f9c-b2bd-4ad312c93344.mp4',
+    media: [
+      {
+        type: 'video',
+        src: 'https://user-images.githubusercontent.com/40745490/153337905-d65b4866-5cb3-4f9c-b2bd-4ad312c93344.mp4',
+      },
+    ],
     color: 'slate',
     stack: ['FEUP', 'React.js', 'Tailwind', 'Python', 'Flask', 'Kademlia'],
     description: 'Peer to peer Twitter clone using Kademlia DHT.',
