@@ -5,10 +5,13 @@ import { type Metadata } from 'next'
 import { calculateAge } from '@/lib/utilities'
 import { skills } from '@/lib/data'
 
+import { JumpsellerLogoLink } from '@/components/about/JumpsellerLogoLink'
+
 import portraitImage from '@/images/portrait.jpg'
 import { Container } from '@/components/Container'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
 import { EnvelopeIcon } from '@heroicons/react/24/solid'
+import { logoJumpseller } from '@/images/logos/resume'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -51,7 +54,13 @@ export default function About() {
               preferred and best technologies or frameworks are React.js, Next.js, Javascript, Typescript and Tailwind.
             </p>
             <p>
-              If you’re interested in my profile reach me on{' '}
+              Right now I am working as a full-stack developer at{' '}
+              <Link href="https://jumpseller.com" target="_blank" className="outer-link inline-flex gap-0.5">
+                <span>Jumpseller</span>
+                <Image src={logoJumpseller} alt="Jumpseller" width={20} height={20} />
+              </Link>
+              where I am working to improve the themes of e-commerce platforms and their customization/edition. If
+              you’re interested in my profile reach me on{' '}
               <Link href="https://linkedin.com/in/kikogoncalves" className="outer-link" target="_blank">
                 LinkedIn
               </Link>
@@ -173,6 +182,32 @@ function CurriculumVitae() {
         and challenges, so feel free to reach out if you think I’d be a good fit for your team.
       </p>
 
+      {/* Languages */}
+      <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
+          Languages
+        </h4>
+        <p className="mb-2 text-base text-navy-600 dark:text-navy-400">
+          Here are the languages I speak and my proficiency level in each.
+        </p>
+
+        <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+          <li>
+            <strong>Portuguese</strong>: Native
+          </li>
+          <li>
+            <strong>English</strong>: Proficient, C1 Level, CAE 2016
+          </li>
+          <li>
+            <strong>Spanish</strong>: Intermediate Understanding
+          </li>
+          <li>
+            <strong>French</strong>: Basic Understanding
+          </li>
+        </ul>
+      </div>
+
+      {/* Education */}
       <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
         <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
           Education
@@ -208,6 +243,29 @@ function CurriculumVitae() {
           <li>
             Relevant <strong>master coursework</strong>: Full Stack Development, IOT factory management, AI Assistant
             Web Navigator, P2P Timeline, Semantic Web App Development
+          </li>
+        </ul>
+      </div>
+
+      {/* Experience */}
+      <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
+          Professional Experience
+        </h4>
+        <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+          <span>Jumpseller</span>
+          <JumpsellerLogoLink />
+        </h5>
+        <p className="text-base font-normal text-navy-700 dark:text-navy-200">Full-stack Engineer</p>
+
+        <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+          <li>
+            Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{' '}
+            <strong>Code Editor</strong> for seamless customization as part of the Themes Team.
+          </li>
+          <li>
+            Enhanced storefront themes architecture, driving e-commerce innovation with an adaptable system for theme
+            creation and detailed customization.
           </li>
         </ul>
       </div>
