@@ -1,18 +1,19 @@
 import clsx from 'clsx'
-import Link from 'next/link'
 import Image from 'next/image'
-import { logoJumpseller } from '@/images/logos/resume'
+import Link from 'next/link'
+import { logoLinkedin } from '@/images/logos/resume'
 
 type Props = {
+  href: string
   className?: string
   width?: number
   height?: number
 }
 
-export function JumpsellerLogoLink({ className, width = 28, height = 28 }: Props) {
+export function LinkedinLogoLink({ href, className, width = 16, height = 16 }: Props) {
   return (
     <Link
-      href="https://jumpseller.com"
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={clsx(
@@ -20,7 +21,7 @@ export function JumpsellerLogoLink({ className, width = 28, height = 28 }: Props
         'inline-flex items-center justify-center transition-opacity duration-300 ease-in-out hover:opacity-80',
       )}
     >
-      <Image src={logoJumpseller} alt="Jumpseller" width={width} height={height} />
+      <Image src={logoLinkedin} alt="Jumpseller" width={width} height={height} />
     </Link>
   )
 }

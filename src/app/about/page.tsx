@@ -12,6 +12,8 @@ import { Container } from '@/components/Container'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
 import { EnvelopeIcon } from '@heroicons/react/24/solid'
 import { logoJumpseller } from '@/images/logos/resume'
+import { LinkedinLogoLink } from '@/components/about/LinkedinLogoLink'
+import { CriticalLogoLink } from '@/components/about/CriticalLogoLink'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -213,7 +215,7 @@ function CurriculumVitae() {
           Education
         </h4>
         <h5 className="mb-0 flex-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
-          Faculty of Engineering of the University of Porto (FEUP)
+          Faculty of Engineering of the University of Porto
         </h5>
         <p className="text-base font-normal text-navy-700 dark:text-navy-200">
           <Link
@@ -252,20 +254,57 @@ function CurriculumVitae() {
         <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
           Professional Experience
         </h4>
-        <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
-          <span>Jumpseller</span>
-          <JumpsellerLogoLink />
-        </h5>
-        <p className="text-base font-normal text-navy-700 dark:text-navy-200">Full-stack Engineer</p>
 
-        <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+        <ul className="flex flex-col gap-y-8">
+          {/* Jumpseller */}
           <li>
-            Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{' '}
-            <strong>Code Editor</strong> for seamless customization as part of the Themes Team.
+            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+              <span>Jumpseller</span>
+              <JumpsellerLogoLink />
+              <LinkedinLogoLink href="https://www.linkedin.com/company/jumpseller/" className="mt-[3px]" />
+            </h5>
+            <p className="text-base font-normal text-navy-700 dark:text-navy-200">Full-stack Engineer</p>
+
+            <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+              <li>
+                Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{' '}
+                <strong>Code Editor</strong> for seamless customization as part of the Themes Team.
+              </li>
+              <li>
+                Enhanced storefront themes architecture, driving e-commerce innovation with an adaptable system for
+                theme creation and detailed customization.
+              </li>
+            </ul>
           </li>
+
+          {/* Critical Manufacturing */}
           <li>
-            Enhanced storefront themes architecture, driving e-commerce innovation with an adaptable system for theme
-            creation and detailed customization.
+            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+              <span>Critical Manufacturing</span>
+              <CriticalLogoLink />
+              <LinkedinLogoLink href="https://www.linkedin.com/company/critical-manufacturing/" />
+            </h5>
+            <p className="text-base font-normal text-navy-700 dark:text-navy-200">Software Engineer Intern</p>
+            <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+              <li>
+                Interned at Critical Manufacturing as a part of product development team. Work focused on collecting web
+                analytics and usability metrics for Critical’s Manufacturing Execution System (MES) aiming to improve
+                UI/UX. Dashboard preview{' '}
+                <Link href="https://usability-dashboard-mes.vercel.app/wizards" className="outer-link" target="_blank">
+                  deployed here
+                </Link>
+                .
+              </li>
+              <li>
+                Developed a custom dashboard for usability metrics in Critical MES, offering insights for its
+                components. The dashboard democratizes the UX improvement process by scoring components and highlighting
+                key metrics within them. Wrote a dissertation around this topic{' '}
+                <Link href="https://kikogoncalves.com/dissertation.pdf" className="outer-link" target="_blank">
+                  available here
+                </Link>
+                .
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
