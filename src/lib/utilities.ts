@@ -129,7 +129,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         badge: 'bg-slate-700 dark:bg-slate-400',
         bubble: 'bg-slate-600/80 text-white dark:bg-slate-400/50',
         textHover: 'hover:text-slate-600 dark:hover:text-slate-500',
-        ring: 'ring-1 ring-offset-2 ring-slate-300 dark:ring-slate-700',
+        ring: 'ring-1 ring-offset-2 ring-slate-400 dark:ring-slate-700',
       }
   }
 }

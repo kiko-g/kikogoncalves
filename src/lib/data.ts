@@ -63,7 +63,7 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.bagrui.screenshot,
+        src: media.baggerui.screenshot,
       },
     ],
   },
@@ -82,6 +82,18 @@ export const projectsData: Project[] = [
     color: 'blue',
     stack: ['FEUP', 'React.js', 'Next.js', 'Typescript', 'Tailwind', 'Angular', 'Docker', 'Matomo', 'MySQL'],
     media: [
+      {
+        type: 'image',
+        src: media.cmfUx.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.cmfUx.screenshot2,
+      },
+      {
+        type: 'image',
+        src: media.cmfUx.screenshot3,
+      },
       {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/246076879-659c8170-4f10-42ec-a67f-03f66dc2e3e7.mp4',
@@ -103,6 +115,14 @@ export const projectsData: Project[] = [
     stack: ['React.js', 'Next.js', 'Typescript', 'Tailwind', 'AWS S3', 'Mongo DB'],
     media: [
       {
+        type: 'image',
+        src: media.finishersHub.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.finishersHub.screenshot2,
+      },
+      {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/230927052-362d6bd0-0abe-495d-9cbf-bd2524354e6e.mp4',
       },
@@ -123,7 +143,7 @@ export const projectsData: Project[] = [
     deployment: 'https://guerner.vercel.app',
     media: [
       {
-        type: 'video',
+        type: 'image',
         src: media.guerner.screenshot,
       },
     ],
@@ -142,6 +162,10 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/NIAEFEUP/tts-revamp-fe',
     deployment: 'https://ni.fe.up.pt/tts',
     media: [
+      {
+        type: 'image',
+        src: media.tts.screenshot,
+      },
       {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/183784200-742c3556-ee0a-4eb7-9994-dcac6dffd440.mp4',
@@ -183,6 +207,18 @@ export const projectsData: Project[] = [
     deployment: 'https://supertommc.itch.io/time-hopper',
     media: [
       {
+        type: 'image',
+        src: media.timeHopper.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.timeHopper.screenshot2,
+      },
+      {
+        type: 'image',
+        src: media.timeHopper.screenshot3,
+      },
+      {
         type: 'video',
         src: 'https://github.com/kiko-g/time-hopper/assets/40745490/a6b17eea-299a-4fcd-9df4-edb2335778ae',
       },
@@ -202,6 +238,18 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/robin-lgp',
     deployment: 'https://robin-lgp.vercel.app/about#showcase',
     media: [
+      {
+        type: 'image',
+        src: media.robin.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.robin.screenshot2,
+      },
+      {
+        type: 'image',
+        src: media.robin.screenshot3,
+      },
       {
         type: 'video',
         src: 'https://robin-lgp.vercel.app/static/change-resource-state-auto-0acbdbc8d8cce72094f83810c41c7a4c.mp4',
@@ -264,6 +312,10 @@ export const projectsData: Project[] = [
       {
         type: 'image',
         src: media.mafiaInTown.screenshot,
+      },
+      {
+        type: 'image',
+        src: media.mafiaInTown.screenshotAlt,
       },
     ],
   },
