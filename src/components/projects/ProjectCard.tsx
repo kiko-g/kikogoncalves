@@ -50,7 +50,7 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
               key={tech}
               onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
               className={clsx(
-                tech === 'FEUP' ? 'bg-feup/80 dark:bg-feup/50 text-white' : cx.bubble,
+                tech === 'FEUP' ? 'bg-feup/80 text-white dark:bg-feup/50' : cx.bubble,
                 'rounded px-1.5 py-1 text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
               )}
             >
@@ -102,22 +102,25 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
         </div>
       </div>
 
-      {!compact && (
-        <div className="group relative order-1 max-w-full xl:order-2 xl:max-w-md">
-          {project.videoUrl ? (
-            <video controls muted className={clsx('rounded-none shadow', cx.border)}>
-              <source src={project.videoUrl} type="video/mp4"></source>
-            </video>
-          ) : (
-            <Image src={project.image} alt="" className={clsx('rounded-none shadow', cx.border)} />
-          )}
-          {project.relevant && showStar && (
-            <div className="absolute right-2 top-0 rounded-b-xl bg-amber-700 p-2 opacity-0 shadow-xl transition-all group-hover:opacity-100">
-              <StarIcon className="h-4 w-4 stroke-white stroke-2" />
-            </div>
-          )}
-        </div>
-      )}
+      <div
+        className={clsx(
+          compact ? 'block lg:hidden' : 'block',
+          'group relative order-1 max-w-full xl:order-2 xl:max-w-md',
+        )}
+      >
+        {project.videoUrl ? (
+          <video controls muted className={clsx('rounded-none shadow', cx.border)}>
+            <source src={project.videoUrl} type="video/mp4"></source>
+          </video>
+        ) : (
+          <Image src={project.image} alt="" className={clsx('rounded-none shadow', cx.border)} />
+        )}
+        {project.relevant && showStar && (
+          <div className="absolute right-2 top-0 rounded-b-xl bg-amber-700 p-2 opacity-0 shadow-xl transition-all group-hover:opacity-100">
+            <StarIcon className="h-4 w-4 stroke-white stroke-2" />
+          </div>
+        )}
+      </div>
     </li>
   )
 }
