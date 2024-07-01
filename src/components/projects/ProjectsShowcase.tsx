@@ -153,7 +153,10 @@ export function ProjectsShowcase() {
 
       <ul
         role="list"
-        className={clsx('grid', compact ? 'grid-cols-2 gap-x-5 gap-y-5' : 'grid-cols-1 gap-x-6 gap-y-10')}
+        className={clsx(
+          'grid',
+          compact ? 'grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2' : 'grid-cols-1 gap-x-6 gap-y-10',
+        )}
       >
         {filteredProjects.map((project) => (
           <ProjectCard project={project} compact={compact} key={project.name} tagClickCallback={onTagClickToggle} />
