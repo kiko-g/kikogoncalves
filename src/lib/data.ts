@@ -19,7 +19,7 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.jumpseller.screenshot,
+        src: media.jumpseller.screenshot1,
       },
     ],
   },
@@ -63,7 +63,11 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.baggerui.screenshot,
+        src: media.baggerui.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.baggerui.screenshot2,
       },
     ],
   },
@@ -144,7 +148,7 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.guerner.screenshot,
+        src: media.guerner.screenshot1,
       },
     ],
   },
@@ -164,7 +168,7 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.tts.screenshot,
+        src: media.tts.screenshot1,
       },
       {
         type: 'video',
@@ -186,6 +190,22 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/rushing-b',
     deployment: 'https://miguelams.itch.io/rushing-b',
     media: [
+      {
+        type: 'image',
+        src: media.rushingB.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.rushingB.screenshot2,
+      },
+      {
+        type: 'image',
+        src: media.rushingB.screenshot3,
+      },
+      {
+        type: 'image',
+        src: media.rushingB.screenshot4,
+      },
       {
         type: 'video',
         src: 'https://github.com/kiko-g/rushing-b/assets/40745490/d7493ab1-a4e7-450b-aba6-1b40eb1ef2b1',
@@ -271,6 +291,22 @@ export const projectsData: Project[] = [
     deployment: '',
     media: [
       {
+        type: 'image',
+        src: media.healthChecker.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.healthChecker.screenshot2,
+      },
+      {
+        type: 'image',
+        src: media.healthChecker.screenshot3,
+      },
+      {
+        type: 'image',
+        src: media.healthChecker.screenshot4,
+      },
+      {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/150367733-d4e5b349-cae0-487e-9a82-685a3e376bd0.mp4',
       },
@@ -289,6 +325,22 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/internet-of-everything',
     deployment: null,
     media: [
+      {
+        type: 'image',
+        src: media.internetOfEverything.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.internetOfEverything.screenshot2,
+      },
+      {
+        type: 'image',
+        src: media.internetOfEverything.screenshot3,
+      },
+      {
+        type: 'image',
+        src: media.internetOfEverything.screenshot4,
+      },
       {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/153331805-e36c6bf9-d4c3-4521-aa1d-33d6f3f4a25d.mp4',
@@ -311,11 +363,11 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.mafiaInTown.screenshot,
+        src: media.mafiaInTown.screenshot1,
       },
       {
         type: 'image',
-        src: media.mafiaInTown.screenshotAlt,
+        src: media.mafiaInTown.screenshot2,
       },
     ],
   },
@@ -333,6 +385,14 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/tech-council',
     deployment: null,
     media: [
+      {
+        type: 'image',
+        src: media.techCouncil.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.techCouncil.screenshot2,
+      },
       {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/139429861-0b86db10-d1d3-46b5-814b-a8b5cc563da3.mp4',
@@ -354,6 +414,10 @@ export const projectsData: Project[] = [
     deployment: 'https://github.com/kiko-g/feup-laig#demo',
     media: [
       {
+        type: 'image',
+        src: media.fuse3D.screenshot1,
+      },
+      {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/153338727-f14204bd-1ecb-488a-bc70-96896d111150.mp4',
       },
@@ -374,7 +438,7 @@ export const projectsData: Project[] = [
     media: [
       {
         type: 'image',
-        src: media.petNexus.screenshot,
+        src: media.petNexus.screenshot1,
       },
     ],
   },
@@ -388,6 +452,10 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/feup-sdle/tree/master/p2p_timeline',
     deployment: 'https://github.com/kiko-g/feup-sdle/tree/master#feup-sdle',
     media: [
+      {
+        type: 'image',
+        src: media.p2pTwitterClone.screenshot1,
+      },
       {
         type: 'video',
         src: 'https://user-images.githubusercontent.com/40745490/153337905-d65b4866-5cb3-4f9c-b2bd-4ad312c93344.mp4',
