@@ -130,7 +130,7 @@ function SocialLink({
 function Skillset({ useProgressBarColor = true }) {
   return (
     <section id="skillset" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
-      <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
+      <h2 className="mb-3 flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl">
         Skillset
       </h2>
       <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
@@ -176,7 +176,7 @@ function Skillset({ useProgressBarColor = true }) {
 function CurriculumVitae() {
   return (
     <section id="cv" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
-      <h2 className="mb-3 flex-1 text-2xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-3xl">
+      <h2 className="mb-3 flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl">
         Resume
       </h2>
       <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
@@ -186,7 +186,7 @@ function CurriculumVitae() {
 
       {/* Languages */}
       <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
-        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-2xl">
           Languages
         </h4>
         <p className="mb-2 text-base text-navy-600 dark:text-navy-400">
@@ -211,7 +211,7 @@ function CurriculumVitae() {
 
       {/* Education */}
       <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
-        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-2xl">
           Education
         </h4>
         <h5 className="mb-0 flex-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
@@ -251,7 +251,7 @@ function CurriculumVitae() {
 
       {/* Experience */}
       <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
-        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-800 dark:text-navy-100 sm:text-2xl">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-2xl">
           Professional Experience
         </h4>
 

@@ -1,10 +1,13 @@
+'use client'
+
 import clsx from 'clsx'
 import Image from 'next/image'
 import { image1, image2, image3, image4, image5 } from '@/images/photos'
 
 export function Photos() {
+  const isMobile = window.matchMedia('(max-width: 460px)').matches
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-  let images = [image1, image2, image3, image4, image5]
+  let images = isMobile ? [image2, image3] : [image1, image2, image3, image4, image5]
 
   return (
     <div className="mt-16 sm:mt-20">
