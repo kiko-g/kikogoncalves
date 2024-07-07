@@ -3,11 +3,12 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 import { image1, image2, image3, image4, image5 } from '@/images/photos'
+import { useMediaQuery } from 'usehooks-ts'
 
 export function Photos() {
-  const isMobile = typeof window !== undefined ? window.matchMedia('(max-width: 460px)').matches : false
+  const isNotMobile = useMediaQuery('(min-width: 480px)')
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-  let images = isMobile ? [image2, image3] : [image1, image2, image3, image4, image5]
+  let images = isNotMobile ? [image1, image2, image3, image4, image5] : [image2, image3]
 
   return (
     <div className="mt-16 sm:mt-20">
