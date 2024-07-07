@@ -14,6 +14,7 @@ import { EnvelopeIcon } from '@heroicons/react/24/solid'
 import { logoJumpseller } from '@/images/logos/resume'
 import { LinkedinLogoLink } from '@/components/about/LinkedinLogoLink'
 import { CriticalLogoLink } from '@/components/about/CriticalLogoLink'
+import { SectionHeading } from '@/components/SectionHeading'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -130,9 +131,9 @@ function SocialLink({
 function Skillset({ useProgressBarColor = true }) {
   return (
     <section id="skillset" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
-      <h2 className="mb-3 flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl">
+      <SectionHeading noMargin slideTo="skillset">
         Skillset
-      </h2>
+      </SectionHeading>
       <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
         Here’s a breakdown of my skills and experience in the tech field. I’m always learning new things and
         experimenting with new technologies, so this list is always changing. The progress bars are a rough estimate of
@@ -176,9 +177,9 @@ function Skillset({ useProgressBarColor = true }) {
 function CurriculumVitae() {
   return (
     <section id="cv" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
-      <h2 className="mb-3 flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl">
+      <SectionHeading noMargin slideTo="resume">
         Resume
-      </h2>
+      </SectionHeading>
       <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
         Here’s a brief overview of my professional experience and education. I’m always looking for new opportunities
         and challenges, so feel free to reach out if you think I’d be a good fit for your team.
