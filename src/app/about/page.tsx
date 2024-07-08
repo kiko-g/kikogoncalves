@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { type Metadata } from 'next'
 import { calculateAge } from '@/lib/utilities'
 import { skills } from '@/lib/data'
-
+import { image1, image2, image3, image4, image5 } from '@/images/photos'
 import { JumpsellerLogoLink } from '@/components/about/JumpsellerLogoLink'
 
 import portraitImage from '@/images/portrait.jpg'
@@ -99,6 +99,7 @@ export default function About() {
 
       <Skillset />
       <CurriculumVitae />
+      <Photos />
     </Container>
   )
 }
@@ -130,7 +131,7 @@ function SocialLink({
 
 function Skillset({ useProgressBarColor = true }) {
   return (
-    <section id="skillset" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
+    <section id="skillset" className="mt-6 pt-12 sm:mt-12">
       <SectionHeading noMargin slideTo="skillset">
         Skillset
       </SectionHeading>
@@ -176,7 +177,7 @@ function Skillset({ useProgressBarColor = true }) {
 
 function CurriculumVitae() {
   return (
-    <section id="cv" className="mt-10 border-t border-navy-100 pt-12 dark:border-navy-700/40 sm:mt-20">
+    <section id="cv" className="mt-6 pt-12 sm:mt-12">
       <SectionHeading noMargin slideTo="resume">
         Resume
       </SectionHeading>
@@ -308,6 +309,38 @@ function CurriculumVitae() {
             </ul>
           </li>
         </ul>
+      </div>
+    </section>
+  )
+}
+
+function Photos() {
+  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let images = [image1, image2, image3, image4, image5]
+
+  return (
+    <section id="photos" className="mt-6 overflow-hidden pt-12 sm:mt-12">
+      <SectionHeading noMargin slideTo="resume">
+        Photos
+      </SectionHeading>
+      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">Some of my favorite personal photos.</p>
+      <div className="-my-4 flex justify-center gap-5 overflow-visible py-4 sm:gap-8">
+        {images.map((image, imageIndex) => (
+          <div
+            key={image.src}
+            className={clsx(
+              'relative aspect-[8/10] w-44 flex-none overflow-hidden rounded-xl bg-navy-100 dark:bg-navy-800 sm:aspect-[9/10] sm:w-72 sm:rounded-2xl',
+              rotations[imageIndex % rotations.length],
+            )}
+          >
+            <Image
+              src={image}
+              alt=""
+              sizes="(min-width: 1920px)"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        ))}
       </div>
     </section>
   )
