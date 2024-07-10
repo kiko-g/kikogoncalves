@@ -124,6 +124,7 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
               src={media.src}
               alt={`${project.name}: Media ${selectedMediaIdx + 1}`}
               className="rounded-none shadow"
+              placeholder="blur"
             />
           )}
           {media.type === 'video' && (
