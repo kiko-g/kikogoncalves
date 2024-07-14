@@ -10,6 +10,8 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImageA from '@/images/avatar-a.jpg'
+import avatarImageAEdited from '@/images/avatar-edited.png'
+import avatarImageAEditedEnhanced from '@/images/avatar-edited-enhanced.png'
 import avatarImageB from '@/images/avatar-b.png'
 
 const navigation = [
@@ -231,7 +233,7 @@ function Avatar({
   return (
     <Link href="/" aria-label="Home" className={clsx(className, 'pointer-events-auto')} {...props}>
       <Image
-        src={avatarImageA}
+        src={avatarImageAEditedEnhanced}
         alt="Description"
         width={large ? 640 : 360}
         height={large ? 640 : 360}
