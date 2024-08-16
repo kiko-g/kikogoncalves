@@ -7,8 +7,27 @@ export const projectsData: Project[] = [
     relevant: true,
     beta: false,
     name: 'Jumpseller Developer - Themes',
-    description:
-      'Although not a project per se, I have been working on the Jumpseller platform as a developer, creating and maintaining themes and their infrastructure for the platform. Jumpseller is an e-commerce platform that allows users to create their online store without the need for technical knowledge. Collaborated on storefront themes, and developed a Visual Editor and Code Editor for seamless customization as part of the Themes Team. Enhanced storefront themes architecture, driving e-commerce innovation with an adaptable system for theme creation and detailed customization. As you can imagine, the code for this project is private and company-owned.',
+    description: (
+      <section className="mdx">
+        <p>
+          I have been working on the Jumpseller platform as a developer since October 2023, creating and maintaining
+          themes and their infrastructure for the platform. Jumpseller is an e-commerce platform that allows users to
+          create their online store without the need for technical knowledge.
+        </p>
+        <ul>
+          <li>Contributed and developed customizable e-commerce storefront themes</li>
+          <li>
+            Developed and improved both a Visual Editor and Code Editor for Jumpseller customers to deeply personalize
+            their stores
+          </li>
+          <li>
+            Revamped the architecture of storefront themes to drive e-commerce innovation, establishing a more flexible
+            system for theme development and extensive customization
+          </li>
+          <li>Code for this project is private and company-owned.</li>
+        </ul>
+      </section>
+    ),
     startDate: '2023-10-02',
     endDate: 'present',
     repo: null,
@@ -28,8 +47,14 @@ export const projectsData: Project[] = [
     relevant: true,
     beta: false,
     name: 'VS Code Theme: Bagger Flow',
-    description:
-      'Bagger Flow is a Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with a clean and minimal touch of the chef’s personal taste. Contains  carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here. Currently available on the VSCode Marketplace.',
+    description: (
+      <section className="mdx">
+        Bagger Flow is a Visual Studio Code Theme with a refined color palette combining elements of other popular
+        themes and with a clean and minimal touch of the chef’s personal taste. Contains carefully customized and
+        exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here.
+        Currently available on the VSCode Marketplace.
+      </section>
+    ),
     startDate: '2024-01-25',
     endDate: 'present',
     repo: 'https://github.com/kiko-g/bagger-flow-vscode',
@@ -52,8 +77,13 @@ export const projectsData: Project[] = [
     relevant: true,
     beta: true,
     name: 'BaggerUI',
-    description:
-      'Vast and growing collection of reusable, copiable and customizable ReactTSX components combined and saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and TailwindUI.',
+    description: (
+      <section className="mdx">
+        Vast and growing collection of reusable, copiable and customizable ReactTSX components combined and saved from
+        different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and
+        TailwindUI.
+      </section>
+    ),
     startDate: '2023-07-17',
     endDate: 'present',
     repo: 'https://github.com/kiko-g/bagger-ui',
@@ -76,8 +106,26 @@ export const projectsData: Project[] = [
     relevant: true,
     beta: false,
     name: "Analytics and Usability Dashboard for CMF's MES",
-    description:
-      "Dashboard with customized analyitical insights for web components inside Critical Manufacturing's MES, an application used for managing industrial shop floors. The dashboard presents organized data of user behavior patterns for developers to improve the usability of MES based on the evidence collected over time.",
+    description: (
+      <section className="mdx">
+        Dashboard with customized analyitical insights for web components inside Critical Manufacturing&apos;s MES, an
+        application used for managing industrial shop floors. The dashboard presents organized data of user behavior
+        patterns for developers to improve the usability of MES based on the evidence collected over time.
+        <ul>
+          <li> Interned at Critical Manufacturing (CMF) within the product development team</li>
+          <li>
+            Collected web analytics and usability metrics for CMF&apos;s Manufacturing Execution System (MES) to enhance
+            UI/UX
+          </li>
+          <li>
+            Developed a custom dashboard with organized data and KPIs from CMF&apos;s MES, offering usability insights
+            for its components, which democratizes the UX improvement process by attributing scores to components and
+            workflows with varying heuristics
+          </li>
+          <li>Authored a dissertation on this project to conclude my Master&apos;s Degree, accessible on my website</li>
+        </ul>
+      </section>
+    ),
     startDate: '2023-02-06',
     endDate: '2023-07-01',
     attachment: 'https://kikogoncalves/dissertation.pdf',
@@ -109,8 +157,12 @@ export const projectsData: Project[] = [
     relevant: true,
     beta: false,
     name: 'Finishers Hub',
-    description:
-      'The place for all finisher related content: chaotic, outrageous, lawless on the fence of criminality. Perfectly unbalanced. As all things should be. The most amusing and most personal project I have ever worked on.',
+    description: (
+      <section className="mdx">
+        The place for all finisher related content: chaotic, outrageous, lawless on the fence of criminality. Perfectly
+        unbalanced. As all things should be. The most amusing and most personal project I have ever worked on.
+      </section>
+    ),
     startDate: '2022-05-01',
     endDate: '2023-08-01',
     repo: 'https://github.com/kiko-g/finishershub',
@@ -139,8 +191,12 @@ export const projectsData: Project[] = [
     name: 'Guerner & Irmãos Website',
     startDate: '2023-01-15',
     endDate: '2023-09-28',
-    description:
-      'Website for Guerner & Irmãos, a textiles, technical fabrics, and building materials company, showcasing their products, mission, history and values.',
+    description: (
+      <section className="mdx">
+        Website for Guerner & Irmãos, a textiles, technical fabrics, and building materials company, showcasing their
+        products, mission, history and values.
+      </section>
+    ),
     color: 'orange',
     stack: ['React.js', 'Typescript', 'Tailwind', 'Gatsby.js', 'MDX', 'GraphQL'],
     repo: 'https://github.com/kiko-g/guerner',
@@ -159,8 +215,13 @@ export const projectsData: Project[] = [
     name: 'Time Table Selector',
     startDate: '2022-04-05',
     endDate: '2022-08-25',
-    description:
-      "A schedule planner for the University of Porto students. Plan your semester and course units with ease. Project developed under the Computer Engineering Student's branch and the data is provided by a SIGARRA web scraper.",
+    description: (
+      <section className="mdx">
+        A schedule planner for the University of Porto students. Plan your semester and course units with ease. Project
+        developed under the Computer Engineering Student&apos;s branch and the data is provided by a SIGARRA web
+        scraper.
+      </section>
+    ),
     color: 'red',
     stack: ['React.js', 'Typescript', 'Tailwind', 'Docker', 'PostgreSQL'],
     repo: 'https://github.com/NIAEFEUP/tts-revamp-fe',
@@ -183,8 +244,13 @@ export const projectsData: Project[] = [
     name: 'Rushing B (2D Game)',
     startDate: '2022-02-15',
     endDate: '2022-04-10',
-    description:
-      "Endless scroller computer game where a student races across FEUP's main hall trying to get to class on time. On their way, they will face many different kinds of enemies and power-ups which will aid them in their journey.",
+    description: (
+      <section className="mdx">
+        Endless scroller computer game where a student races across FEUP&apos;s main hall trying to get to class on
+        time. On their way, they will face many different kinds of enemies and power-ups which will aid them in their
+        journey.
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'Unity', 'C#'],
     repo: 'https://github.com/kiko-g/rushing-b',
@@ -219,8 +285,14 @@ export const projectsData: Project[] = [
     name: 'Time Hopper (2D Game)',
     startDate: '2022-04-15',
     endDate: '2022-07-01',
-    description:
-      '3rd person shooter horde-like game built with Unity (3D). After a time-space anomaly that got you stuck in a violent loop, you must fight your way through different arenas, located in various locations and eras. Survive as long as you can, master all weapons and unlock all perk upgrades.Team of developers collaborated with graphic designers and sound engineers for a complete game experience. Team of 7 people (4 DEV, 2 SND, 1 GFX)',
+    description: (
+      <section className="mdx">
+        3rd person shooter horde-like game built with Unity (3D). After a time-space anomaly that got you stuck in a
+        violent loop, you must fight your way through different arenas, located in various locations and eras. Survive
+        as long as you can, master all weapons and unlock all perk upgrades.Team of developers collaborated with graphic
+        designers and sound engineers for a complete game experience. Team of 7 people (4 DEV, 2 SND, 1 GFX)
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'Unity', 'C#'],
     repo: 'https://github.com/kiko-g/time-hopper',
@@ -251,8 +323,12 @@ export const projectsData: Project[] = [
     name: 'Virtual Assistant for MES',
     startDate: '2022-03-01',
     endDate: '2022-06-15',
-    description:
-      "A virtual assistant to facilitate navigation and interaction with Critical Manufacturing's MES. Created branding around the adopted project as a small startup named Robin.",
+    description: (
+      <section className="mdx">
+        A virtual assistant to facilitate navigation and interaction with Critical Manufacturing&apos;s MES. Created
+        branding around the adopted project as a small startup named Robin.
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'Gatsby.js', 'Typescript', 'Angular', 'Python', 'SpaCy', 'Docker'],
     repo: 'https://github.com/kiko-g/robin-lgp',
@@ -283,8 +359,12 @@ export const projectsData: Project[] = [
     name: 'Health Checker',
     startDate: '2021-11-01',
     endDate: '2022-01-21',
-    description:
-      'A better way to get accurate health information. Users consult medically validated information related to health and diseases.',
+    description: (
+      <section className="mdx">
+        A better way to get accurate health information. Users consult medically validated information related to health
+        and diseases.,
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'React.js', 'Express', 'Javascript', 'Tailwind', 'SPARQL'],
     repo: 'https://github.com/kiko-g/health-checker',
@@ -319,7 +399,7 @@ export const projectsData: Project[] = [
     name: 'Internet of Everything',
     startDate: '2021-10-25',
     endDate: '2022-01-30',
-    description: 'IOT Factory management and maintenance platform for simulations.',
+    description: <section className="mdx">IOT Factory management and maintenance platform for simulations.</section>,
     color: 'slate',
     stack: ['FEUP', 'React.js', 'Tailwind', 'Javascript', 'Java', 'Python', 'MQTT', 'Docker'],
     repo: 'https://github.com/kiko-g/internet-of-everything',
@@ -354,8 +434,12 @@ export const projectsData: Project[] = [
     name: 'Mafia in Town',
     startDate: '2020-12-14',
     endDate: '2020-10-12',
-    description:
-      'Multi-agent system faction game resembling Mafia In Town or Among Us, that simulates a the story with a variable number of AI players.',
+    description: (
+      <section className="mdx">
+        Multi-agent system faction game resembling Mafia In Town or Among Us, that simulates a the story with a variable
+        number of AI players.
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'Java', 'JADE', 'SAJaS', 'Repast'],
     repo: 'https://github.com/kiko-g/feup-aiad',
@@ -378,8 +462,11 @@ export const projectsData: Project[] = [
     name: 'Tech Council',
     startDate: '2021-03-01',
     endDate: '2021-06-18',
-    description:
-      'Full stack collaborative Q&A app. Users to post questions and share answers for everything tech-related',
+    description: (
+      <section className="mdx">
+        Full stack collaborative Q&A app. Users to post questions and share answers for everything tech-related,
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'Laravel', 'Bootstrap', 'HTML', 'CSS', 'Javascript', 'PostgreSQL', 'Docker'],
     repo: 'https://github.com/kiko-g/tech-council',
@@ -406,8 +493,11 @@ export const projectsData: Project[] = [
     name: 'Fuse 3D',
     startDate: '2019-09-25',
     endDate: '2020-01-10',
-    description:
-      'A 3D environment with a board for 2 players to play Fuse. Game logic is done via requests to a Prolog server.',
+    description: (
+      <section className="mdx">
+        A 3D environment with a board for 2 players to play Fuse. Game logic is done via requests to a Prolog server.,
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'Javascript', 'WebGL', 'Prolog'],
     repo: 'https://github.com/kiko-g/feup-laig',
@@ -430,7 +520,7 @@ export const projectsData: Project[] = [
     name: 'Pet Nexus',
     startDate: '2020-10-21',
     endDate: '2020-12-20',
-    description: 'Pet adoption website built with all Vanilla technologies.',
+    description: <section className="mdx">Pet adoption website built with all Vanilla technologies.,</section>,
     color: 'slate',
     stack: ['FEUP', 'HTML', 'CSS', 'Javascript', 'PHP', 'SQLite'],
     repo: 'https://github.com/kiko-g/pet-nexus',
@@ -463,7 +553,7 @@ export const projectsData: Project[] = [
     ],
     color: 'slate',
     stack: ['FEUP', 'React.js', 'Tailwind', 'Python', 'Flask', 'Kademlia'],
-    description: 'Peer to peer Twitter clone using Kademlia DHT.',
+    description: <section className="mdx">Peer to peer Twitter clone using Kademlia DHT.,</section>,
   },
 ]
 

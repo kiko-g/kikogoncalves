@@ -31,6 +31,22 @@ html {
   @apply font-medium text-navy-800 hover:underline dark:text-navy-300;
 }
 
+.inner-link.highlight {
+  @apply font-medium hover:underline text-primary-500 dark:text-primary-500;
+}
+
 .bg-skillbar {
   background-image: linear-gradient(90deg, var(--color-start), var(--color-mid), var(--color-end));
+}
+
+.mdx {
+  @apply text-sm leading-5;
+}
+
+.mdx ul {
+  @apply mt-2 ml-1 list-disc list-inside;
+}
+
+.mdx ul li {
+  @apply mb-1;
 }

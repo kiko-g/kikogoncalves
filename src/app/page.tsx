@@ -32,7 +32,7 @@ export default async function Home() {
               skills
             </Link>{' '}
             and{' '}
-            <Link href="/projects" className="inner-link">
+            <Link href="/projects" className="inner-link highlight">
               projects
             </Link>
             .
