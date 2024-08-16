@@ -17,7 +17,8 @@ import InternetOfEverythingScreenshot1 from './internet-of-everything/screenshot
 import InternetOfEverythingScreenshot2 from './internet-of-everything/screenshot-2.png'
 import InternetOfEverythingScreenshot3 from './internet-of-everything/screenshot-3.png'
 import InternetOfEverythingScreenshot4 from './internet-of-everything/screenshot-4.png'
-import JumpsellerScreenshot1 from './jumpseller/screenshot.png'
+import JumpsellerScreenshot1 from './jumpseller/screenshot-1.png'
+import JumpsellerScreenshot2 from './jumpseller/screenshot-2.png'
 import MafiaInTownScreenshot1 from './mafia-in-town/screenshot.png'
 import MafiaInTownScreenshot2 from './mafia-in-town/screenshot2.png'
 import P2PTwitterCloneScreenshot1 from './p2p-twitter-clone/screenshot-1.png'
@@ -74,6 +75,7 @@ export const media = {
   },
   jumpseller: {
     screenshot1: JumpsellerScreenshot1,
+    screenshot2: JumpsellerScreenshot2,
   },
   mafiaInTown: {
     screenshot1: MafiaInTownScreenshot1,

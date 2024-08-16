@@ -40,6 +40,10 @@ export const projectsData: Project[] = [
         type: 'image',
         src: media.jumpseller.screenshot1,
       },
+      {
+        type: 'image',
+        src: media.jumpseller.screenshot2,
+      },
     ],
   },
   {
