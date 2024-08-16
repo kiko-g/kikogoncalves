@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import type { Technology, Project } from '@/types'
-import { resolveProjectCardColors, getDatespan } from '@/lib/utilities'
+import { resolveProjectCardColors, getDatespan, techStackIcons } from '@/lib/utilities'
 import { GitHubIcon } from '@/components/SocialIcons'
 import { LinkIcon } from '@heroicons/react/20/solid'
 import { StarIcon, DocumentArrowDownIcon, ArrowLongRightIcon, ArrowLongLeftIcon } from '@heroicons/react/24/outline'
@@ -49,18 +49,22 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
         </p>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {project.stack.map((tech) => (
-            <button
-              key={tech}
-              onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
-              className={clsx(
-                tech === 'FEUP' ? 'bg-feup/80 text-white dark:bg-feup/50' : cx.bubble,
-                'rounded px-1.5 py-1 text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
-              )}
-            >
-              {tech}
-            </button>
-          ))}
+          {project.stack.map((tech) => {
+            const techIcon = techStackIcons[tech.toLowerCase()]
+            return (
+              <button
+                key={tech}
+                onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
+                className={clsx(
+                  tech === 'FEUP' ? 'bg-feup/80 text-white dark:bg-feup/50' : cx.bubble,
+                  'flex items-center gap-1 rounded px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
+                )}
+              >
+                {techIcon && <Image src={techIcon} alt={tech} width={14} height={14} className="rounded-sm" />}
+                <span className="-mt-[2px]">{tech}</span>
+              </button>
+            )
+          })}
         </div>
 
         <div className="mt-4 flex flex-col items-start justify-start gap-2">

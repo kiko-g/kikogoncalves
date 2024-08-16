@@ -1,4 +1,15 @@
 import type { ProjectColor, ProjectCardColor, Project, Technology } from '@/types'
+import {
+  AwsSvg,
+  JavascriptSvg,
+  JsonSvg,
+  MySqlSvg,
+  NodeJsSvg,
+  ReactJsSvg,
+  RubySvg,
+  ShopifySvg,
+  TailwindSvg,
+} from '@/images/tech'
 
 export function getDatespan(startDate: string, endDate: string | 'present'): string {
   const start = new Date(startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
@@ -36,7 +47,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-blue-600/10 dark:bg-blue-600/10',
         border: 'border-blue-600/30 dark:border-blue-600/50',
         badge: 'bg-blue-600 dark:bg-blue-500',
-        bubble: 'bg-blue-600/80 text-white dark:bg-blue-500/50',
+        bubble: 'bg-blue-600/60 text-white dark:bg-blue-500/50',
         textHover: 'hover:text-blue-600 dark:hover:text-blue-300',
         ring: 'ring-1 ring-offset-2 ring-blue-600 dark:ring-blue-500',
       }
@@ -45,7 +56,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-teal-600/10 dark:bg-teal-600/10',
         border: 'border-teal-600/30 dark:border-teal-600/50',
         badge: 'bg-teal-600 dark:bg-teal-500',
-        bubble: 'bg-teal-600/80 text-white dark:bg-teal-500/50',
+        bubble: 'bg-teal-600/60 text-white dark:bg-teal-500/50',
         textHover: 'hover:text-teal-600 dark:hover:text-teal-400',
         ring: 'ring-1 ring-offset-2 ring-teal-600 dark:ring-teal-500',
       }
@@ -54,7 +65,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-purple-500/10 dark:bg-purple-400/10',
         border: 'border-purple-500/30 dark:border-purple-400/50',
         badge: 'bg-purple-500 dark:bg-purple-400',
-        bubble: 'bg-purple-500/80 text-white dark:bg-purple-400/50',
+        bubble: 'bg-purple-500/60 text-white dark:bg-purple-400/50',
         textHover: 'hover:text-purple-500 dark:hover:text-purple-400',
         ring: 'ring-1 ring-offset-2 ring-purple-500 dark:ring-purple-400',
       }
@@ -63,7 +74,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-indigo-500/10 dark:bg-indigo-400/10',
         border: 'border-indigo-500/30 dark:border-indigo-400/50',
         badge: 'bg-indigo-500 dark:bg-indigo-400',
-        bubble: 'bg-indigo-500/80 text-white dark:bg-indigo-400/50',
+        bubble: 'bg-indigo-500/60 text-white dark:bg-indigo-400/50',
         textHover: 'hover:text-indigo-500 dark:hover:text-indigo-400',
         ring: 'ring-1 ring-offset-2 ring-indigo-500 dark:ring-indigo-400',
       }
@@ -72,7 +83,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-pink-600/10 dark:bg-pink-600/10',
         border: 'border-pink-600/30 dark:border-pink-600/50',
         badge: 'bg-pink-600 dark:bg-pink-500',
-        bubble: 'bg-pink-600/80 text-white dark:bg-pink-500/50',
+        bubble: 'bg-pink-600/60 text-white dark:bg-pink-500/50',
         textHover: 'hover:text-pink-600 dark:hover:text-pink-600',
         ring: 'ring-1 ring-offset-2 ring-pink-600 dark:ring-pink-500',
       }
@@ -81,7 +92,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-orange-600/10 dark:bg-orange-600/10',
         border: 'border-orange-600/30 dark:border-orange-600/50',
         badge: 'bg-orange-500 dark:bg-orange-400',
-        bubble: 'bg-orange-500/80 text-white dark:bg-orange-400/80',
+        bubble: 'bg-orange-500/60 text-white dark:bg-orange-400/70',
         textHover: 'hover:text-orange-600 dark:hover:text-orange-600',
         ring: 'ring-1 ring-offset-2 ring-orange-600 dark:ring-orange-500',
       }
@@ -90,7 +101,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-amber-600/10 dark:bg-amber-500/10',
         border: 'border-amber-600/30 dark:border-amber-500/50',
         badge: 'bg-amber-600 dark:bg-amber-500',
-        bubble: 'bg-amber-600/80 text-white dark:bg-amber-500/50',
+        bubble: 'bg-amber-600/60 text-white dark:bg-amber-500/50',
         textHover: 'hover:text-amber-600 dark:hover:text-amber-500',
         ring: 'ring-1 ring-offset-2 ring-amber-600 dark:ring-amber-500',
       }
@@ -99,7 +110,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-red-700/10 dark:bg-red-700/[15%]',
         border: 'border-red-700/30 dark:border-red-700/50',
         badge: 'bg-red-700 dark:bg-red-500',
-        bubble: 'bg-red-700/80 text-white dark:bg-red-500/50',
+        bubble: 'bg-red-700/60 text-white dark:bg-red-500/50',
         textHover: 'hover:text-red-700 dark:hover:text-red-700',
         ring: 'ring-1 ring-offset-2 ring-red-700 dark:ring-red-500',
       }
@@ -108,7 +119,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-emerald-700/10 dark:bg-emerald-700/10',
         border: 'border-emerald-700/30 dark:border-emerald-700/50',
         badge: 'bg-emerald-700 dark:bg-emerald-600',
-        bubble: 'bg-emerald-700/80 text-white dark:bg-emerald-600/50',
+        bubble: 'bg-emerald-700/60 text-white dark:bg-emerald-600/50',
         textHover: 'hover:text-emerald-700 dark:hover:text-emerald-700',
         ring: 'ring-1 ring-offset-2 ring-emerald-700 dark:ring-emerald-600',
       }
@@ -117,7 +128,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-jumpseller-800/10 dark:bg-jumpseller-800/10',
         border: 'border-jumpseller-800/50 dark:border-jumpseller-800/70',
         badge: 'bg-jumpseller-800 dark:bg-jumpseller-700',
-        bubble: 'bg-jumpseller-800/80 text-white dark:bg-jumpseller-700/50',
+        bubble: 'bg-jumpseller-800/60 text-white dark:bg-jumpseller-700/50',
         textHover: 'hover:text-jumpseller-800 dark:hover:text-jumpseller-800',
         ring: 'ring-1 ring-offset-2 ring-jumpseller-800 dark:ring-jumpseller-700',
       }
@@ -127,11 +138,23 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-slate-100 dark:bg-slate-600/20',
         border: 'border-slate-300 dark:border-slate-700',
         badge: 'bg-slate-700 dark:bg-slate-400',
-        bubble: 'bg-slate-600/80 text-white dark:bg-slate-400/50',
+        bubble: 'bg-slate-600/60 text-white dark:bg-slate-400/50',
         textHover: 'hover:text-slate-600 dark:hover:text-slate-500',
         ring: 'ring-1 ring-offset-2 ring-slate-400 dark:ring-slate-700',
       }
   }
+}
+
+export const techStackIcons: Record<string, any> = {
+  'aws s3': AwsSvg,
+  ruby: RubySvg,
+  javascript: JavascriptSvg,
+  json: JsonSvg,
+  mysql: MySqlSvg,
+  liquid: ShopifySvg,
+  tailwind: TailwindSvg,
+  'react.js': ReactJsSvg,
+  'node.js': NodeJsSvg,
 }
 
 export function getColorContrast(hex: any) {
