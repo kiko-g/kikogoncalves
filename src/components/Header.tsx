@@ -17,8 +17,8 @@ import avatarImageB from '@/images/avatar-b.png'
 const navigation = [
   { name: 'Home', href: '/', shown: true },
   { name: 'About', href: '/about', shown: true },
-  { name: 'Articles', href: '/articles', shown: true },
   { name: 'Projects', href: '/projects', shown: true },
+  { name: 'Articles', href: '/articles', shown: true },
   { name: 'Uses', href: '/uses', shown: true },
   { name: 'Speaking', href: '/speaking', shown: false },
 ].filter((item) => item.shown)

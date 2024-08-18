@@ -25,12 +25,12 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
   return (
     <li
       className={clsx(
-        'relative flex flex-col gap-4 rounded-none border p-4 xl:flex-row xl:p-6',
+        'relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6',
         cx.background,
         cx.border,
       )}
     >
-      <div className="order-2 flex flex-1 flex-col self-stretch xl:order-1">
+      <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
         <div className="flex items-center justify-between gap-x-2">
           <div className="flex items-center gap-x-2">
             <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
@@ -113,7 +113,7 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
       <div
         className={clsx(
           compact ? 'block lg:hidden' : 'block',
-          'group relative order-1 max-w-full xl:order-2 xl:max-w-md',
+          'group relative order-2 max-w-full lg:order-2 lg:max-w-md',
         )}
       >
         {project.relevant && (

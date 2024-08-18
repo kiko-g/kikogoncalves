@@ -1,28 +1,29 @@
+import Link from 'next/link'
 import { media } from '@/images/portfolio'
 import type { Project, Skill } from '@/types'
 
 export const projectsData: Project[] = [
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
     beta: false,
     name: 'Jumpseller Developer - Themes',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         <p>
           I have been working on the Jumpseller platform as a developer since October 2023, creating and maintaining
           themes and their infrastructure for the platform. Jumpseller is an e-commerce platform that allows users to
           create their online store without the need for technical knowledge.
         </p>
         <ul>
-          <li>Contributed and developed customizable e-commerce storefront themes</li>
+          <li>Contributed and developed customizable e-commerce storefront themes.</li>
           <li>
             Developed and improved both a Visual Editor and Code Editor for Jumpseller customers to deeply personalize
-            their stores
+            their stores.
           </li>
           <li>
             Revamped the architecture of storefront themes to drive e-commerce innovation, establishing a more flexible
-            system for theme development and extensive customization
+            system for theme development and extensive customization.
           </li>
           <li>Code for this project is private and company-owned.</li>
         </ul>
@@ -47,12 +48,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
     beta: false,
     name: 'VS Code Theme: Bagger Flow',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         Bagger Flow is a Visual Studio Code Theme with a refined color palette combining elements of other popular
         themes and with a clean and minimal touch of the chef’s personal taste. Contains carefully customized and
         exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here.
@@ -82,10 +83,11 @@ export const projectsData: Project[] = [
     beta: true,
     name: 'BaggerUI',
     description: (
-      <section className="mdx">
-        Vast and growing collection of reusable, copiable and customizable ReactTSX components combined and saved from
-        different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and
-        TailwindUI.
+      <section className="project-card-description">
+        Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and saved
+        from different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and
+        TailwindUI. Check out our new <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link>{' '}
+        components.
       </section>
     ),
     startDate: '2023-07-17',
@@ -111,22 +113,24 @@ export const projectsData: Project[] = [
     beta: false,
     name: "Analytics and Usability Dashboard for CMF's MES",
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         Dashboard with customized analyitical insights for web components inside Critical Manufacturing&apos;s MES, an
         application used for managing industrial shop floors. The dashboard presents organized data of user behavior
         patterns for developers to improve the usability of MES based on the evidence collected over time.
         <ul>
-          <li> Interned at Critical Manufacturing (CMF) within the product development team</li>
+          <li> Interned at Critical Manufacturing (CMF) within the product dev team.</li>
           <li>
             Collected web analytics and usability metrics for CMF&apos;s Manufacturing Execution System (MES) to enhance
-            UI/UX
+            UI/UX.
           </li>
           <li>
             Developed a custom dashboard with organized data and KPIs from CMF&apos;s MES, offering usability insights
             for its components, which democratizes the UX improvement process by attributing scores to components and
-            workflows with varying heuristics
+            workflows with varying heuristics.
           </li>
-          <li>Authored a dissertation on this project to conclude my Master&apos;s Degree, accessible on my website</li>
+          <li>
+            Authored a dissertation on this project to conclude my Master&apos;s Degree, accessible on my website.
+          </li>
         </ul>
       </section>
     ),
@@ -157,12 +161,12 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
     beta: false,
     name: 'Finishers Hub',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         The place for all finisher related content: chaotic, outrageous, lawless on the fence of criminality. Perfectly
         unbalanced. As all things should be. The most amusing and most personal project I have ever worked on.
       </section>
@@ -189,14 +193,14 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
     beta: false,
     name: 'Guerner & Irmãos Website',
     startDate: '2023-01-15',
     endDate: '2023-09-28',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         Website for Guerner & Irmãos, a textiles, technical fabrics, and building materials company, showcasing their
         products, mission, history and values.
       </section>
@@ -213,14 +217,14 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
     beta: false,
     name: 'Time Table Selector',
     startDate: '2022-04-05',
     endDate: '2022-08-25',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         A schedule planner for the University of Porto students. Plan your semester and course units with ease. Project
         developed under the Computer Engineering Student&apos;s branch and the data is provided by a SIGARRA web
         scraper.
@@ -249,7 +253,7 @@ export const projectsData: Project[] = [
     startDate: '2022-02-15',
     endDate: '2022-04-10',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         Endless scroller computer game where a student races across FEUP&apos;s main hall trying to get to class on
         time. On their way, they will face many different kinds of enemies and power-ups which will aid them in their
         journey.
@@ -290,7 +294,7 @@ export const projectsData: Project[] = [
     startDate: '2022-04-15',
     endDate: '2022-07-01',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         3rd person shooter horde-like game built with Unity (3D). After a time-space anomaly that got you stuck in a
         violent loop, you must fight your way through different arenas, located in various locations and eras. Survive
         as long as you can, master all weapons and unlock all perk upgrades.Team of developers collaborated with graphic
@@ -328,7 +332,7 @@ export const projectsData: Project[] = [
     startDate: '2022-03-01',
     endDate: '2022-06-15',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         A virtual assistant to facilitate navigation and interaction with Critical Manufacturing&apos;s MES. Created
         branding around the adopted project as a small startup named Robin.
       </section>
@@ -364,7 +368,7 @@ export const projectsData: Project[] = [
     startDate: '2021-11-01',
     endDate: '2022-01-21',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         A better way to get accurate health information. Users consult medically validated information related to health
         and diseases.,
       </section>
@@ -403,7 +407,11 @@ export const projectsData: Project[] = [
     name: 'Internet of Everything',
     startDate: '2021-10-25',
     endDate: '2022-01-30',
-    description: <section className="mdx">IOT Factory management and maintenance platform for simulations.</section>,
+    description: (
+      <section className="project-card-description">
+        IOT Factory management and maintenance platform for simulations.
+      </section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'React.js', 'Tailwind', 'Javascript', 'Java', 'Python', 'MQTT', 'Docker'],
     repo: 'https://github.com/kiko-g/internet-of-everything',
@@ -439,7 +447,7 @@ export const projectsData: Project[] = [
     startDate: '2020-12-14',
     endDate: '2020-10-12',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         Multi-agent system faction game resembling Mafia In Town or Among Us, that simulates a the story with a variable
         number of AI players.
       </section>
@@ -467,7 +475,7 @@ export const projectsData: Project[] = [
     startDate: '2021-03-01',
     endDate: '2021-06-18',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         Full stack collaborative Q&A app. Users to post questions and share answers for everything tech-related,
       </section>
     ),
@@ -498,7 +506,7 @@ export const projectsData: Project[] = [
     startDate: '2019-09-25',
     endDate: '2020-01-10',
     description: (
-      <section className="mdx">
+      <section className="project-card-description">
         A 3D environment with a board for 2 players to play Fuse. Game logic is done via requests to a Prolog server.,
       </section>
     ),
@@ -524,7 +532,9 @@ export const projectsData: Project[] = [
     name: 'Pet Nexus',
     startDate: '2020-10-21',
     endDate: '2020-12-20',
-    description: <section className="mdx">Pet adoption website built with all Vanilla technologies.,</section>,
+    description: (
+      <section className="project-card-description">Pet adoption website built with all Vanilla technologies.,</section>
+    ),
     color: 'slate',
     stack: ['FEUP', 'HTML', 'CSS', 'Javascript', 'PHP', 'SQLite'],
     repo: 'https://github.com/kiko-g/pet-nexus',
@@ -557,7 +567,9 @@ export const projectsData: Project[] = [
     ],
     color: 'slate',
     stack: ['FEUP', 'React.js', 'Tailwind', 'Python', 'Flask', 'Kademlia'],
-    description: <section className="mdx">Peer to peer Twitter clone using Kademlia DHT.,</section>,
+    description: (
+      <section className="project-card-description">Peer to peer Twitter clone using Kademlia DHT.,</section>
+    ),
   },
 ]
 

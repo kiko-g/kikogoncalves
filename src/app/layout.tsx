@@ -21,7 +21,7 @@ import clsx from 'clsx'
 export const metadata: Metadata = {
   title: {
     template: '%s - Francisco Gonçalves',
-    default: 'Francisco Gonçalves - Full-stack engineer and frontend afficionado',
+    default: 'Francisco Gonçalves - Part-Time Fullstack Developer, Full-Time Goofball',
   },
   description:
     'I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={clsx('h-full antialiased', inter.variable, lexend.variable)} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={clsx('h-full antialiased', inter.variable, lexend.variable)}>
       <body className="flex h-full bg-navy-50 dark:bg-navy-950">
         <Providers>
           <div className="flex w-full">

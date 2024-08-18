@@ -9,8 +9,8 @@ import { type Technology } from '@/types'
 import { projectsData } from '@/lib/data'
 import { extractTechStackAndSortByFrequency, sortByPinned } from '@/lib/utilities'
 
-import { Squares2X2Icon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
-import { Bars4Icon, ChevronDownIcon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
+import { ChevronUpDownIcon, Squares2X2Icon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
+import { Bars4Icon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
 import { useLocalStorageBoolean } from '@/lib/hooks'
 
 export function ProjectsShowcase() {
@@ -81,7 +81,7 @@ export function ProjectsShowcase() {
             )}
           >
             <span>Tags</span>
-            <ChevronDownIcon className="ml-1.5 h-4 w-4" />
+            <ChevronUpDownIcon className="ml-1.5 h-4 w-4" />
           </ListboxButton>
 
           <Transition
@@ -94,7 +94,7 @@ export function ProjectsShowcase() {
           >
             <ListboxOptions
               anchor="bottom end"
-              className="mt-2 flex w-52 flex-col gap-0.5 border border-navy-300 bg-white py-2 pl-2 pr-4 text-sm text-navy-950 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-200"
+              className="mt-2 flex w-52 flex-col gap-0.5 rounded-md border border-navy-300 bg-white py-2 pl-2 pr-4 text-sm text-navy-950 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-200"
             >
               <div className="mb-1 flex items-center justify-between gap-2 border-b border-navy-300 pb-1 dark:border-navy-200/10">
                 <span className="pl-1 text-xs">{selectedTags.length} selected</span>
@@ -109,7 +109,7 @@ export function ProjectsShowcase() {
                   <ListboxOption
                     key={tag.name}
                     value={tag}
-                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-navy-800 data-[focus]:text-white dark:data-[focus]:bg-white/5"
+                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-navy-800/10 data-[focus]:text-navy-900 dark:data-[focus]:bg-white/10 dark:data-[focus]:text-white"
                   >
                     <span className={clsx('block truncate', isSelected ? '' : '')}>
                       {tag.name} ({tag.freq})
