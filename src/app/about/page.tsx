@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import Image from 'next/image'
 import { type Metadata } from 'next'
-import { calculateAge } from '@/lib/utilities'
+import { calculateAge, techStackIcons } from '@/lib/utilities'
 import { skills } from '@/lib/data'
 import { image1, image2, image3, image4, image5 } from '@/images/photos'
 import { JumpsellerLogoLink } from '@/components/about/JumpsellerLogoLink'
@@ -141,35 +141,42 @@ function Skillset({ useProgressBarColor = true }) {
         my experience and familiriaty with each technology.
       </p>
       <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {skills.map((skill, skillIdx) => (
-          <li key={`skill-${skillIdx}`} className="flex flex-col gap-1.5">
-            <div className="mb-0 flex w-full items-center gap-1">
-              <span className="block h-2 w-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
-              <span className="text-xs font-medium leading-none tracking-tight text-navy-600 dark:text-navy-300">
-                {skill.name}
-              </span>
-            </div>
-            <div className="h-3 w-full rounded-none bg-navy-200 dark:bg-white/[3%]">
-              <div
-                className="bg-skillbar h-full rounded-none"
-                style={
-                  {
-                    width: `${skill.score}%`,
+        {skills.map((skill, skillIdx) => {
+          const techIcon = techStackIcons[skill.name.toLowerCase()]
+          return (
+            <li key={`skill-${skillIdx}`} className="flex flex-col gap-1.5">
+              <div className="mb-0 flex w-full items-center gap-1">
+                {techIcon ? (
+                  <Image src={techIcon} alt={skill.name} width={13} height={13} className="size-[13px] rounded-sm" />
+                ) : (
+                  <span className="block h-2 w-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
+                )}
+                <span className="text-xs font-medium leading-none tracking-tight text-navy-600 dark:text-navy-300">
+                  {skill.name}
+                </span>
+              </div>
+              <div className="h-3 w-full rounded-none bg-navy-200 dark:bg-white/[3%]">
+                <div
+                  className="bg-skillbar h-full rounded-none"
+                  style={
+                    {
+                      width: `${skill.score}%`,
 
-                    ...(useProgressBarColor
-                      ? {
-                          border: `1px solid ${skill.color}f0`,
-                          '--color-start': `${skill.color}b0`,
-                          '--color-mid': `${skill.color}a0`,
-                          '--color-end': `${skill.color}90`,
-                        }
-                      : { border: `1px solid #232830`, backgroundColor: '#3b404b' }),
-                  } as React.CSSProperties
-                }
-              ></div>
-            </div>
-          </li>
-        ))}
+                      ...(useProgressBarColor
+                        ? {
+                            border: `1px solid ${skill.color}f0`,
+                            '--color-start': `${skill.color}b0`,
+                            '--color-mid': `${skill.color}a0`,
+                            '--color-end': `${skill.color}90`,
+                          }
+                        : { border: `1px solid #232830`, backgroundColor: '#3b404b' }),
+                    } as React.CSSProperties
+                  }
+                ></div>
+              </div>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )

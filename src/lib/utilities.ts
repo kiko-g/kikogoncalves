@@ -13,7 +13,7 @@ import {
   NextJsSvg,
   NodeJsSvg,
   ReactJsSvg,
-  RubyOnRailsSvg,
+  RubyRailsSvg,
   RubySvg,
   ShopifySvg,
   TailwindSvg,
@@ -25,6 +25,13 @@ import {
   JavaSvg,
   HtmlSvg,
   CssSvg,
+  GitSvg,
+  VueJsSvg,
+  RustSvg,
+  PhpSvg,
+  LaravelSvg,
+  CppSvg,
+  FlutterSvg,
 } from '@/images/tech'
 
 export function getDatespan(startDate: string, endDate: string | 'present'): string {
@@ -78,12 +85,12 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'purple':
       return {
-        background: 'bg-purple-500/10 dark:bg-purple-400/10',
-        border: 'border-purple-500/30 dark:border-purple-400/50',
-        badge: 'bg-purple-500 dark:bg-purple-400',
-        bubble: 'bg-purple-500/60 text-white dark:bg-purple-400/50',
-        textHover: 'hover:text-purple-500 dark:hover:text-purple-400',
-        ring: 'ring-1 ring-offset-2 ring-purple-500 dark:ring-purple-400',
+        background: 'bg-purple-600/10 dark:bg-purple-400/10',
+        border: 'border-purple-600/30 dark:border-purple-400/50',
+        badge: 'bg-purple-600 dark:bg-purple-400',
+        bubble: 'bg-purple-600/60 text-white dark:bg-purple-400/70',
+        textHover: 'hover:text-purple-600 dark:hover:text-purple-400',
+        ring: 'ring-1 ring-offset-2 ring-purple-600 dark:ring-purple-400',
       }
     case 'indigo':
       return {
@@ -165,28 +172,36 @@ export const techStackIcons: Record<string, any> = {
   angular: AngularSvg,
   'aws s3': AwsSvg,
   'c#': CSharpSvg,
+  'c/c++': CppSvg,
   css: CssSvg,
   docker: DockerSvg,
   feup: FeupSvg,
+  flutter: FlutterSvg,
   'gatsby.js': GatsbyJsSvg,
-  html: HtmlSvg,
+  git: GitSvg,
   graphql: GraphQlSvg,
-  liquid: ShopifySvg,
+  html: HtmlSvg,
   java: JavaSvg,
   javascript: JavascriptSvg,
   json: JsonSvg,
+  laravel: LaravelSvg,
+  liquid: ShopifySvg,
   mdx: MdxSvg,
   'mongo db': MongoDbSvg,
   mysql: MySqlSvg,
   'next.js': NextJsSvg,
   'node.js': NodeJsSvg,
+  php: PhpSvg,
   python: PythonSvg,
   'react.js': ReactJsSvg,
+  'react native': ReactJsSvg,
   ruby: RubySvg,
-  'ruby on rails': RubyOnRailsSvg,
+  'ruby on rails': RubyRailsSvg,
+  rust: RustSvg,
   tailwind: TailwindSvg,
   typescript: TypeScriptSvg,
   unity: UnitySvg,
+  'vue.js': VueJsSvg,
 }
 
 export function getColorContrast(hex: any) {
