@@ -1,14 +1,30 @@
 import type { ProjectColor, ProjectCardColor, Project, Technology } from '@/types'
 import {
+  AngularSvg,
   AwsSvg,
+  DockerSvg,
+  FeupSvg,
+  GatsbyJsSvg,
+  GraphQlSvg,
   JavascriptSvg,
   JsonSvg,
   MySqlSvg,
+  MdxSvg,
+  NextJsSvg,
   NodeJsSvg,
   ReactJsSvg,
+  RubyOnRailsSvg,
   RubySvg,
   ShopifySvg,
   TailwindSvg,
+  TypeScriptSvg,
+  MongoDbSvg,
+  UnitySvg,
+  PythonSvg,
+  CSharpSvg,
+  JavaSvg,
+  HtmlSvg,
+  CssSvg,
 } from '@/images/tech'
 
 export function getDatespan(startDate: string, endDate: string | 'present'): string {
@@ -146,15 +162,31 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
 }
 
 export const techStackIcons: Record<string, any> = {
+  angular: AngularSvg,
   'aws s3': AwsSvg,
-  ruby: RubySvg,
+  'c#': CSharpSvg,
+  css: CssSvg,
+  docker: DockerSvg,
+  feup: FeupSvg,
+  'gatsby.js': GatsbyJsSvg,
+  html: HtmlSvg,
+  graphql: GraphQlSvg,
+  liquid: ShopifySvg,
+  java: JavaSvg,
   javascript: JavascriptSvg,
   json: JsonSvg,
+  mdx: MdxSvg,
+  'mongo db': MongoDbSvg,
   mysql: MySqlSvg,
-  liquid: ShopifySvg,
-  tailwind: TailwindSvg,
-  'react.js': ReactJsSvg,
+  'next.js': NextJsSvg,
   'node.js': NodeJsSvg,
+  python: PythonSvg,
+  'react.js': ReactJsSvg,
+  ruby: RubySvg,
+  'ruby on rails': RubyOnRailsSvg,
+  tailwind: TailwindSvg,
+  typescript: TypeScriptSvg,
+  unity: UnitySvg,
 }
 
 export function getColorContrast(hex: any) {

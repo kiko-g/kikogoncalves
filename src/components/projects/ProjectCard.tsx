@@ -60,7 +60,9 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
                   'flex items-center gap-1 rounded px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
                 )}
               >
-                {techIcon && <Image src={techIcon} alt={tech} width={14} height={14} className="rounded-sm" />}
+                {techIcon && (
+                  <Image src={techIcon} alt={tech} width={15} height={15} className="size-[15px] rounded-sm" />
+                )}
                 <span className="-mt-[2px]">{tech}</span>
               </button>
             )
