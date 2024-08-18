@@ -9,10 +9,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImageA from '@/images/avatar-a.jpg'
-import avatarImageAEdited from '@/images/avatar-edited.png'
 import avatarImageAEditedEnhanced from '@/images/avatar-edited-enhanced.png'
-import avatarImageB from '@/images/avatar-b.png'
 
 const navigation = [
   { name: 'Home', href: '/', shown: true },

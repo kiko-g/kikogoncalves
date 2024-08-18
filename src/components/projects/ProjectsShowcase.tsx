@@ -2,12 +2,13 @@
 
 import React, { useMemo, useState } from 'react'
 import clsx from 'clsx'
+import Image from 'next/image'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 
 import { type Technology } from '@/types'
 import { projectsData } from '@/lib/data'
-import { extractTechStackAndSortByFrequency, sortByPinned } from '@/lib/utilities'
+import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from '@/lib/utilities'
 
 import { ChevronUpDownIcon, Squares2X2Icon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 import { Bars4Icon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
@@ -105,15 +106,27 @@ export function ProjectsShowcase() {
 
               {tags.map((tag) => {
                 const isSelected = selectedTags.includes(tag)
+                const techIcon = techStackIcons[tag.name.toLowerCase()]
                 return (
                   <ListboxOption
                     key={tag.name}
                     value={tag}
                     className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-navy-800/10 data-[focus]:text-navy-900 dark:data-[focus]:bg-white/10 dark:data-[focus]:text-white"
                   >
-                    <span className={clsx('block truncate', isSelected ? '' : '')}>
-                      {tag.name} ({tag.freq})
-                    </span>
+                    <div className="inline-flex items-center gap-1">
+                      {techIcon && (
+                        <Image
+                          src={techIcon}
+                          alt={tag.name}
+                          width={13}
+                          height={13}
+                          className="size-[13px] rounded-sm"
+                        />
+                      )}
+                      <span className={clsx('block truncate', isSelected ? '' : '')}>
+                        {tag.name} ({tag.freq})
+                      </span>
+                    </div>
                     {isSelected && <CheckIcon className="h-4 w-4 data-[focus]:text-white" aria-hidden="true" />}
                   </ListboxOption>
                 )

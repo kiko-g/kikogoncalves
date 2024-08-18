@@ -88,6 +88,9 @@ export const projectsData: Project[] = [
         from different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and
         TailwindUI. Check out our new <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link>{' '}
         components.
+        <p className="mt-1">
+          BaggerUI is still <span className="text-amber-600">under development</span>.
+        </p>
       </section>
     ),
     startDate: '2023-07-17',
