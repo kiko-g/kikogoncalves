@@ -84,12 +84,12 @@ export const projectsData: Project[] = [
     name: 'BaggerUI',
     description: (
       <section className="project-card-description">
-        Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and saved
-        from different projects. Take the code and build the project of your dreams. Inspired by RadixUI, HeadlessUI and
-        TailwindUI. Check out our new <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link>{' '}
-        components.
-        <p className="mt-1">
-          BaggerUI is still <span className="text-amber-600">under development</span>.
+        <p>
+          Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and
+          saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI,
+          HeadlessUI and TailwindUI. Check out our new{' '}
+          <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link> components. BaggerUI is still{' '}
+          <span className="text-amber-700">under development</span>.
         </p>
       </section>
     ),
