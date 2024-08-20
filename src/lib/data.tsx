@@ -55,9 +55,9 @@ export const projectsData: Project[] = [
     description: (
       <section className="project-card-description">
         Bagger Flow is a Visual Studio Code Theme with a refined color palette combining elements of other popular
-        themes and with a clean and minimal touch of the chef’s personal taste. Contains carefully customized and
-        exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here.
-        Currently available on the VSCode Marketplace.
+        themes and with a clean and minimal touch of the chef’s touch. Contains carefully customized and exhaustive
+        support for JS/TS, JSX/TSX, HTML/CSS and Ruby. It was a long time coming and now it’s finally here. Currently
+        available on the VSCode Marketplace.
       </section>
     ),
     startDate: '2024-01-25',
@@ -588,7 +588,7 @@ export const skills: Skill[] = [
   { name: 'Ruby on Rails', experience: '1y', color: '#a01508', score: 60 },
   { name: 'Java', experience: '3y', color: '#007396', score: 50 },
   { name: 'Tailwind', experience: '2y', color: '#38b2ac', score: 100 },
-  { name: 'Next.js', experience: '2y', color: '#000000', score: 80 },
+  { name: 'Next.js', experience: '2y', color: '#304050', score: 80 },
   { name: 'Gatsby.js', experience: '2y', color: '#663399', score: 80 },
   { name: 'Vue.js', experience: '1y', color: '#3fb984', score: 60 },
   { name: 'Angular', experience: '0.5y', color: '#dd0031', score: 50 },
@@ -602,5 +602,5 @@ export const skills: Skill[] = [
   { name: 'Flutter', experience: '0.5y', color: '#31b9f6', score: 30 },
   { name: 'C/C++', experience: '3y', color: '#00559c', score: 30 },
   { name: 'C#', experience: '0.5y', color: '#813084', score: 40 },
-  { name: 'Unity', experience: '0.5y', color: '#002233', score: 40 },
+  { name: 'Unity', experience: '0.5y', color: '#445566', score: 40 },
 ]
