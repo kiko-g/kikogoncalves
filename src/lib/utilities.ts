@@ -188,7 +188,7 @@ export const techStackIcons: Record<string, any> = {
   liquid: ShopifySvg,
   mdx: MdxSvg,
   'mongo db': MongoDbSvg,
-  mysql: MySqlSvg,
+  sql: MySqlSvg,
   'next.js': NextJsSvg,
   'node.js': NodeJsSvg,
   php: PhpSvg,
