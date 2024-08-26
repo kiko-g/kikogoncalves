@@ -35,7 +35,7 @@ export const projectsData: Project[] = [
     deployment: 'https://jumpseller.com',
     attachment: 'https://jumpseller.com/support',
     color: 'jumpseller',
-    stack: ['Ruby', 'Ruby on Rails', 'React.js', 'Javascript', 'MySQL', 'Liquid', 'AWS S3'],
+    stack: ['Ruby', 'Ruby on Rails', 'React.js', 'Javascript', 'SQL', 'Liquid', 'AWS S3'],
     media: [
       {
         type: 'image',
@@ -143,7 +143,7 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/usability-dashboard-mes',
     deployment: 'https://usability-dashboard-mes.vercel.app',
     color: 'blue',
-    stack: ['FEUP', 'React.js', 'Next.js', 'Typescript', 'Tailwind', 'Angular', 'Docker', 'Matomo', 'MySQL'],
+    stack: ['FEUP', 'React.js', 'Next.js', 'Typescript', 'Tailwind', 'Angular', 'Docker', 'Matomo', 'SQL'],
     media: [
       {
         type: 'image',
@@ -234,7 +234,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'red',
-    stack: ['React.js', 'Typescript', 'Tailwind', 'Docker', 'PostgreSQL'],
+    stack: ['React.js', 'Typescript', 'Tailwind', 'Docker', 'SQL'],
     repo: 'https://github.com/NIAEFEUP/tts-revamp-fe',
     deployment: 'https://ni.fe.up.pt/tts',
     media: [
@@ -483,7 +483,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Laravel', 'Bootstrap', 'HTML', 'CSS', 'Javascript', 'PostgreSQL', 'Docker'],
+    stack: ['FEUP', 'Laravel', 'Bootstrap', 'HTML', 'CSS', 'Javascript', 'SQL', 'Docker'],
     repo: 'https://github.com/kiko-g/tech-council',
     deployment: null,
     media: [
@@ -539,7 +539,7 @@ export const projectsData: Project[] = [
       <section className="project-card-description">Pet adoption website built with all Vanilla technologies.,</section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'HTML', 'CSS', 'Javascript', 'PHP', 'SQLite'],
+    stack: ['FEUP', 'HTML', 'CSS', 'Javascript', 'PHP', 'SQL'],
     repo: 'https://github.com/kiko-g/pet-nexus',
     deployment: 'https://web.fe.up.pt/~up201704790/ltw/',
     media: [
