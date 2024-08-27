@@ -10,7 +10,12 @@ const nextConfig = {
       {
         source: '/portfolio',
         destination: '/projects',
-        permanent: true, // or false if it's a temporary redirect
+        permanent: true,
+      },
+      {
+        source: '/cv',
+        destination: '/cv.pdf',
+        permanent: true,
       },
     ]
   },
