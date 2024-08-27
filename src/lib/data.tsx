@@ -7,6 +7,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     beta: false,
+    feup: false,
     name: 'Jumpseller Developer - Themes',
     description: (
       <section className="project-card-description">
@@ -51,6 +52,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     beta: false,
+    feup: false,
     name: 'VS Code Theme: Bagger Flow',
     description: (
       <section className="project-card-description">
@@ -81,6 +83,7 @@ export const projectsData: Project[] = [
     pinned: true,
     relevant: true,
     beta: true,
+    feup: false,
     name: 'BaggerUI',
     description: (
       <section className="project-card-description">
@@ -88,8 +91,8 @@ export const projectsData: Project[] = [
           Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and
           saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI,
           HeadlessUI and TailwindUI. Check out our new{' '}
-          <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link> components. BaggerUI is still{' '}
-          <span className="text-amber-700">under development</span>.
+          <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link> components. BaggerUI is still under
+          development.
         </p>
       </section>
     ),
@@ -114,7 +117,8 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     beta: false,
-    name: "Analytics and Usability Dashboard for CMF's MES",
+    feup: true,
+    name: "Analytics and UX Dashboard for CMF's MES",
     description: (
       <section className="project-card-description">
         Dashboard with customized analyitical insights for web components inside Critical Manufacturing&apos;s MES, an
@@ -143,7 +147,7 @@ export const projectsData: Project[] = [
     repo: 'https://github.com/kiko-g/usability-dashboard-mes',
     deployment: 'https://usability-dashboard-mes.vercel.app',
     color: 'blue',
-    stack: ['FEUP', 'React.js', 'Next.js', 'Typescript', 'Tailwind', 'Angular', 'Docker', 'Matomo', 'SQL'],
+    stack: ['React.js', 'Next.js', 'Typescript', 'Tailwind', 'Angular', 'Docker', 'Matomo', 'SQL'],
     media: [
       {
         type: 'image',
@@ -167,6 +171,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     beta: false,
+    feup: false,
     name: 'Finishers Hub',
     description: (
       <section className="project-card-description">
@@ -199,6 +204,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     beta: false,
+    feup: false,
     name: 'Guerner & Irmãos Website',
     startDate: '2023-01-15',
     endDate: '2023-09-28',
@@ -223,6 +229,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     beta: false,
+    feup: false,
     name: 'Time Table Selector',
     startDate: '2022-04-05',
     endDate: '2022-08-25',
@@ -252,6 +259,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Rushing B (2D Game)',
     startDate: '2022-02-15',
     endDate: '2022-04-10',
@@ -263,7 +271,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Unity', 'C#'],
+    stack: ['Unity', 'C#'],
     repo: 'https://github.com/kiko-g/rushing-b',
     deployment: 'https://miguelams.itch.io/rushing-b',
     media: [
@@ -293,6 +301,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Time Hopper (2D Game)',
     startDate: '2022-04-15',
     endDate: '2022-07-01',
@@ -305,7 +314,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Unity', 'C#'],
+    stack: ['Unity', 'C#'],
     repo: 'https://github.com/kiko-g/time-hopper',
     deployment: 'https://supertommc.itch.io/time-hopper',
     media: [
@@ -331,6 +340,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Virtual Assistant for MES',
     startDate: '2022-03-01',
     endDate: '2022-06-15',
@@ -341,7 +351,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Gatsby.js', 'Typescript', 'Angular', 'Python', 'SpaCy', 'Docker'],
+    stack: ['Gatsby.js', 'Typescript', 'Angular', 'Python', 'SpaCy', 'Docker'],
     repo: 'https://github.com/kiko-g/robin-lgp',
     deployment: 'https://robin-lgp.vercel.app/about#showcase',
     media: [
@@ -367,6 +377,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Health Checker',
     startDate: '2021-11-01',
     endDate: '2022-01-21',
@@ -377,7 +388,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'React.js', 'Express', 'Javascript', 'Tailwind', 'SPARQL'],
+    stack: ['React.js', 'Express', 'Javascript', 'Tailwind', 'SPARQL'],
     repo: 'https://github.com/kiko-g/health-checker',
     deployment: '',
     media: [
@@ -407,6 +418,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Internet of Everything',
     startDate: '2021-10-25',
     endDate: '2022-01-30',
@@ -416,7 +428,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'React.js', 'Tailwind', 'Javascript', 'Java', 'Python', 'MQTT', 'Docker'],
+    stack: ['React.js', 'Tailwind', 'Javascript', 'Java', 'Python', 'MQTT', 'Docker'],
     repo: 'https://github.com/kiko-g/internet-of-everything',
     deployment: null,
     media: [
@@ -446,6 +458,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Mafia in Town',
     startDate: '2020-12-14',
     endDate: '2020-10-12',
@@ -456,7 +469,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Java', 'JADE', 'SAJaS', 'Repast'],
+    stack: ['Java', 'JADE', 'SAJaS', 'Repast'],
     repo: 'https://github.com/kiko-g/feup-aiad',
     deployment: null,
     media: [
@@ -474,6 +487,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Tech Council',
     startDate: '2021-03-01',
     endDate: '2021-06-18',
@@ -483,7 +497,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Laravel', 'Bootstrap', 'HTML', 'CSS', 'Javascript', 'SQL', 'Docker'],
+    stack: ['Laravel', 'Bootstrap', 'HTML', 'CSS', 'Javascript', 'SQL', 'Docker'],
     repo: 'https://github.com/kiko-g/tech-council',
     deployment: null,
     media: [
@@ -505,6 +519,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Fuse 3D',
     startDate: '2019-09-25',
     endDate: '2020-01-10',
@@ -514,7 +529,7 @@ export const projectsData: Project[] = [
       </section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'Javascript', 'WebGL', 'Prolog'],
+    stack: ['Javascript', 'WebGL', 'Prolog'],
     repo: 'https://github.com/kiko-g/feup-laig',
     deployment: 'https://github.com/kiko-g/feup-laig#demo',
     media: [
@@ -532,6 +547,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'Pet Nexus',
     startDate: '2020-10-21',
     endDate: '2020-12-20',
@@ -539,7 +555,7 @@ export const projectsData: Project[] = [
       <section className="project-card-description">Pet adoption website built with all Vanilla technologies.,</section>
     ),
     color: 'slate',
-    stack: ['FEUP', 'HTML', 'CSS', 'Javascript', 'PHP', 'SQL'],
+    stack: ['HTML', 'CSS', 'Javascript', 'PHP', 'SQL'],
     repo: 'https://github.com/kiko-g/pet-nexus',
     deployment: 'https://web.fe.up.pt/~up201704790/ltw/',
     media: [
@@ -553,6 +569,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: false,
     beta: false,
+    feup: true,
     name: 'P2P Timeline Twitter Clone',
     startDate: '2021-11-08',
     endDate: '2022-02-05',
@@ -569,7 +586,7 @@ export const projectsData: Project[] = [
       },
     ],
     color: 'slate',
-    stack: ['FEUP', 'React.js', 'Tailwind', 'Python', 'Flask', 'Kademlia'],
+    stack: ['React.js', 'Tailwind', 'Python', 'Flask', 'Kademlia'],
     description: (
       <section className="project-card-description">Peer to peer Twitter clone using Kademlia DHT.,</section>
     ),

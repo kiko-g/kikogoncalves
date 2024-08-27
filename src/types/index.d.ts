@@ -39,19 +39,20 @@ type Media = {
 }
 type ISODateString = `${number}-${number}-${number}`
 export type Project = {
-  pinned?: boolean
-  relevant?: boolean
-  beta?: boolean
   name: string
   description: React.ReactNode
-  attachment?: string
-  repo: string | null
-  deployment: string | null
   startDate: ISODateString
   endDate: ISODateString | 'present'
+  repo: string | null
+  deployment: string | null
   color: ProjectColor
   stack: string[]
   media: Media[]
+  attachment?: string
+  beta?: boolean
+  pinned?: boolean
+  relevant?: boolean
+  feup?: boolean
 }
 
 export type ProjectCardColor = {

@@ -31,12 +31,17 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
       )}
     >
       <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
-        <div className="flex items-center justify-between gap-x-2">
-          <div className="flex items-center gap-x-2">
-            <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
-            <span className={clsx('h-3 w-3 rounded-full', cx.badge)} />
-          </div>
+        <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
+            <span className={clsx('h-2.5 w-2.5 rounded-full', cx.badge)} />
+            <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
+          </div>
+          <div className="flex items-start gap-2">
+            {project.feup && (
+              <span className="inline-flex items-center rounded-sm bg-feup px-1.5 py-1 text-xs font-bold uppercase leading-4 tracking-tight text-white">
+                FEUP
+              </span>
+            )}
             {project.beta && (
               <span className="inline-flex items-center rounded-sm bg-amber-400 px-1.5 py-1 text-xs font-bold uppercase leading-4 tracking-tight text-amber-950">
                 Beta
