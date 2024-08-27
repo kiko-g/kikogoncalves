@@ -322,12 +322,42 @@ function CurriculumVitae() {
 }
 
 function Photos() {
+  let images = [image1, image2, image3, image4, image5]
+
+  return (
+    <section id="photos" className="mt-6 overflow-hidden pt-12 sm:mt-12">
+      <SectionHeading noMargin slideTo="photos">
+        Photos
+      </SectionHeading>
+      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">Some of my favorite personal photos.</p>
+      <div className="-my-4 grid grid-cols-3 gap-8 py-2">
+        {images.map((image, imageIndex) => (
+          <div
+            key={image.src}
+            className={clsx(
+              'relative aspect-square w-full flex-none overflow-hidden rounded bg-navy-100 dark:bg-navy-800',
+            )}
+          >
+            <Image
+              src={image}
+              alt=""
+              sizes="(min-width: 1920px)"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function PhotosAlt() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
   let images = [image1, image2, image3, image4, image5]
 
   return (
     <section id="photos" className="mt-6 overflow-hidden pt-12 sm:mt-12">
-      <SectionHeading noMargin slideTo="resume">
+      <SectionHeading noMargin slideTo="photos">
         Photos
       </SectionHeading>
       <p className="mb-8 text-base text-navy-600 dark:text-navy-400">Some of my favorite personal photos.</p>
