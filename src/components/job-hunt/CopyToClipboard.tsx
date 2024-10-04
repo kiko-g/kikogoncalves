@@ -20,8 +20,8 @@ export function CopyToClipboard({ textTsx }: { textTsx: React.ReactNode }) {
       className={clsx(
         'flex max-h-8 items-center gap-1 rounded border px-2.5 py-0.5 text-sm transition',
         copied
-          ? 'border-green-200 bg-green-100 text-emerald-800'
-          : 'border-slate-300 bg-slate-100 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-600/20',
+          ? 'border-green-200 bg-green-100 text-emerald-800 dark:border-green-400/40 dark:bg-green-600/20 dark:text-emerald-50'
+          : 'border-gray-300 bg-gray-100 hover:bg-gray-200 dark:border-gray-700 dark:bg-gray-600/20 dark:hover:bg-gray-700/20',
       )}
     >
       <span>{copied ? 'Copied' : 'Copy'}</span>
