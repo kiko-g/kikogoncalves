@@ -22,6 +22,13 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
+                <NavLink href="/uses">Uses</NavLink>
+                {process.env.NODE_ENV === 'development' && (
+                  <>
+                    <NavLink href="/job-hunt">Job Hunt</NavLink>
+                    <NavLink href="/speaking">Speaking</NavLink>
+                  </>
+                )}
               </div>
               <p className="text-sm text-navy-400 dark:text-navy-500">
                 &copy; {new Date().getFullYear()} Francisco Gonçalves. All rights reserved.

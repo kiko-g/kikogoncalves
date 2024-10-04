@@ -18,9 +18,9 @@ export function CopyToClipboard({ textTsx }: { textTsx: React.ReactNode }) {
     <button
       onClick={handleCopy}
       className={clsx(
-        'flex items-center gap-1 rounded border px-2.5 py-0.5 text-sm transition',
+        'flex max-h-8 items-center gap-1 rounded border px-2.5 py-0.5 text-sm transition',
         copied
-          ? 'border-green-200 bg-green-50'
+          ? 'border-green-200 bg-green-100 text-emerald-800'
           : 'border-slate-300 bg-slate-100 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-600/20',
       )}
     >

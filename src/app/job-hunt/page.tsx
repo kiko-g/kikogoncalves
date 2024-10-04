@@ -1,7 +1,7 @@
+import Link from 'next/link'
 import { type Metadata } from 'next'
 import { LayoutSimple } from '@/components/LayoutSimple'
-import Link from 'next/link'
-import { CopyToClipboard } from '@/components/job-hunt/CopyToClipboard'
+import { JobHuntEntry } from '@/components/job-hunt/JobHuntEntry'
 
 export const metadata: Metadata = {
   title: 'Job Hunt',
@@ -14,7 +14,33 @@ export default function JobHunt() {
     {
       company: 'Decipad',
       position: 'Frontend Developer',
-      description: (
+      jobPost: (
+        <>
+          <h2 className="mb-2 text-xl font-bold">Who you are</h2>
+          <ul className="list-disc pl-4">
+            <li>Experience in building productivity tools</li>
+            <li>Experience developing React and React Native applications</li>
+            <li>Knowledge in SaaS billing, management, and APIs</li>
+            <li>Understanding of modern JS application packaging</li>
+            <li>Worked in open source software before (nice to have)</li>
+          </ul>
+          <h2 className="mb-2 mt-4 text-xl font-bold">What the job involves</h2>
+          <ul className="list-disc pl-4">
+            <li>Develop open-source libraries</li>
+            <li>Implement rich no-code and low-code interactions alongside our designers</li>
+            <li>Work with the product team to make the process of manipulating data super simple for our users</li>
+            <li>Craft well-documented, reusable, testable code</li>
+            <li>Be responsible for creating a product that is fast, responsive, and accessible</li>
+            <li>Be responsive for our Slate.js Notebook Implementation</li>
+          </ul>
+          <h2 className="mb-2 mt-4 text-xl font-bold">Application process</h2>
+          <p>
+            Send us your portfolio showcasing your work on complex web applications, along with a few lines explaining
+            why you&apos;re excited to join Decipad. Bonus points if you have explored our product (app.decipad.com)
+          </p>
+        </>
+      ),
+      application: (
         <p>
           I’m excited about the opportunity at Decipad because your innovative approach to digital storytelling and data
           visualization aligns perfectly with my interests. The focus on creativity and innovation resonates with me, as
@@ -44,30 +70,5 @@ export default function JobHunt() {
         <JobHuntEntry key={jobHuntEntryIdx} {...jobHuntEntry} />
       ))}
     </LayoutSimple>
-  )
-}
-
-function JobHuntEntry({
-  company,
-  position,
-  description,
-  link,
-}: {
-  company: string
-  position: string
-  description: React.ReactNode
-  link: string
-}) {
-  return (
-    <section className="border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-600/20">
-      <div className="flex items-center justify-between gap-2">
-        <div className="mb-1.5 flex flex-col">
-          <h3 className="flex-1 text-xl font-bold leading-7">{company}</h3>
-          <p className="text-sm text-slate-500 dark:text-slate-400">{position}</p>
-        </div>
-        <CopyToClipboard textTsx={description} />
-      </div>
-      <div className="max-w-2xl">{description}</div>
-    </section>
   )
 }
