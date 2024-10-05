@@ -1,12 +1,13 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React, { Suspense, useMemo, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import type { Technology, Project } from '@/types'
 import { resolveProjectCardColors, getDatespan, techStackIcons } from '@/lib/utilities'
 import { GitHubIcon } from '@/components/SocialIcons'
 import { LinkIcon } from '@heroicons/react/20/solid'
+import { VideoComponent } from '@/components/projects/Video'
 import { StarIcon, DocumentArrowDownIcon, ArrowLongRightIcon, ArrowLongLeftIcon } from '@heroicons/react/24/outline'
 
 type Props = {
@@ -15,7 +16,7 @@ type Props = {
   tagClickCallback?: (tagName: string) => void
 }
 
-export function ProjectCard({ project, tagClickCallback, compact }: Props) {
+export function ProjectCard({ project, tagClickCallback, compact = false }: Props) {
   const [selectedMediaIdx, setSelectedMediaIdx] = useState(0)
   const media = useMemo(() => project.media[selectedMediaIdx], [selectedMediaIdx, project.media])
 
@@ -65,9 +66,9 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
         </div>
 
         <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
-        <p className={clsx('mt-2', compact ? 'text-sm leading-snug' : 'text-base leading-normal')}>
+        <div className={clsx('mt-2', compact ? 'text-sm leading-snug' : 'text-base leading-normal')}>
           {project.description}
-        </p>
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => {
@@ -78,7 +79,7 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
                 onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
                 className={clsx(
                   tech === 'FEUP' ? 'bg-feup/80 text-white dark:bg-feup/50' : cx.bubble,
-                  'flex items-center gap-1 rounded px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
+                  'flex items-center gap-1 rounded-sm px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
                 )}
               >
                 {techIcon && (
@@ -139,20 +140,16 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
           'group relative order-2 max-w-full lg:order-2 lg:max-w-md',
         )}
       >
-        <div className={clsx('relative rounded-none shadow', cx.border)}>
+        <div className={clsx('relative min-w-full rounded-none', cx.border)}>
           {media.type === 'image' && (
             <Image
               src={media.src}
               alt={`${project.name}: Media ${selectedMediaIdx + 1}`}
-              className="rounded-none shadow"
+              className="rounded-none shadow transition-all"
               placeholder="blur"
             />
           )}
-          {media.type === 'video' && (
-            <video controls muted className={clsx('rounded-none shadow', cx.border)}>
-              <source src={media.src} type="video/mp4"></source>
-            </video>
-          )}
+          {media.type === 'video' && <VideoComponent media={media} additionalClassnames={cx.border} />}
         </div>
 
         {project.media.length > 1 && (
@@ -164,16 +161,16 @@ export function ProjectCard({ project, tagClickCallback, compact }: Props) {
             >
               <ArrowLongLeftIcon className="h-5 w-5" />
             </button>
-            <div className="mt-[1px] flex flex-1 items-center justify-center gap-2.5">
+            <div className="mt-[1px] flex flex-1 flex-wrap items-center justify-center gap-3">
               {project.media.map((_, mediaIdx) => (
                 <button
                   onClick={() => setSelectedMediaIdx(mediaIdx)}
                   key={`${project.name}-indicator-${mediaIdx}`}
                   title={`Show media ${mediaIdx + 1} for ${project.name}`}
                   className={clsx(
-                    'h-3 w-3 rounded-full hover:opacity-80',
                     cx.badge,
-                    selectedMediaIdx === mediaIdx ? `ring-offset-white dark:ring-offset-navy-800 ${cx.ring}` : '',
+                    'h-1 w-4 transition',
+                    selectedMediaIdx === mediaIdx ? '' : 'opacity-40 hover:opacity-80',
                   )}
                 />
               ))}

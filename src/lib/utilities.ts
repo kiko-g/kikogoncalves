@@ -79,7 +79,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-teal-600/10 dark:bg-teal-600/10',
         border: 'border-teal-600/30 dark:border-teal-600/50',
         badge: 'bg-teal-600 dark:bg-teal-500',
-        bubble: 'bg-teal-600/60 text-white dark:bg-teal-600/30',
+        bubble: 'bg-teal-800/50 text-white dark:bg-teal-600/30',
         textHover: 'hover:text-teal-600 dark:hover:text-teal-400',
         ring: 'ring-1 ring-offset-2 ring-teal-600 dark:ring-teal-500',
       }
@@ -88,7 +88,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: 'bg-purple-600/10 dark:bg-purple-400/10',
         border: 'border-purple-600/30 dark:border-purple-400/50',
         badge: 'bg-purple-600 dark:bg-purple-400',
-        bubble: 'bg-purple-600/60 text-white dark:bg-purple-400/30',
+        bubble: 'bg-purple-700/40 text-white dark:bg-purple-400/30',
         textHover: 'hover:text-purple-600 dark:hover:text-purple-400',
         ring: 'ring-1 ring-offset-2 ring-purple-600 dark:ring-purple-400',
       }

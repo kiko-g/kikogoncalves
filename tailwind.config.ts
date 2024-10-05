@@ -25,6 +25,13 @@ export default {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
+    minWidth: {
+      '96': '24rem',
+      '112': '28rem',
+      '128': '32rem',
+      '144': '36rem',
+      '160': '40rem',
+    },
     typography: typographyStyles,
     extend: {
       colors: {
