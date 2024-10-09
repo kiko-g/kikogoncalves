@@ -33,8 +33,8 @@ export const projectsData: Project[] = [
     startDate: '2023-10-02',
     endDate: 'present',
     repo: null,
-    deployment: 'https://jumpseller.com',
-    attachment: 'https://jumpseller.com/support',
+    deployment: 'https://jumpseller.com/sign-up/',
+    attachment: 'https://simple-clothes.jumpseller.com/',
     color: 'jumpseller',
     stack: ['Ruby', 'Ruby on Rails', 'React.js', 'Javascript', 'SQL', 'Liquid', 'AWS S3'],
     media: [
@@ -242,12 +242,16 @@ export const projectsData: Project[] = [
     ),
     color: 'red',
     stack: ['React.js', 'Typescript', 'Tailwind', 'Docker', 'SQL'],
-    repo: 'https://github.com/NIAEFEUP/tts-revamp-fe',
-    deployment: 'https://ni.fe.up.pt/tts',
+    repo: 'https://github.com/NIAEFEUP/tts-fe',
+    deployment: 'https://tts.niaefeup.pt/planner',
     media: [
       {
         type: 'image',
         src: media.tts.screenshot1,
+      },
+      {
+        type: 'image',
+        src: media.tts.screenshot2,
       },
       {
         type: 'video',

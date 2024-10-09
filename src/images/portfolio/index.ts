@@ -36,6 +36,7 @@ import TimeHopperScreenshot1 from './time-hopper/screenshot-1.png'
 import TimeHopperScreenshot2 from './time-hopper/screenshot-2.png'
 import TimeHopperScreenshot3 from './time-hopper/screenshot-3.png'
 import TimeTableSchedulerScreenshot1 from './tts/screenshot-1.png'
+import TimeTableSchedulerScreenshot2 from './tts/screenshot-2.png'
 
 export const media = {
   baggerFlow: {
@@ -109,5 +110,6 @@ export const media = {
   },
   tts: {
     screenshot1: TimeTableSchedulerScreenshot1,
+    screenshot2: TimeTableSchedulerScreenshot2,
   },
 }
