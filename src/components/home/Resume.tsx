@@ -20,8 +20,8 @@ export function Resume() {
       company: 'Critical Manufacturing',
       title: 'Software Engineer Intern',
       logo: logoCriticalManufacturing,
-      start: '02/2022',
-      end: '07/2022',
+      start: '01/2023',
+      end: '07/2023',
     },
     {
       company: 'Faculty of Engineering of the University of Porto',
