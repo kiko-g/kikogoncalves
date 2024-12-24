@@ -21,6 +21,7 @@ import NextJsSvg from './next.js.svg'
 import NodeJsSvg from './node.js.svg'
 import PhpSvg from './php.svg'
 import PythonSvg from './python.svg'
+import ReduxSvg from './redux.svg'
 import RubyRailsSvg from './rails.svg'
 import ReactJsSvg from './react.js.svg'
 import RubySvg from './ruby.svg'
@@ -56,6 +57,7 @@ export {
   PhpSvg,
   PythonSvg,
   ReactJsSvg,
+  ReduxSvg,
   RubyRailsSvg,
   RubySvg,
   RustSvg,

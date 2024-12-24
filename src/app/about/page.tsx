@@ -140,7 +140,7 @@ function Skillset({ useProgressBarColor = true }) {
         experimenting with new technologies, so this list is always changing. The progress bars are a rough estimate of
         my experience and familiriaty with each technology.
       </p>
-      <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-3 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-6 xl:grid-cols-5 xl:gap-6">
         {skills.map((skill, skillIdx) => {
           const techIcon = techStackIcons[skill.name.toLowerCase()]
           return (
@@ -155,7 +155,7 @@ function Skillset({ useProgressBarColor = true }) {
                   {skill.name}
                 </span>
               </div>
-              <div className="h-3 w-full rounded-none bg-navy-200 dark:bg-white/[3%]">
+              <div className="h-3 w-full overflow-hidden rounded-none bg-navy-200 dark:bg-white/5">
                 <div
                   className="bg-skillbar h-full rounded-none"
                   style={
@@ -164,7 +164,7 @@ function Skillset({ useProgressBarColor = true }) {
 
                       ...(useProgressBarColor
                         ? {
-                            border: `1px solid ${skill.color}f0`,
+                            border: `1px solid ${skill.color}b0`,
                             '--color-start': `${skill.color}b0`,
                             '--color-mid': `${skill.color}a0`,
                             '--color-end': `${skill.color}90`,

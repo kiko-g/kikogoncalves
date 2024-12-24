@@ -11,7 +11,7 @@ export function TechSkills() {
     <div className="rounded-2xl border border-navy-100 bg-navy-25 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Technologies I work with</span>
+        <span className="ml-3">Technologies</span>
       </h2>
 
       <p className="mt-2 text-sm text-navy-600 dark:text-navy-400">
