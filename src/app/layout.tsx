@@ -1,3 +1,7 @@
+import clsx from 'clsx'
+import '@/styles/prism.css'
+import '@/styles/global.css'
+
 import { Inter, Lexend } from 'next/font/google'
 import { type Metadata } from 'next'
 import { Providers } from '@/app/providers'
@@ -14,9 +18,6 @@ const lexend = Lexend({
   variable: '--font-lexend',
   display: 'swap',
 })
-
-import '@/styles/global.css'
-import clsx from 'clsx'
 
 export const metadata: Metadata = {
   title: {

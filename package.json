@@ -1,6 +1,6 @@
 {
-  "name": "tailwindui-template",
-  "version": "0.1.0",
+  "name": "kikogoncalves",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -22,7 +22,6 @@
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "@types/webpack-env": "^1.18.1",
-    "autoprefixer": "^10.4.12",
     "axios": "^1.7.2",
     "cheerio": "^1.0.0-rc.12",
     "clsx": "^2.1.1",
@@ -33,16 +32,18 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "^3.0.1",
-    "tailwindcss": "^3.4.17",
     "typescript": "5.1.6",
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.20",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.16",
+    "postcss": "^8.4.49",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.0",
+    "tailwindcss": "^3.4.17"
   }
 }

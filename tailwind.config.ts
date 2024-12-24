@@ -5,7 +5,7 @@ import typographyPlugin from '@tailwindcss/typography'
 import formsPlugin from '@tailwindcss/forms'
 
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   plugins: [typographyPlugin, formsPlugin],
   theme: {
