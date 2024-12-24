@@ -141,13 +141,13 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
         className={clsx(
           'relative block rounded px-4 py-2 transition',
           isActive
-            ? 'font-semibold text-primary-500 hover:opacity-80 dark:text-primary-500'
-            : 'hover:text-primary-500 dark:hover:text-primary-500',
+            ? 'font-semibold text-indigo-500 hover:opacity-80 dark:text-indigo-500'
+            : 'hover:text-indigo-500 dark:hover:text-indigo-500',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary-500/10 via-primary-500 to-primary-500/10 dark:from-primary-400/0 dark:via-primary-500/80 dark:to-primary-400/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-indigo-500/10 via-indigo-500 to-indigo-500/10 dark:from-indigo-400/0 dark:via-indigo-500/80 dark:to-indigo-400/0" />
         )}
       </Link>
     </li>
@@ -196,7 +196,7 @@ function ThemeToggle() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="hidden h-6 w-6 fill-primary-400 stroke-primary-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-400 [@media_not_(prefers-color-scheme:dark)]:fill-primary-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-500"
+        className="hidden h-6 w-6 fill-indigo-400 stroke-indigo-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-indigo-400 [@media_not_(prefers-color-scheme:dark)]:fill-indigo-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-indigo-500"
       />
     </button>
   )

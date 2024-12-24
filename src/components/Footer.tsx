@@ -4,7 +4,7 @@ import { ContainerInner, ContainerOuter } from '@/components/Container'
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="transition hover:text-primary-500 dark:hover:text-primary-400">
+    <Link href={href} className="transition hover:text-indigo-500 dark:hover:text-indigo-400">
       {children}
     </Link>
   )

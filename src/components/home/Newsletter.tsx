@@ -20,7 +20,7 @@ export function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-navy-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-navy-800/5 placeholder:text-navy-400 focus:border-primary-500 focus:outline-none focus:ring-4 focus:ring-primary-500/10 dark:border-navy-700 dark:bg-navy-700/[0.15] dark:text-navy-200 dark:placeholder:text-navy-500 dark:focus:border-primary-400 dark:focus:ring-primary-400/10 sm:text-sm"
+          className="min-w-0 flex-auto appearance-none rounded-md border border-navy-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-navy-800/5 placeholder:text-navy-400 focus:border-indigo-500 focus:outline-none focus:ring-4 focus:ring-indigo-500/10 dark:border-navy-700 dark:bg-navy-700/[0.15] dark:text-navy-200 dark:placeholder:text-navy-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/10 sm:text-sm"
         />
         <Button type="submit" className="ml-4 flex-none">
           Join

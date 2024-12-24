@@ -15,7 +15,7 @@ const lexend = Lexend({
   display: 'swap',
 })
 
-import '@/styles/tailwind.css'
+import '@/styles/global.css'
 import clsx from 'clsx'
 
 export const metadata: Metadata = {

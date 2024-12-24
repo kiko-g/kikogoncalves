@@ -149,12 +149,12 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case 'jumpseller':
       return {
-        background: 'bg-jumpseller-800/10 dark:bg-jumpseller-800/10',
-        border: 'border-jumpseller-800/50 dark:border-jumpseller-800/70',
-        badge: 'bg-jumpseller-800 dark:bg-jumpseller-700',
-        bubble: 'bg-jumpseller-800/60 text-white dark:bg-jumpseller-700/30',
-        textHover: 'hover:text-jumpseller-800 dark:hover:text-jumpseller-800',
-        ring: 'ring-1 ring-offset-2 ring-jumpseller-800 dark:ring-jumpseller-700',
+        background: 'bg-lime-800/10 dark:bg-lime-800/10',
+        border: 'border-lime-800/50 dark:border-lime-800/70',
+        badge: 'bg-lime-800 dark:bg-lime-700',
+        bubble: 'bg-lime-800/60 text-white dark:bg-lime-700/30',
+        textHover: 'hover:text-lime-800 dark:hover:text-lime-800',
+        ring: 'ring-1 ring-offset-2 ring-lime-800 dark:ring-lime-700',
       }
     case 'slate':
     default:

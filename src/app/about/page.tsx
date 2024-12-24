@@ -120,9 +120,9 @@ function SocialLink({
       <Link
         href={href}
         target="_blank"
-        className="group flex text-sm font-medium text-navy-800 transition hover:text-primary-500 dark:text-navy-200 dark:hover:text-primary-500"
+        className="group flex text-sm font-medium text-navy-800 transition hover:text-indigo-500 dark:text-navy-200 dark:hover:text-indigo-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-navy-500 transition group-hover:fill-primary-500" />
+        <Icon className="h-6 w-6 flex-none fill-navy-500 transition group-hover:fill-indigo-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
