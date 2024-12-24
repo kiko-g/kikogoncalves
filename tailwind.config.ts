@@ -106,10 +106,14 @@ export default {
     extend: {
       colors: {
         feup: "#842a18",
+        zinc: {
+          "25": "#fbfcfc",
+          "150": "#f0f0f1",
+          "925": "#121215",
+        },
         navy: {
           "25": "#fbfcfc",
           "50": "#f9fafa",
-          "75": "#f6f7f8",
           "100": "#f3f4f5",
           "200": "#e4e5e9",
           "300": "#d2d4d9",

@@ -13,9 +13,9 @@ import { LayersIcon } from "lucide-react"
 export function TechSkills() {
   return (
     <div className="bg-zinc-25 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+      <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <LayersIcon className="size-5 flex-none" />
-        <span className="ml-3">Technologies</span>
+        <span>Technologies</span>
       </h2>
 
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
