@@ -2,7 +2,7 @@ import Image from "next/image"
 import { type Role } from "@/types"
 import { Button } from "@/components/Button"
 import { logoJumpseller, logoCriticalManufacturing, logoFeup } from "@/images/logos/resume"
-import { ArrowDownIcon, BriefcaseIcon } from "lucide-react"
+import { ArrowDownIcon, BriefcaseBusinessIcon } from "lucide-react"
 
 export function Resume() {
   let resume: Array<Role> = [
@@ -35,7 +35,7 @@ export function Resume() {
   return (
     <div className="bg-zinc-25 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <BriefcaseBusinessIcon className="size-5 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
 
@@ -47,7 +47,7 @@ export function Resume() {
 
       <Button target="_blank" href="/cv.pdf" variant="primary" className="group mt-6 w-full">
         Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
   )

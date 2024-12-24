@@ -82,7 +82,7 @@ export function ProjectsShowcase() {
             )}
           >
             <span>Tags</span>
-            <PartyPopperIcon className="ml-1.5 h-4 w-4" />
+            <PartyPopperIcon className="ml-1.5 size-4" />
           </ListboxButton>
 
           <Transition
@@ -127,7 +127,7 @@ export function ProjectsShowcase() {
                         {tag.name} ({tag.freq})
                       </span>
                     </div>
-                    {isSelected && <CheckIcon className="h-4 w-4 data-[focus]:text-white" aria-hidden="true" />}
+                    {isSelected && <CheckIcon className="size-4 data-[focus]:text-white" aria-hidden="true" />}
                   </ListboxOption>
                 )
               })}
@@ -146,11 +146,7 @@ export function ProjectsShowcase() {
               : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
           )}
         >
-          {compact ? (
-            <Tally4Icon className="h-5 w-5 rotate-90 stroke-2" />
-          ) : (
-            <LayoutGrid className="h-5 w-5 stroke-2" />
-          )}
+          {compact ? <Tally4Icon className="size-5 rotate-90 stroke-2" /> : <LayoutGrid className="size-5 stroke-2" />}
         </button>
 
         <button
@@ -165,9 +161,9 @@ export function ProjectsShowcase() {
           )}
         >
           {showOnlyStarred ? (
-            <StarIcon className="h-5 w-5 fill-red-400" />
+            <StarIcon className="size-5 fill-red-400" />
           ) : (
-            <StarIcon className="h-5 w-5 stroke-red-400" />
+            <StarIcon className="size-5 stroke-red-400" />
           )}
         </button>
       </div>

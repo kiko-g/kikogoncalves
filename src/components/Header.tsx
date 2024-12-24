@@ -66,7 +66,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <XIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+                <XIcon className="size-5 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Navigation</h2>
             </div>
@@ -144,14 +144,14 @@ function ThemeToggle() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="h-6 w-6 fill-orange-500 stroke-orange-500 p-[1px] transition group-hover:fill-orange-500 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-500 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-600 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600"
+        className="size-5 fill-orange-500 stroke-orange-500 p-[1px] transition group-hover:fill-orange-500 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-500 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-600 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600"
       />
       <MoonIcon
         strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="hidden h-6 w-6 fill-indigo-400 stroke-indigo-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-indigo-400 [@media_not_(prefers-color-scheme:dark)]:fill-indigo-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-indigo-500"
+        className="hidden size-5 fill-indigo-400 stroke-indigo-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-indigo-400 [@media_not_(prefers-color-scheme:dark)]:fill-indigo-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-indigo-500"
       />
     </button>
   )

@@ -8,13 +8,13 @@ import { useTheme } from "next-themes"
 import { type Skill } from "@/types"
 import { skills } from "@/lib/data"
 import { techStackIcons } from "@/lib/utilities"
-import { BriefcaseIcon } from "lucide-react"
+import { LayersIcon } from "lucide-react"
 
 export function TechSkills() {
   return (
     <div className="bg-zinc-25 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <LayersIcon className="size-5 flex-none" />
         <span className="ml-3">Technologies</span>
       </h2>
 
@@ -78,7 +78,7 @@ function SkillBubble({
         <Image src={techIcon} alt={skill.name} width={13} height={13} className="mt-[1px] size-[13px] rounded-sm" />
       ) : (
         <span
-          className="mt-[3px] h-2 w-2 rounded-full"
+          className="mt-[3px] size-2 rounded-full"
           style={{
             backgroundColor: skill.color,
           }}

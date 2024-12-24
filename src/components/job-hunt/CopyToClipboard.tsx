@@ -26,7 +26,7 @@ export function CopyToClipboard({ textTsx }: { textTsx: React.ReactNode }) {
       )}
     >
       <span>{copied ? "Copied" : "Copy"}</span>
-      {copied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
+      {copied ? <CheckIcon className="size-4" /> : <ClipboardIcon className="size-4" />}
     </button>
   )
 }

@@ -27,7 +27,7 @@ export function SectionHeading({ children, slideTo, noMargin, withDivider, ...pr
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-7 top-[26px] opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>

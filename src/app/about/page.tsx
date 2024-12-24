@@ -122,7 +122,7 @@ function SocialLink({
         target="_blank"
         className="group flex items-center fill-zinc-800 text-sm font-medium transition hover:fill-indigo-500 dark:fill-zinc-200 dark:hover:fill-indigo-500"
       >
-        <Icon className="h-5 w-5 flex-none transition" />
+        <Icon className="size-5 flex-none transition" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -149,7 +149,7 @@ function Skillset({ useProgressBarColor = true }) {
                 {techIcon ? (
                   <Image src={techIcon} alt={skill.name} width={13} height={13} className="size-[13px] rounded-sm" />
                 ) : (
-                  <span className="block h-2 w-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
+                  <span className="block size-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
                 )}
                 <span className="text-xs font-medium leading-none tracking-tight text-zinc-600 dark:text-zinc-300">
                   {skill.name}
