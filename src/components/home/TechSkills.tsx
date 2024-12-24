@@ -2,9 +2,14 @@
 
 import clsx from 'clsx'
 import Link from 'next/link'
+import Image from 'next/image'
+
 import { type Skill } from '@/types'
 import { skills } from '@/lib/data'
+import { techStackIcons } from '@/lib/utilities'
+
 import { BriefcaseIcon } from '@/components/Icons'
+import { useTheme } from 'next-themes'
 
 export function TechSkills() {
   return (
@@ -23,17 +28,17 @@ export function TechSkills() {
       </p>
 
       <ul className="mt-4 flex flex-wrap gap-3">
-        {skills.map((skill) => (
-          <SkillBubble key={skill.name} skill={skill} background rounded lowercase />
-        ))}
+        {skills.map((skill) => {
+          return <SkillBubble key={skill.name} skill={skill} background bordered rounded lowercase />
+        })}
       </ul>
 
-      <div className="mt-2 flex items-center justify-end gap-2 border-t border-navy-200 pt-3 dark:border-navy-700/80 sm:mt-4">
+      <div className="mt-4 flex items-center justify-end gap-2 border-t border-navy-200 pt-2 dark:border-navy-700/80">
         <Link
           href="/about#skillset"
           className="flex items-center gap-1 text-sm text-navy-600 hover:underline dark:text-navy-400"
         >
-          See more
+          <span>See more</span>
         </Link>
       </div>
     </div>
@@ -53,23 +58,34 @@ function SkillBubble({
   lowercase?: boolean
   rounded?: boolean
 }) {
+  const { resolvedTheme } = useTheme()
+  const isDarkMode = resolvedTheme === 'dark'
+  const borderTransparencyChannel = isDarkMode ? '00' : '00'
+  const backgroundTransparencyChannel = isDarkMode ? '30' : '20'
+  const techIcon = techStackIcons[skill.name.toLowerCase()]
+
   return (
     <li
+      style={{
+        backgroundColor: background ? `${skill.color}${backgroundTransparencyChannel}` : 'transparent',
+        border: `1px solid ${bordered ? `${skill.color}${borderTransparencyChannel}` : 'transparent'}`,
+      }}
       className={clsx(
-        'flex items-center gap-1 px-2 pb-[6px] pt-[5px] leading-none',
+        'flex items-center gap-1 px-2 pb-[5px] pt-[4px] leading-none',
         rounded ? 'rounded-full' : 'rounded-none',
       )}
-      style={{
-        border: `1px solid ${bordered ? `${skill.color}80` : 'transparent'}`,
-        backgroundColor: background ? `${skill.color}22` : undefined,
-      }}
     >
-      <span
-        className="mt-[3px] h-2 w-2 rounded-full"
-        style={{
-          backgroundColor: skill.color,
-        }}
-      />
+      {techIcon ? (
+        <Image src={techIcon} alt={skill.name} width={13} height={13} className="mt-[1px] size-[13px] rounded-sm" />
+      ) : (
+        <span
+          className="mt-[3px] h-2 w-2 rounded-full"
+          style={{
+            backgroundColor: skill.color,
+          }}
+        />
+      )}
+
       <span className={clsx('text-xs font-normal leading-none tracking-tight', lowercase && 'lowercase')}>
         {skill.name}
       </span>
