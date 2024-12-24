@@ -3,24 +3,14 @@
 import { useContext } from "react"
 import { useRouter } from "next/navigation"
 
-import { AppContext } from "@/app/providers"
-import { Container } from "@/components/Container"
-import { Prose } from "@/components/Prose"
 import { type ArticleWithSlug } from "@/lib/articles"
 import { formatDate } from "@/lib/utilities"
+import { AppContext } from "@/app/providers"
 
-function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
+import { Prose } from "@/components/Prose"
+import { Container } from "@/components/Container"
+
+import { ArrowLeftIcon } from "lucide-react"
 
 export function ArticleLayout({ article, children }: { article: ArticleWithSlug; children: React.ReactNode }) {
   let router = useRouter()

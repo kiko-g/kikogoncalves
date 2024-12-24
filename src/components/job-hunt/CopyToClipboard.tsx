@@ -1,8 +1,9 @@
 "use client"
 
-import React, { useCallback, useState } from "react"
 import clsx from "clsx"
-import { CheckIcon, ClipboardIcon } from "@heroicons/react/24/outline"
+import React, { useCallback, useState } from "react"
+
+import { CheckIcon, ClipboardIcon } from "lucide-react"
 
 export function CopyToClipboard({ textTsx }: { textTsx: React.ReactNode }) {
   const convertedText = extractTextFromReactNode(textTsx)

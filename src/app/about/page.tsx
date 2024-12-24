@@ -10,11 +10,11 @@ import { JumpsellerLogoLink } from "@/components/about/JumpsellerLogoLink"
 import portraitImage from "@/images/portrait.jpg"
 import { Container } from "@/components/Container"
 import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons"
-import { EnvelopeIcon } from "@heroicons/react/24/solid"
 import { logoJumpseller } from "@/images/logos/resume"
 import { LinkedinLogoLink } from "@/components/about/LinkedinLogoLink"
 import { CriticalLogoLink } from "@/components/about/CriticalLogoLink"
 import { SectionHeading } from "@/components/SectionHeading"
+import { MailIcon } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "About",
@@ -88,7 +88,7 @@ export default function About() {
             </SocialLink>
             <SocialLink
               href="mailto:kikojpgoncalves@gmail.com"
-              icon={EnvelopeIcon}
+              icon={MailIcon}
               className="mt-8 border-t border-navy-100 pt-8 dark:border-navy-700/40"
             >
               kikogoncalves@gmail.com

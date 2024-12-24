@@ -1,15 +1,17 @@
 "use client"
 
-import { Fragment, useEffect, useRef, useState } from "react"
+import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
+import { Fragment, useEffect, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
-import { Popover, Transition } from "@headlessui/react"
-import clsx from "clsx"
+import avatarImageAEditedEnhanced from "@/images/avatar-edited-enhanced.png"
 
 import { Container } from "@/components/Container"
-import avatarImageAEditedEnhanced from "@/images/avatar-edited-enhanced.png"
+import { Popover, Transition } from "@headlessui/react"
+
+import { ChevronDownIcon, XIcon, SunIcon, MoonIcon } from "lucide-react"
 
 const navigation = [
   { name: "Home", href: "/", shown: true },
@@ -19,53 +21,6 @@ const navigation = [
   { name: "Uses", href: "/uses", shown: true },
   { name: "Speaking", href: "/speaking", shown: false },
 ].filter((item) => item.shown)
-
-function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-function ChevronDownIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
-      <path d="M1.75 1.75 4 4.25l2.25-2.5" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function SunIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg viewBox="0 0 24 24" {...props}>
-      <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z" />
-      <path
-        d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061"
-        fill="none"
-      />
-    </svg>
-  )
-}
-
-function MoonIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg viewBox="0 0 24 24" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
-        clipRule="evenodd"
-      />
-    </svg>
-  )
-}
 
 function MobileNavItem({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -111,7 +66,7 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <CloseIcon className="h-6 w-6 text-navy-500 dark:text-navy-400" />
+                <XIcon className="h-6 w-6 text-navy-500 dark:text-navy-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-navy-600 dark:text-navy-400">Navigation</h2>
             </div>

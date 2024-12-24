@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { type Role } from "@/types"
 import { Button } from "@/components/Button"
-import { BriefcaseIcon, MailIcon, ArrowDownIcon } from "@/components/Icons"
 import { logoJumpseller, logoCriticalManufacturing, logoFeup } from "@/images/logos/resume"
+import { ArrowDownIcon, BriefcaseIcon } from "lucide-react"
 
 export function Resume() {
   let resume: Array<Role> = [

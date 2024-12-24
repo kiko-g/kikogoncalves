@@ -6,9 +6,8 @@ import Image from "next/image"
 import type { Technology, Project } from "@/types"
 import { resolveProjectCardColors, getDatespan, techStackIcons } from "@/lib/utilities"
 import { GitHubIcon } from "@/components/SocialIcons"
-import { LinkIcon } from "@heroicons/react/20/solid"
 import { VideoComponent } from "@/components/projects/Video"
-import { StarIcon, DocumentArrowDownIcon, ArrowLongRightIcon, ArrowLongLeftIcon } from "@heroicons/react/24/outline"
+import { BookCheckIcon, LinkIcon, MoveLeftIcon, MoveRightIcon } from "lucide-react"
 
 type Props = {
   project: Project
@@ -101,7 +100,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <DocumentArrowDownIcon className="h-5 w-5 stroke-gray-700 dark:stroke-white" />
+              <BookCheckIcon className="h-5 w-5 stroke-gray-700 dark:stroke-white" />
               <span>{project.attachment}</span>
             </a>
           )}
@@ -159,7 +158,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               disabled={selectedMediaIdx === 0}
               onClick={() => setSelectedMediaIdx(selectedMediaIdx - 1)}
             >
-              <ArrowLongLeftIcon className="h-5 w-5" />
+              <MoveLeftIcon className="h-5 w-5" />
             </button>
             <div className="mt-[1px] flex flex-1 flex-wrap items-center justify-center gap-3">
               {project.media.map((_, mediaIdx) => (
@@ -180,7 +179,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               disabled={selectedMediaIdx === project.media.length - 1}
               onClick={() => setSelectedMediaIdx(selectedMediaIdx + 1)}
             >
-              <ArrowLongRightIcon className="h-5 w-5" />
+              <MoveRightIcon className="h-5 w-5" />
             </button>
           </div>
         )}

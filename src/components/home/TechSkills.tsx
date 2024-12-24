@@ -3,13 +3,12 @@
 import clsx from "clsx"
 import Link from "next/link"
 import Image from "next/image"
+import { useTheme } from "next-themes"
 
 import { type Skill } from "@/types"
 import { skills } from "@/lib/data"
 import { techStackIcons } from "@/lib/utilities"
-
-import { BriefcaseIcon } from "@/components/Icons"
-import { useTheme } from "next-themes"
+import { BriefcaseIcon } from "lucide-react"
 
 export function TechSkills() {
   return (

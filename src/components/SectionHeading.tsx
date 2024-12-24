@@ -1,6 +1,7 @@
-import React, { HTMLAttributes } from "react"
 import clsx from "clsx"
-import { LinkIcon } from "@heroicons/react/24/outline"
+import React, { HTMLAttributes } from "react"
+
+import { LinkIcon } from "lucide-react"
 
 type Props = HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode

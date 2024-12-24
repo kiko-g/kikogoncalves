@@ -3,16 +3,16 @@
 import React, { useMemo, useState } from "react"
 import clsx from "clsx"
 import Image from "next/image"
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
-import { ProjectCard } from "@/components/projects/ProjectCard"
-
 import { type Technology } from "@/types"
+
+import { useLocalStorageBoolean } from "@/lib/hooks"
 import { projectsData } from "@/lib/data"
 import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from "@/lib/utilities"
 
-import { ChevronUpDownIcon, Squares2X2Icon, StarIcon as StarIconOutline } from "@heroicons/react/24/outline"
-import { Bars4Icon, CheckIcon, StarIcon as StarIconSolid } from "@heroicons/react/24/solid"
-import { useLocalStorageBoolean } from "@/lib/hooks"
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
+import { ProjectCard } from "@/components/projects/ProjectCard"
+
+import { CheckIcon, LayoutGrid, PartyPopperIcon, StarIcon, Tally4Icon } from "lucide-react"
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
@@ -82,7 +82,7 @@ export function ProjectsShowcase() {
             )}
           >
             <span>Tags</span>
-            <ChevronUpDownIcon className="ml-1.5 h-4 w-4" />
+            <PartyPopperIcon className="ml-1.5 h-4 w-4" />
           </ListboxButton>
 
           <Transition
@@ -146,7 +146,11 @@ export function ProjectsShowcase() {
               : "border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300",
           )}
         >
-          {compact ? <Bars4Icon className="h-5 w-5 stroke-2" /> : <Squares2X2Icon className="h-5 w-5 stroke-2" />}
+          {compact ? (
+            <Tally4Icon className="h-5 w-5 rotate-90 stroke-2" />
+          ) : (
+            <LayoutGrid className="h-5 w-5 stroke-2" />
+          )}
         </button>
 
         <button
@@ -160,7 +164,11 @@ export function ProjectsShowcase() {
               : "border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300",
           )}
         >
-          {showOnlyStarred ? <StarIconSolid className="h-5 w-5" /> : <StarIconOutline className="h-5 w-5" />}
+          {showOnlyStarred ? (
+            <StarIcon className="h-5 w-5 fill-red-400" />
+          ) : (
+            <StarIcon className="h-5 w-5 stroke-red-400" />
+          )}
         </button>
       </div>
 
