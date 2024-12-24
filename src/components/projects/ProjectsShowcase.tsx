@@ -55,7 +55,7 @@ export function ProjectsShowcase() {
   return (
     <>
       <div className="mb-1 flex items-center justify-between gap-2 text-sm">
-        <span className="font-medium text-navy-600 dark:text-navy-400">
+        <span className="font-medium text-zinc-600 dark:text-zinc-400">
           Showing {filteredProjects.length} out of {projectsData.length} projects
         </span>
         <button onClick={clearFilters} className="hover:underline">
@@ -69,16 +69,16 @@ export function ProjectsShowcase() {
           value={query}
           placeholder="Search by project name"
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full flex-1 border border-navy-300 bg-navy-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-navy-400 hover:border-indigo-500/80 hover:bg-indigo-500/10 focus:border-indigo-500 focus:accent-indigo-500 focus:ring-0 focus:ring-indigo-500 focus:ring-offset-0 dark:border-navy-200/10 dark:bg-navy-100/5 dark:placeholder:text-navy-400 dark:hover:border-indigo-500/70 dark:hover:bg-indigo-500/10 dark:focus:border-indigo-500/50 dark:focus:ring-0 dark:focus:ring-indigo-500 lg:px-3 lg:py-2 lg:text-sm"
+          className="w-full flex-1 border border-zinc-300 bg-zinc-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-indigo-500/80 hover:bg-indigo-500/10 focus:border-indigo-500 focus:accent-indigo-500 focus:ring-0 focus:ring-indigo-500 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-indigo-500/70 dark:hover:bg-indigo-500/10 dark:focus:border-indigo-500/50 dark:focus:ring-0 dark:focus:ring-indigo-500 lg:px-3 lg:py-2 lg:text-sm"
         />
 
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
           <ListboxButton
             className={clsx(
-              "flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-navy-300",
+              "flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-zinc-300",
               selectedTags.length > 0
                 ? "border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20"
-                : "border-navy-300 bg-navy-50 text-navy-700 dark:border-navy-200/10 dark:bg-navy-100/5",
+                : "border-zinc-300 bg-zinc-50 text-zinc-700 dark:border-zinc-200/10 dark:bg-zinc-100/5",
             )}
           >
             <span>Tags</span>
@@ -95,9 +95,9 @@ export function ProjectsShowcase() {
           >
             <ListboxOptions
               anchor="bottom end"
-              className="mt-2 flex w-52 flex-col gap-0.5 rounded-md border border-navy-300 bg-white py-2 pl-2 pr-4 text-sm text-navy-950 transition dark:border-navy-200/10 dark:bg-navy-900 dark:text-navy-200"
+              className="mt-2 flex w-52 flex-col gap-0.5 rounded-md border border-zinc-300 bg-white py-2 pl-2 pr-4 text-sm text-zinc-950 transition dark:border-zinc-200/10 dark:bg-zinc-900 dark:text-zinc-200"
             >
-              <div className="mb-1 flex items-center justify-between gap-2 border-b border-navy-300 pb-1 dark:border-navy-200/10">
+              <div className="mb-1 flex items-center justify-between gap-2 border-b border-zinc-300 pb-1 dark:border-zinc-200/10">
                 <span className="pl-1 text-xs">{selectedTags.length} selected</span>
                 <button onClick={() => setSelectedTags([])} className="text-xs hover:underline">
                   Clear
@@ -111,7 +111,7 @@ export function ProjectsShowcase() {
                   <ListboxOption
                     key={tag.name}
                     value={tag}
-                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-navy-800/10 data-[focus]:text-navy-900 dark:data-[focus]:bg-white/10 dark:data-[focus]:text-white"
+                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-zinc-800/10 data-[focus]:text-zinc-900 dark:data-[focus]:bg-white/10 dark:data-[focus]:text-white"
                   >
                     <div className="inline-flex items-center gap-1">
                       {techIcon && (
@@ -143,7 +143,7 @@ export function ProjectsShowcase() {
             "hidden items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80 lg:flex",
             compact
               ? "border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20"
-              : "border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300",
+              : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
           )}
         >
           {compact ? (
@@ -160,8 +160,8 @@ export function ProjectsShowcase() {
           className={clsx(
             "flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80",
             showOnlyStarred
-              ? "text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-navy-300"
-              : "border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300",
+              ? "text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-zinc-300"
+              : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
           )}
         >
           {showOnlyStarred ? (

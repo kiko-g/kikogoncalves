@@ -30,16 +30,16 @@ export default function About() {
             <Image
               src={portraitImage}
               alt=""
-              className="aspect-square rotate-3 rounded-2xl bg-navy-100 object-cover dark:bg-navy-800"
+              className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
           </div>
         </div>
 
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-navy-800 dark:text-navy-100 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             I’m Francisco. I live in Porto, Portugal where I’m busy crafting cool software projects.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-navy-600 dark:text-navy-400">
+          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               I’m a {calculateAge()} year old Software Engineer based in Porto. I have a Masters Degree in Informatics
               and Computer Engineering, from FEUP, the Factulty of Engineering of the University of Porto (
@@ -89,7 +89,7 @@ export default function About() {
             <SocialLink
               href="mailto:kikojpgoncalves@gmail.com"
               icon={MailIcon}
-              className="mt-8 border-t border-navy-100 pt-8 dark:border-navy-700/40"
+              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
               kikogoncalves@gmail.com
             </SocialLink>
@@ -120,9 +120,9 @@ function SocialLink({
       <Link
         href={href}
         target="_blank"
-        className="group flex text-sm font-medium text-navy-800 transition hover:text-indigo-500 dark:text-navy-200 dark:hover:text-indigo-500"
+        className="group flex items-center fill-zinc-800 text-sm font-medium transition hover:fill-indigo-500 dark:fill-zinc-200 dark:hover:fill-indigo-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-navy-500 transition group-hover:fill-indigo-500" />
+        <Icon className="h-5 w-5 flex-none transition" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -135,7 +135,7 @@ function Skillset({ useProgressBarColor = true }) {
       <SectionHeading noMargin slideTo="skillset">
         Skillset
       </SectionHeading>
-      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">
         Here’s a breakdown of my skills and experience in the tech field. I’m always learning new things and
         experimenting with new technologies, so this list is always changing. The progress bars are a rough estimate of
         my experience and familiriaty with each technology.
@@ -151,11 +151,11 @@ function Skillset({ useProgressBarColor = true }) {
                 ) : (
                   <span className="block h-2 w-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
                 )}
-                <span className="text-xs font-medium leading-none tracking-tight text-navy-600 dark:text-navy-300">
+                <span className="text-xs font-medium leading-none tracking-tight text-zinc-600 dark:text-zinc-300">
                   {skill.name}
                 </span>
               </div>
-              <div className="h-3 w-full overflow-hidden rounded-none bg-navy-200 dark:bg-white/5">
+              <div className="h-3 w-full overflow-hidden rounded-none bg-zinc-200 dark:bg-white/5">
                 <div
                   className="bg-skillbar h-full rounded-none"
                   style={
@@ -188,21 +188,21 @@ function CurriculumVitae() {
       <SectionHeading noMargin slideTo="resume">
         Resume
       </SectionHeading>
-      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">
         Here’s a brief overview of my professional experience and education. I’m always looking for new opportunities
         and challenges, so feel free to reach out if you think I’d be a good fit for your team.
       </p>
 
       {/* Languages */}
-      <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
-        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-2xl">
+      <div className="mt-6 border-t border-zinc-200 pt-8 dark:border-zinc-700/80 sm:mt-12">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-2xl">
           Languages
         </h4>
-        <p className="mb-2 text-base text-navy-600 dark:text-navy-400">
+        <p className="mb-2 text-base text-zinc-600 dark:text-zinc-400">
           Here are the languages I speak and my proficiency level in each.
         </p>
 
-        <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+        <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
           <li>
             <strong>Portuguese</strong>: Native
           </li>
@@ -219,14 +219,14 @@ function CurriculumVitae() {
       </div>
 
       {/* Education */}
-      <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
-        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-2xl">
+      <div className="mt-6 border-t border-zinc-200 pt-8 dark:border-zinc-700/80 sm:mt-12">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-2xl">
           Education
         </h4>
-        <h5 className="mb-0 flex-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+        <h5 className="mb-0 flex-1 text-base font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-lg">
           Faculty of Engineering of the University of Porto
         </h5>
-        <p className="text-base font-normal text-navy-700 dark:text-navy-200">
+        <p className="text-base font-normal text-zinc-700 dark:text-zinc-200">
           <Link
             target="_blank"
             href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31224&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
@@ -245,7 +245,7 @@ function CurriculumVitae() {
           in Informatics and Computer Engineering
         </p>
 
-        <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+        <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
           <li>Completed both the bachelor and master degrees, finishing the masters’ averaging 18/20</li>
           <li>
             Relevant <strong>bachelor coursework</strong>: Web App Development, Algorithms and Data Structures,
@@ -259,22 +259,22 @@ function CurriculumVitae() {
       </div>
 
       {/* Experience */}
-      <div className="mt-6 border-t border-navy-200 pt-8 dark:border-navy-700/80 sm:mt-12">
-        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-2xl">
+      <div className="mt-6 border-t border-zinc-200 pt-8 dark:border-zinc-700/80 sm:mt-12">
+        <h4 className="mb-1 flex-1 text-xl font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-2xl">
           Professional Experience
         </h4>
 
         <ul className="flex flex-col gap-y-8">
           {/* Jumpseller */}
           <li>
-            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-lg">
               <span>Jumpseller</span>
               <JumpsellerLogoLink />
               <LinkedinLogoLink href="https://www.linkedin.com/company/jumpseller/" className="mt-[3px]" />
             </h5>
-            <p className="text-base font-normal text-navy-700 dark:text-navy-200">Full-stack Engineer</p>
+            <p className="text-base font-normal text-zinc-700 dark:text-zinc-200">Full-stack Engineer</p>
 
-            <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+            <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
               <li>
                 Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{" "}
                 <strong>Code Editor</strong> for seamless customization as part of the Themes Team.
@@ -288,13 +288,13 @@ function CurriculumVitae() {
 
           {/* Critical Manufacturing */}
           <li>
-            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-navy-700 dark:text-navy-200 sm:text-lg">
+            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-lg">
               <span>Critical Manufacturing</span>
               <CriticalLogoLink />
               <LinkedinLogoLink href="https://www.linkedin.com/company/critical-manufacturing/" />
             </h5>
-            <p className="text-base font-normal text-navy-700 dark:text-navy-200">Software Engineer Intern</p>
-            <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
+            <p className="text-base font-normal text-zinc-700 dark:text-zinc-200">Software Engineer Intern</p>
+            <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
               <li>
                 Interned at Critical Manufacturing as a part of product development team. Work focused on collecting web
                 analytics and usability metrics for Critical’s Manufacturing Execution System (MES) aiming to improve
@@ -333,13 +333,13 @@ function Photos() {
       <SectionHeading noMargin slideTo="photos">
         Photos
       </SectionHeading>
-      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">Some of my favorite personal photos.</p>
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Some of my favorite personal photos.</p>
       <div className="-my-4 grid grid-cols-3 gap-8 py-2">
         {images.map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
-              "relative aspect-square w-full flex-none overflow-hidden rounded bg-navy-100 dark:bg-navy-800",
+              "relative aspect-square w-full flex-none overflow-hidden rounded bg-zinc-100 dark:bg-zinc-800",
             )}
           >
             <Image
@@ -364,13 +364,13 @@ function PhotosAlt() {
       <SectionHeading noMargin slideTo="photos">
         Photos
       </SectionHeading>
-      <p className="mb-8 text-base text-navy-600 dark:text-navy-400">Some of my favorite personal photos.</p>
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Some of my favorite personal photos.</p>
       <div className="-my-4 flex justify-center gap-5 overflow-visible py-4 sm:gap-8">
         {images.map((image, imageIndex) => (
           <div
             key={image.src}
             className={clsx(
-              "relative aspect-[8/10] w-44 flex-none overflow-hidden rounded-xl bg-navy-100 dark:bg-navy-800 sm:aspect-[9/10] sm:w-72 sm:rounded-2xl",
+              "relative aspect-[8/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:aspect-[9/10] sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length],
             )}
           >

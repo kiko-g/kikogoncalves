@@ -17,7 +17,7 @@ export function SectionHeading({ children, slideTo, noMargin, withDivider, ...pr
       className={clsx(
         noMargin ? "mb-0" : "mb-3",
         withDivider && "border-dimmed border-b pb-2.5",
-        "mb-3 flex flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl",
+        "mb-3 flex flex-1 text-3xl font-bold leading-7 tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl",
       )}
     >
       {children}

@@ -90,7 +90,7 @@
   }
 
   .internal-link {
-    @apply font-medium text-navy-800 hover:underline dark:text-navy-300;
+    @apply font-medium text-zinc-800 hover:underline dark:text-zinc-300;
   }
 
   .internal-link.highlight {

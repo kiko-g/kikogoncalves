@@ -16,10 +16,10 @@ export default async function Home() {
     <>
       <Container className="mt-9">
         <div className="max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight text-navy-800 dark:text-navy-100 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Francisco Gonçalves
           </h1>
-          <p className="mt-6 text-base text-navy-600 dark:text-navy-400">
+          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a
             full-stack engineer, where we develop a platform for clients to create and deeply customize online stores. I
             also occasionally work as a freelancer or solopreneur, developing websites for clients or useful cool

@@ -12,13 +12,13 @@ import { BriefcaseIcon } from "lucide-react"
 
 export function TechSkills() {
   return (
-    <div className="rounded-2xl border border-navy-100 bg-navy-25 p-6 dark:border-navy-700/40 dark:bg-white/[3%]">
-      <h2 className="flex text-sm font-semibold text-navy-900 dark:text-navy-100">
+    <div className="bg-zinc-25 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Technologies</span>
       </h2>
 
-      <p className="mt-2 text-sm text-navy-600 dark:text-navy-400">
+      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         Some of the technologies I have experience with. Visit the{" "}
         <Link className="underline hover:opacity-80" href="/projects">
           projects
@@ -32,10 +32,10 @@ export function TechSkills() {
         })}
       </ul>
 
-      <div className="mt-4 flex items-center justify-end gap-2 border-t border-navy-200 pt-2 dark:border-navy-700/80">
+      <div className="mt-4 flex items-center justify-end gap-2 border-t border-zinc-200 pt-2 dark:border-zinc-700/80">
         <Link
           href="/about#skillset"
-          className="flex items-center gap-1 text-sm text-navy-600 hover:underline dark:text-navy-400"
+          className="flex items-center gap-1 text-sm text-zinc-600 hover:underline dark:text-zinc-400"
         >
           <span>See more</span>
         </Link>
