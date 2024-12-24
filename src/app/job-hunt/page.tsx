@@ -47,11 +47,11 @@ export default function JobHunt() {
           I love exploring new ways to create user-friendly digital tools. I believe my skills and passion for frontend
           development match the job description well, and I’m confident I can contribute significantly to Decipad&apos;s
           product. You can check out my technical profile and experience in my CV (
-          <Link href="kikogoncalves.com/cv.pdf" className="outer-link">
+          <Link href="kikogoncalves.com/cv.pdf" className="external-link">
             kikogoncalves.com/cv.pdf
           </Link>
           ) and portfolio (
-          <Link href="kikogoncalves.com/projects" className="outer-link">
+          <Link href="kikogoncalves.com/projects" className="external-link">
             kikogoncalves.com/projects
           </Link>
           ), which showcase projects that align well with this opportunity.

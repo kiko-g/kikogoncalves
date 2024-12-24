@@ -45,7 +45,7 @@ export default function Uses() {
             Visual Studio Code is hard to beat for me. The amount of customization I have put into it over the years has
             made me very productive. I have tried other editors but I always come back to VS Code. If you&apos;re
             interested check out my{" "}
-            <a className="outer-link" href="https://github.com/kiko-g/dotfiles/tree/main/vscode">
+            <a className="external-link" href="https://github.com/kiko-g/dotfiles/tree/main/vscode">
               VS Code settings
             </a>
             .

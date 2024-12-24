@@ -44,7 +44,7 @@ export default function About() {
               I’m a {calculateAge()} year old Software Engineer based in Porto. I have a Masters Degree in Informatics
               and Computer Engineering, from FEUP, the Factulty of Engineering of the University of Porto (
               <Link
-                className="outer-link"
+                className="external-link"
                 href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
                 target="_blank"
               >
@@ -58,13 +58,13 @@ export default function About() {
             </p>
             <p>
               Right now I am working as a full-stack developer at{" "}
-              <Link href="https://jumpseller.com" target="_blank" className="outer-link inline-flex gap-0.5">
+              <Link href="https://jumpseller.com" target="_blank" className="external-link inline-flex gap-0.5">
                 <span>Jumpseller</span>
                 <Image src={logoJumpseller} alt="Jumpseller" width={20} height={20} />
               </Link>
               where I am working to improve the themes of e-commerce platforms and their customization/edition. If
               you’re interested in my profile reach me on{" "}
-              <Link href="https://linkedin.com/in/kikogoncalves" className="outer-link" target="_blank">
+              <Link href="https://linkedin.com/in/kikogoncalves" className="external-link" target="_blank">
                 LinkedIn
               </Link>
               , as I’m always interested in hearing about opportunities for a full-stack or frontend position.
@@ -230,7 +230,7 @@ function CurriculumVitae() {
           <Link
             target="_blank"
             href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31224&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
-            className="outer-link"
+            className="external-link"
           >
             Bachelor
           </Link>{" "}
@@ -238,7 +238,7 @@ function CurriculumVitae() {
           <Link
             target="_blank"
             href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
-            className="outer-link"
+            className="external-link"
           >
             Master
           </Link>{" "}
@@ -299,7 +299,11 @@ function CurriculumVitae() {
                 Interned at Critical Manufacturing as a part of product development team. Work focused on collecting web
                 analytics and usability metrics for Critical’s Manufacturing Execution System (MES) aiming to improve
                 UI/UX. Dashboard preview{" "}
-                <Link href="https://usability-dashboard-mes.vercel.app/wizards" className="outer-link" target="_blank">
+                <Link
+                  href="https://usability-dashboard-mes.vercel.app/wizards"
+                  className="external-link"
+                  target="_blank"
+                >
                   deployed here
                 </Link>
                 .
@@ -308,7 +312,7 @@ function CurriculumVitae() {
                 Developed a custom dashboard for usability metrics in Critical MES, offering insights for its
                 components. The dashboard democratizes the UX improvement process by scoring components and highlighting
                 key metrics within them. Wrote a dissertation around this topic{" "}
-                <Link href="https://kikogoncalves.com/dissertation.pdf" className="outer-link" target="_blank">
+                <Link href="https://kikogoncalves.com/dissertation.pdf" className="external-link" target="_blank">
                   available here
                 </Link>
                 .

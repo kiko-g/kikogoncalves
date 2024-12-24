@@ -24,15 +24,15 @@ export default async function Home() {
             full-stack engineer, where we develop a platform for clients to create and deeply customize online stores. I
             also occasionally work as a freelancer or solopreneur, developing websites for clients or useful cool
             projects.{" "}
-            <Link href="/about" className="inner-link">
+            <Link href="/about" className="internal-link">
               Read more about me
             </Link>{" "}
             or check out my{" "}
-            <Link href="/about#skillset" className="inner-link">
+            <Link href="/about#skillset" className="internal-link">
               skills
             </Link>{" "}
             and{" "}
-            <Link href="/projects" className="inner-link highlight">
+            <Link href="/projects" className="internal-link highlight">
               projects
             </Link>
             .
