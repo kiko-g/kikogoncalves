@@ -185,7 +185,7 @@ function Avatar({
   return (
     <Link href="/" aria-label="Home" className={clsx(className, "pointer-events-auto")} {...props}>
       <Image
-        src={avatarImageAEditedEnhanced}
+        src="/profile.svg"
         alt="Description"
         width={large ? 640 : 360}
         height={large ? 640 : 360}
