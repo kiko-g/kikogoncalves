@@ -1,26 +1,26 @@
-'use client'
+"use client"
 
-import React, { useMemo, useState } from 'react'
-import clsx from 'clsx'
-import Image from 'next/image'
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
-import { ProjectCard } from '@/components/projects/ProjectCard'
+import React, { useMemo, useState } from "react"
+import clsx from "clsx"
+import Image from "next/image"
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
+import { ProjectCard } from "@/components/projects/ProjectCard"
 
-import { type Technology } from '@/types'
-import { projectsData } from '@/lib/data'
-import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from '@/lib/utilities'
+import { type Technology } from "@/types"
+import { projectsData } from "@/lib/data"
+import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from "@/lib/utilities"
 
-import { ChevronUpDownIcon, Squares2X2Icon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
-import { Bars4Icon, CheckIcon, StarIcon as StarIconSolid } from '@heroicons/react/24/solid'
-import { useLocalStorageBoolean } from '@/lib/hooks'
+import { ChevronUpDownIcon, Squares2X2Icon, StarIcon as StarIconOutline } from "@heroicons/react/24/outline"
+import { Bars4Icon, CheckIcon, StarIcon as StarIconSolid } from "@heroicons/react/24/solid"
+import { useLocalStorageBoolean } from "@/lib/hooks"
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
   const [selectedTags, setSelectedTags] = useState<Technology[]>([])
 
-  const [query, setQuery] = useState('')
-  const [compact, setCompact] = useLocalStorageBoolean('kikogoncalves.projects.compact', false)
-  const [showOnlyStarred, setShowOnlyStarred] = useLocalStorageBoolean('kikogoncalves.projects.starred', false)
+  const [query, setQuery] = useState("")
+  const [compact, setCompact] = useLocalStorageBoolean("kikogoncalves.projects.compact", false)
+  const [showOnlyStarred, setShowOnlyStarred] = useLocalStorageBoolean("kikogoncalves.projects.starred", false)
   const filteredProjects = useMemo(
     () =>
       projectsData
@@ -32,7 +32,7 @@ export function ProjectsShowcase() {
   )
 
   function clearFilters() {
-    setQuery('')
+    setQuery("")
     setSelectedTags([])
     setCompact(false)
     setShowOnlyStarred(false)
@@ -69,16 +69,16 @@ export function ProjectsShowcase() {
           value={query}
           placeholder="Search by project name"
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full flex-1 border border-navy-300 bg-navy-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-navy-400 hover:border-indigo-500/80 hover:bg-indigo-500/10 focus:border-indigo-500 focus:accent-indigo-500 focus:ring-0 focus:ring-indigo-500 focus:ring-offset-0 dark:border-navy-200/10  dark:bg-navy-100/5 dark:placeholder:text-navy-400 dark:hover:border-indigo-500/70 dark:hover:bg-indigo-500/10 dark:focus:border-indigo-500/50 dark:focus:ring-0 dark:focus:ring-indigo-500 lg:px-3 lg:py-2 lg:text-sm"
+          className="w-full flex-1 border border-navy-300 bg-navy-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-navy-400 hover:border-indigo-500/80 hover:bg-indigo-500/10 focus:border-indigo-500 focus:accent-indigo-500 focus:ring-0 focus:ring-indigo-500 focus:ring-offset-0 dark:border-navy-200/10 dark:bg-navy-100/5 dark:placeholder:text-navy-400 dark:hover:border-indigo-500/70 dark:hover:bg-indigo-500/10 dark:focus:border-indigo-500/50 dark:focus:ring-0 dark:focus:ring-indigo-500 lg:px-3 lg:py-2 lg:text-sm"
         />
 
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
           <ListboxButton
             className={clsx(
-              'flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-navy-300',
+              "flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-navy-300",
               selectedTags.length > 0
-                ? 'border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20'
-                : 'border-navy-300 bg-navy-50 text-navy-700 dark:border-navy-200/10 dark:bg-navy-100/5',
+                ? "border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20"
+                : "border-navy-300 bg-navy-50 text-navy-700 dark:border-navy-200/10 dark:bg-navy-100/5",
             )}
           >
             <span>Tags</span>
@@ -123,7 +123,7 @@ export function ProjectsShowcase() {
                           className="size-[13px] rounded-sm"
                         />
                       )}
-                      <span className={clsx('block truncate', isSelected ? '' : '')}>
+                      <span className={clsx("block truncate", isSelected ? "" : "")}>
                         {tag.name} ({tag.freq})
                       </span>
                     </div>
@@ -140,10 +140,10 @@ export function ProjectsShowcase() {
           title="Toggle compact view"
           onClick={() => setCompact((prev) => !prev)}
           className={clsx(
-            'hidden items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80 lg:flex',
+            "hidden items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80 lg:flex",
             compact
-              ? 'border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20'
-              : 'border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
+              ? "border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20"
+              : "border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300",
           )}
         >
           {compact ? <Bars4Icon className="h-5 w-5 stroke-2" /> : <Squares2X2Icon className="h-5 w-5 stroke-2" />}
@@ -154,10 +154,10 @@ export function ProjectsShowcase() {
           title="Toggle starred projects"
           onClick={() => setShowOnlyStarred((prev) => !prev)}
           className={clsx(
-            'flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80',
+            "flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80",
             showOnlyStarred
-              ? 'text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-navy-300'
-              : 'border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300',
+              ? "text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-navy-300"
+              : "border-navy-300 bg-navy-50 text-navy-600 dark:border-navy-200/10 dark:bg-navy-100/5 dark:text-navy-300",
           )}
         >
           {showOnlyStarred ? <StarIconSolid className="h-5 w-5" /> : <StarIconOutline className="h-5 w-5" />}
@@ -167,8 +167,8 @@ export function ProjectsShowcase() {
       <ul
         role="list"
         className={clsx(
-          'grid',
-          compact ? 'grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2' : 'grid-cols-1 gap-x-6 gap-y-10',
+          "grid",
+          compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10",
         )}
       >
         {filteredProjects.map((project) => (

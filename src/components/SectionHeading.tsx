@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from 'react'
-import clsx from 'clsx'
-import { LinkIcon } from '@heroicons/react/24/outline'
+import React, { HTMLAttributes } from "react"
+import clsx from "clsx"
+import { LinkIcon } from "@heroicons/react/24/outline"
 
 type Props = HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode
@@ -14,9 +14,9 @@ export function SectionHeading({ children, slideTo, noMargin, withDivider, ...pr
     <h2
       {...props}
       className={clsx(
-        noMargin ? 'mb-0' : 'mb-3',
-        withDivider && 'border-dimmed border-b pb-2.5',
-        'mb-3 flex flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl',
+        noMargin ? "mb-0" : "mb-3",
+        withDivider && "border-dimmed border-b pb-2.5",
+        "mb-3 flex flex-1 text-3xl font-bold leading-7 tracking-tight text-navy-800 dark:text-navy-100 sm:text-4xl",
       )}
     >
       {children}

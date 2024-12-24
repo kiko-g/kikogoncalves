@@ -9,7 +9,7 @@ export interface Skill {
 export interface Role {
   company: string
   title: string
-  logo: ImageProps['src']
+  logo: ImageProps["src"]
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
 }
@@ -21,20 +21,20 @@ export type Technology = {
 }
 
 export type ProjectColor =
-  | 'blue'
-  | 'teal'
-  | 'purple'
-  | 'pink'
-  | 'red'
-  | 'orange'
-  | 'forest'
-  | 'indigo'
-  | 'amber'
-  | 'slate'
-  | 'jumpseller'
+  | "blue"
+  | "teal"
+  | "purple"
+  | "pink"
+  | "red"
+  | "orange"
+  | "forest"
+  | "indigo"
+  | "amber"
+  | "slate"
+  | "jumpseller"
 
 type Media = {
-  type: 'image' | 'video'
+  type: "image" | "video"
   src: StaticImageData | string | null
 }
 type ISODateString = `${number}-${number}-${number}`
@@ -42,7 +42,7 @@ export type Project = {
   name: string
   description: React.ReactNode
   startDate: ISODateString
-  endDate: ISODateString | 'present'
+  endDate: ISODateString | "present"
   repo: string | null
   deployment: string | null
   color: ProjectColor

@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import { type Metadata } from 'next'
-import { LayoutSimple } from '@/components/LayoutSimple'
-import { JobHuntEntry } from '@/components/job-hunt/JobHuntEntry'
+import Link from "next/link"
+import { type Metadata } from "next"
+import { LayoutSimple } from "@/components/LayoutSimple"
+import { JobHuntEntry } from "@/components/job-hunt/JobHuntEntry"
 
 export const metadata: Metadata = {
-  title: 'Job Hunt',
+  title: "Job Hunt",
   description:
     "This is a playground for me to test out different job hunt strategies and tactics. I'll be sharing my progress and learnings here",
 }
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function JobHunt() {
   const jobHuntEntries = [
     {
-      company: 'Decipad',
-      position: 'Frontend Developer',
+      company: "Decipad",
+      position: "Frontend Developer",
       jobPost: (
         <>
           <h2 className="mb-2 text-xl font-bold">Who you are</h2>
@@ -57,11 +57,11 @@ export default function JobHunt() {
           ), which showcase projects that align well with this opportunity.
         </p>
       ),
-      link: 'kikogoncalves.com/cv.pdf',
+      link: "kikogoncalves.com/cv.pdf",
     },
     {
-      company: 'Augusta Labs',
-      position: 'Full Stack Developer',
+      company: "Augusta Labs",
+      position: "Full Stack Developer",
       jobPost: (
         <>
           <h2 className="mb-2 text-xl font-bold">About Augusta Labs</h2>

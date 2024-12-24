@@ -1,6 +1,6 @@
-import Link from 'next/link'
+import Link from "next/link"
 
-import { ContainerInner, ContainerOuter } from '@/components/Container'
+import { ContainerInner, ContainerOuter } from "@/components/Container"
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -23,7 +23,7 @@ export function Footer() {
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/uses">Uses</NavLink>
-                {process.env.NODE_ENV === 'development' && (
+                {process.env.NODE_ENV === "development" && (
                   <>
                     <NavLink href="/job-hunt">Job Hunt</NavLink>
                     <NavLink href="/speaking">Speaking</NavLink>

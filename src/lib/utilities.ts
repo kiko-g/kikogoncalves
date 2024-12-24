@@ -1,4 +1,4 @@
-import type { ProjectColor, ProjectCardColor, Project, Technology } from '@/types'
+import type { ProjectColor, ProjectCardColor, Project, Technology } from "@/types"
 import {
   AngularSvg,
   AwsSvg,
@@ -33,14 +33,14 @@ import {
   LaravelSvg,
   CppSvg,
   FlutterSvg,
-} from '@/images/tech'
+} from "@/images/tech"
 
-export function getDatespan(startDate: string, endDate: string | 'present'): string {
-  const start = new Date(startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+export function getDatespan(startDate: string, endDate: string | "present"): string {
+  const start = new Date(startDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })
   const end =
-    endDate === 'present'
-      ? 'Present'
-      : new Date(endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+    endDate === "present"
+      ? "Present"
+      : new Date(endDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })
   return `${start} - ${end}`
 }
 
@@ -48,8 +48,8 @@ export function getStartDate(startDate: string): Date {
   return new Date(startDate)
 }
 
-export function getEndDate(endDate: string | 'present'): Date | null {
-  return endDate === 'present' ? new Date() : new Date(endDate)
+export function getEndDate(endDate: string | "present"): Date | null {
+  return endDate === "present" ? new Date() : new Date(endDate)
 }
 
 export function sortByRelevancyThenDateDesc(a: Project, b: Project): number {
@@ -66,119 +66,119 @@ export function sortByPinned(a: Project, b: Project): number {
 
 export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor {
   switch (color) {
-    case 'blue':
+    case "blue":
       return {
-        background: 'bg-blue-600/10 dark:bg-blue-600/10',
-        border: 'border-blue-600/30 dark:border-blue-600/50',
-        badge: 'bg-blue-600 dark:bg-blue-500',
-        bubble: 'bg-blue-600/60 text-white dark:bg-blue-500/30',
-        textHover: 'hover:text-blue-600 dark:hover:text-blue-300',
-        ring: 'ring-1 ring-offset-2 ring-blue-600 dark:ring-blue-500',
+        background: "bg-blue-600/10 dark:bg-blue-600/10",
+        border: "border-blue-600/30 dark:border-blue-600/50",
+        badge: "bg-blue-600 dark:bg-blue-500",
+        bubble: "bg-blue-600/60 text-white dark:bg-blue-500/30",
+        textHover: "hover:text-blue-600 dark:hover:text-blue-300",
+        ring: "ring-1 ring-offset-2 ring-blue-600 dark:ring-blue-500",
       }
-    case 'teal':
+    case "teal":
       return {
-        background: 'bg-teal-600/10 dark:bg-teal-600/10',
-        border: 'border-teal-600/30 dark:border-teal-600/50',
-        badge: 'bg-teal-600 dark:bg-teal-500',
-        bubble: 'bg-teal-800/50 text-white dark:bg-teal-600/30',
-        textHover: 'hover:text-teal-600 dark:hover:text-teal-400',
-        ring: 'ring-1 ring-offset-2 ring-teal-600 dark:ring-teal-500',
+        background: "bg-teal-600/10 dark:bg-teal-600/10",
+        border: "border-teal-600/30 dark:border-teal-600/50",
+        badge: "bg-teal-600 dark:bg-teal-500",
+        bubble: "bg-teal-800/50 text-white dark:bg-teal-600/30",
+        textHover: "hover:text-teal-600 dark:hover:text-teal-400",
+        ring: "ring-1 ring-offset-2 ring-teal-600 dark:ring-teal-500",
       }
-    case 'purple':
+    case "purple":
       return {
-        background: 'bg-purple-600/10 dark:bg-purple-400/10',
-        border: 'border-purple-600/30 dark:border-purple-400/50',
-        badge: 'bg-purple-600 dark:bg-purple-400',
-        bubble: 'bg-purple-700/40 text-white dark:bg-purple-400/30',
-        textHover: 'hover:text-purple-600 dark:hover:text-purple-400',
-        ring: 'ring-1 ring-offset-2 ring-purple-600 dark:ring-purple-400',
+        background: "bg-purple-600/10 dark:bg-purple-400/10",
+        border: "border-purple-600/30 dark:border-purple-400/50",
+        badge: "bg-purple-600 dark:bg-purple-400",
+        bubble: "bg-purple-700/40 text-white dark:bg-purple-400/30",
+        textHover: "hover:text-purple-600 dark:hover:text-purple-400",
+        ring: "ring-1 ring-offset-2 ring-purple-600 dark:ring-purple-400",
       }
-    case 'indigo':
+    case "indigo":
       return {
-        background: 'bg-indigo-500/10 dark:bg-indigo-400/10',
-        border: 'border-indigo-500/30 dark:border-indigo-400/50',
-        badge: 'bg-indigo-500 dark:bg-indigo-400',
-        bubble: 'bg-indigo-500/60 text-white dark:bg-indigo-400/30',
-        textHover: 'hover:text-indigo-500 dark:hover:text-indigo-400',
-        ring: 'ring-1 ring-offset-2 ring-indigo-500 dark:ring-indigo-400',
+        background: "bg-indigo-500/10 dark:bg-indigo-400/10",
+        border: "border-indigo-500/30 dark:border-indigo-400/50",
+        badge: "bg-indigo-500 dark:bg-indigo-400",
+        bubble: "bg-indigo-500/60 text-white dark:bg-indigo-400/30",
+        textHover: "hover:text-indigo-500 dark:hover:text-indigo-400",
+        ring: "ring-1 ring-offset-2 ring-indigo-500 dark:ring-indigo-400",
       }
-    case 'pink':
+    case "pink":
       return {
-        background: 'bg-pink-600/10 dark:bg-pink-600/10',
-        border: 'border-pink-600/30 dark:border-pink-600/50',
-        badge: 'bg-pink-600 dark:bg-pink-500',
-        bubble: 'bg-pink-600/60 text-white dark:bg-pink-500/50',
-        textHover: 'hover:text-pink-600 dark:hover:text-pink-600',
-        ring: 'ring-1 ring-offset-2 ring-pink-600 dark:ring-pink-500',
+        background: "bg-pink-600/10 dark:bg-pink-600/10",
+        border: "border-pink-600/30 dark:border-pink-600/50",
+        badge: "bg-pink-600 dark:bg-pink-500",
+        bubble: "bg-pink-600/60 text-white dark:bg-pink-500/50",
+        textHover: "hover:text-pink-600 dark:hover:text-pink-600",
+        ring: "ring-1 ring-offset-2 ring-pink-600 dark:ring-pink-500",
       }
-    case 'orange':
+    case "orange":
       return {
-        background: 'bg-orange-600/10 dark:bg-orange-600/10',
-        border: 'border-orange-600/30 dark:border-orange-600/50',
-        badge: 'bg-orange-500 dark:bg-orange-400',
-        bubble: 'bg-orange-500/60 text-white dark:bg-orange-400/30',
-        textHover: 'hover:text-orange-600 dark:hover:text-orange-600',
-        ring: 'ring-1 ring-offset-2 ring-orange-600 dark:ring-orange-500',
+        background: "bg-orange-600/10 dark:bg-orange-600/10",
+        border: "border-orange-600/30 dark:border-orange-600/50",
+        badge: "bg-orange-500 dark:bg-orange-400",
+        bubble: "bg-orange-500/60 text-white dark:bg-orange-400/30",
+        textHover: "hover:text-orange-600 dark:hover:text-orange-600",
+        ring: "ring-1 ring-offset-2 ring-orange-600 dark:ring-orange-500",
       }
-    case 'amber':
+    case "amber":
       return {
-        background: 'bg-amber-600/10 dark:bg-amber-500/10',
-        border: 'border-amber-600/30 dark:border-amber-500/50',
-        badge: 'bg-amber-600 dark:bg-amber-500',
-        bubble: 'bg-amber-600/60 text-white dark:bg-amber-500/30',
-        textHover: 'hover:text-amber-600 dark:hover:text-amber-500',
-        ring: 'ring-1 ring-offset-2 ring-amber-600 dark:ring-amber-500',
+        background: "bg-amber-600/10 dark:bg-amber-500/10",
+        border: "border-amber-600/30 dark:border-amber-500/50",
+        badge: "bg-amber-600 dark:bg-amber-500",
+        bubble: "bg-amber-600/60 text-white dark:bg-amber-500/30",
+        textHover: "hover:text-amber-600 dark:hover:text-amber-500",
+        ring: "ring-1 ring-offset-2 ring-amber-600 dark:ring-amber-500",
       }
-    case 'red':
+    case "red":
       return {
-        background: 'bg-red-700/10 dark:bg-red-700/[15%]',
-        border: 'border-red-700/30 dark:border-red-700/50',
-        badge: 'bg-red-700 dark:bg-red-500',
-        bubble: 'bg-red-700/60 text-white dark:bg-red-500/30',
-        textHover: 'hover:text-red-700 dark:hover:text-red-700',
-        ring: 'ring-1 ring-offset-2 ring-red-700 dark:ring-red-500',
+        background: "bg-red-700/10 dark:bg-red-700/[15%]",
+        border: "border-red-700/30 dark:border-red-700/50",
+        badge: "bg-red-700 dark:bg-red-500",
+        bubble: "bg-red-700/60 text-white dark:bg-red-500/30",
+        textHover: "hover:text-red-700 dark:hover:text-red-700",
+        ring: "ring-1 ring-offset-2 ring-red-700 dark:ring-red-500",
       }
-    case 'forest':
+    case "forest":
       return {
-        background: 'bg-emerald-700/10 dark:bg-emerald-700/10',
-        border: 'border-emerald-700/30 dark:border-emerald-700/50',
-        badge: 'bg-emerald-700 dark:bg-emerald-600',
-        bubble: 'bg-emerald-700/60 text-white dark:bg-emerald-600/30',
-        textHover: 'hover:text-emerald-700 dark:hover:text-emerald-700',
-        ring: 'ring-1 ring-offset-2 ring-emerald-700 dark:ring-emerald-600',
+        background: "bg-emerald-700/10 dark:bg-emerald-700/10",
+        border: "border-emerald-700/30 dark:border-emerald-700/50",
+        badge: "bg-emerald-700 dark:bg-emerald-600",
+        bubble: "bg-emerald-700/60 text-white dark:bg-emerald-600/30",
+        textHover: "hover:text-emerald-700 dark:hover:text-emerald-700",
+        ring: "ring-1 ring-offset-2 ring-emerald-700 dark:ring-emerald-600",
       }
-    case 'jumpseller':
+    case "jumpseller":
       return {
-        background: 'bg-lime-800/10 dark:bg-lime-800/10',
-        border: 'border-lime-800/50 dark:border-lime-800/70',
-        badge: 'bg-lime-800 dark:bg-lime-700',
-        bubble: 'bg-lime-800/60 text-white dark:bg-lime-700/30',
-        textHover: 'hover:text-lime-800 dark:hover:text-lime-800',
-        ring: 'ring-1 ring-offset-2 ring-lime-800 dark:ring-lime-700',
+        background: "bg-lime-800/10 dark:bg-lime-800/10",
+        border: "border-lime-800/50 dark:border-lime-800/70",
+        badge: "bg-lime-800 dark:bg-lime-700",
+        bubble: "bg-lime-800/60 text-white dark:bg-lime-700/30",
+        textHover: "hover:text-lime-800 dark:hover:text-lime-800",
+        ring: "ring-1 ring-offset-2 ring-lime-800 dark:ring-lime-700",
       }
-    case 'slate':
+    case "slate":
     default:
       return {
-        background: 'bg-slate-100 dark:bg-slate-600/20',
-        border: 'border-slate-300 dark:border-slate-700',
-        badge: 'bg-slate-700 dark:bg-slate-400',
-        bubble: 'bg-slate-600/60 text-white dark:bg-slate-400/30',
-        textHover: 'hover:text-slate-600 dark:hover:text-slate-500',
-        ring: 'ring-1 ring-offset-2 ring-slate-400 dark:ring-slate-700',
+        background: "bg-slate-100 dark:bg-slate-600/20",
+        border: "border-slate-300 dark:border-slate-700",
+        badge: "bg-slate-700 dark:bg-slate-400",
+        bubble: "bg-slate-600/60 text-white dark:bg-slate-400/30",
+        textHover: "hover:text-slate-600 dark:hover:text-slate-500",
+        ring: "ring-1 ring-offset-2 ring-slate-400 dark:ring-slate-700",
       }
   }
 }
 
 export const techStackIcons: Record<string, any> = {
   angular: AngularSvg,
-  'aws s3': AwsSvg,
-  'c#': CSharpSvg,
-  'c/c++': CppSvg,
+  "aws s3": AwsSvg,
+  "c#": CSharpSvg,
+  "c/c++": CppSvg,
   css: CssSvg,
   docker: DockerSvg,
   feup: FeupSvg,
   flutter: FlutterSvg,
-  'gatsby.js': GatsbyJsSvg,
+  "gatsby.js": GatsbyJsSvg,
   git: GitSvg,
   graphql: GraphQlSvg,
   html: HtmlSvg,
@@ -188,29 +188,29 @@ export const techStackIcons: Record<string, any> = {
   laravel: LaravelSvg,
   liquid: ShopifySvg,
   mdx: MdxSvg,
-  'mongo db': MongoDbSvg,
+  "mongo db": MongoDbSvg,
   sql: MySqlSvg,
-  'next.js': NextJsSvg,
-  'node.js': NodeJsSvg,
+  "next.js": NextJsSvg,
+  "node.js": NodeJsSvg,
   php: PhpSvg,
   python: PythonSvg,
-  'react.js': ReactJsSvg,
-  'react native': ReactJsSvg,
+  "react.js": ReactJsSvg,
+  "react native": ReactJsSvg,
   redux: ReduxSvg,
   ruby: RubySvg,
-  'ruby on rails': RubyRailsSvg,
+  "ruby on rails": RubyRailsSvg,
   rust: RustSvg,
   tailwind: TailwindSvg,
   typescript: TypeScriptSvg,
   unity: UnitySvg,
-  'vue.js': VueJsSvg,
+  "vue.js": VueJsSvg,
 }
 
 export function getColorContrast(hex: any) {
   const r = parseInt(hex.substr(1, 2), 16)
   const g = parseInt(hex.substr(3, 2), 16)
   const b = parseInt(hex.substr(5, 2), 16)
-  return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? '#000000' : '#FFFFFF'
+  return r * 0.299 + g * 0.587 + b * 0.114 > 186 ? "#000000" : "#FFFFFF"
 }
 
 export function extractTechStackAndSortByFrequency(projects: Project[]): Technology[] {
@@ -230,16 +230,16 @@ export function extractTechStackAndSortByFrequency(projects: Project[]): Technol
 }
 
 export function formatDate(dateString: string) {
-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('pt-PT', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'GMT',
+  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString("pt-PT", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "GMT",
   })
 }
 
-export function calculateAge(dateOfBirth: string = '03-08-1999'): number {
-  let [day, month, year] = dateOfBirth.split('-').map(Number) // dd-mm-yyyy
+export function calculateAge(dateOfBirth: string = "03-08-1999"): number {
+  let [day, month, year] = dateOfBirth.split("-").map(Number) // dd-mm-yyyy
   let today = new Date()
   let birthDate = new Date(year, month - 1, day)
   let age = today.getFullYear() - birthDate.getFullYear()

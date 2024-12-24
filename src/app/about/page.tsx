@@ -1,24 +1,24 @@
-import clsx from 'clsx'
-import Link from 'next/link'
-import Image from 'next/image'
-import { type Metadata } from 'next'
-import { calculateAge, techStackIcons } from '@/lib/utilities'
-import { skills } from '@/lib/data'
-import { image1, image2, image3, image4, image5 } from '@/images/photos'
-import { JumpsellerLogoLink } from '@/components/about/JumpsellerLogoLink'
+import clsx from "clsx"
+import Link from "next/link"
+import Image from "next/image"
+import { type Metadata } from "next"
+import { calculateAge, techStackIcons } from "@/lib/utilities"
+import { skills } from "@/lib/data"
+import { image1, image2, image3, image4, image5 } from "@/images/photos"
+import { JumpsellerLogoLink } from "@/components/about/JumpsellerLogoLink"
 
-import portraitImage from '@/images/portrait.jpg'
-import { Container } from '@/components/Container'
-import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
-import { EnvelopeIcon } from '@heroicons/react/24/solid'
-import { logoJumpseller } from '@/images/logos/resume'
-import { LinkedinLogoLink } from '@/components/about/LinkedinLogoLink'
-import { CriticalLogoLink } from '@/components/about/CriticalLogoLink'
-import { SectionHeading } from '@/components/SectionHeading'
+import portraitImage from "@/images/portrait.jpg"
+import { Container } from "@/components/Container"
+import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons"
+import { EnvelopeIcon } from "@heroicons/react/24/solid"
+import { logoJumpseller } from "@/images/logos/resume"
+import { LinkedinLogoLink } from "@/components/about/LinkedinLogoLink"
+import { CriticalLogoLink } from "@/components/about/CriticalLogoLink"
+import { SectionHeading } from "@/components/SectionHeading"
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'I’m Francisco Gonçalves. I live in Porto, Portugal where I cook up cool software projects.',
+  title: "About",
+  description: "I’m Francisco Gonçalves. I live in Porto, Portugal where I cook up cool software projects.",
 }
 
 export default function About() {
@@ -57,13 +57,13 @@ export default function About() {
               preferred and best technologies or frameworks are React.js, Next.js, Javascript, Typescript and Tailwind.
             </p>
             <p>
-              Right now I am working as a full-stack developer at{' '}
+              Right now I am working as a full-stack developer at{" "}
               <Link href="https://jumpseller.com" target="_blank" className="outer-link inline-flex gap-0.5">
                 <span>Jumpseller</span>
                 <Image src={logoJumpseller} alt="Jumpseller" width={20} height={20} />
               </Link>
               where I am working to improve the themes of e-commerce platforms and their customization/edition. If
-              you’re interested in my profile reach me on{' '}
+              you’re interested in my profile reach me on{" "}
               <Link href="https://linkedin.com/in/kikogoncalves" className="outer-link" target="_blank">
                 LinkedIn
               </Link>
@@ -116,7 +116,7 @@ function SocialLink({
   children: React.ReactNode
 }) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         target="_blank"
@@ -165,11 +165,11 @@ function Skillset({ useProgressBarColor = true }) {
                       ...(useProgressBarColor
                         ? {
                             border: `1px solid ${skill.color}b0`,
-                            '--color-start': `${skill.color}b0`,
-                            '--color-mid': `${skill.color}a0`,
-                            '--color-end': `${skill.color}90`,
+                            "--color-start": `${skill.color}b0`,
+                            "--color-mid": `${skill.color}a0`,
+                            "--color-end": `${skill.color}90`,
                           }
-                        : { border: `1px solid #232830`, backgroundColor: '#3b404b' }),
+                        : { border: `1px solid #232830`, backgroundColor: "#3b404b" }),
                     } as React.CSSProperties
                   }
                 ></div>
@@ -233,15 +233,15 @@ function CurriculumVitae() {
             className="outer-link"
           >
             Bachelor
-          </Link>{' '}
-          and{' '}
+          </Link>{" "}
+          and{" "}
           <Link
             target="_blank"
             href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
             className="outer-link"
           >
             Master
-          </Link>{' '}
+          </Link>{" "}
           in Informatics and Computer Engineering
         </p>
 
@@ -276,7 +276,7 @@ function CurriculumVitae() {
 
             <ul className="ml-4 mt-1 list-disc text-sm text-navy-600 dark:text-navy-300">
               <li>
-                Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{' '}
+                Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{" "}
                 <strong>Code Editor</strong> for seamless customization as part of the Themes Team.
               </li>
               <li>
@@ -298,7 +298,7 @@ function CurriculumVitae() {
               <li>
                 Interned at Critical Manufacturing as a part of product development team. Work focused on collecting web
                 analytics and usability metrics for Critical’s Manufacturing Execution System (MES) aiming to improve
-                UI/UX. Dashboard preview{' '}
+                UI/UX. Dashboard preview{" "}
                 <Link href="https://usability-dashboard-mes.vercel.app/wizards" className="outer-link" target="_blank">
                   deployed here
                 </Link>
@@ -307,7 +307,7 @@ function CurriculumVitae() {
               <li>
                 Developed a custom dashboard for usability metrics in Critical MES, offering insights for its
                 components. The dashboard democratizes the UX improvement process by scoring components and highlighting
-                key metrics within them. Wrote a dissertation around this topic{' '}
+                key metrics within them. Wrote a dissertation around this topic{" "}
                 <Link href="https://kikogoncalves.com/dissertation.pdf" className="outer-link" target="_blank">
                   available here
                 </Link>
@@ -335,7 +335,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-square w-full flex-none overflow-hidden rounded bg-navy-100 dark:bg-navy-800',
+              "relative aspect-square w-full flex-none overflow-hidden rounded bg-navy-100 dark:bg-navy-800",
             )}
           >
             <Image
@@ -352,7 +352,7 @@ function Photos() {
 }
 
 function PhotosAlt() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = ["rotate-2", "-rotate-2", "rotate-2", "rotate-2", "-rotate-2"]
   let images = [image1, image2, image3, image4, image5]
 
   return (
@@ -366,7 +366,7 @@ function PhotosAlt() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[8/10] w-44 flex-none overflow-hidden rounded-xl bg-navy-100 dark:bg-navy-800 sm:aspect-[9/10] sm:w-72 sm:rounded-2xl',
+              "relative aspect-[8/10] w-44 flex-none overflow-hidden rounded-xl bg-navy-100 dark:bg-navy-800 sm:aspect-[9/10] sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length],
             )}
           >

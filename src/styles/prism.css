@@ -1,29 +1,29 @@
 /* Base styles */
-pre[class*='language-'] {
-  color: theme('colors.zinc.100');
-  background-color: theme('colors.navy.800');
-  padding: theme('spacing.4');
-  border-radius: theme('borderRadius.md');
+pre[class*="language-"] {
+  color: theme("colors.zinc.100");
+  background-color: theme("colors.navy.800");
+  padding: theme("spacing.4");
+  border-radius: theme("borderRadius.md");
   overflow-x: auto;
 }
 
 /* Shared token styles */
 .token.comment {
-  color: theme('colors.zinc.400');
+  color: theme("colors.zinc.400");
 }
 
 .token.punctuation {
-  color: theme('colors.zinc.500');
+  color: theme("colors.zinc.500");
 }
 
 .token.string,
 .token.char {
-  color: theme('colors.emerald.400');
+  color: theme("colors.emerald.400");
 }
 
 .token.boolean,
 .token.number {
-  color: theme('colors.rose.600');
+  color: theme("colors.rose.600");
 }
 
 .token.property,
@@ -35,7 +35,7 @@ pre[class*='language-'] {
 .token.attr-name,
 .token.builtin,
 .token.inserted {
-  color: theme('colors.blue.400');
+  color: theme("colors.blue.400");
 }
 
 .token.operator,
@@ -43,24 +43,24 @@ pre[class*='language-'] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: theme('colors.zinc.300');
+  color: theme("colors.zinc.300");
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: theme('colors.pink.400');
+  color: theme("colors.pink.400");
 }
 
 .token.function,
 .token.class-name {
-  color: theme('colors.yellow.400');
+  color: theme("colors.yellow.400");
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: theme('colors.orange.400');
+  color: theme("colors.orange.400");
 }
 
 /* Specific styles for JavaScript and TypeScript */
@@ -68,48 +68,48 @@ pre[class*='language-'] {
 .language-typescript .token.function,
 .language-jsx .token.function,
 .language-tsx .token.function {
-  color: theme('colors.green.400');
+  color: theme("colors.green.400");
 }
 
 /* Specific styles for JSX and TSX */
 .language-jsx .token.punctuation,
 .language-tsx .token.punctuation {
-  color: theme('colors.blue.400');
+  color: theme("colors.blue.400");
 }
 
 .language-jsx .token.tag,
 .language-tsx .token.tag {
-  color: theme('colors.purple.400');
+  color: theme("colors.purple.400");
 }
 
 /* Specific styles for JSON */
 .language-json .token.property {
-  color: theme('colors.blue.400');
+  color: theme("colors.blue.400");
 }
 
 .language-json .token.string {
-  color: theme('colors.emerald.500');
+  color: theme("colors.emerald.500");
 }
 
 /* Specific styles for HTML */
 .language-html .token.tag {
-  color: theme('colors.blue.400');
+  color: theme("colors.blue.400");
 }
 
 /* Specific styles for CSS */
 .language-css .token.selector {
-  color: theme('colors.purple.400');
+  color: theme("colors.purple.400");
 }
 
 .language-css .token.property {
-  color: theme('colors.pink.500');
+  color: theme("colors.pink.500");
 }
 
 /* Line numbers and highlights */
 .line-numbers .line-numbers-rows {
-  border-right-color: theme('colors.navy.700');
+  border-right-color: theme("colors.navy.700");
 }
 
-pre[class*='language-'] > code[class*='language-'] .line-highlight {
-  background-color: theme('colors.navy.700');
+pre[class*="language-"] > code[class*="language-"] .line-highlight {
+  background-color: theme("colors.navy.700");
 }

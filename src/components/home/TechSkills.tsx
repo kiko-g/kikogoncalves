@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import clsx from 'clsx'
-import Link from 'next/link'
-import Image from 'next/image'
+import clsx from "clsx"
+import Link from "next/link"
+import Image from "next/image"
 
-import { type Skill } from '@/types'
-import { skills } from '@/lib/data'
-import { techStackIcons } from '@/lib/utilities'
+import { type Skill } from "@/types"
+import { skills } from "@/lib/data"
+import { techStackIcons } from "@/lib/utilities"
 
-import { BriefcaseIcon } from '@/components/Icons'
-import { useTheme } from 'next-themes'
+import { BriefcaseIcon } from "@/components/Icons"
+import { useTheme } from "next-themes"
 
 export function TechSkills() {
   return (
@@ -20,10 +20,10 @@ export function TechSkills() {
       </h2>
 
       <p className="mt-2 text-sm text-navy-600 dark:text-navy-400">
-        Some of the technologies I have experience with. Visit the{' '}
+        Some of the technologies I have experience with. Visit the{" "}
         <Link className="underline hover:opacity-80" href="/projects">
           projects
-        </Link>{' '}
+        </Link>{" "}
         page to see them in action.
       </p>
 
@@ -59,20 +59,20 @@ function SkillBubble({
   rounded?: boolean
 }) {
   const { resolvedTheme } = useTheme()
-  const isDarkMode = resolvedTheme === 'dark'
-  const borderTransparencyChannel = isDarkMode ? '00' : '00'
-  const backgroundTransparencyChannel = isDarkMode ? '30' : '20'
+  const isDarkMode = resolvedTheme === "dark"
+  const borderTransparencyChannel = isDarkMode ? "00" : "00"
+  const backgroundTransparencyChannel = isDarkMode ? "30" : "20"
   const techIcon = techStackIcons[skill.name.toLowerCase()]
 
   return (
     <li
       style={{
-        backgroundColor: background ? `${skill.color}${backgroundTransparencyChannel}` : 'transparent',
-        border: `1px solid ${bordered ? `${skill.color}${borderTransparencyChannel}` : 'transparent'}`,
+        backgroundColor: background ? `${skill.color}${backgroundTransparencyChannel}` : "transparent",
+        border: `1px solid ${bordered ? `${skill.color}${borderTransparencyChannel}` : "transparent"}`,
       }}
       className={clsx(
-        'flex items-center gap-1 px-2 pb-[5px] pt-[4px] leading-none',
-        rounded ? 'rounded-full' : 'rounded-none',
+        "flex items-center gap-1 px-2 pb-[5px] pt-[4px] leading-none",
+        rounded ? "rounded-full" : "rounded-none",
       )}
     >
       {techIcon ? (
@@ -86,7 +86,7 @@ function SkillBubble({
         />
       )}
 
-      <span className={clsx('text-xs font-normal leading-none tracking-tight', lowercase && 'lowercase')}>
+      <span className={clsx("text-xs font-normal leading-none tracking-tight", lowercase && "lowercase")}>
         {skill.name}
       </span>
     </li>

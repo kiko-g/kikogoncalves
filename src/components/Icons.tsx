@@ -1,4 +1,4 @@
-export function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function MailIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -18,7 +18,7 @@ export function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function BriefcaseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -41,7 +41,7 @@ export function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function ArrowDownIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path

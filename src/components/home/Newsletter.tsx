@@ -1,5 +1,5 @@
-import { Button } from '@/components/Button'
-import { MailIcon } from '@/components/Icons'
+import { Button } from "@/components/Button"
+import { MailIcon } from "@/components/Icons"
 
 export function Newsletter() {
   return (

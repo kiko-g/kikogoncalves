@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import { useContext } from 'react'
-import { useRouter } from 'next/navigation'
+import { useContext } from "react"
+import { useRouter } from "next/navigation"
 
-import { AppContext } from '@/app/providers'
-import { Container } from '@/components/Container'
-import { Prose } from '@/components/Prose'
-import { type ArticleWithSlug } from '@/lib/articles'
-import { formatDate } from '@/lib/utilities'
+import { AppContext } from "@/app/providers"
+import { Container } from "@/components/Container"
+import { Prose } from "@/components/Prose"
+import { type ArticleWithSlug } from "@/lib/articles"
+import { formatDate } from "@/lib/utilities"
 
-function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path

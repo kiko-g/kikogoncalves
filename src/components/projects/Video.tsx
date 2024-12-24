@@ -1,6 +1,6 @@
-import type { Media } from '@/types'
-import React, { useState } from 'react'
-import clsx from 'clsx'
+import type { Media } from "@/types"
+import React, { useState } from "react"
+import clsx from "clsx"
 
 type Props = {
   media: Media
@@ -13,7 +13,7 @@ export function VideoComponent({ media, additionalClassnames }: Props) {
   return (
     <>
       {loading && (
-        <div className="lg:min-w-112 flex h-full w-full min-w-full items-center justify-center">
+        <div className="min-w-full flex h-full w-full items-center justify-center lg:min-w-112">
           <div className="h-full w-full animate-pulse rounded-none bg-gray-400 py-36 dark:bg-white/50"></div>
         </div>
       )}
@@ -21,7 +21,7 @@ export function VideoComponent({ media, additionalClassnames }: Props) {
         controls
         muted
         preload="true"
-        className={clsx('rounded-none shadow', additionalClassnames, loading ? 'hidden' : '')}
+        className={clsx("rounded-none shadow", additionalClassnames, loading ? "hidden" : "")}
         onLoadedData={() => setLoading(false)}
       >
         <source src={media.src} type="video/mp4" />

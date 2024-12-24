@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import React, { Suspense, useMemo, useState } from 'react'
-import clsx from 'clsx'
-import Image from 'next/image'
-import type { Technology, Project } from '@/types'
-import { resolveProjectCardColors, getDatespan, techStackIcons } from '@/lib/utilities'
-import { GitHubIcon } from '@/components/SocialIcons'
-import { LinkIcon } from '@heroicons/react/20/solid'
-import { VideoComponent } from '@/components/projects/Video'
-import { StarIcon, DocumentArrowDownIcon, ArrowLongRightIcon, ArrowLongLeftIcon } from '@heroicons/react/24/outline'
+import React, { Suspense, useMemo, useState } from "react"
+import clsx from "clsx"
+import Image from "next/image"
+import type { Technology, Project } from "@/types"
+import { resolveProjectCardColors, getDatespan, techStackIcons } from "@/lib/utilities"
+import { GitHubIcon } from "@/components/SocialIcons"
+import { LinkIcon } from "@heroicons/react/20/solid"
+import { VideoComponent } from "@/components/projects/Video"
+import { StarIcon, DocumentArrowDownIcon, ArrowLongRightIcon, ArrowLongLeftIcon } from "@heroicons/react/24/outline"
 
 type Props = {
   project: Project
@@ -26,7 +26,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
   return (
     <li
       className={clsx(
-        'relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6',
+        "relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6",
         cx.background,
         cx.border,
       )}
@@ -34,7 +34,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
       <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className={clsx('h-2.5 w-2.5 rounded-full', cx.badge)} />
+            <span className={clsx("h-2.5 w-2.5 rounded-full", cx.badge)} />
             <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
           </div>
           <div className="flex items-start gap-2">
@@ -66,7 +66,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
         </div>
 
         <p className="text-sm font-normal text-navy-700 dark:text-white/50">{datespan}</p>
-        <div className={clsx('mt-2', compact ? 'text-sm leading-snug' : 'text-base leading-normal')}>
+        <div className={clsx("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
           {project.description}
         </div>
 
@@ -76,10 +76,10 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
             return (
               <button
                 key={tech}
-                onClick={() => typeof tagClickCallback === 'function' && tagClickCallback(tech)}
+                onClick={() => typeof tagClickCallback === "function" && tagClickCallback(tech)}
                 className={clsx(
-                  tech === 'FEUP' ? 'bg-feup/80 text-white dark:bg-feup/50' : cx.bubble,
-                  'flex items-center gap-1 rounded-sm px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80',
+                  tech === "FEUP" ? "bg-feup/80 text-white dark:bg-feup/50" : cx.bubble,
+                  "flex items-center gap-1 rounded-sm px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80",
                 )}
               >
                 {techIcon && (
@@ -98,7 +98,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               target="_blank"
               className={clsx(
                 cx.textHover,
-                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
+                "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
               <DocumentArrowDownIcon className="h-5 w-5 stroke-gray-700 dark:stroke-white" />
@@ -111,7 +111,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               target="_blank"
               className={clsx(
                 cx.textHover,
-                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
+                "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
               <LinkIcon className="h-5 w-5 fill-gray-700 dark:fill-white" strokeWidth={1.5} />
@@ -124,7 +124,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               target="_blank"
               className={clsx(
                 cx.textHover,
-                'flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80',
+                "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
               <GitHubIcon className="h-5 w-5 fill-[#333333] dark:fill-white" />
@@ -136,12 +136,12 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
 
       <div
         className={clsx(
-          compact ? 'block lg:hidden' : 'block',
-          'group relative order-2 max-w-full lg:order-2 lg:max-w-md',
+          compact ? "block lg:hidden" : "block",
+          "group relative order-2 max-w-full lg:order-2 lg:max-w-md",
         )}
       >
-        <div className={clsx('relative min-w-full rounded-none', cx.border)}>
-          {media.type === 'image' && (
+        <div className={clsx("min-w-full relative rounded-none", cx.border)}>
+          {media.type === "image" && (
             <Image
               src={media.src}
               alt={`${project.name}: Media ${selectedMediaIdx + 1}`}
@@ -149,7 +149,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               placeholder="blur"
             />
           )}
-          {media.type === 'video' && <VideoComponent media={media} additionalClassnames={cx.border} />}
+          {media.type === "video" && <VideoComponent media={media} additionalClassnames={cx.border} />}
         </div>
 
         {project.media.length > 1 && (
@@ -169,8 +169,8 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                   title={`Show media ${mediaIdx + 1} for ${project.name}`}
                   className={clsx(
                     cx.badge,
-                    'h-1 w-4 transition',
-                    selectedMediaIdx === mediaIdx ? '' : 'opacity-40 hover:opacity-80',
+                    "h-1 w-4 transition",
+                    selectedMediaIdx === mediaIdx ? "" : "opacity-40 hover:opacity-80",
                   )}
                 />
               ))}

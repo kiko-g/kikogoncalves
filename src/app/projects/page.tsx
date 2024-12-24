@@ -1,12 +1,12 @@
-import React from 'react'
-import { type Metadata } from 'next'
+import React from "react"
+import { type Metadata } from "next"
 
-import { LayoutSimple } from '@/components/LayoutSimple'
-import { ProjectsShowcase } from '@/components/projects/ProjectsShowcase'
+import { LayoutSimple } from "@/components/LayoutSimple"
+import { ProjectsShowcase } from "@/components/projects/ProjectsShowcase"
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Cool things I’ve built across the years trying to leave my mark on this world.',
+  title: "Projects",
+  description: "Cool things I’ve built across the years trying to leave my mark on this world.",
 }
 
 export default function Projects() {

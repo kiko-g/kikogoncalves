@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { getAllArticles } from '@/lib/articles'
-import { Container } from '@/components/Container'
-import { Resume } from '@/components/home/Resume'
-import { Newsletter } from '@/components/home/Newsletter'
-import { TechSkills } from '@/components/home/TechSkills'
-import { ArticleCard } from '@/components/home/ArticleCard'
-import { SocialLink } from '@/components/home/SocialLink'
-import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/SocialIcons'
-import Link from 'next/link'
+import * as React from "react"
+import { getAllArticles } from "@/lib/articles"
+import { Container } from "@/components/Container"
+import { Resume } from "@/components/home/Resume"
+import { Newsletter } from "@/components/home/Newsletter"
+import { TechSkills } from "@/components/home/TechSkills"
+import { ArticleCard } from "@/components/home/ArticleCard"
+import { SocialLink } from "@/components/home/SocialLink"
+import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons"
+import Link from "next/link"
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
@@ -23,15 +23,15 @@ export default async function Home() {
             I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a
             full-stack engineer, where we develop a platform for clients to create and deeply customize online stores. I
             also occasionally work as a freelancer or solopreneur, developing websites for clients or useful cool
-            projects.{' '}
+            projects.{" "}
             <Link href="/about" className="inner-link">
               Read more about me
-            </Link>{' '}
-            or check out my{' '}
+            </Link>{" "}
+            or check out my{" "}
             <Link href="/about#skillset" className="inner-link">
               skills
-            </Link>{' '}
-            and{' '}
+            </Link>{" "}
+            and{" "}
             <Link href="/projects" className="inner-link highlight">
               projects
             </Link>

@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { CopyToClipboard } from '@/components/job-hunt/CopyToClipboard'
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
+import { useState } from "react"
+import { CopyToClipboard } from "@/components/job-hunt/CopyToClipboard"
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react"
 
 export function JobHuntEntry({
   company,
@@ -15,9 +15,9 @@ export function JobHuntEntry({
   application: React.ReactNode
   jobPost: React.ReactNode
 }) {
-  const tabs = ['Job Post', 'Application']
+  const tabs = ["Job Post", "Application"]
   const panels = [jobPost, application]
-  const [selectedTab, setSelectedTab] = useState<(typeof tabs)[number]>('Job Post')
+  const [selectedTab, setSelectedTab] = useState<(typeof tabs)[number]>("Job Post")
 
   return (
     <section className="border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-600/20">

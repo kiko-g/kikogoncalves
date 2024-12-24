@@ -1,12 +1,12 @@
-import { type Metadata } from 'next'
+import { type Metadata } from "next"
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { LayoutSimple } from '@/components/LayoutSimple'
+import { Card } from "@/components/Card"
+import { Section } from "@/components/Section"
+import { LayoutSimple } from "@/components/LayoutSimple"
 
 export const metadata: Metadata = {
-  title: 'Speaking',
-  description: 'I’ve spoken at events all around the world and been interviewed for many podcasts.',
+  title: "Speaking",
+  description: "I’ve spoken at events all around the world and been interviewed for many podcasts.",
 }
 
 export default function Speaking() {

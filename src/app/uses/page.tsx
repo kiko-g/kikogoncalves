@@ -1,10 +1,10 @@
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { LayoutSimple } from '@/components/LayoutSimple'
+import { Card } from "@/components/Card"
+import { Section } from "@/components/Section"
+import { LayoutSimple } from "@/components/LayoutSimple"
 
 export const metadata = {
-  title: 'Setup',
-  description: 'Tools and software I use among other things I recommend.',
+  title: "Setup",
+  description: "Tools and software I use among other things I recommend.",
 }
 
 export default function Uses() {
@@ -44,7 +44,7 @@ export default function Uses() {
           <Tool title="Visual Studio Code">
             Visual Studio Code is hard to beat for me. The amount of customization I have put into it over the years has
             made me very productive. I have tried other editors but I always come back to VS Code. If you&apos;re
-            interested check out my{' '}
+            interested check out my{" "}
             <a className="outer-link" href="https://github.com/kiko-g/dotfiles/tree/main/vscode">
               VS Code settings
             </a>

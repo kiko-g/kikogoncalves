@@ -1,6 +1,6 @@
-import { type ArticleWithSlug } from '@/lib/articles'
-import { formatDate } from '@/lib/utilities'
-import { Card } from '@/components/Card'
+import { type ArticleWithSlug } from "@/lib/articles"
+import { formatDate } from "@/lib/utilities"
+import { Card } from "@/components/Card"
 
 export function ArticleCard({ article }: { article: ArticleWithSlug }) {
   return (

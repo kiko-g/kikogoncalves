@@ -1,10 +1,10 @@
-import { type Metadata } from 'next'
+import { type Metadata } from "next"
 
-import { LayoutSimple } from '@/components/LayoutSimple'
+import { LayoutSimple } from "@/components/LayoutSimple"
 
 export const metadata: Metadata = {
-  title: 'You’re subscribed',
-  description: 'Thanks for subscribing to my newsletter.',
+  title: "You’re subscribed",
+  description: "Thanks for subscribing to my newsletter.",
 }
 
 export default function ThankYou() {
