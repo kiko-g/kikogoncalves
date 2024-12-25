@@ -146,7 +146,7 @@ export function ProjectsShowcase() {
               : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
           )}
         >
-          {compact ? <Tally4Icon className="size-5 rotate-90 stroke-2" /> : <LayoutGrid className="size-5 stroke-2" />}
+          {compact ? <LayoutGrid className="size-5 stroke-2" /> : <Tally4Icon className="size-5 rotate-90 stroke-2" />}
         </button>
 
         <button
@@ -160,11 +160,7 @@ export function ProjectsShowcase() {
               : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
           )}
         >
-          {showOnlyStarred ? (
-            <StarIcon className="size-5 fill-red-400" />
-          ) : (
-            <StarIcon className="size-5 stroke-red-400" />
-          )}
+          {showOnlyStarred ? <StarIcon className="size-5" /> : <StarIcon className="size-5" />}
         </button>
       </div>
 

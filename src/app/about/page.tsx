@@ -2,19 +2,24 @@ import clsx from "clsx"
 import Link from "next/link"
 import Image from "next/image"
 import { type Metadata } from "next"
-import { calculateAge, techStackIcons } from "@/lib/utilities"
+
 import { skills } from "@/lib/data"
-import { image1, image2, image3, image4, image5 } from "@/images/photos"
-import { JumpsellerLogoLink } from "@/components/about/JumpsellerLogoLink"
+import { calculateAge, techStackIcons } from "@/lib/utilities"
 
 import portraitImage from "@/images/portrait.jpg"
-import { Container } from "@/components/Container"
-import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons"
 import { logoJumpseller } from "@/images/logos/resume"
+import { image1, image2, image3, image4, image5 } from "@/images/photos"
+
+import { Container } from "@/components/Container"
 import { LinkedinLogoLink } from "@/components/about/LinkedinLogoLink"
 import { CriticalLogoLink } from "@/components/about/CriticalLogoLink"
 import { SectionHeading } from "@/components/SectionHeading"
+
 import { MailIcon } from "lucide-react"
+import { JumpsellerLogoLink } from "@/components/about/JumpsellerLogoLink"
+import { GithubIcon, InstagramIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons"
+import { FeupLogoLink } from "@/components/about/FeupLogoLink"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "About",
@@ -72,28 +77,37 @@ export default function About() {
           </div>
         </div>
 
-        <div className="lg:pl-20">
-          <ul role="list">
-            <SocialLink href="https://twitter.com/kikogoncalves_" icon={TwitterIcon}>
-              Follow on Twitter
-            </SocialLink>
-            <SocialLink href="https://instagram.com/kikogoncalves_" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink>
-            <SocialLink href="https://github.com/kiko-g" icon={GitHubIcon} className="mt-4">
-              Follow on GitHub
-            </SocialLink>
-            <SocialLink href="https://linkedin.com/in/kikogoncalves" icon={LinkedInIcon} className="mt-4">
-              Follow on LinkedIn
-            </SocialLink>
-            <SocialLink
-              href="mailto:kikojpgoncalves@gmail.com"
-              icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
-              kikogoncalves@gmail.com
-            </SocialLink>
-          </ul>
+        <div className="flex flex-col items-start gap-3 lg:pl-20">
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="https://twitter.com/kikogoncalves_" target="_blank" rel="noopener noreferrer">
+              <XTwitterIcon />
+              <span className="ml-2 text-sm font-medium">Follow on Twitter</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="https://instagram.com/kikogoncalves_" target="_blank" rel="noopener noreferrer">
+              <InstagramIcon />
+              <span className="ml-2 text-sm font-medium">Follow on Instagram</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="https://github.com/kiko-g" target="_blank" rel="noopener noreferrer">
+              <GithubIcon />
+              <span className="ml-2 text-sm font-medium">Follow on GitHub</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="https://linkedin.com/in/kikogoncalves" target="_blank" rel="noopener noreferrer">
+              <LinkedinIcon />
+              <span className="ml-2 text-sm font-medium">Follow on LinkedIn</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="mailto:kikojpgoncalves@gmail.com" target="_blank" rel="noopener noreferrer">
+              <MailIcon />
+              <span className="ml-2 text-sm font-medium">kikogoncalves@gmail.com</span>
+            </Link>
+          </Button>
         </div>
       </div>
 
@@ -101,31 +115,6 @@ export default function About() {
       <CurriculumVitae />
       <Photos />
     </Container>
-  )
-}
-
-function SocialLink({
-  className,
-  href,
-  children,
-  icon: Icon,
-}: {
-  className?: string
-  href: string
-  icon: React.ComponentType<{ className?: string }>
-  children: React.ReactNode
-}) {
-  return (
-    <li className={clsx(className, "flex")}>
-      <Link
-        href={href}
-        target="_blank"
-        className="group flex items-center fill-zinc-800 text-sm font-medium transition hover:fill-indigo-500 dark:fill-zinc-200 dark:hover:fill-indigo-500"
-      >
-        <Icon className="size-5 flex-none transition" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
   )
 }
 
@@ -144,18 +133,27 @@ function Skillset({ useProgressBarColor = true }) {
         {skills.map((skill, skillIdx) => {
           const techIcon = techStackIcons[skill.name.toLowerCase()]
           return (
-            <li key={`skill-${skillIdx}`} className="flex flex-col gap-1.5">
-              <div className="mb-0 flex w-full items-center gap-1">
-                {techIcon ? (
-                  <Image src={techIcon} alt={skill.name} width={13} height={13} className="size-[13px] rounded-sm" />
-                ) : (
-                  <span className="block size-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
-                )}
-                <span className="text-xs font-medium leading-none tracking-tight text-zinc-600 dark:text-zinc-300">
-                  {skill.name}
-                </span>
+            <li key={`skill-${skillIdx}`} title={`${skill.name}: ${skill.score}%`} className="flex flex-col gap-1.5">
+              <div className="flex items-center justify-between gap-1">
+                <div className="mb-0 flex w-full items-center gap-1">
+                  {techIcon ? (
+                    <Image
+                      src={techIcon}
+                      alt={skill.name}
+                      width={13}
+                      height={13}
+                      className="size-[13px] rounded-[2px]"
+                    />
+                  ) : (
+                    <span className="block size-2 rounded-full" style={{ backgroundColor: skill.color }}></span>
+                  )}
+                  <span className="text-xs font-medium leading-none tracking-tight text-zinc-600 dark:text-zinc-300">
+                    {skill.name}
+                  </span>
+                </div>
               </div>
-              <div className="h-3 w-full overflow-hidden rounded-none bg-zinc-200 dark:bg-white/5">
+
+              <div className="relative h-3.5 w-full overflow-hidden rounded-none bg-zinc-200 dark:bg-white/5">
                 <div
                   className="bg-skillbar h-full rounded-none"
                   style={
@@ -172,7 +170,7 @@ function Skillset({ useProgressBarColor = true }) {
                         : { border: `1px solid #232830`, backgroundColor: "#3b404b" }),
                     } as React.CSSProperties
                   }
-                ></div>
+                />
               </div>
             </li>
           )
@@ -202,18 +200,18 @@ function CurriculumVitae() {
           Here are the languages I speak and my proficiency level in each.
         </p>
 
-        <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
+        <ul className="ml-1 mt-1 text-sm text-zinc-600 dark:text-zinc-300">
           <li>
-            <strong>Portuguese</strong>: Native
+            <strong>🇵🇹 Portuguese</strong>: Native
           </li>
           <li>
-            <strong>English</strong>: Proficient, C1 Level, CAE 2016
+            <strong>🇬🇧 English</strong>: Proficient, C1 Level, CAE 2016
           </li>
           <li>
-            <strong>Spanish</strong>: Intermediate Understanding
+            <strong>🇪🇸 Spanish</strong>: Intermediate Understanding
           </li>
           <li>
-            <strong>French</strong>: Basic Understanding
+            <strong>🇫🇷 French</strong>: Basic Understanding
           </li>
         </ul>
       </div>
@@ -226,7 +224,7 @@ function CurriculumVitae() {
         <h5 className="mb-0 flex-1 text-base font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-lg">
           Faculty of Engineering of the University of Porto
         </h5>
-        <p className="text-base font-normal text-zinc-700 dark:text-zinc-200">
+        <p className="flex items-center gap-1 text-base font-normal text-zinc-700 dark:text-zinc-200">
           <Link
             target="_blank"
             href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31224&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
@@ -243,6 +241,7 @@ function CurriculumVitae() {
             Master
           </Link>{" "}
           in Informatics and Computer Engineering
+          <FeupLogoLink />
         </p>
 
         <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
@@ -329,18 +328,16 @@ function Photos() {
   let images = [image1, image2, image3, image4, image5]
 
   return (
-    <section id="photos" className="mt-6 overflow-hidden pt-12 sm:mt-12">
+    <section id="photos" className="mt-6 pt-12 sm:mt-12">
       <SectionHeading noMargin slideTo="photos">
         Photos
       </SectionHeading>
       <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Some of my favorite personal photos.</p>
-      <div className="-my-4 grid grid-cols-3 gap-8 py-2">
-        {images.map((image, imageIndex) => (
+      <div className="-my-4 grid grid-cols-2 gap-4 py-4 lg:grid-cols-3 lg:gap-8">
+        {images.map((image) => (
           <div
             key={image.src}
-            className={clsx(
-              "relative aspect-square w-full flex-none overflow-hidden rounded bg-zinc-100 dark:bg-zinc-800",
-            )}
+            className="relative aspect-square w-full flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800"
           >
             <Image
               src={image}

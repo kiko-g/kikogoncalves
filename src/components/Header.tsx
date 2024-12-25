@@ -97,7 +97,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
           "relative block rounded px-4 py-2 transition",
           isActive
             ? "font-semibold text-indigo-500 hover:opacity-80 dark:text-indigo-500"
-            : "hover:text-indigo-500 dark:hover:text-indigo-500",
+            : "hover:text-indigo-500 dark:hover:text-indigo-400",
         )}
       >
         {children}
@@ -151,7 +151,7 @@ function ThemeToggle() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="hidden size-5 fill-indigo-400 stroke-indigo-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-indigo-400 [@media_not_(prefers-color-scheme:dark)]:fill-indigo-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-indigo-500"
+        className="hidden size-5 fill-zinc-400 stroke-zinc-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-zinc-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-zinc-500"
       />
     </button>
   )

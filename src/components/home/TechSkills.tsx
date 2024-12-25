@@ -12,7 +12,7 @@ import { LayersIcon } from "lucide-react"
 
 export function TechSkills() {
   return (
-    <div className="bg-zinc-25 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
+    <div className="rounded-2xl border border-zinc-100 bg-zinc-25 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
       <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <LayersIcon className="size-5 flex-none" />
         <span>Technologies</span>
@@ -59,7 +59,7 @@ function SkillBubble({
 }) {
   const { resolvedTheme } = useTheme()
   const isDarkMode = resolvedTheme === "dark"
-  const borderTransparencyChannel = isDarkMode ? "00" : "00"
+  const borderTransparencyChannel = isDarkMode ? "00" : "20"
   const backgroundTransparencyChannel = isDarkMode ? "30" : "20"
   const techIcon = techStackIcons[skill.name.toLowerCase()]
 
@@ -75,7 +75,7 @@ function SkillBubble({
       )}
     >
       {techIcon ? (
-        <Image src={techIcon} alt={skill.name} width={13} height={13} className="mt-[1px] size-[13px] rounded-sm" />
+        <Image src={techIcon} alt={skill.name} width={13} height={13} className="mt-[1px] size-[13px] rounded-[2px]" />
       ) : (
         <span
           className="mt-[3px] size-2 rounded-full"

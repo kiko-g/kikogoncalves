@@ -1,13 +1,15 @@
 import * as React from "react"
+import Link from "next/link"
+
 import { getAllArticles } from "@/lib/articles"
+
+import { Button } from "@/components/ui/button"
 import { Container } from "@/components/Container"
 import { Resume } from "@/components/home/Resume"
-import { Newsletter } from "@/components/home/Newsletter"
 import { TechSkills } from "@/components/home/TechSkills"
 import { ArticleCard } from "@/components/home/ArticleCard"
-import { SocialLink } from "@/components/home/SocialLink"
-import { GitHubIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/components/SocialIcons"
-import Link from "next/link"
+
+import { GithubIcon, InstagramIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons"
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
@@ -38,31 +40,27 @@ export default async function Home() {
             .
           </p>
 
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/kikogoncalves_"
-              target="_blank"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com/kikogoncalves_"
-              target="_blank"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com/kiko-g"
-              target="_blank"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://linkedin.com/in/kikogoncalves"
-              target="_blank"
-              icon={LinkedInIcon}
-              aria-label="Follow on LinkedIn"
-            />
+          <div className="mt-6 flex gap-3">
+            <Button variant="ghost" size="icon-sm" asChild>
+              <Link href="https://twitter.com/kikogoncalves_" target="_blank" aria-label="Follow on Twitter">
+                <XTwitterIcon />
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon-sm" asChild>
+              <Link href="https://instagram.com/kikogoncalves_" target="_blank" aria-label="Follow on Instagram">
+                <InstagramIcon />
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon-sm" asChild>
+              <Link href="https://github.com/kiko-g" target="_blank" aria-label="Follow on Github">
+                <GithubIcon />
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon-sm" asChild>
+              <Link href="https://linkedin.com/in/kikogoncalves" target="_blank" aria-label="Follow on LinkedIn">
+                <LinkedinIcon />
+              </Link>
+            </Button>
           </div>
         </div>
       </Container>

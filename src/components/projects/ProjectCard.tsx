@@ -1,12 +1,15 @@
 "use client"
 
-import React, { Suspense, useMemo, useState } from "react"
+import React, { useMemo, useState } from "react"
 import clsx from "clsx"
 import Image from "next/image"
-import type { Technology, Project } from "@/types"
+import type { Project } from "@/types"
+
 import { resolveProjectCardColors, getDatespan, techStackIcons } from "@/lib/utilities"
-import { GitHubIcon } from "@/components/SocialIcons"
+
 import { VideoComponent } from "@/components/projects/Video"
+
+import { GithubIcon } from "@/components/icons"
 import { BookCheckIcon, LinkIcon, MoveLeftIcon, MoveRightIcon } from "lucide-react"
 
 type Props = {
@@ -100,7 +103,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <BookCheckIcon className="size-5 stroke-gray-700 dark:stroke-white" />
+              <BookCheckIcon className="size-5 text-gray-700 dark:text-white" />
               <span>{project.attachment}</span>
             </a>
           )}
@@ -113,7 +116,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <LinkIcon className="size-5 fill-gray-700 dark:fill-white" strokeWidth={1.5} />
+              <LinkIcon className="size-5 text-gray-700 dark:text-white" strokeWidth={1.5} />
               <span>{project.deployment}</span>
             </a>
           )}
@@ -126,7 +129,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <GitHubIcon className="size-5 fill-[#333333] dark:fill-white" />
+              <GithubIcon className="size-5 fill-[#333333] dark:fill-white" />
               <span>{project.repo}</span>
             </a>
           )}

@@ -66,7 +66,7 @@
   }
 
   *::selection {
-    @apply bg-sky-800/70 text-white dark:bg-emerald-500/50;
+    @apply bg-indigo-600/50 text-white dark:bg-indigo-400/50;
   }
 
   html {
@@ -86,15 +86,15 @@
   }
 
   .external-link {
-    @apply text-indigo-500 hover:text-indigo-600 hover:underline dark:text-indigo-500 dark:hover:text-indigo-500;
+    @apply text-indigo-500 hover:text-indigo-600 hover:underline dark:text-indigo-500 dark:hover:text-indigo-400;
   }
 
   .internal-link {
-    @apply font-medium text-zinc-800 hover:underline dark:text-zinc-300;
+    @apply text-zinc-800 hover:underline dark:text-zinc-300;
   }
 
   .internal-link.highlight {
-    @apply font-medium text-indigo-500 hover:underline dark:text-indigo-500;
+    @apply transition hover:text-indigo-500 dark:hover:text-indigo-400;
   }
 
   .project-card-description {
