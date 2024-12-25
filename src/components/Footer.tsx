@@ -28,9 +28,9 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/uses">Uses</NavLink>
                 {process.env.NODE_ENV === "development" && (
                   <>
+                    <NavLink href="/uses">Uses</NavLink>
                     <NavLink href="/job-hunt">Job Hunt</NavLink>
                     <NavLink href="/speaking">Speaking</NavLink>
                   </>
