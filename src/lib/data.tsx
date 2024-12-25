@@ -90,9 +90,7 @@ export const projectsData: Project[] = [
         <p>
           Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and
           saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI,
-          HeadlessUI and TailwindUI. Check out our new{" "}
-          <Link href="https://bagger-ui.vercel.app/marketing/kpi">KPI widgets</Link> components. BaggerUI is still under
-          development.
+          Shadcn, TailwindUI and HyperUI. BaggerUI is still under development.
         </p>
       </section>
     ),

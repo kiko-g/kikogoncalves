@@ -9,10 +9,10 @@ import { useLocalStorageBoolean } from "@/lib/hooks"
 import { projectsData } from "@/lib/data"
 import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from "@/lib/utilities"
 
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
 import { ProjectCard } from "@/components/projects/ProjectCard"
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
 
-import { CheckIcon, LayoutGrid, PartyPopperIcon, StarIcon, Tally4Icon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon, LayoutGrid, StarIcon, Tally4Icon } from "lucide-react"
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
@@ -75,14 +75,14 @@ export function ProjectsShowcase() {
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
           <ListboxButton
             className={clsx(
-              "flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-zinc-300",
+              "flex items-center gap-1 self-stretch border px-3 text-sm font-medium transition hover:opacity-80 dark:text-zinc-300",
               selectedTags.length > 0
                 ? "border-blue-600 bg-blue-600/60 text-white dark:border-blue-500/60 dark:bg-blue-500/20"
                 : "border-zinc-300 bg-zinc-50 text-zinc-700 dark:border-zinc-200/10 dark:bg-zinc-100/5",
             )}
           >
             <span>Tags</span>
-            <PartyPopperIcon className="ml-1.5 size-4" />
+            <ChevronDownIcon className="size-4" />
           </ListboxButton>
 
           <Transition
@@ -95,7 +95,7 @@ export function ProjectsShowcase() {
           >
             <ListboxOptions
               anchor="bottom end"
-              className="mt-2 flex w-52 flex-col gap-0.5 rounded-md border border-zinc-300 bg-white py-2 pl-2 pr-4 text-sm text-zinc-950 transition dark:border-zinc-200/10 dark:bg-zinc-900 dark:text-zinc-200"
+              className="mt-2 flex w-64 flex-col gap-0.5 rounded-md border border-zinc-300 bg-white py-2 pl-2 pr-4 text-sm text-zinc-950 transition dark:border-zinc-200/10 dark:bg-zinc-900 dark:text-zinc-200"
             >
               <div className="mb-1 flex items-center justify-between gap-2 border-b border-zinc-300 pb-1 dark:border-zinc-200/10">
                 <span className="pl-1 text-xs">{selectedTags.length} selected</span>
