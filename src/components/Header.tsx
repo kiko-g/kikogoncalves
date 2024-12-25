@@ -4,14 +4,24 @@ import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
 import { Fragment, useEffect, useRef, useState } from "react"
-import { usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
-import avatarImageAEditedEnhanced from "@/images/avatar-edited-enhanced.png"
+import { usePathname } from "next/navigation"
+import { clamp } from "@/lib/utilities"
 
 import { Container } from "@/components/Container"
-import { Popover, Transition } from "@headlessui/react"
+import { Popover } from "@headlessui/react"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTitle,
+  DrawerHeader,
+  DrawerTrigger,
+  DrawerDescription,
+} from "@/components/ui/drawer"
 
-import { ChevronDownIcon, XIcon, SunIcon, MoonIcon } from "lucide-react"
+import { SunIcon, MoonIcon, MenuIcon } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 const navigation = [
   { name: "Home", href: "/", shown: true },
@@ -22,67 +32,42 @@ const navigation = [
   { name: "Speaking", href: "/speaking", shown: false },
 ].filter((item) => item.shown)
 
-function MobileNavItem({ href, children }: { href: string; children: React.ReactNode }) {
+function MobileNavigation() {
   return (
-    <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
-        {children}
-      </Popover.Button>
-    </li>
-  )
-}
+    <Drawer>
+      <DrawerTrigger className="group pointer-events-auto flex items-center justify-center rounded-full bg-zinc-50/90 p-[7px] px-3 py-2.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:bg-zinc-800/90 dark:ring-zinc-50/10 dark:hover:ring-zinc-50/20 md:hidden">
+        <MenuIcon className="size-4" />
+      </DrawerTrigger>
 
-function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>) {
-  return (
-    <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
-        Menu
-        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
-      </Popover.Button>
-      <Transition.Root>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Popover.Overlay className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80" />
-        </Transition.Child>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          <Popover.Panel
-            focus
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
-          >
-            <div className="flex flex-row-reverse items-center justify-between">
-              <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                <XIcon className="size-5 text-zinc-500 dark:text-zinc-400" />
-              </Popover.Button>
-              <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Navigation</h2>
-            </div>
-            <nav className="mt-6">
-              <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                {navigation.map((item) => (
-                  <MobileNavItem href={item.href} key={item.href}>
-                    {item.name}
-                  </MobileNavItem>
-                ))}
-              </ul>
-            </nav>
-          </Popover.Panel>
-        </Transition.Child>
-      </Transition.Root>
-    </Popover>
+      <DrawerContent className="px-1 pb-4 pt-2">
+        <DrawerHeader className="sr-only">
+          <DrawerTitle className="sr-only">Navigation</DrawerTitle>
+          <DrawerDescription className="sr-only">Drawer menu to navigate through the site</DrawerDescription>
+        </DrawerHeader>
+
+        <ul className="mt-4 flex min-h-[200px] flex-col gap-2">
+          {navigation.map((item, itemIdx) => {
+            const isActive = usePathname() === item.href
+            return (
+              <li key={`nav-${itemIdx}`}>
+                <Link
+                  title={item.name}
+                  href={item.href}
+                  className={cn(
+                    isActive
+                      ? "bg-zinc-100 font-medium text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100"
+                      : "text-zinc-500 dark:text-zinc-400",
+                    "mx-3 flex cursor-pointer items-center justify-start gap-2 rounded-md border-0 px-3 py-2.5 leading-none transition ease-in-out",
+                  )}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </DrawerContent>
+    </Drawer>
   )
 }
 
@@ -112,7 +97,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<"nav">) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-xl bg-white/90 px-1 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex rounded-xl bg-zinc-50/90 px-1 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-zinc-50/10">
         {navigation.map((item) => (
           <NavItem href={item.href} key={item.href}>
             {item.name}
@@ -136,7 +121,7 @@ function ThemeToggle() {
     <button
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : "Toggle theme"}
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group rounded-full bg-zinc-50/90 px-3 py-2.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition hover:bg-orange-400/5 hover:ring-orange-900/10 dark:bg-zinc-800/90 dark:ring-zinc-50/10 dark:hover:ring-zinc-50/20"
       onClick={() => setTheme(otherTheme)}
     >
       <SunIcon
@@ -144,23 +129,17 @@ function ThemeToggle() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="size-5 fill-orange-500 stroke-orange-500 p-[1px] transition group-hover:fill-orange-500 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-500 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-600 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600"
+        className="size-5 fill-orange-500 stroke-orange-500 transition group-hover:fill-orange-500 group-hover:stroke-orange-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-orange-500 [@media(prefers-color-scheme:dark)]:stroke-orange-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-orange-600 [@media(prefers-color-scheme:dark)]:group-hover:stroke-orange-600"
       />
       <MoonIcon
         strokeWidth="1"
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className="hidden size-5 fill-zinc-400 stroke-zinc-400 p-0.5 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-zinc-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-zinc-500"
+        className="hidden size-5 fill-zinc-300 stroke-zinc-300 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-zinc-400/20 [@media_not_(prefers-color-scheme:dark)]:stroke-zinc-500"
       />
     </button>
   )
-}
-
-function clamp(number: number, a: number, b: number) {
-  let min = Math.min(a, b)
-  let max = Math.max(a, b)
-  return Math.min(Math.max(number, min), max)
 }
 
 function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
@@ -168,7 +147,7 @@ function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef
     <div
       className={clsx(
         className,
-        "h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10",
+        "h-10 w-10 rounded-full bg-zinc-50/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-zinc-50/10",
       )}
       {...props}
     />
@@ -361,7 +340,7 @@ export function Header() {
                 )}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto md:hidden" />
+                <MobileNavigation />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
               <div className="flex justify-end md:flex-1">

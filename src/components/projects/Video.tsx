@@ -14,7 +14,7 @@ export function VideoComponent({ media, additionalClassnames }: Props) {
     <>
       {loading && (
         <div className="min-w-full flex h-full w-full items-center justify-center lg:min-w-112">
-          <div className="h-full w-full animate-pulse rounded-none bg-gray-400 py-36 dark:bg-white/50"></div>
+          <div className="h-full w-full animate-pulse rounded-none bg-gray-400 py-36 dark:bg-zinc-50/50"></div>
         </div>
       )}
       <video

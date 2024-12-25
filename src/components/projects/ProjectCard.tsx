@@ -67,7 +67,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
           </div>
         </div>
 
-        <p className="text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
+        <p className="text-sm font-normal text-zinc-700 dark:text-zinc-50/50">{datespan}</p>
         <div className={clsx("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
           {project.description}
         </div>
