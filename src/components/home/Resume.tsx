@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { type Role } from "@/types"
-import { Button } from "@/components/Button"
+import { Button } from "@/components/ui/button"
 import { logoJumpseller, logoCriticalManufacturing, logoFeup } from "@/images/logos/resume"
 import { ArrowDownIcon, BriefcaseBusinessIcon } from "lucide-react"
+import Link from "next/link"
 
 export function Resume() {
   let resume: Array<Role> = [
@@ -45,9 +46,11 @@ export function Resume() {
         ))}
       </ol>
 
-      <Button target="_blank" href="/cv.pdf" variant="primary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="size-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+      <Button variant="default" asChild className="mt-6 w-full">
+        <Link href="/cv.pdf" target="_blank">
+          <span>Download CV</span>
+          <ArrowDownIcon />
+        </Link>
       </Button>
     </div>
   )
