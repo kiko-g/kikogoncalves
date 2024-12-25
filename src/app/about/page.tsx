@@ -44,7 +44,7 @@ export default function About() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             I’m Francisco. I live in Porto, Portugal where I’m busy building cool software.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-700 dark:text-zinc-300">
+          <div className="mt-6 space-y-7 text-base text-zinc-700 dark:text-zinc-400">
             <p>
               My name is Francisco Gonçalves. I’m a {calculateAge()} year old Software Engineer based in Porto. I have a
               Masters Degree in Informatics and Computer Engineering, from FEUP, the Factulty of Engineering of the

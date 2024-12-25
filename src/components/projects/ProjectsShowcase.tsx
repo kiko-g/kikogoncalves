@@ -69,7 +69,7 @@ export function ProjectsShowcase() {
           value={query}
           placeholder="Search by project name"
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full flex-1 border border-zinc-300 bg-zinc-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-blue-500/80 hover:bg-blue-500/10 focus:border-blue-500 focus:accent-blue-500 focus:ring-0 focus:ring-blue-500 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-blue-500/70 dark:hover:bg-blue-500/10 dark:focus:border-blue-500/50 dark:focus:ring-0 dark:focus:ring-blue-500 lg:px-3 lg:py-2 lg:text-sm"
+          className="w-full flex-1 border border-zinc-300 bg-zinc-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-blue-500/80 hover:bg-blue-500/10 focus:border-blue-500 focus:bg-blue-500/10 focus:accent-blue-500 focus:ring-0 focus:ring-blue-500 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-blue-500/70 dark:hover:bg-blue-500/10 dark:focus:border-blue-500/50 dark:focus:bg-blue-500/10 dark:focus:ring-0 dark:focus:ring-blue-500 lg:px-3 lg:py-2 lg:text-sm"
         />
 
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
