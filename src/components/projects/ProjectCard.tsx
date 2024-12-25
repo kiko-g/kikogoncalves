@@ -8,9 +8,10 @@ import type { Project } from "@/types"
 import { resolveProjectCardColors, getDatespan, techStackIcons } from "@/lib/utilities"
 
 import { VideoComponent } from "@/components/projects/Video"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 import { GithubIcon } from "@/components/icons"
-import { BookCheckIcon, LinkIcon, MoveLeftIcon, MoveRightIcon } from "lucide-react"
+import { BookCheckIcon, LinkIcon } from "lucide-react"
 
 type Props = {
   project: Project
@@ -19,9 +20,6 @@ type Props = {
 }
 
 export function ProjectCard({ project, tagClickCallback, compact = false }: Props) {
-  const [selectedMediaIdx, setSelectedMediaIdx] = useState(0)
-  const media = useMemo(() => project.media[selectedMediaIdx], [selectedMediaIdx, project.media])
-
   const cx = resolveProjectCardColors(project.color)
   const datespan = getDatespan(project.startDate, project.endDate)
 
@@ -107,6 +105,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               <span>{project.attachment}</span>
             </a>
           )}
+
           {project.deployment && (
             <a
               href={project.deployment}
@@ -142,50 +141,28 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
           "group relative order-2 max-w-full lg:order-2 lg:max-w-md",
         )}
       >
-        <div className={cn("min-w-full relative rounded-none", cx.border)}>
-          {media.type === "image" && (
-            <Image
-              src={media.src}
-              alt={`${project.name}: Media ${selectedMediaIdx + 1}`}
-              className="rounded-none shadow transition-all"
-              placeholder="blur"
-            />
-          )}
-          {media.type === "video" && <VideoComponent media={media} additionalClassnames={cx.border} />}
-        </div>
+        <Carousel className="flex w-full max-w-md flex-col gap-2" opts={{ loop: true }}>
+          <CarouselContent>
+            {project.media.map((media, mediaIdx) => (
+              <CarouselItem key={mediaIdx}>
+                {media.type === "image" && (
+                  <Image
+                    src={media.src}
+                    alt={`${project.name}: Media ${mediaIdx + 1}`}
+                    className="h-full rounded-none object-cover shadow transition-all"
+                    placeholder="blur"
+                  />
+                )}
+                {media.type === "video" && <VideoComponent media={media} additionalClassnames={cx.border} />}
+              </CarouselItem>
+            ))}
+          </CarouselContent>
 
-        {project.media.length > 1 && (
-          <div className="mt-3 flex w-full items-center gap-2">
-            <button
-              className="disabled:cursor-not-allowed disabled:opacity-25"
-              disabled={selectedMediaIdx === 0}
-              onClick={() => setSelectedMediaIdx(selectedMediaIdx - 1)}
-            >
-              <MoveLeftIcon className="size-4" />
-            </button>
-            <div className="mt-[1px] flex flex-1 flex-wrap items-center justify-center gap-3">
-              {project.media.map((_, mediaIdx) => (
-                <button
-                  onClick={() => setSelectedMediaIdx(mediaIdx)}
-                  key={`${project.name}-indicator-${mediaIdx}`}
-                  title={`Show media ${mediaIdx + 1} for ${project.name}`}
-                  className={cn(
-                    cx.badge,
-                    "h-1 w-4 transition",
-                    selectedMediaIdx === mediaIdx ? "" : "opacity-40 hover:opacity-80",
-                  )}
-                />
-              ))}
-            </div>
-            <button
-              className="disabled:cursor-not-allowed disabled:opacity-25"
-              disabled={selectedMediaIdx === project.media.length - 1}
-              onClick={() => setSelectedMediaIdx(selectedMediaIdx + 1)}
-            >
-              <MoveRightIcon className="size-4" />
-            </button>
+          <div className="flex items-center justify-between gap-2">
+            <CarouselPrevious variant="ghost" />
+            <CarouselNext variant="ghost" />
           </div>
-        )}
+        </Carousel>
       </div>
     </li>
   )
