@@ -51,7 +51,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               </span>
             )}
             {project.pinned && (
-              <div className="inline-flex items-center rounded-sm bg-gradient-to-br from-teal-500 via-indigo-400 to-violet-400 px-1 py-1 text-xs">
+              <div className="inline-flex items-center rounded-sm bg-gradient-to-br from-rose-500 to-rose-600 px-1 py-1 text-xs">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={16}
