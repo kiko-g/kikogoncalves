@@ -26,7 +26,7 @@ export function JobHuntEntry({
           {tabs.map((tab) => (
             <Tab
               key={tab}
-              className="rounded bg-zinc-950 px-3 py-1 text-sm/6 font-semibold text-white opacity-50 transition-all data-[hover]:opacity-80 data-[selected]:data-[hover]:opacity-100 data-[selected]:opacity-100 dark:data-[hover]:bg-zinc-50/5 dark:data-[selected]:bg-zinc-50 dark:data-[selected]:text-zinc-950 dark:data-[selected]:data-[hover]:opacity-80"
+              className="rounded bg-zinc-950 px-3 py-1 text-sm/6 font-semibold text-white opacity-50 transition-all data-[hover]:opacity-80 data-[selected]:data-[hover]:opacity-100 data-[selected]:opacity-100 dark:data-[hover]:bg-white/5 dark:data-[selected]:bg-zinc-50 dark:data-[selected]:text-zinc-950 dark:data-[selected]:data-[hover]:opacity-80"
             >
               {tab}
             </Tab>

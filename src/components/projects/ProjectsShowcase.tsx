@@ -111,7 +111,7 @@ export function ProjectsShowcase() {
                   <ListboxOption
                     key={tag.name}
                     value={tag}
-                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-zinc-800/10 data-[focus]:text-zinc-900 dark:data-[focus]:bg-zinc-50/10 dark:data-[focus]:text-white"
+                    className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-zinc-800/10 data-[focus]:text-zinc-900 dark:data-[focus]:bg-white/10 dark:data-[focus]:text-white"
                   >
                     <div className="inline-flex items-center gap-1">
                       {techIcon && (

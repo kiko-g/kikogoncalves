@@ -33,7 +33,7 @@ export function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 bg-zinc-25 p-6 dark:border-zinc-700/40 dark:bg-zinc-50/[3%]">
+    <div className="rounded-2xl border border-zinc-100 bg-zinc-25 p-6 dark:border-zinc-700/40 dark:bg-white/[3%]">
       <h2 className="flex items-center gap-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseBusinessIcon className="size-5 flex-none" />
         <span>Work</span>
@@ -62,7 +62,7 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white p-[1px] shadow-md ring-1 ring-zinc-900/5 dark:border dark:border-zinc-500/40 dark:bg-zinc-50/10 dark:ring-0">
+      <div className="relative mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white p-[1px] shadow-md ring-1 ring-zinc-900/5 dark:border dark:border-zinc-500/40 dark:bg-white/10 dark:ring-0">
         <Image src={role.logo} alt="" className="h-8 w-8" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
