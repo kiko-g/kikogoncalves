@@ -96,13 +96,13 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
         className={clsx(
           "relative block rounded px-4 py-2 transition",
           isActive
-            ? "font-semibold text-indigo-500 hover:opacity-80 dark:text-indigo-500"
-            : "hover:text-indigo-500 dark:hover:text-indigo-400",
+            ? "font-semibold text-blue-500 hover:opacity-80 dark:text-blue-500"
+            : "hover:text-blue-500 dark:hover:text-blue-400",
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-indigo-500/10 via-indigo-500 to-indigo-500/10 dark:from-indigo-400/0 dark:via-indigo-500/80 dark:to-indigo-400/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/10 via-blue-500 to-blue-500/10 dark:from-blue-400/0 dark:via-blue-500/80 dark:to-blue-400/0" />
         )}
       </Link>
     </li>

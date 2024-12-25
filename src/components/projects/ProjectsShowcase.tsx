@@ -69,7 +69,7 @@ export function ProjectsShowcase() {
           value={query}
           placeholder="Search by project name"
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full flex-1 border border-zinc-300 bg-zinc-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-indigo-500/80 hover:bg-indigo-500/10 focus:border-indigo-500 focus:accent-indigo-500 focus:ring-0 focus:ring-indigo-500 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-indigo-500/70 dark:hover:bg-indigo-500/10 dark:focus:border-indigo-500/50 dark:focus:ring-0 dark:focus:ring-indigo-500 lg:px-3 lg:py-2 lg:text-sm"
+          className="w-full flex-1 border border-zinc-300 bg-zinc-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-blue-500/80 hover:bg-blue-500/10 focus:border-blue-500 focus:accent-blue-500 focus:ring-0 focus:ring-blue-500 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-blue-500/70 dark:hover:bg-blue-500/10 dark:focus:border-blue-500/50 dark:focus:ring-0 dark:focus:ring-blue-500 lg:px-3 lg:py-2 lg:text-sm"
         />
 
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
@@ -77,7 +77,7 @@ export function ProjectsShowcase() {
             className={clsx(
               "flex items-center self-stretch border px-2.5 text-sm font-medium transition hover:opacity-80 dark:text-zinc-300",
               selectedTags.length > 0
-                ? "border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20"
+                ? "border-blue-600 bg-blue-600/60 text-white dark:border-blue-500/60 dark:bg-blue-500/20"
                 : "border-zinc-300 bg-zinc-50 text-zinc-700 dark:border-zinc-200/10 dark:bg-zinc-100/5",
             )}
           >
@@ -142,7 +142,7 @@ export function ProjectsShowcase() {
           className={clsx(
             "hidden items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80 lg:flex",
             compact
-              ? "border-indigo-600 bg-indigo-600/60 text-white dark:border-indigo-500/60 dark:bg-indigo-500/20"
+              ? "border-blue-600 bg-blue-600/60 text-white dark:border-blue-500/60 dark:bg-blue-500/20"
               : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
           )}
         >
