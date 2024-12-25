@@ -18,7 +18,7 @@ const navigation = [
   { name: "About", href: "/about", shown: true },
   { name: "Projects", href: "/projects", shown: true },
   { name: "Articles", href: "/articles", shown: true },
-  { name: "Uses", href: "/uses", shown: true },
+  { name: "Uses", href: "/uses", shown: false },
   { name: "Speaking", href: "/speaking", shown: false },
 ].filter((item) => item.shown)
 
