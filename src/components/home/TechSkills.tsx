@@ -1,6 +1,6 @@
 "use client"
 
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
@@ -69,7 +69,7 @@ function SkillBubble({
         backgroundColor: background ? `${skill.color}${backgroundTransparencyChannel}` : "transparent",
         border: `1px solid ${bordered ? `${skill.color}${borderTransparencyChannel}` : "transparent"}`,
       }}
-      className={clsx(
+      className={cn(
         "flex items-center gap-1 px-2 pb-[5px] pt-[4px] leading-none",
         rounded ? "rounded-full" : "rounded-none",
       )}
@@ -85,7 +85,7 @@ function SkillBubble({
         />
       )}
 
-      <span className={clsx("text-xs font-normal leading-none tracking-tight", lowercase && "lowercase")}>
+      <span className={cn("text-xs font-normal leading-none tracking-tight", lowercase && "lowercase")}>
         {skill.name}
       </span>
     </li>

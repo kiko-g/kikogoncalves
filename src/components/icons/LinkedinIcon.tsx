@@ -1,13 +1,13 @@
 "use client"
 
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 
 export function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      className={clsx(
+      className={cn(
         props.className,
         "fill-zinc-800 transition group-hover:fill-zinc-800 dark:fill-zinc-100 dark:group-hover:fill-zinc-100",
       )}

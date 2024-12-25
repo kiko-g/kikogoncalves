@@ -1,5 +1,5 @@
 import Link from "next/link"
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 
 import { ChevronRightIcon } from "lucide-react"
 
@@ -13,7 +13,7 @@ export function Card<T extends React.ElementType = "div">({
 }) {
   let Component = as ?? "div"
 
-  return <Component className={clsx(className, "group relative flex flex-col items-start")}>{children}</Component>
+  return <Component className={cn(className, "group relative flex flex-col items-start")}>{children}</Component>
 }
 
 Card.Link = function CardLink({ children, ...props }: React.ComponentPropsWithoutRef<typeof Link>) {
@@ -72,7 +72,7 @@ Card.Eyebrow = function CardEyebrow<T extends React.ElementType = "p">({
 
   return (
     <Component
-      className={clsx(
+      className={cn(
         className,
         "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
         decorate && "pl-3.5",

@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 import Image from "next/image"
 import { type Metadata } from "next"
@@ -366,7 +366,7 @@ function PhotosAlt() {
         {images.map((image, imageIndex) => (
           <div
             key={image.src}
-            className={clsx(
+            className={cn(
               "relative aspect-[8/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:aspect-[9/10] sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length],
             )}

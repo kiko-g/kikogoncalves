@@ -1,6 +1,6 @@
 import type { Media } from "@/types"
 import React, { useState } from "react"
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 
 type Props = {
   media: Media
@@ -21,7 +21,7 @@ export function VideoComponent({ media, additionalClassnames }: Props) {
         controls
         muted
         preload="true"
-        className={clsx("rounded-none shadow", additionalClassnames, loading ? "hidden" : "")}
+        className={cn("rounded-none shadow", additionalClassnames, loading ? "hidden" : "")}
         onLoadedData={() => setLoading(false)}
       >
         <source src={media.src} type="video/mp4" />

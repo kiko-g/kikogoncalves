@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import "@/styles/prism.css"
 import "@/styles/global.css"
 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={clsx("h-full antialiased", inter.variable, lexend.variable)}>
+    <html lang="en" suppressHydrationWarning className={cn("h-full antialiased", inter.variable, lexend.variable)}>
       <body className="flex h-full bg-zinc-50 dark:bg-zinc-950">
         <Providers>
           <div className="flex w-full">

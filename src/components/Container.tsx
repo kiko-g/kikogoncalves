@@ -1,10 +1,10 @@
 import { forwardRef } from "react"
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 
 export const ContainerOuter = forwardRef<React.ElementRef<"div">, React.ComponentPropsWithoutRef<"div">>(
   function OuterContainer({ className, children, ...props }, ref) {
     return (
-      <div ref={ref} className={clsx("sm:px-8", className)} {...props}>
+      <div ref={ref} className={cn("sm:px-8", className)} {...props}>
         <div className="mx-auto w-full max-w-7xl lg:px-8">{children}</div>
       </div>
     )
@@ -14,7 +14,7 @@ export const ContainerOuter = forwardRef<React.ElementRef<"div">, React.Componen
 export const ContainerInner = forwardRef<React.ElementRef<"div">, React.ComponentPropsWithoutRef<"div">>(
   function InnerContainer({ className, children, ...props }, ref) {
     return (
-      <div ref={ref} className={clsx("relative px-4 sm:px-6 lg:px-8", className)} {...props}>
+      <div ref={ref} className={cn("relative px-4 sm:px-6 lg:px-8", className)} {...props}>
         <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
       </div>
     )

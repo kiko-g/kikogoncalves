@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useMemo, useState } from "react"
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { type Technology } from "@/types"
 
@@ -74,7 +74,7 @@ export function ProjectsShowcase() {
 
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
           <ListboxButton
-            className={clsx(
+            className={cn(
               "flex items-center gap-1 self-stretch border px-3 text-sm font-medium transition hover:opacity-80 dark:text-zinc-300",
               selectedTags.length > 0
                 ? "border-blue-600 bg-blue-600/60 text-white dark:border-blue-500/60 dark:bg-blue-500/20"
@@ -113,7 +113,7 @@ export function ProjectsShowcase() {
                     value={tag}
                     className="flex cursor-pointer items-center justify-between gap-2 rounded border border-transparent px-1.5 py-0.5 data-[focus]:border-transparent data-[focus]:bg-zinc-800/10 data-[focus]:text-zinc-900 dark:data-[focus]:bg-white/10 dark:data-[focus]:text-white"
                   >
-                    <div className="inline-flex items-center gap-1">
+                    <div className="inline-flex items-center gap-2">
                       {techIcon && (
                         <Image
                           src={techIcon}
@@ -123,7 +123,7 @@ export function ProjectsShowcase() {
                           className="size-[13px] rounded-sm"
                         />
                       )}
-                      <span className={clsx("block truncate", isSelected ? "" : "")}>
+                      <span className={cn("block truncate font-medium", isSelected ? "" : "")}>
                         {tag.name} ({tag.freq})
                       </span>
                     </div>
@@ -139,7 +139,7 @@ export function ProjectsShowcase() {
           type="button"
           title="Toggle compact view"
           onClick={() => setCompact((prev) => !prev)}
-          className={clsx(
+          className={cn(
             "hidden items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80 lg:flex",
             compact
               ? "border-blue-600 bg-blue-600/60 text-white dark:border-blue-500/60 dark:bg-blue-500/20"
@@ -153,7 +153,7 @@ export function ProjectsShowcase() {
           type="button"
           title="Toggle starred projects"
           onClick={() => setShowOnlyStarred((prev) => !prev)}
-          className={clsx(
+          className={cn(
             "flex items-center gap-2 self-stretch border px-2.5 text-sm transition hover:opacity-80",
             showOnlyStarred
               ? "text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-zinc-300"
@@ -166,10 +166,7 @@ export function ProjectsShowcase() {
 
       <ul
         role="list"
-        className={clsx(
-          "grid",
-          compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10",
-        )}
+        className={cn("grid", compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10")}
       >
         {filteredProjects.map((project) => (
           <ProjectCard project={project} compact={compact} key={project.name} tagClickCallback={onTagClickToggle} />

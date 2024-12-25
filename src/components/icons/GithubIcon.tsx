@@ -1,6 +1,6 @@
 "use client"
 
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import React from "react"
 
 export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -8,7 +8,7 @@ export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
     <svg
       viewBox="0 0 16 16"
       fill="currentColor"
-      className={clsx(
+      className={cn(
         props.className,
         "text-zinc-800 transition group-hover:text-zinc-800 dark:text-zinc-100 dark:group-hover:text-zinc-100",
       )}

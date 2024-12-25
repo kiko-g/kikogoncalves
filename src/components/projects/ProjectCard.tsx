@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useMemo, useState } from "react"
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import Image from "next/image"
 import type { Project } from "@/types"
 
@@ -27,7 +27,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
 
   return (
     <li
-      className={clsx(
+      className={cn(
         "relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6",
         cx.background,
         cx.border,
@@ -36,7 +36,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
       <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className={clsx("h-2.5 w-2.5 rounded-full", cx.badge)} />
+            <span className={cn("h-2.5 w-2.5 rounded-full", cx.badge)} />
             <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
           </div>
           <div className="flex items-start gap-2">
@@ -68,7 +68,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
         </div>
 
         <p className="text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
-        <div className={clsx("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
+        <div className={cn("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
           {project.description}
         </div>
 
@@ -79,7 +79,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               <button
                 key={tech}
                 onClick={() => typeof tagClickCallback === "function" && tagClickCallback(tech)}
-                className={clsx(
+                className={cn(
                   tech === "FEUP" ? "bg-feup/80 text-white dark:bg-feup/50" : cx.bubble,
                   "flex items-center gap-1 rounded-sm px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80",
                 )}
@@ -98,7 +98,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
             <a
               href={project.attachment}
               target="_blank"
-              className={clsx(
+              className={cn(
                 cx.textHover,
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
@@ -111,7 +111,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
             <a
               href={project.deployment}
               target="_blank"
-              className={clsx(
+              className={cn(
                 cx.textHover,
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
@@ -124,7 +124,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
             <a
               href={project.repo}
               target="_blank"
-              className={clsx(
+              className={cn(
                 cx.textHover,
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
@@ -137,12 +137,12 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
       </div>
 
       <div
-        className={clsx(
+        className={cn(
           compact ? "block lg:hidden" : "block",
           "group relative order-2 max-w-full lg:order-2 lg:max-w-md",
         )}
       >
-        <div className={clsx("min-w-full relative rounded-none", cx.border)}>
+        <div className={cn("min-w-full relative rounded-none", cx.border)}>
           {media.type === "image" && (
             <Image
               src={media.src}
@@ -169,7 +169,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                   onClick={() => setSelectedMediaIdx(mediaIdx)}
                   key={`${project.name}-indicator-${mediaIdx}`}
                   title={`Show media ${mediaIdx + 1} for ${project.name}`}
-                  className={clsx(
+                  className={cn(
                     cx.badge,
                     "h-1 w-4 transition",
                     selectedMediaIdx === mediaIdx ? "" : "opacity-40 hover:opacity-80",

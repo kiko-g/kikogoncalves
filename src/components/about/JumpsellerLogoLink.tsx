@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 import Image from "next/image"
 import { logoJumpseller } from "@/images/logos/resume"
@@ -15,7 +15,7 @@ export function JumpsellerLogoLink({ className, width = 28, height = 28 }: Props
       href="https://jumpseller.com"
       target="_blank"
       rel="noopener noreferrer"
-      className={clsx(
+      className={cn(
         className,
         "inline-flex items-center justify-center transition-opacity duration-300 ease-in-out hover:opacity-80",
       )}

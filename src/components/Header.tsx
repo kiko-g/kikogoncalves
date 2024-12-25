@@ -1,16 +1,14 @@
 "use client"
 
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
-import { Fragment, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
 import { clamp } from "@/lib/utilities"
 
 import { Container } from "@/components/Container"
-import { Popover } from "@headlessui/react"
-import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Drawer,
   DrawerContent,
@@ -21,7 +19,6 @@ import {
 } from "@/components/ui/drawer"
 
 import { SunIcon, MoonIcon, MenuIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 const navigation = [
   { name: "Home", href: "/", shown: true },
@@ -78,7 +75,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
     <li>
       <Link
         href={href}
-        className={clsx(
+        className={cn(
           "relative block rounded px-4 py-2 transition",
           isActive
             ? "font-semibold text-blue-500 hover:opacity-80 dark:text-blue-500"
@@ -145,7 +142,7 @@ function ThemeToggle() {
 function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef<"div">) {
   return (
     <div
-      className={clsx(
+      className={cn(
         className,
         "h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10",
       )}
@@ -162,13 +159,13 @@ function Avatar({
   large?: boolean
 }) {
   return (
-    <Link href="/" aria-label="Home" className={clsx(className, "pointer-events-auto")} {...props}>
+    <Link href="/" aria-label="Home" className={cn(className, "pointer-events-auto")} {...props}>
       <Image
         src="/profile.svg"
         alt="Description"
         width={large ? 640 : 360}
         height={large ? 640 : 360}
-        className={clsx("rounded-full bg-zinc-100 object-cover dark:bg-zinc-800", large ? "h-16 w-16" : "h-9 w-9")}
+        className={cn("rounded-full bg-zinc-100 object-cover dark:bg-zinc-800", large ? "h-16 w-16" : "h-9 w-9")}
         priority
       />
     </Link>

@@ -1,6 +1,6 @@
 "use client"
 
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import React, { useCallback, useState } from "react"
 
 import { CheckIcon, ClipboardIcon } from "lucide-react"
@@ -18,7 +18,7 @@ export function CopyToClipboard({ textTsx }: { textTsx: React.ReactNode }) {
   return (
     <button
       onClick={handleCopy}
-      className={clsx(
+      className={cn(
         "flex max-h-8 items-center gap-1 rounded border px-2.5 py-0.5 text-sm transition",
         copied
           ? "border-green-200 bg-green-100 text-emerald-800 dark:border-green-400/40 dark:bg-green-600/20 dark:text-emerald-50"

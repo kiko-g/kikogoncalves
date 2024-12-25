@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import { cn } from "@/lib/utils"
 import React, { HTMLAttributes } from "react"
 
 import { LinkIcon } from "lucide-react"
@@ -14,7 +14,7 @@ export function SectionHeading({ children, slideTo, noMargin, withDivider, ...pr
   const heading = (
     <h2
       {...props}
-      className={clsx(
+      className={cn(
         noMargin ? "mb-0" : "mb-3",
         withDivider && "border-dimmed border-b pb-2.5",
         "mb-3 flex flex-1 text-3xl font-bold leading-7 tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl",
