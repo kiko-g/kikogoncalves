@@ -42,12 +42,13 @@ export default function About() {
 
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Francisco. I live in Porto, Portugal where I’m busy crafting cool software projects.
+            I’m Francisco. I live in Porto, Portugal where I’m busy building cool software.
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className="mt-6 space-y-7 text-base text-zinc-700 dark:text-zinc-300">
             <p>
-              I’m a {calculateAge()} year old Software Engineer based in Porto. I have a Masters Degree in Informatics
-              and Computer Engineering, from FEUP, the Factulty of Engineering of the University of Porto (
+              My name is Francisco Gonçalves. I’m a {calculateAge()} year old Software Engineer based in Porto. I have a
+              Masters Degree in Informatics and Computer Engineering, from FEUP, the Factulty of Engineering of the
+              University of Porto (
               <Link
                 className="external-link"
                 href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
@@ -57,18 +58,20 @@ export default function About() {
               </Link>
               ).
             </p>
+
             <p>
-              I have a passion for software engineering as a whole with a fond interest in full-stack development. My
-              preferred and best technologies or frameworks are React.js, Next.js, Javascript, Typescript and Tailwind.
-            </p>
-            <p>
+              I have a passion for software engineering as a whole with a fond interest in web full-stack development.
               Right now I am working as a full-stack developer at{" "}
               <Link href="https://jumpseller.com" target="_blank" className="external-link inline-flex gap-0.5">
                 <span>Jumpseller</span>
                 <Image src={logoJumpseller} alt="Jumpseller" width={20} height={20} />
               </Link>
-              where I am working to improve the themes of e-commerce platforms and their customization/edition. If
-              you’re interested in my profile reach me on{" "}
+              where I am working to improve the storefront themes of e-commerce platforms and their customization and
+              configuration, as well as improving the Visual and Code Editors for store personalization.
+            </p>
+
+            <p>
+              If you’re interested in my profile reach me on{" "}
               <Link href="https://linkedin.com/in/kikogoncalves" className="external-link" target="_blank">
                 LinkedIn
               </Link>
