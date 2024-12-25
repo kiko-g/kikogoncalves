@@ -1,14 +1,15 @@
 import { type Config } from "tailwindcss"
-import defaultTheme from "tailwindcss/defaultTheme"
 import typographyStyles from "./typography"
+import tailwindcssAnimate from "tailwindcss-animate"
 import typographyPlugin from "@tailwindcss/typography"
 import formsPlugin from "@tailwindcss/forms"
 
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   darkMode: "class",
-  plugins: [typographyPlugin, formsPlugin, require("tailwindcss-animate")],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  plugins: [typographyPlugin, formsPlugin, tailwindcssAnimate],
   theme: {
+    typography: typographyStyles,
     fontSize: {
       xxs: [
         "0.725rem",
@@ -102,7 +103,6 @@ export default {
       "144": "36rem",
       "160": "40rem",
     },
-    typography: "typographyStyles",
     extend: {
       colors: {
         feup: "#842a18",

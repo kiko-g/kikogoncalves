@@ -103,7 +103,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <BookCheckIcon className="size-5 text-gray-700 dark:text-white" />
+              <BookCheckIcon className="size-4 text-gray-700 dark:text-white" />
               <span>{project.attachment}</span>
             </a>
           )}
@@ -116,7 +116,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <LinkIcon className="size-5 text-gray-700 dark:text-white" strokeWidth={1.5} />
+              <LinkIcon className="size-4 text-gray-700 dark:text-white" strokeWidth={1.5} />
               <span>{project.deployment}</span>
             </a>
           )}
@@ -129,7 +129,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <GithubIcon className="size-5 fill-[#333333] dark:fill-white" />
+              <GithubIcon className="size-4 fill-[#333333] dark:fill-white" />
               <span>{project.repo}</span>
             </a>
           )}
@@ -161,7 +161,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               disabled={selectedMediaIdx === 0}
               onClick={() => setSelectedMediaIdx(selectedMediaIdx - 1)}
             >
-              <MoveLeftIcon className="size-5" />
+              <MoveLeftIcon className="size-4" />
             </button>
             <div className="mt-[1px] flex flex-1 flex-wrap items-center justify-center gap-3">
               {project.media.map((_, mediaIdx) => (
@@ -182,7 +182,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               disabled={selectedMediaIdx === project.media.length - 1}
               onClick={() => setSelectedMediaIdx(selectedMediaIdx + 1)}
             >
-              <MoveRightIcon className="size-5" />
+              <MoveRightIcon className="size-4" />
             </button>
           </div>
         )}

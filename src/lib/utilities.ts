@@ -131,12 +131,12 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case "red":
       return {
-        background: "bg-red-700/10 dark:bg-red-700/[15%]",
-        border: "border-red-700/30 dark:border-red-700/50",
-        badge: "bg-red-700 dark:bg-red-500",
-        bubble: "bg-red-700/60 text-white dark:bg-red-500/30",
-        textHover: "hover:text-red-700 dark:hover:text-red-700",
-        ring: "ring-1 ring-offset-2 ring-red-700 dark:ring-red-500",
+        background: "bg-red-600/10 dark:bg-red-600/20",
+        border: "border-red-600/30 dark:border-red-600/50",
+        badge: "bg-red-600 dark:bg-red-500",
+        bubble: "bg-red-600/60 text-white dark:bg-red-600/40",
+        textHover: "hover:text-red-600 dark:hover:text-red-600",
+        ring: "ring-1 ring-offset-2 ring-red-600 dark:ring-red-500",
       }
     case "forest":
       return {
