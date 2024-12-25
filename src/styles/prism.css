@@ -1,10 +1,12 @@
 /* Base styles */
 pre[class*="language-"] {
   color: theme("colors.zinc.100");
-  background-color: theme("colors.navy.800");
+  background-color: theme("colors.zinc.900");
   padding: theme("spacing.4");
   border-radius: theme("borderRadius.md");
   overflow-x: auto;
+  line-height: theme("lineHeight.6");
+  font-size: theme("fontSize.sm");
 }
 
 /* Shared token styles */
@@ -107,9 +109,9 @@ pre[class*="language-"] {
 
 /* Line numbers and highlights */
 .line-numbers .line-numbers-rows {
-  border-right-color: theme("colors.navy.700");
+  border-right-color: theme("colors.zinc.800");
 }
 
 pre[class*="language-"] > code[class*="language-"] .line-highlight {
-  background-color: theme("colors.navy.700");
+  background-color: theme("colors.zinc.800");
 }

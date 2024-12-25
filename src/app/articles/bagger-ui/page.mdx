@@ -1,0 +1,34 @@
+import { ArticleLayout } from "@/components/ArticleLayout"
+import Image from "next/image"
+
+export const article = {
+  author: "Francisco Gonçalves",
+  date: "2024-11-15",
+  title: "Creating a React TSX Component Library",
+  description:
+    "After working on enough projects, you start noticing how often you end up going back to old codebases to grab, tweak, or adapt pieces of code you've already written before. Feels complicated and like a waste of time, and I thought I could improve on that. I wanted to create something that made it easier to skip the repetitive stuff.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export const BaggerUiLink = () => {
+  return (
+    <a href="https://bagger-ui.vercel.app" target="_blank" className="external-link inline-flex items-center gap-1">
+      <span>BaggerUI</span>
+      <img src="/bagger-ui.svg" className="inline-flex size-4 stroke-white" alt="BaggerUI" />
+    </a>
+  )
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+## Demo
+
+Try <BaggerUiLink />. Deployed on Vercel, open source and still in development. BaggerUI will keep being updated as an ever increasing stash of components meant to save time and cover all frontend activities.
+
+## Why?
+
+After working on enough projects, you start noticing how often you end up going back to old codebases to grab, tweak, or adapt pieces of code you've already written before. Feels complicated and like a waste of time, and I thought I could improve on that. I wanted to create something that made it easier to skip the repetitive stuff. Inspired by TailwindUI, which is great for layouts and tailwind markup, and Shadcn, which nails customizable barebones components, I decided to take it a step further. BaggerUI is a collection of React TSX pre-assembled combo components designed to save time and headaches. The goal? You hop onto the site, find the frontend snippet you need (not just the basics), and get straight to building without wasting time rewriting or adapting code.

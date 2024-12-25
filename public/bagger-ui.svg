@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140">
+  <g opacity="1.0">
+    <rect
+      width="45.255"
+      height="45.255"
+      x="37.99"
+      y="107.632"
+      fill-opacity="1.0"
+      stroke-width="2"
+      stroke-opacity="0.0"
+      rx="10"
+      transform="rotate(-45 37.99 107.632)"
+    />
+  </g>
+  <path
+    fill-opacity="1.0"
+    stroke-width="2"
+    stroke-opacity="0.0"
+    d="M45.768 25.99 63.626 8.134a9 9 0 0 1 12.728 0L94.212 25.99a9 9 0 0 1 0 12.727L76.354 56.576a9 9 0 0 1-12.728 0L45.768 38.718a9 9 0 0 1 0-12.728Z"
+    opacity="1.0"
+  />
+  <rect
+    width="43.255"
+    height="43.255"
+    rx="9"
+    x="77.043"
+    y="69.993"
+    fill-opacity="1.0"
+    stroke-width="2"
+    stroke-opacity="0.0"
+    opacity="1.0"
+    transform="rotate(-45 77.043 69.993)"
+  />
+  <rect
+    width="43.255"
+    height="43.255"
+    x="1.766"
+    y="69.993"
+    fill-opacity="1.0"
+    stroke-width="2"
+    stroke-opacity="0.0"
+    opacity="1.0"
+    rx="9"
+    transform="rotate(-45 1.766 69.993)"
+  />
+  <defs>
+    <linearGradient id="a" x1="18.5" x2="54.5" y1="18" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0.014" stop-color="#2393f8" />
+      <stop offset="1" stop-color="#115ea4" />
+    </linearGradient>
+  </defs>
+</svg>
