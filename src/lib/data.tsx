@@ -6,41 +6,6 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: true,
-    beta: true,
-    feup: false,
-    name: "Price Lens - See Through Prices",
-    description: (
-      <section className="project-card-description">
-        <p>
-          A tool to uncover the reality of prices on supermarket chains in Portugal. See through what shelf labels are
-          hiding from you. Wake up.
-        </p>
-        <p>
-          Via scraping we periodically collect prices from supermarkets and analyze them to provide a clear and
-          transparent view of the prices. As of December 2024 only supporting the{" "}
-          <Link href="https://www.continente.pt" target="_blank">
-            <strong>Continente</strong>
-          </Link>{" "}
-          chain.
-        </p>
-      </section>
-    ),
-    startDate: "2024-12-26",
-    endDate: "present",
-    repo: "https://github.com/kiko-g/price-lens",
-    deployment: "https://price-lens.vercel.app",
-    color: "red",
-    stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Prisma", "PostgreSQL", "Supabase"],
-    media: [
-      {
-        type: "image",
-        src: media.baggerFlow.screenshot1,
-      },
-    ],
-  },
-  {
-    pinned: false,
-    relevant: true,
     beta: false,
     feup: false,
     name: "Jumpseller Developer - Themes",
