@@ -1,7 +1,12 @@
 import BaggerFlowScreenshot1 from "./bagger-flow/screenshot-1.png"
 import BaggerFlowScreenshot2 from "./bagger-flow/screenshot-2.png"
-import BaggerUIScreenshot1 from "./bagger-ui/screenshot-1.png"
-import BaggerUIScreenshot2 from "./bagger-ui/screenshot-2.png"
+
+import BaggerUIScreenshot1 from "./bagger-ui/bagger-ui-1.png"
+import BaggerUIScreenshot2 from "./bagger-ui/bagger-ui-2.png"
+import BaggerUIScreenshot3 from "./bagger-ui/bagger-ui-3.png"
+import BaggerUIScreenshot4 from "./bagger-ui/bagger-ui-4.png"
+import BaggerUIScreenshot5 from "./bagger-ui/bagger-ui-5.png"
+
 import CMFUXScreenshot1 from "./cmf-ux/screenshot-1.png"
 import CMFUXScreenshot2 from "./cmf-ux/screenshot-2.png"
 import CMFUXScreenshot3 from "./cmf-ux/screenshot-3.png"
@@ -46,6 +51,9 @@ export const media = {
   baggerui: {
     screenshot1: BaggerUIScreenshot1,
     screenshot2: BaggerUIScreenshot2,
+    screenshot3: BaggerUIScreenshot3,
+    screenshot4: BaggerUIScreenshot4,
+    screenshot5: BaggerUIScreenshot5,
   },
   cmfUx: {
     screenshot1: CMFUXScreenshot1,

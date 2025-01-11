@@ -109,6 +109,18 @@ export const projectsData: Project[] = [
         type: "image",
         src: media.baggerui.screenshot2,
       },
+      {
+        type: "image",
+        src: media.baggerui.screenshot3,
+      },
+      {
+        type: "image",
+        src: media.baggerui.screenshot4,
+      },
+      {
+        type: "image",
+        src: media.baggerui.screenshot5,
+      },
     ],
   },
   {
