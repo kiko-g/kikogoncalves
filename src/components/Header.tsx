@@ -76,10 +76,10 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
       <Link
         href={href}
         className={cn(
-          "relative block rounded px-4 py-2 transition",
+          "relative block rounded-md px-3.5 py-1.5 transition",
           isActive
-            ? "bg-zinc-200 font-semibold text-zinc-800 dark:bg-zinc-800 dark:text-white"
-            : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800",
+            ? "bg-zinc-150 font-semibold text-zinc-800 dark:bg-zinc-800 dark:text-white"
+            : "text-zinc-700 hover:bg-zinc-100/70 dark:text-zinc-400 dark:hover:bg-zinc-800/70",
         )}
       >
         {children}
@@ -91,7 +91,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<"nav">) {
   return (
     <nav {...props}>
-      <ul className="flex gap-3 text-sm font-medium text-zinc-800 shadow-zinc-800/5 backdrop-blur dark:text-zinc-200">
+      <ul className="flex gap-2 rounded-lg bg-white/50 px-2 py-1.5 text-sm font-medium text-zinc-800 shadow-zinc-800/5 backdrop-blur-xl dark:bg-zinc-900/50 dark:text-zinc-200">
         {navigation.map((item) => (
           <NavItem href={item.href} key={item.href}>
             {item.name}
