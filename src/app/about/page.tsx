@@ -20,6 +20,7 @@ import { JumpsellerLogoLink } from "@/components/about/JumpsellerLogoLink"
 import { GithubIcon, InstagramIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons"
 import { FeupLogoLink } from "@/components/about/FeupLogoLink"
 import { Button } from "@/components/ui/button"
+import { TweetCard } from "@/components/Twitter"
 
 export const metadata: Metadata = {
   title: "About",
@@ -117,6 +118,7 @@ export default function About() {
       <Skillset />
       <CurriculumVitae />
       <Photos />
+      <Moments />
     </Container>
   )
 }
@@ -383,6 +385,19 @@ function PhotosAlt() {
           </div>
         ))}
       </div>
+    </section>
+  )
+}
+
+function Moments() {
+  return (
+    <section id="moments" className="mt-6 pt-12 sm:mt-12">
+      <SectionHeading noMargin slideTo="moments">
+        Moments
+      </SectionHeading>
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Highlights of my eternal yapping tendencies.</p>
+
+      <TweetCard id="1876986582739062807" />
     </section>
   )
 }

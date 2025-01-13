@@ -178,7 +178,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: false,
+    pinned: true,
     relevant: true,
     beta: false,
     feup: false,
@@ -236,7 +236,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: false,
+    pinned: true,
     relevant: true,
     beta: false,
     feup: false,
