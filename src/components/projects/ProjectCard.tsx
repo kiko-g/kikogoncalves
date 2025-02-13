@@ -43,9 +43,14 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                 FEUP
               </span>
             )}
-            {project.beta && (
-              <span className="inline-flex items-center rounded-sm bg-amber-400 px-1.5 py-1 text-xs font-bold uppercase leading-4 tracking-tight text-amber-950">
+            {project.status === "beta" && (
+              <span className="inline-flex items-center rounded-sm bg-gradient-to-br from-amber-500 to-amber-600 px-1.5 py-1 text-xs font-semibold leading-4 tracking-tight text-white">
                 Beta
+              </span>
+            )}
+            {project.status === "early-access" && (
+              <span className="inline-flex items-center rounded-sm bg-gradient-to-br from-indigo-400 to-indigo-600 px-1.5 py-1 text-xs font-semibold leading-4 tracking-tight text-white">
+                Early Access
               </span>
             )}
             {project.pinned && (

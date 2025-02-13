@@ -138,6 +138,15 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         textHover: "hover:text-red-600 dark:hover:text-red-600",
         ring: "ring-1 ring-offset-2 ring-red-600 dark:ring-red-500",
       }
+    case "rose":
+      return {
+        background: "bg-rose-800/10 dark:bg-rose-600/10",
+        border: "border-rose-800/30 dark:border-rose-600/50",
+        badge: "bg-rose-800 dark:bg-rose-600",
+        bubble: "bg-rose-800/60 text-white dark:bg-rose-600/40",
+        textHover: "hover:text-rose-800 dark:hover:text-rose-600",
+        ring: "ring-1 ring-offset-2 ring-rose-800 dark:ring-rose-600",
+      }
     case "forest":
       return {
         background: "bg-emerald-700/10 dark:bg-emerald-700/10",

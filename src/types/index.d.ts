@@ -26,6 +26,7 @@ export type ProjectColor =
   | "purple"
   | "pink"
   | "red"
+  | "rose"
   | "orange"
   | "forest"
   | "indigo"
@@ -49,7 +50,7 @@ export type Project = {
   stack: string[]
   media: Media[]
   attachment?: string
-  beta?: boolean
+  status?: "beta" | "early-access" | null
   pinned?: boolean
   relevant?: boolean
   feup?: boolean

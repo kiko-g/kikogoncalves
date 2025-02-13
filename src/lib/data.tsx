@@ -4,9 +4,47 @@ import type { Project, Skill } from "@/types"
 
 export const projectsData: Project[] = [
   {
+    pinned: true,
+    relevant: true,
+    status: "early-access",
+    feup: false,
+    name: "Price Lens - See Through Prices",
+    description: (
+      <section className="project-card-description">
+        <p>
+          A tool to uncover the reality of prices on supermarket chains in Portugal. See through what shelf labels are
+          hiding from you. Wake up.
+        </p>
+        <p>
+          Via scraping we periodically collect prices from supermarkets and analyze them to provide a clear and
+          transparent view of the prices. As of December 2024 only supporting the{" "}
+          <Link href="https://www.continente.pt" target="_blank">
+            <strong>Continente</strong>
+          </Link>{" "}
+          chain.
+        </p>
+        <p className="italic">
+          This project is still under development and the prototype is only a preview of the final product.
+        </p>
+      </section>
+    ),
+    startDate: "2024-12-26",
+    endDate: "present",
+    repo: "https://github.com/kiko-g/price-lens",
+    deployment: "https://price-lens.vercel.app",
+    color: "rose",
+    stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
+    media: [
+      {
+        type: "image",
+        src: media.priceLens.screenshot1,
+      },
+    ],
+  },
+  {
     pinned: false,
     relevant: true,
-    beta: false,
+    status: null,
     feup: false,
     name: "Jumpseller Developer - Themes",
     description: (
@@ -34,7 +72,7 @@ export const projectsData: Project[] = [
     endDate: "present",
     repo: null,
     deployment: "https://jumpseller.com/sign-up/",
-    attachment: "https://simple-clothes.jumpseller.com/",
+    attachment: "https://modern-sports.jumpseller.com/",
     color: "jumpseller",
     stack: ["Ruby", "Ruby on Rails", "React.js", "Javascript", "SQL", "Liquid", "AWS S3"],
     media: [
@@ -51,7 +89,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: true,
-    beta: false,
+    status: null,
     feup: false,
     name: "VS Code Theme: Bagger Flow",
     description: (
@@ -82,7 +120,7 @@ export const projectsData: Project[] = [
   {
     pinned: true,
     relevant: true,
-    beta: true,
+    status: "beta",
     feup: false,
     name: "BaggerUI",
     description: (
@@ -126,7 +164,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: true,
-    beta: false,
+    status: null,
     feup: true,
     name: "Analytics and UX Dashboard for CMF's MES",
     description: (
@@ -178,9 +216,9 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
-    beta: false,
+    status: null,
     feup: false,
     name: "Finishers Hub",
     description: (
@@ -213,7 +251,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: true,
-    beta: false,
+    status: null,
     feup: false,
     name: "Guerner & Irmãos Website",
     startDate: "2023-01-15",
@@ -236,9 +274,9 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: true,
+    pinned: false,
     relevant: true,
-    beta: false,
+    status: null,
     feup: false,
     name: "Time Table Selector",
     startDate: "2022-04-05",
@@ -272,7 +310,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Rushing B (2D Game)",
     startDate: "2022-02-15",
@@ -314,7 +352,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Time Hopper (2D Game)",
     startDate: "2022-04-15",
@@ -353,7 +391,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Virtual Assistant for MES",
     startDate: "2022-03-01",
@@ -390,7 +428,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Health Checker",
     startDate: "2021-11-01",
@@ -431,7 +469,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Internet of Everything",
     startDate: "2021-10-25",
@@ -471,7 +509,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Mafia in Town",
     startDate: "2020-12-14",
@@ -500,7 +538,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Tech Council",
     startDate: "2021-03-01",
@@ -532,7 +570,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Fuse 3D",
     startDate: "2019-09-25",
@@ -560,7 +598,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "Pet Nexus",
     startDate: "2020-10-21",
@@ -582,7 +620,7 @@ export const projectsData: Project[] = [
   {
     pinned: false,
     relevant: false,
-    beta: false,
+    status: null,
     feup: true,
     name: "P2P Timeline Twitter Clone",
     startDate: "2021-11-08",

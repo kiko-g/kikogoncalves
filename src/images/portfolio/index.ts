@@ -18,28 +18,40 @@ import HealthCheckerScreenshot1 from "./health-checker/screenshot-1.png"
 import HealthCheckerScreenshot2 from "./health-checker/screenshot-2.png"
 import HealthCheckerScreenshot3 from "./health-checker/screenshot-3.png"
 import HealthCheckerScreenshot4 from "./health-checker/screenshot-4.png"
+
 import InternetOfEverythingScreenshot1 from "./internet-of-everything/screenshot-1.png"
 import InternetOfEverythingScreenshot2 from "./internet-of-everything/screenshot-2.png"
 import InternetOfEverythingScreenshot3 from "./internet-of-everything/screenshot-3.png"
 import InternetOfEverythingScreenshot4 from "./internet-of-everything/screenshot-4.png"
+
 import JumpsellerScreenshot1 from "./jumpseller/screenshot-1.png"
 import JumpsellerScreenshot2 from "./jumpseller/screenshot-2.png"
+
 import MafiaInTownScreenshot1 from "./mafia-in-town/screenshot.png"
 import MafiaInTownScreenshot2 from "./mafia-in-town/screenshot2.png"
+
 import P2PTwitterCloneScreenshot1 from "./p2p-twitter-clone/screenshot-1.png"
+
 import PetNexusScreenshot1 from "./pet-nexus/screenshot.png"
+
+import PriceLensScreenshot1 from "./price-lens/screenshot-1.png"
+
 import RobinScreenshot1 from "./robin/screenshot-1.png"
 import RobinScreenshot2 from "./robin/screenshot-2.png"
 import RobinScreenshot3 from "./robin/screenshot-3.png"
+
 import RushingBScreenshot1 from "./rushing-b/screenshot-1.png"
 import RushingBScreenshot2 from "./rushing-b/screenshot-2.png"
 import RushingBScreenshot3 from "./rushing-b/screenshot-3.png"
 import RushingBScreenshot4 from "./rushing-b/screenshot-4.png"
+
 import TechCouncilScreenshot1 from "./tech-council/screenshot-1.png"
 import TechCouncilScreenshot2 from "./tech-council/screenshot-2.png"
+
 import TimeHopperScreenshot1 from "./time-hopper/screenshot-1.png"
 import TimeHopperScreenshot2 from "./time-hopper/screenshot-2.png"
 import TimeHopperScreenshot3 from "./time-hopper/screenshot-3.png"
+
 import TimeTableSchedulerScreenshot1 from "./tts/screenshot-1.png"
 import TimeTableSchedulerScreenshot2 from "./tts/screenshot-2.png"
 
@@ -119,5 +131,8 @@ export const media = {
   tts: {
     screenshot1: TimeTableSchedulerScreenshot1,
     screenshot2: TimeTableSchedulerScreenshot2,
+  },
+  priceLens: {
+    screenshot1: PriceLensScreenshot1,
   },
 }
