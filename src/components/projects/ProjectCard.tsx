@@ -25,18 +25,15 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
 
   return (
     <li
-      className={cn(
-        "relative flex flex-col gap-4 rounded-none border p-4 lg:flex-row lg:p-6",
-        cx.background,
-        cx.border,
-      )}
+      className={cn("relative flex flex-col gap-4 rounded-lg border p-4 lg:flex-row lg:p-6", cx.background, cx.border)}
     >
       <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-1">
           <div className="flex items-center gap-2">
             <span className={cn("h-2.5 w-2.5 rounded-full", cx.badge)} />
             <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
           </div>
+
           <div className="flex items-start gap-2">
             {project.feup && (
               <span className="inline-flex items-center rounded-sm bg-feup px-1.5 py-1 text-xs font-bold uppercase leading-4 tracking-tight text-white">
@@ -70,7 +67,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
           </div>
         </div>
 
-        <p className="text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
+        <p className="mt-0.5 text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
         <div className={cn("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
           {project.description}
         </div>

@@ -158,9 +158,9 @@ function Skillset({ useProgressBarColor = true }) {
                 </div>
               </div>
 
-              <div className="relative h-3.5 w-full overflow-hidden rounded-none bg-zinc-200 dark:bg-white/5">
+              <div className="relative h-3.5 w-full overflow-hidden rounded-sm bg-zinc-200 dark:bg-white/5">
                 <div
-                  className="bg-skillbar h-full rounded-none"
+                  className="bg-skillbar h-full rounded-sm"
                   style={
                     {
                       width: `${skill.score}%`,

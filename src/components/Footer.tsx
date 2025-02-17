@@ -26,13 +26,13 @@ export function Footer() {
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/about">About</NavLink>
+                <NavLink href="/resume">Resume</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/projects">Projects</NavLink>
                 {process.env.NODE_ENV === "development" && (
                   <>
                     <NavLink href="/uses">Uses</NavLink>
                     <NavLink href="/job-hunt">Job Hunt</NavLink>
-                    <NavLink href="/speaking">Speaking</NavLink>
                   </>
                 )}
               </div>
