@@ -3,9 +3,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { DownloadIcon, MailIcon, PhoneIcon } from "lucide-react"
+import { CodeIcon, DownloadIcon, MailIcon, PhoneIcon } from "lucide-react"
 import { JumpsellerLogoLink } from "../about/JumpsellerLogoLink"
-import { XTwitterIcon } from "../icons"
+import { XTwitterIcon, GithubIcon } from "../icons"
 import { logoLinkedin } from "@/images/logos/resume"
 
 export function ResumeCanvas() {
@@ -52,22 +52,32 @@ export function ResumeCanvas() {
             <span>+351 91 827 11 05</span>
           </Link>
 
-          <Link href="mailto:kikojpgoncalves@gmail.com" className="flex items-center gap-1 pl-3.5 hover:underline">
+          <Link href="mailto:kikojpgoncalves@gmail.com" className="flex items-center gap-1 pl-3 hover:underline">
             <MailIcon className="h-4 w-4" />
             <span>kikojpgoncalves@gmail.com</span>
           </Link>
 
-          <Link href="https://x.com/kikogoncalves_" className="flex items-center gap-1 pl-3.5 hover:underline">
+          {/* <Link href="https://x.com/kikogoncalves_" className="flex items-center gap-1 pl-3 hover:underline">
             <XTwitterIcon className="h-4 w-4" />
             <span>kikogoncalves_</span>
+          </Link> */}
+
+          <Link href="https://kikogoncalves.com/projects" className="flex items-center gap-1 pl-3 hover:underline">
+            <CodeIcon className="h-4 w-4" />
+            <span>Projects</span>
           </Link>
 
           <Link
             href="https://www.linkedin.com/in/kikogoncalves/"
-            className="flex items-center gap-1 pl-3.5 hover:underline"
+            className="flex items-center gap-1 pl-3 hover:underline"
           >
             <Image src={logoLinkedin} alt="Linkedin" width={16} height={16} />
             <span>kikogoncalves_</span>
+          </Link>
+
+          <Link href="https://github.com/kiko-g" className="flex items-center gap-1 pl-3 hover:underline">
+            <GithubIcon className="h-4 w-4" />
+            <span>kiko-g</span>
           </Link>
         </div>
       </section>
