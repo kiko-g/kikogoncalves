@@ -395,7 +395,7 @@ function Moments() {
       <SectionHeading noMargin slideTo="moments">
         Moments
       </SectionHeading>
-      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Highlights of my eternal yapping tendencies.</p>
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Highlights of exquisite yapping tendencies</p>
 
       <TweetCard id="1876986582739062807" />
     </section>
