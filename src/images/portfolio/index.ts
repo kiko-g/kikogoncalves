@@ -35,6 +35,7 @@ import P2PTwitterCloneScreenshot1 from "./p2p-twitter-clone/screenshot-1.png"
 import PetNexusScreenshot1 from "./pet-nexus/screenshot.png"
 
 import PriceLensScreenshot1 from "./price-lens/screenshot-1.png"
+import PriceLensScreenshot2 from "./price-lens/screenshot-2.png"
 
 import RobinScreenshot1 from "./robin/screenshot-1.png"
 import RobinScreenshot2 from "./robin/screenshot-2.png"
@@ -134,5 +135,6 @@ export const media = {
   },
   priceLens: {
     screenshot1: PriceLensScreenshot1,
+    screenshot2: PriceLensScreenshot2,
   },
 }

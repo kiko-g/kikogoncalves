@@ -12,8 +12,9 @@ export const projectsData: Project[] = [
     description: (
       <section className="project-card-description">
         <p>
-          A tool to uncover the reality of prices on supermarket chains in Portugal. See through what shelf labels are
-          hiding from you. Wake up.
+          A (early access) app for tracking supermarket prices over the years, promoting transparency in{" "}
+          <strong>consumer goods inflation</strong>, namely in Portugal. See through what shelf labels are hiding from
+          you.
         </p>
         <p>
           Via scraping we periodically collect prices from supermarkets and analyze them to provide a clear and
