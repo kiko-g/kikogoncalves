@@ -151,7 +151,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
                   <Image
                     src={media.src}
                     alt={`${project.name}: Media ${mediaIdx + 1}`}
-                    className="h-full rounded-none object-cover shadow transition-all"
+                    className="h-full rounded-md object-cover shadow transition-all"
                     placeholder="blur"
                   />
                 )}
@@ -161,8 +161,14 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
           </CarouselContent>
 
           <div className="flex items-center justify-between gap-2">
-            <CarouselPrevious variant="ghost" />
-            <CarouselNext variant="ghost" />
+            <CarouselPrevious
+              variant="ghost"
+              className="transition-all hover:scale-125 hover:bg-black/0 dark:hover:bg-white/0 [&_svg]:size-5"
+            />
+            <CarouselNext
+              variant="ghost"
+              className="transition-all hover:scale-125 hover:bg-black/0 dark:hover:bg-white/0 [&_svg]:size-5"
+            />
           </div>
         </Carousel>
       </div>

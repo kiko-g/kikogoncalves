@@ -236,16 +236,16 @@ export const projectsData: Project[] = [
     stack: ["React.js", "Next.js", "Typescript", "Tailwind", "AWS S3", "Mongo DB"],
     media: [
       {
+        type: "video",
+        src: "https://github.com/user-attachments/assets/106d13ef-adb0-466b-a49f-0b77bf817937",
+      },
+      {
         type: "image",
         src: media.finishersHub.screenshot1,
       },
       {
         type: "image",
         src: media.finishersHub.screenshot2,
-      },
-      {
-        type: "video",
-        src: "https://user-images.githubusercontent.com/40745490/230927052-362d6bd0-0abe-495d-9cbf-bd2524354e6e.mp4",
       },
     ],
   },
@@ -295,16 +295,16 @@ export const projectsData: Project[] = [
     deployment: "https://tts.niaefeup.pt/planner",
     media: [
       {
+        type: "video",
+        src: "https://github.com/user-attachments/assets/c303455b-b540-423f-ac2c-a78db2fef3c6",
+      },
+      {
         type: "image",
         src: media.tts.screenshot1,
       },
       {
         type: "image",
         src: media.tts.screenshot2,
-      },
-      {
-        type: "video",
-        src: "https://user-images.githubusercontent.com/40745490/183784200-742c3556-ee0a-4eb7-9994-dcac6dffd440.mp4",
       },
     ],
   },
