@@ -79,7 +79,7 @@ function NavItem({ href, children }: { href: string; children: React.ReactNode }
         className={cn(
           "relative block rounded-md px-3.5 py-1.5 transition",
           isActive
-            ? "bg-zinc-150 font-semibold text-zinc-800 dark:bg-zinc-800 dark:text-white"
+            ? "bg-gradient-to-br from-blue-500/10 to-blue-500/[15%] text-zinc-800 dark:from-blue-500/20 dark:to-blue-500/30 dark:text-white"
             : "text-zinc-700 hover:bg-zinc-100/70 dark:text-zinc-400 dark:hover:bg-zinc-800/70",
         )}
       >

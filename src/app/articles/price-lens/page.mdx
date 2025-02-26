@@ -1,0 +1,22 @@
+import { ArticleLayout } from "@/components/ArticleLayout"
+import Image from "next/image"
+
+export const article = {
+  author: "Francisco Gonçalves",
+  date: "2024-12-30",
+  title: "Developing a Supermarket Price Awareness Tool",
+  description:
+    "Price Lens is my latest solo endeavour. A tool that helps you see through shelf prices and understand what the real inflation is over time for the products you love and buy most often.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Price Lens is my latest solo endeavour. A tool that helps you see through shelf prices and understand what the real
+inflation is over time for the products you love and buy most often.
+
+![Price Lens Home Page](https://github.com/user-attachments/assets/9de429ca-79f0-479b-8dce-f898ec4bbcc0)

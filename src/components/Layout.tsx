@@ -1,5 +1,7 @@
 import { Footer } from "@/components/Footer"
 import { Header } from "@/components/Header"
+import { DotPattern } from "@/components/magicui/dot-pattern"
+import { cn } from "@/lib/utils"
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

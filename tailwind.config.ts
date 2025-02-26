@@ -9,7 +9,7 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   plugins: [typographyPlugin, formsPlugin, tailwindcssAnimate],
   theme: {
-    typography: typographyStyles,
+    typography: "typographyStyles",
     fontSize: {
       xxs: [
         "0.725rem",
@@ -170,6 +170,22 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      animation: {
+        shine: "shine var(--duration) infinite linear",
+      },
+      keyframes: {
+        shine: {
+          "0%": {
+            "background-position": "0% 0%",
+          },
+          "50%": {
+            "background-position": "100% 100%",
+          },
+          to: {
+            "background-position": "0% 0%",
+          },
+        },
       },
     },
   },
