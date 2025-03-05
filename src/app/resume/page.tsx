@@ -14,7 +14,7 @@ export default function Resume() {
       title="My resume"
       intro="My resume, with my work experience, skills, and education with the web format twist. Extra razzledazzle."
     >
-      <ResumeCanvas />
+      {/* <ResumeCanvas /> */}
     </LayoutSimple>
   )
 }
