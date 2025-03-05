@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { navigation } from "@/lib/utils"
 
 import { Button } from "./ui/button"
 import { ContainerInner, ContainerOuter } from "@/components/Container"
@@ -24,17 +25,13 @@ export function Footer() {
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row md:items-start">
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/">Home</NavLink>
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/resume">Resume</NavLink>
-                <NavLink href="/articles">Articles</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                {process.env.NODE_ENV === "development" && (
-                  <>
-                    <NavLink href="/uses">Uses</NavLink>
-                    <NavLink href="/job-hunt">Job Hunt</NavLink>
-                  </>
-                )}
+                {navigation
+                  .filter((item) => item.shown)
+                  .map((item) => (
+                    <NavLink key={item.name} href={item.href}>
+                      {item.name}
+                    </NavLink>
+                  ))}
               </div>
 
               <div className="flex flex-col gap-1">

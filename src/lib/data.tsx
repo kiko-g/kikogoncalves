@@ -24,16 +24,14 @@ export const projectsData: Project[] = [
           </Link>{" "}
           chain.
         </p>
-        <p className="italic">
-          This project is still under development and the prototype is only a preview of the final product.
-        </p>
+        <p>This project is still under development and the prototype is only a preview of the final product.</p>
       </section>
     ),
     startDate: "2024-12-26",
     endDate: "present",
     repo: "https://github.com/kiko-g/price-lens",
     deployment: "https://price-lens.vercel.app",
-    color: "rose",
+    color: "highlight",
     stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
     media: [
       {

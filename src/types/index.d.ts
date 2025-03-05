@@ -33,6 +33,7 @@ export type ProjectColor =
   | "amber"
   | "slate"
   | "jumpseller"
+  | "highlight"
 
 type Media = {
   type: "image" | "video"

@@ -140,12 +140,12 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case "rose":
       return {
-        background: "bg-rose-800/10 dark:bg-rose-600/10",
-        border: "border-rose-800/30 dark:border-rose-600/50",
-        badge: "bg-rose-800 dark:bg-rose-600",
-        bubble: "bg-rose-800/60 text-white dark:bg-rose-600/40",
-        textHover: "hover:text-rose-800 dark:hover:text-rose-600",
-        ring: "ring-1 ring-offset-2 ring-rose-800 dark:ring-rose-600",
+        background: "bg-rose-700/10 dark:bg-rose-600/10",
+        border: "border-rose-700/30 dark:border-rose-600/50",
+        badge: "bg-rose-700 dark:bg-rose-600",
+        bubble: "bg-rose-700/60 text-white dark:bg-rose-600/40",
+        textHover: "hover:text-rose-700 dark:hover:text-rose-600",
+        ring: "ring-1 ring-offset-2 ring-rose-700 dark:ring-rose-600",
       }
     case "forest":
       return {
@@ -164,6 +164,15 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         bubble: "bg-lime-800/60 text-white dark:bg-lime-700/30",
         textHover: "hover:text-lime-800 dark:hover:text-lime-800",
         ring: "ring-1 ring-offset-2 ring-lime-800 dark:ring-lime-700",
+      }
+    case "highlight":
+      return {
+        background: "bg-gradient-to-br from-zinc-50 to-zinc-200 dark:from-zinc-100/20 dark:to-zinc-50/10",
+        border: "border-zinc-500/10 dark:border-zinc-400/10",
+        badge: "bg-zinc-700 dark:bg-zinc-300",
+        bubble: "bg-zinc-900/70 text-white dark:bg-zinc-900/80",
+        textHover: "hover:text-zinc-700 dark:hover:text-zinc-300",
+        ring: "ring-1 ring-offset-2 ring-zinc-400 dark:ring-zinc-300",
       }
     case "slate":
     default:

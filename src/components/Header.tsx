@@ -1,12 +1,14 @@
 "use client"
 
-import { cn } from "@/lib/utils"
-import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
+import Image from "next/image"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+
 import { clamp } from "@/lib/utilities"
+import { navigation } from "@/lib/utils"
 
 import { Container } from "@/components/Container"
 import {
@@ -19,16 +21,6 @@ import {
 } from "@/components/ui/drawer"
 
 import { SunIcon, MoonIcon, MenuIcon } from "lucide-react"
-
-const navigation = [
-  { name: "Home", href: "/", shown: true },
-  { name: "About", href: "/about", shown: true },
-  { name: "Resume", href: "/resume", shown: process.env.NODE_ENV === "development" },
-  { name: "Projects", href: "/projects", shown: true },
-  { name: "Articles", href: "/articles", shown: true },
-  { name: "Uses", href: "/uses", shown: false },
-  { name: "Speaking", href: "/speaking", shown: false },
-].filter((item) => item.shown)
 
 function MobileNavigation() {
   return (
