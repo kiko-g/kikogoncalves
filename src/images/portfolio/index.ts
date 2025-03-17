@@ -37,6 +37,10 @@ import PetNexusScreenshot1 from "./pet-nexus/screenshot.png"
 import PriceLensScreenshot1 from "./price-lens/screenshot-1.png"
 import PriceLensScreenshot2 from "./price-lens/screenshot-2.png"
 import PriceLensScreenshot3 from "./price-lens/screenshot-3.png"
+import PriceLensScreenshot4 from "./price-lens/screenshot-4.png"
+import PriceLensScreenshot5 from "./price-lens/screenshot-5.png"
+import PriceLensScreenshot6 from "./price-lens/screenshot-6.png"
+
 import RobinScreenshot1 from "./robin/screenshot-1.png"
 import RobinScreenshot2 from "./robin/screenshot-2.png"
 import RobinScreenshot3 from "./robin/screenshot-3.png"
@@ -137,5 +141,8 @@ export const media = {
     screenshot1: PriceLensScreenshot1,
     screenshot2: PriceLensScreenshot2,
     screenshot3: PriceLensScreenshot3,
+    screenshot4: PriceLensScreenshot4,
+    screenshot5: PriceLensScreenshot5,
+    screenshot6: PriceLensScreenshot6,
   },
 }
