@@ -38,6 +38,26 @@ export const projectsData: Project[] = [
         type: "image",
         src: media.priceLens.screenshot1,
       },
+      {
+        type: "image",
+        src: media.priceLens.screenshot2,
+      },
+      {
+        type: "image",
+        src: media.priceLens.screenshot3,
+      },
+      {
+        type: "image",
+        src: media.priceLens.screenshot4,
+      },
+      {
+        type: "image",
+        src: media.priceLens.screenshot5,
+      },
+      {
+        type: "image",
+        src: media.priceLens.screenshot6,
+      },
     ],
   },
   {
