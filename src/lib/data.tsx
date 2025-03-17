@@ -50,14 +50,6 @@ export const projectsData: Project[] = [
         type: "image",
         src: media.priceLens.screenshot4,
       },
-      {
-        type: "image",
-        src: media.priceLens.screenshot5,
-      },
-      {
-        type: "image",
-        src: media.priceLens.screenshot6,
-      },
     ],
   },
   {
