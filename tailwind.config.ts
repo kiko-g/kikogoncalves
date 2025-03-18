@@ -9,7 +9,7 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   plugins: [typographyPlugin, formsPlugin, tailwindcssAnimate],
   theme: {
-    typography: "typographyStyles",
+    typography: typographyStyles,
     fontSize: {
       xxs: [
         "0.725rem",
