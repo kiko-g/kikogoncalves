@@ -168,8 +168,14 @@ export function ProjectsShowcase() {
         role="list"
         className={cn("grid", compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10")}
       >
-        {filteredProjects.map((project) => (
-          <ProjectCard project={project} compact={compact} key={project.name} tagClickCallback={onTagClickToggle} />
+        {filteredProjects.map((project, projectIndex) => (
+          <ProjectCard
+            project={project}
+            compact={compact}
+            key={project.name}
+            tagClickCallback={onTagClickToggle}
+            projectIndex={projectIndex}
+          />
         ))}
       </ul>
 

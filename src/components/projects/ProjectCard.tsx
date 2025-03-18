@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useMemo, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import type { Project } from "@/types"
@@ -17,11 +17,29 @@ type Props = {
   project: Project
   compact?: boolean
   tagClickCallback?: (tagName: string) => void
+  projectIndex?: number
 }
 
-export function ProjectCard({ project, tagClickCallback, compact = false }: Props) {
+export function ProjectCard({ project, tagClickCallback, compact = false, projectIndex }: Props) {
   const cx = resolveProjectCardColors(project.color)
   const datespan = getDatespan(project.startDate, project.endDate)
+  const nextButtonRef = React.useRef<HTMLButtonElement>(null)
+
+  const handleNextSlide = () => {
+    if (!nextButtonRef.current) return
+
+    const nextButton = nextButtonRef.current
+    if (nextButton && !nextButton.disabled) nextButton.click()
+  }
+
+  useEffect(() => {
+    if (typeof projectIndex !== "number" || projectIndex > 0) return
+
+    const interval = setInterval(() => {
+      handleNextSlide()
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <li
@@ -165,7 +183,9 @@ export function ProjectCard({ project, tagClickCallback, compact = false }: Prop
               variant="ghost"
               className="transition-all hover:scale-125 hover:bg-black/0 dark:hover:bg-white/0 [&_svg]:size-5"
             />
+
             <CarouselNext
+              ref={nextButtonRef}
               variant="ghost"
               className="transition-all hover:scale-125 hover:bg-black/0 dark:hover:bg-white/0 [&_svg]:size-5"
             />
