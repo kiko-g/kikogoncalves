@@ -65,7 +65,7 @@ function Header() {
 
       <div className="flex flex-col gap-0 divide-x-0 divide-zinc-300 text-sm dark:divide-zinc-500 lg:flex-row lg:gap-3 lg:divide-x lg:text-base lg:[&>*:not(:first-child)]:pl-3">
         <span className="flex items-center gap-1 font-bold">
-          Fullstack Engineer at Jumpseller <JumpsellerLogoLink width={20} height={20} />
+          Fullstack Engineer at Jumpseller <JumpsellerLogoLink width={15} height={20} />
         </span>
         <span className="font-normal">MSc in Informatics and Computing Engineering</span>
         <span className="font-normal opacity-70">Porto, Portugal</span>

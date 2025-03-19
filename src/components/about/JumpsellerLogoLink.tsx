@@ -9,7 +9,7 @@ type Props = {
   height?: number
 }
 
-export function JumpsellerLogoLink({ className, width = 28, height = 28 }: Props) {
+export function JumpsellerLogoLink({ className, width = 15, height = 20 }: Props) {
   return (
     <Link
       href="https://jumpseller.com"

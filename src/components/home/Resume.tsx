@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { type Role } from "@/types"
 import { Button } from "@/components/ui/button"
-import { logoJumpseller, logoCriticalManufacturing, logoFeup } from "@/images/logos/resume"
+import { logoJumpsellerAlt, logoCriticalManufacturing, logoFeup } from "@/images/logos/resume"
 import { ArrowDownIcon, BriefcaseBusinessIcon } from "lucide-react"
 import Link from "next/link"
 
@@ -10,7 +10,7 @@ export function Resume() {
     {
       company: "Jumpseller",
       title: "Fullstack Engineer",
-      logo: logoJumpseller,
+      logo: logoJumpsellerAlt,
       start: "10/2023",
       end: {
         label: "Present",
