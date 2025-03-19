@@ -35,7 +35,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
         variant="default"
         size="icon-sm"
         onClick={downloadResume}
-        className="absolute right-4 top-4 z-10 opacity-20 transition-opacity group-hover:opacity-100"
+        className="absolute right-4 top-4 z-50 opacity-20 transition-opacity group-hover:opacity-100"
       >
         <DownloadIcon />
       </Button>
@@ -62,7 +62,7 @@ function Header() {
       </h1>
 
       <div className="flex flex-col gap-0 divide-x-0 divide-zinc-300 text-sm dark:divide-zinc-500 lg:flex-row lg:gap-3 lg:divide-x lg:text-base lg:[&>*:not(:first-child)]:pl-3">
-        <span className="flex items-center gap-1 font-semibold">
+        <span className="flex items-center gap-1 font-bold">
           Fullstack Engineer at Jumpseller <JumpsellerLogoLink width={20} height={20} />
         </span>
         <span className="font-normal">MSc in Informatics and Computing Engineering</span>
@@ -71,22 +71,22 @@ function Header() {
 
       <div className="mt-2 flex w-full flex-col gap-0 divide-x-0 divide-zinc-300 border-t pt-2 text-sm opacity-80 dark:divide-zinc-500 lg:mt-1 lg:flex-row lg:gap-3 lg:divide-x lg:border-t-0 lg:pt-0 [&>*:not(:first-child)]:pl-0 lg:[&>*:not(:first-child)]:pl-3">
         <Link href="tel:+351918271105" className="flex items-center gap-1 hover:underline">
-          <PhoneIcon className="h-4 w-4" />
+          <PhoneIcon className="size-4" />
           <span>+351 91 827 11 05</span>
         </Link>
 
         <Link href="mailto:kikojpgoncalves@gmail.com" className="flex items-center gap-1 hover:underline">
-          <MailIcon className="h-4 w-4" />
+          <MailIcon className="size-4" />
           <span>kikojpgoncalves@gmail.com</span>
         </Link>
 
         {/* <Link href="https://x.com/kikogoncalves_" className="flex items-center gap-1 hover:underline">
-    <XTwitterIcon className="h-4 w-4" />
-    <span>kikogoncalves_</span>
-  </Link> */}
+            <XTwitterIcon className="size-4" />
+            <span>kikogoncalves_</span>
+          </Link> */}
 
         <Link href="https://kikogoncalves.com/projects" className="flex items-center gap-1 hover:underline">
-          <CodeIcon className="h-4 w-4" />
+          <CodeIcon className="size-4" />
           <span>Projects</span>
         </Link>
 
@@ -96,7 +96,7 @@ function Header() {
         </Link>
 
         <Link href="https://github.com/kiko-g" className="flex items-center gap-1 hover:underline">
-          <GithubIcon className="h-4 w-4" />
+          <GithubIcon className="size-4" />
           <span>kiko-g</span>
         </Link>
       </div>
@@ -214,16 +214,16 @@ function Experience() {
     if (typeof item === "string") return <li key={index}>{item}</li>
 
     return (
-      <li key={index}>
+      <li key={index} className="leading-snug">
         {/* Main text */}
-        {item.bold ? <span className="font-semibold">{item.text}</span> : item.text}
+        {item.bold ? <span className="font-bold">{item.text}</span> : item.text}
 
         {/* Optional link */}
         {item.link && (
           <a href={item.link.url} className="mx-1 inline-flex items-center">
             <span className="font-medium">{item.link.text}</span>
-            {item.link.type === "external" && <ExternalLinkIcon />}
-            {item.link.type === "github" && <GithubIcon />}
+            {item.link.type === "external" && <ExternalLinkIcon className="size-4" />}
+            {item.link.type === "github" && <GithubIcon className="size-4" />}
             {item.link.text.startsWith("(") && <span>)</span>}
           </a>
         )}
@@ -236,32 +236,32 @@ function Experience() {
 
   return (
     <div>
-      <h2 className="mb-4 border-b border-gray-300 pb-1 text-3xl font-medium">
-        <span className="font-bold text-teal-600">Pro</span>fessional & Other Experiences
+      <h2 className="mb-2 border-b pb-1 text-2xl font-bold">
+        <span className="text-sky-600">Pro</span>fessional & Other Experiences
       </h2>
 
       {experienceData.map((experience, index) => (
-        <div key={index} className="mb-6">
+        <div key={index} className="mb-4">
           {/* Header with job title and period */}
-          <div className="mb-1 flex items-baseline justify-between">
-            <h3 className="text-xl font-semibold">{experience.title}</h3>
-            <span className="font-medium text-teal-600">{experience.period}</span>
+          <div className="flex items-baseline justify-between">
+            <h3 className="text-xl font-bold leading-none">{experience.title}</h3>
+            <span className="font-medium text-sky-600">{experience.period}</span>
           </div>
 
           {/* Subheader with company and location */}
-          <div className="mb-2 flex items-baseline justify-between">
+          <div className="flex items-baseline justify-between">
             <div className="flex items-center">
               <span className="font-medium">{experience.company}</span>
-              <a href={experience.companyLink} className="ml-1 inline-flex text-gray-600">
-                {experience.companyLinkType === "external" && <ExternalLinkIcon />}
-                {experience.companyLinkType === "github" && <GithubIcon />}
+              <a href={experience.companyLink} className="ml-1 inline-flex opacity-70">
+                {experience.companyLinkType === "external" && <ExternalLinkIcon className="size-4" />}
+                {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
               </a>
             </div>
-            <span className="text-gray-600">{experience.location}</span>
+            <span className="text-sm opacity-70">{experience.location}</span>
           </div>
 
           {/* Responsibilities list */}
-          <ul className="list-disc space-y-2 pl-5">
+          <ul className="list-disc pl-5 text-sm">
             {experience.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
           </ul>
         </div>
