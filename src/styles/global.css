@@ -81,7 +81,7 @@
     @apply bg-background text-foreground;
   }
 
-  #experience * {
+  #resume * {
     @apply leading-tight;
   }
 

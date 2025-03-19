@@ -4,17 +4,18 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Experience } from "./Experience"
+import { Education } from "./Education"
 
 import { logoLinkedin } from "@/images/logos/resume"
 import { XTwitterIcon, GithubIcon } from "../icons"
 import { JumpsellerLogoLink } from "../about/JumpsellerLogoLink"
 import { CodeIcon, DownloadIcon, MailIcon, PhoneIcon } from "lucide-react"
-
 export function ResumeCanvas() {
   return (
     <Wrapper>
       <Header />
       <Experience />
+      <Education />
     </Wrapper>
   )
 }
@@ -44,7 +45,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
 
       <Overlay />
 
-      <article className="absolute left-0 top-0 z-20 flex h-full w-full flex-col gap-4 p-4 text-zinc-800 dark:text-zinc-50">
+      <article className="absolute left-0 top-0 z-20 flex h-full w-full flex-col px-4 py-3 text-zinc-800 dark:text-zinc-50">
         {children}
       </article>
     </div>
@@ -57,7 +58,7 @@ function Overlay() {
 
 function Header() {
   return (
-    <header>
+    <header className="mb-2">
       <h1 className="text-4xl">
         <span>Francisco</span>
         <span className="ml-1.5 font-bold">Gonçalves</span>

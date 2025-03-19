@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { StaticImageData } from "next/image"
+import { cn } from "@/lib/utils"
 
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
@@ -157,12 +158,12 @@ export function Experience() {
 
   return (
     <div id="experience">
-      <h2 className="mb-2 border-b pb-1 text-2xl font-bold leading-none">
+      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">
         <span className="text-teal-700">Pro</span>fessional & Other Experiences
       </h2>
 
       {experienceData.map((experience, index) => (
-        <div key={index} className="mb-3">
+        <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
           {/* Header with job title and period */}
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-bold">{experience.title}</h3>
@@ -179,7 +180,7 @@ export function Experience() {
                 rel="noopener noreferrer"
               >
                 {experience.companyLogo}
-                <span className="font-medium">{experience.company}</span>
+                <span className="font-semibold tracking-tight">{experience.company}</span>
                 {experience.companyLinkType === "external" && <ExternalLinkIcon className="size-4" />}
                 {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
               </a>
