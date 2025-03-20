@@ -85,7 +85,7 @@ export const projectsData: Project[] = [
     deployment: "https://jumpseller.com/sign-up/",
     attachment: "https://modern-sports.jumpseller.com/",
     color: "jumpseller",
-    stack: ["Ruby", "Ruby on Rails", "React.js", "Javascript", "SQL", "Liquid", "AWS S3"],
+    stack: ["Ruby", "Ruby on Rails", "React.js", "Javascript", "Redux", "SQL", "Liquid", "AWS S3"],
     media: [
       {
         type: "image",

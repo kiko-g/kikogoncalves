@@ -11,7 +11,7 @@ export default {
   theme: {
     typography: typographyStyles,
     fontSize: {
-      xxs: [
+      "2xs": [
         "0.725rem",
         {
           lineHeight: "1.25rem",

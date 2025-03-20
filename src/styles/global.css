@@ -78,7 +78,7 @@
   }
 
   #resume * {
-    @apply leading-tight;
+    @apply leading-snug;
   }
 
   .external-link {

@@ -1,10 +1,11 @@
 import Image from "next/image"
 import { StaticImageData } from "next/image"
 import { cn } from "@/lib/utils"
+import { techStackIcons } from "@/lib/utilities"
 
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
-import { ExternalLinkIcon } from "lucide-react"
+import { ExternalLinkIcon, GlobeIcon } from "lucide-react"
 import { logoCriticalManufacturing, logoFeup, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
@@ -30,6 +31,7 @@ interface Experience {
   companyLink: string
   companyLinkType: LinkType
   responsibilities: (string | ResponsibilityItem)[]
+  stack: string[]
   image?: StaticImageData
   companyLogo?: React.ReactNode
 }
@@ -41,10 +43,11 @@ export function Experience() {
       company: "Jumpseller",
       location: "Porto, Porto, Portugal",
       period: "Oct 2023 - Present",
-      companyLink: "https://jumpseller.com",
+      companyLink: "https://jumpseller.com/themes",
       companyLogo: <Image src={logoJumpseller} alt="Jumpseller" width={15} height={20} />,
       companyLinkType: "external",
       image: media.jumpseller.screenshot1,
+      stack: ["React.js", "Javascript", "Ruby", "Ruby on Rails", "Redux", "SQL", "Liquid", "AWS S3"],
       responsibilities: [
         "Contributed and developed customizable e-commerce storefront themes.",
         "Developed and improved both a Visual Editor and Code Editor for Jumpseller customers to deeply personalize their stores.",
@@ -61,10 +64,11 @@ export function Experience() {
       company: "Critical Manufacturing",
       location: "Maia, Porto, Portugal",
       period: "Feb 2023 - Jul 2023",
-      companyLink: "https://criticalmanufacturing.com",
+      companyLink: "https://usability-dashboard-mes.vercel.app",
       companyLogo: <Image src={logoCriticalManufacturing} alt="Critical Manufacturing" width={20} height={20} />,
       companyLinkType: "external",
       image: media.cmfUx.screenshot2,
+      stack: ["React.js", "Next.js", "Typescript", "Tailwind", "Angular", "Docker", "Matomo", "SQL"],
       responsibilities: [
         {
           text: "Gathered analytics and usability metrics for CMF's Manufacturing Execution System (MES) to enhance UI/UX",
@@ -94,6 +98,7 @@ export function Experience() {
       companyLink: "https://guerner.pt",
       companyLinkType: "external",
       image: media.guerner.screenshot1,
+      stack: ["React.js", "Typescript", "Tailwind", "Gatsby.js", "MDX", "GraphQL"],
       responsibilities: [
         "Designed and developed a modern, responsive marketing website for Guerner & Irmãos from scratch using Gatsby.js and MDX, transforming their digital presence and enabling effective showcasing of their products.",
         "Collaborated closely with stakeholders to create an intuitive, SEO-optimized platform that significantly improved market reach and streamlined the sales process, resulting in enhanced customer engagement and business growth.",
@@ -108,6 +113,7 @@ export function Experience() {
       companyLogo: <Image src={logoNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-1" />,
       companyLinkType: "external",
       image: media.tts.screenshot1,
+      stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],
       responsibilities: [
         {
           text: "Initiated and led development for the ",
@@ -166,7 +172,33 @@ export function Experience() {
         <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
           {/* Header with job title and period */}
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-bold">{experience.title}</h3>
+            <div className="flex items-center gap-2">
+              <h3 className="text-xl font-bold">{experience.title}</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {experience.stack.map((tech) => {
+                  const techIcon = techStackIcons[tech.toLowerCase()]
+                  return (
+                    <span
+                      key={tech}
+                      className={cn(
+                        "text-2xs flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
+                      )}
+                    >
+                      {techIcon && (
+                        <Image
+                          src={techIcon}
+                          alt={tech}
+                          width={12}
+                          height={12}
+                          className="size-[12px] rounded-sm grayscale-[0.8] dark:grayscale-[0.2]"
+                        />
+                      )}
+                      <span className="-mt-[2px]">{tech}</span>
+                    </span>
+                  )
+                })}
+              </div>
+            </div>
             <span className="text-sm font-semibold text-teal-700">{experience.period}</span>
           </div>
 
@@ -175,13 +207,13 @@ export function Experience() {
             <div className="flex items-center">
               <a
                 href={experience.companyLink}
-                className="inline-flex items-center gap-0.5 hover:opacity-70"
+                className="inline-flex items-center gap-1 hover:opacity-70"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {experience.companyLogo}
                 <span className="font-semibold tracking-tight">{experience.company}</span>
-                {experience.companyLinkType === "external" && <ExternalLinkIcon className="size-4" />}
+                {experience.companyLinkType === "external" && <GlobeIcon className="size-4" />}
                 {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
               </a>
             </div>
