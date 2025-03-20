@@ -231,7 +231,7 @@ export function Experience() {
               <a
                 href={experience.companyLink}
                 target="_blank"
-                className="inline-flex aspect-video w-[120px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80"
+                className="inline-flex aspect-video w-[110px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80"
                 rel="noopener noreferrer"
               >
                 <Image

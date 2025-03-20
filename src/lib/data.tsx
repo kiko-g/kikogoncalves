@@ -234,8 +234,9 @@ export const projectsData: Project[] = [
     name: "Finishers Hub",
     description: (
       <section className="project-card-description">
-        The place for all finisher related content: chaotic, outrageous, lawless on the fence of criminality. Perfectly
-        unbalanced. As all things should be. The most amusing and most personal project I have ever worked on.
+        Developed and designed a dynamic web platform for entertaining video highlights, evolving from relying on the
+        Twitch API for video fetching to AWS S3 storage for better scalability and management. Platform also includes an
+        admin dashboard for good content management and stat tracking.
       </section>
     ),
     startDate: "2022-05-01",

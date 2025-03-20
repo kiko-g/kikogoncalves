@@ -92,7 +92,7 @@ export function Education() {
                   {detail.includes("18/20") ? (
                     <>
                       {detail.split("18/20")[0]}
-                      <span className="font-bold">18/20</span>
+                      <span>18/20</span>
                       {detail.split("18/20")[1]}
                     </>
                   ) : (
