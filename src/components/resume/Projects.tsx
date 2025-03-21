@@ -6,7 +6,14 @@ import { techStackIcons } from "@/lib/utilities"
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
 import { ExternalLinkIcon, LinkIcon } from "lucide-react"
-import { logoBaggerUi, logoCriticalManufacturing, logoFeup, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
+import {
+  logoBaggerFlow,
+  logoBaggerUi,
+  logoCriticalManufacturing,
+  logoFeup,
+  logoJumpseller,
+  logoNiaefeup,
+} from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -44,10 +51,39 @@ export function Projects() {
       image: media.priceLens.screenshot1,
       responsibilities: [
         {
-          text: "An app for tracking supermarket prices over the years, promoting transparency in consumer goods inflation.",
+          text: "Developed an app that tracks supermarket prices over time, bringing transparency to consumer goods inflation in Portugal and helping shoppers understand price changes beyond what appears on shelf labels.",
         },
         {
-          text: "Scheduled and automated scrapers periodically update the database with fresh pricing data and adjacent product information.",
+          text: "Created effective scheduled scrapers that automatically collect and update pricing data from multiple supermarkets, enabling price trend analysis and historical comparisons.",
+        },
+        {
+          text: "Designed a user-friendly data visualization system that presents pricing information in an accessible way, helping consumers make more informed purchasing decisions.",
+        },
+      ],
+    },
+    {
+      title: "Bagger UI - UI Components library for React + Typescript",
+      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-1" />,
+      repo: "https://github.com/kiko-g/bagger-ui",
+      deployment: "https://bagger-ui.vercel.app",
+      stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
+      image: media.baggerui.screenshot1,
+      responsibilities: [
+        {
+          text: "Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and stashed from different projects. Built for covering recurring UI scenarios. You own the code, take it and build the project of your dreams with a fitting design. Inspired by Shadcn, TailwindUI and HyperUI.",
+        },
+      ],
+    },
+    {
+      title: "Bagger Flow - AI-powered workflow for Jumpseller",
+      logo: <Image src={logoBaggerFlow} alt="Bagger Flow" width={18} height={18} className="mr-1 rounded-full" />,
+      repo: "",
+      deployment: "",
+      stack: ["Node.js", "Typescript"],
+      image: media.baggerFlow.screenshot1,
+      responsibilities: [
+        {
+          text: "A Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with a clean and minimal feel. Contains carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. Available on the VSCode Marketplace.",
         },
       ],
     },

@@ -182,9 +182,7 @@ export function Experience() {
 
   return (
     <div id="experience">
-      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">
-        <span className="text-teal-700">Pro</span>fessional & Other Experiences
-      </h2>
+      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">Professional & Other Experiences</h2>
 
       {experienceData.map((experience, index) => (
         <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
@@ -205,8 +203,10 @@ export function Experience() {
             </a>
 
             <div className="flex items-center justify-end gap-2">
-              <Bubble className="text-2xs">{experience.period}</Bubble>
-              <Bubble variant="secondary" className="text-2xs">
+              <Bubble variant="default" className="text-2xs font-medium">
+                {experience.period}
+              </Bubble>
+              <Bubble variant="secondary" className="text-2xs font-medium">
                 {experience.location}
               </Bubble>
             </div>
