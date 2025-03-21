@@ -5,8 +5,8 @@ import { techStackIcons } from "@/lib/utilities"
 
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
-import { ExternalLinkIcon, GlobeIcon } from "lucide-react"
-import { logoCriticalManufacturing, logoFeup, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
+import { ExternalLinkIcon, LinkIcon } from "lucide-react"
+import { logoBaggerUi, logoCriticalManufacturing, logoFeup, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -37,27 +37,17 @@ export function Projects() {
   const projectsData: Project[] = [
     {
       title: "Price Lens - See Through Prices",
-      logo: <Image src={logoNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-1" />,
+      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-1" />,
       repo: "https://github.com/kiko-g/price-lens",
       deployment: "https://price-lens.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
-      image: null,
+      image: media.priceLens.screenshot1,
       responsibilities: [
         {
-          text: "Initiated and led development for the ",
-          link: {
-            text: "Time Table Scheduler for the University of Porto",
-            url: "https://tts.niaefeup.pt",
-            type: "external",
-          },
-          extraText:
-            ": a web application helping students optimize class schedules, form work groups, and share timetables. Built with React, TypeScript, Tailwind, and SQL.",
+          text: "An app for tracking supermarket prices over the years, promoting transparency in consumer goods inflation.",
         },
         {
-          text: "Established the core architecture and UI framework",
-          bold: true,
-          extraText:
-            " that continues to serve as the foundation for the platform, creating a maintainable codebase that facilitated smooth collaboration and ongoing development by the team.",
+          text: "Scheduled and automated scrapers periodically update the database with fresh pricing data and adjacent product information.",
         },
       ],
     },
@@ -107,8 +97,8 @@ export function Projects() {
                 rel="noopener noreferrer"
               >
                 {project.logo}
-                <h3 className="text-xl font-bold text-zinc-600 dark:text-zinc-200">{project.title}</h3>
-                <GlobeIcon className="size-4" />
+                <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
+                <LinkIcon className="size-4" />
               </a>
               <a
                 href={project.repo}
@@ -135,7 +125,7 @@ export function Projects() {
                         alt={tech}
                         width={12}
                         height={12}
-                        className="size-[12px] rounded-sm grayscale-[0.6] dark:grayscale-[0.4]"
+                        className="size-[12px] rounded-sm grayscale dark:grayscale-0"
                       />
                     )}
                     <span className="-mt-[2px]">{tech}</span>
@@ -147,7 +137,7 @@ export function Projects() {
 
           <div className="mt-1 flex items-start gap-4">
             {/* Responsibilities list */}
-            <ul className="list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+            <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
               {project.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
             </ul>
 

@@ -63,7 +63,7 @@ function Bubble({ children, className }: { children: React.ReactNode; className?
   return (
     <span
       className={cn(
-        "flex items-center gap-1 rounded-full border border-teal-600/10 bg-gradient-to-r from-teal-600/10 to-teal-600/10 px-1.5 py-0.5 leading-none dark:border-teal-500/20 dark:bg-teal-500/20",
+        "flex items-center gap-1 rounded-full border-0 border-teal-600/10 bg-gradient-to-r from-teal-600/10 to-teal-600/10 px-1.5 py-0.5 leading-none dark:border-teal-500/20 dark:bg-teal-500/20",
         className,
       )}
     >

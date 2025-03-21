@@ -5,8 +5,8 @@ import { techStackIcons } from "@/lib/utilities"
 
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
-import { ExternalLinkIcon, GlobeIcon } from "lucide-react"
-import { logoCriticalManufacturing, logoFeup, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
+import { ExternalLinkIcon, LinkIcon } from "lucide-react"
+import { logoCriticalManufacturing, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -25,7 +25,6 @@ interface ResponsibilityItem {
 
 interface Experience {
   title: string
-  company: string
   location: string
   period: string
   companyLink: string
@@ -36,11 +35,33 @@ interface Experience {
   companyLogo?: React.ReactNode
 }
 
+function Bubble({
+  children,
+  variant = "default",
+  className,
+}: {
+  children: React.ReactNode
+  variant?: "default" | "secondary"
+  className?: string
+}) {
+  return (
+    <span
+      className={cn(
+        "flex items-center gap-1 rounded-full border-0 bg-gradient-to-r px-1.5 py-[1px] leading-none",
+        variant === "default" && "border-teal-600/10 bg-teal-600/10 dark:border-teal-500/20 dark:bg-teal-500/20",
+        variant === "secondary" && "border-zinc-600/10 bg-zinc-600/10 dark:border-zinc-500/20 dark:bg-zinc-500/20",
+        className,
+      )}
+    >
+      {children}
+    </span>
+  )
+}
+
 export function Experience() {
   const experienceData: Experience[] = [
     {
-      title: "Full-stack Engineer",
-      company: "Jumpseller",
+      title: "Full-stack Engineer at Jumpseller",
       location: "Porto, Porto, Portugal",
       period: "Oct 2023 - Present",
       companyLink: "https://jumpseller.com/themes",
@@ -60,15 +81,14 @@ export function Experience() {
       ],
     },
     {
-      title: "Software Engineer Intern",
-      company: "Critical Manufacturing",
+      title: "Software Engineer Intern at Critical Manufacturing",
       location: "Maia, Porto, Portugal",
       period: "Feb 2023 - Jul 2023",
       companyLink: "https://usability-dashboard-mes.vercel.app",
       companyLogo: <Image src={logoCriticalManufacturing} alt="Critical Manufacturing" width={20} height={20} />,
       companyLinkType: "external",
       image: media.cmfUx.screenshot2,
-      stack: ["React.js", "Next.js", "Typescript", "Tailwind", "Angular", "Docker", "Matomo", "SQL"],
+      stack: ["React.js", "Next.js", "Typescript", "Tailwind", "Angular", "Docker", "SQL"],
       responsibilities: [
         {
           text: "Gathered analytics and usability metrics for CMF's Manufacturing Execution System (MES) to enhance UI/UX",
@@ -92,7 +112,6 @@ export function Experience() {
     },
     {
       title: "Freelance Web Developer",
-      company: "Guerner & Irmãos S.A.",
       location: "Gaia, Porto, Portugal",
       period: "Jan 2023 - Aug 2023",
       companyLink: "https://guerner.pt",
@@ -105,8 +124,7 @@ export function Experience() {
       ],
     },
     {
-      title: "Active Member",
-      company: "NIAEFEUP - Informatics Engineering Student Branch @ FEUP",
+      title: "Active Member at Informatics Engineering Student Branch (NIAEFEUP, FEUP)",
       location: "Porto, Portugal",
       period: "Nov 2020 - Jun 2023",
       companyLink: "https://tts.niaefeup.pt",
@@ -171,9 +189,31 @@ export function Experience() {
       {experienceData.map((experience, index) => (
         <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
           {/* Header with job title and period */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <h3 className="text-xl font-bold">{experience.title}</h3>
+          <div className="flex items-center justify-between gap-2">
+            <a
+              className="flex items-center gap-1"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={experience.companyLink}
+            >
+              {experience.companyLogo}
+              <h3 className="text-lg font-semibold tracking-tight">{experience.title}</h3>
+              <span className="inline-flex items-center gap-1 hover:opacity-70">
+                {experience.companyLinkType === "external" && <LinkIcon className="size-4" />}
+                {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
+              </span>
+            </a>
+
+            <div className="flex items-center justify-end gap-2">
+              <Bubble className="text-2xs">{experience.period}</Bubble>
+              <Bubble variant="secondary" className="text-2xs">
+                {experience.location}
+              </Bubble>
+            </div>
+          </div>
+
+          <div className="mt-1 flex items-start gap-4">
+            <div className="flex flex-col gap-1">
               <div className="flex flex-wrap gap-1.5">
                 {experience.stack.map((tech) => {
                   const techIcon = techStackIcons[tech.toLowerCase()]
@@ -190,7 +230,7 @@ export function Experience() {
                           alt={tech}
                           width={12}
                           height={12}
-                          className="size-[12px] rounded-sm grayscale-[0.8] dark:grayscale-[0.2]"
+                          className="size-[12px] rounded-sm grayscale-[0.8] dark:grayscale-0"
                         />
                       )}
                       <span className="-mt-[2px]">{tech}</span>
@@ -198,33 +238,11 @@ export function Experience() {
                   )
                 })}
               </div>
-            </div>
-            <span className="text-sm font-semibold text-teal-700">{experience.period}</span>
-          </div>
 
-          {/* Subheader with company and location */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <a
-                href={experience.companyLink}
-                className="inline-flex items-center gap-1 hover:opacity-70"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {experience.companyLogo}
-                <span className="font-semibold tracking-tight">{experience.company}</span>
-                {experience.companyLinkType === "external" && <GlobeIcon className="size-4" />}
-                {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
-              </a>
+              <ul className="list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+                {experience.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
+              </ul>
             </div>
-            <span className="text-sm font-semibold opacity-70">{experience.location}</span>
-          </div>
-
-          <div className="mt-1 flex items-start gap-4">
-            {/* Responsibilities list */}
-            <ul className="list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
-              {experience.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
-            </ul>
 
             {/* Image */}
             {experience.image && (
@@ -236,7 +254,7 @@ export function Experience() {
               >
                 <Image
                   src={experience.image}
-                  alt={experience.company}
+                  alt={experience.title}
                   width={1600}
                   height={900}
                   className="aspect-video object-cover"
