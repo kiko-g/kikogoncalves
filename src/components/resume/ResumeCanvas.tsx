@@ -3,9 +3,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Experience } from "./Experience"
 import { Education } from "./Education"
+import { Projects } from "./Projects"
 
 import { cn } from "@/lib/utils"
 import { logoLinkedin } from "@/images/logos/resume"
@@ -16,6 +16,7 @@ export function ResumeCanvas() {
   return (
     <Wrapper>
       <Header />
+      <Projects />
       <Experience />
       <Education />
     </Wrapper>
