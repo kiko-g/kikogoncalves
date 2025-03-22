@@ -113,7 +113,7 @@ export function Education() {
 
           <div className="mt-1 flex items-start gap-4">
             {/* Details list */}
-            <ul className="list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+            <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
               {education.details.map((detail, detailIndex) => (
                 <li key={detailIndex}>{detail}</li>
               ))}

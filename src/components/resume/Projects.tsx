@@ -174,7 +174,7 @@ export function Projects() {
               <a
                 href={project.deployment}
                 target="_blank"
-                className="inline-flex aspect-video w-[110px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80"
+                className="mb-2 inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80 lg:mb-0 lg:w-[115px]"
                 rel="noopener noreferrer"
               >
                 <Image

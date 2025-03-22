@@ -238,7 +238,7 @@ export function Experience() {
                 })}
               </div>
 
-              <ul className="list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+              <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
                 {experience.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
               </ul>
             </div>
