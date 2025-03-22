@@ -397,7 +397,10 @@ function Moments() {
       </SectionHeading>
       <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Highlights of exquisite yapping tendencies</p>
 
-      <TweetCard id="1876986582739062807" />
+      <div className="grid grid-cols-2 gap-4">
+        <TweetCard id="1876986582739062807" />
+        <TweetCard id="1886775379852931413" />
+      </div>
     </section>
   )
 }

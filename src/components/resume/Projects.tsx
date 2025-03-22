@@ -51,34 +51,36 @@ export function Projects() {
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
       image: media.priceLens.screenshot1,
       responsibilities: (
-        <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
-            Developed an app that tracks supermarket prices over time, bringing transparency to consumer goods inflation
+            Developed an app that tracks supermarket prices over time, bringing{" "}
+            <strong>transparency to consumer goods inflation</strong>
             in Portugal and helping shoppers understand price changes beyond what appears on shelf labels.
           </li>
           <li>
-            Created effective scheduled scrapers that automatically collect and update pricing data from multiple
-            supermarkets, enabling price trend analysis and historical comparisons.
+            Created effective <strong>scheduled scrapers that automatically collect</strong> and update pricing data
+            from multiple supermarkets, enabling price trend analysis and historical comparisons.
           </li>
           <li>
-            User-friendly data visualization system to present pricing data in an accessible way.
+            User-friendly data visualization system to present pricing data in an accessible way.{" "}
             <strong>Free and premium plans available.</strong>
           </li>
         </ul>
       ),
     },
     {
-      title: "Bagger UI - UI Components library for React + Typescript",
+      title: "Bagger UI - Components and snippets library for React",
       logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-1" />,
       repo: "https://github.com/kiko-g/bagger-ui",
       deployment: "https://bagger-ui.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
       image: media.baggerui.screenshot1,
       responsibilities: (
-        <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
-            Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and
-            stashed from different projects. Built for covering recurring UI scenarios.
+            Beautiful collection of copy pasteable, reusable and customizable React (Typescript, .tsx) components
+            collected from various projects. Designed to address common UI patterns while expanding the library and
+            minimizing the need to recode similar things.
           </li>
           <li>
             You own the code, take it and build the project of your dreams with a fitting design. Inspired by Shadcn,
@@ -95,7 +97,7 @@ export function Projects() {
       stack: ["Node.js", "JSON"],
       image: media.baggerFlow.screenshot1,
       responsibilities: (
-        <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
             A Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with
             a clean and minimal feel. Contains carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS
@@ -114,7 +116,7 @@ export function Projects() {
 
       {projectsData.map((project, index) => (
         <div key={index} className={cn("mb-3", index === projectsData.length - 1 && "mb-2")}>
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-center">
             <div className="flex items-center gap-2">
               <a
                 href={project.deployment}
@@ -161,7 +163,7 @@ export function Projects() {
             </div>
           </div>
 
-          <div className="mt-1 flex items-start gap-4">
+          <div className="mt-1 flex flex-col items-start gap-4 lg:flex-row lg:items-center">
             {project.responsibilities}
 
             {/* Image */}

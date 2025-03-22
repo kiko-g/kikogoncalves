@@ -36,7 +36,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div id="resume" className="group relative mx-auto w-full" style={{ aspectRatio: "1/1.4142" }}>
+    <div id="resume" className="group relative mx-auto aspect-[0.1] w-full lg:aspect-[1/1.4142]">
       <Button
         variant="default"
         size="icon-sm"

@@ -186,8 +186,7 @@ export function Experience() {
 
       {experienceData.map((experience, index) => (
         <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
-          {/* Header with job title and period */}
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-center">
             <a
               className="flex items-center gap-1"
               target="_blank"
@@ -202,7 +201,7 @@ export function Experience() {
               </span>
             </a>
 
-            <div className="flex flex-col items-center justify-end gap-1">
+            <div className="flex items-end justify-center gap-1">
               <Bubble variant="default" className="text-2xs font-medium">
                 {experience.period}
               </Bubble>
@@ -212,7 +211,7 @@ export function Experience() {
             </div>
           </div>
 
-          <div className="mt-1 flex items-start gap-4">
+          <div className="mt-1 flex flex-col items-start gap-4 lg:flex-row lg:items-center">
             <div className="flex flex-col gap-1">
               <div className="flex flex-wrap gap-1.5">
                 {experience.stack.map((tech) => {
@@ -244,12 +243,11 @@ export function Experience() {
               </ul>
             </div>
 
-            {/* Image */}
             {experience.image && (
               <a
                 href={experience.companyLink}
                 target="_blank"
-                className="inline-flex aspect-video w-[110px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80"
+                className="mb-4 inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80 lg:mb-0 lg:w-[115px]"
                 rel="noopener noreferrer"
               >
                 <Image

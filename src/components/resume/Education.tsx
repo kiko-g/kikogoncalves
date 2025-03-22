@@ -83,7 +83,7 @@ export function Education() {
       {educationData.map((education, index) => (
         <div key={index} className={cn("mb-3", index === educationData.length - 1 && "mb-0")}>
           {/* Header with institution and period */}
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col items-start justify-between lg:flex-row lg:items-center">
             <h3 className="text-xl font-bold">{education.degree}</h3>
             <div className="flex items-center gap-1">
               <Bubble variant="default" className="text-2xs font-medium">

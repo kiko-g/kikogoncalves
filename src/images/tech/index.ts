@@ -21,12 +21,14 @@ import NextJsSvg from "./next.js.svg"
 import NodeJsSvg from "./node.js.svg"
 import PhpSvg from "./php.svg"
 import PythonSvg from "./python.svg"
+import PostgresSvg from "./postgresql.svg"
 import ReduxSvg from "./redux.svg"
 import RubyRailsSvg from "./rails.svg"
 import ReactJsSvg from "./react.js.svg"
 import RubySvg from "./ruby.svg"
 import RustSvg from "./rust.svg"
 import ShopifySvg from "./shopify.svg"
+import SupabaseSvg from "./supabase.svg"
 import TailwindSvg from "./tailwind.svg"
 import TypeScriptSvg from "./typescript.svg"
 import UnitySvg from "./unity.svg"
@@ -56,12 +58,14 @@ export {
   NodeJsSvg,
   PhpSvg,
   PythonSvg,
+  PostgresSvg,
   ReactJsSvg,
   ReduxSvg,
   RubyRailsSvg,
   RubySvg,
   RustSvg,
   ShopifySvg,
+  SupabaseSvg,
   TailwindSvg,
   TypeScriptSvg,
   UnitySvg,

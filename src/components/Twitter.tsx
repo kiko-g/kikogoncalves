@@ -121,13 +121,13 @@ export const TweetBody = ({ tweet }: { tweet: EnrichedTweet }) => (
               href={entity.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-normal text-gray-500"
+              className="text-base font-normal text-gray-400"
             >
               <span>{entity.text}</span>
             </a>
           )
         case "text":
-          return <span key={idx} className="text-sm font-normal" dangerouslySetInnerHTML={{ __html: entity.text }} />
+          return <span key={idx} className="text-base font-medium" dangerouslySetInnerHTML={{ __html: entity.text }} />
       }
     })}
   </div>

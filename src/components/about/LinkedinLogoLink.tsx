@@ -21,7 +21,7 @@ export function LinkedinLogoLink({ href, className, width = 16, height = 16 }: P
         "inline-flex size-4 items-center justify-center transition-opacity duration-300 ease-in-out hover:opacity-80",
       )}
     >
-      <Image src={logoLinkedin} alt="Linkedin" width={512} height={512} />
+      <Image src={logoLinkedin} alt="Linkedin" width={512} height={512} className="rounded-[2px]" />
     </Link>
   )
 }
