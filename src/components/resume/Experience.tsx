@@ -202,7 +202,7 @@ export function Experience() {
               </span>
             </a>
 
-            <div className="flex items-center justify-end gap-2">
+            <div className="flex flex-col items-center justify-end gap-1">
               <Bubble variant="default" className="text-2xs font-medium">
                 {experience.period}
               </Bubble>

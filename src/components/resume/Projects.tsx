@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import Image from "next/image"
 import { StaticImageData } from "next/image"
 import { cn } from "@/lib/utils"
@@ -37,7 +38,7 @@ interface Project {
   deployment: string
   stack: string[]
   image?: StaticImageData | null
-  responsibilities: (string | ResponsibilityItem)[]
+  responsibilities: ReactElement
 }
 
 export function Projects() {
@@ -49,17 +50,22 @@ export function Projects() {
       deployment: "https://price-lens.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
       image: media.priceLens.screenshot1,
-      responsibilities: [
-        {
-          text: "Developed an app that tracks supermarket prices over time, bringing transparency to consumer goods inflation in Portugal and helping shoppers understand price changes beyond what appears on shelf labels.",
-        },
-        {
-          text: "Created effective scheduled scrapers that automatically collect and update pricing data from multiple supermarkets, enabling price trend analysis and historical comparisons.",
-        },
-        {
-          text: "Designed a user-friendly data visualization system that presents pricing information in an accessible way, helping consumers make more informed purchasing decisions.",
-        },
-      ],
+      responsibilities: (
+        <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+          <li>
+            Developed an app that tracks supermarket prices over time, bringing transparency to consumer goods inflation
+            in Portugal and helping shoppers understand price changes beyond what appears on shelf labels.
+          </li>
+          <li>
+            Created effective scheduled scrapers that automatically collect and update pricing data from multiple
+            supermarkets, enabling price trend analysis and historical comparisons.
+          </li>
+          <li>
+            User-friendly data visualization system to present pricing data in an accessible way.
+            <strong>Free and premium plans available.</strong>
+          </li>
+        </ul>
+      ),
     },
     {
       title: "Bagger UI - UI Components library for React + Typescript",
@@ -68,53 +74,37 @@ export function Projects() {
       deployment: "https://bagger-ui.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
       image: media.baggerui.screenshot1,
-      responsibilities: [
-        {
-          text: "Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and stashed from different projects. Built for covering recurring UI scenarios. You own the code, take it and build the project of your dreams with a fitting design. Inspired by Shadcn, TailwindUI and HyperUI.",
-        },
-      ],
+      responsibilities: (
+        <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+          <li>
+            Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and
+            stashed from different projects. Built for covering recurring UI scenarios.
+          </li>
+          <li>
+            You own the code, take it and build the project of your dreams with a fitting design. Inspired by Shadcn,
+            TailwindUI and HyperUI.
+          </li>
+        </ul>
+      ),
     },
     {
-      title: "Bagger Flow - AI-powered workflow for Jumpseller",
+      title: "Bagger Flow - VS Code Theme ",
       logo: <Image src={logoBaggerFlow} alt="Bagger Flow" width={18} height={18} className="mr-1 rounded-full" />,
-      repo: "",
-      deployment: "",
-      stack: ["Node.js", "Typescript"],
+      repo: "https://github.com/kiko-g/bagger-flow-vscode",
+      deployment: "https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow",
+      stack: ["Node.js", "JSON"],
       image: media.baggerFlow.screenshot1,
-      responsibilities: [
-        {
-          text: "A Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with a clean and minimal feel. Contains carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS and Ruby. Available on the VSCode Marketplace.",
-        },
-      ],
+      responsibilities: (
+        <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
+          <li>
+            A Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with
+            a clean and minimal feel. Contains carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS
+            and Ruby. <strong>Available on the VSCode Marketplace.</strong>
+          </li>
+        </ul>
+      ),
     },
   ]
-
-  const renderResponsibility = (item: string | ResponsibilityItem, index: number) => {
-    if (typeof item === "string") return <li key={index}>{item}</li>
-
-    return (
-      <li key={index} className="leading-snug">
-        {/* Main text */}
-        {item.bold ? <span className="font-bold">{item.text}</span> : item.text}
-
-        {/* Optional link */}
-        {item.link && (
-          <a
-            href={item.link.url}
-            className="inline-flex items-center gap-0.5 rounded-md px-1 text-zinc-900 opacity-100 transition hover:bg-teal-500/20 hover:text-teal-700 dark:text-white dark:hover:bg-teal-500/10 dark:hover:text-teal-500"
-          >
-            <span className="font-medium">{item.link.text}</span>
-            {item.link.type === "external" && <ExternalLinkIcon className="size-4" />}
-            {item.link.type === "github" && <GithubIcon className="size-4" />}
-            {item.link.text.startsWith("(") && <span>)</span>}
-          </a>
-        )}
-
-        {/* Extra text */}
-        {item.extraText}
-      </li>
-    )
-  }
 
   return (
     <div id="experience">
@@ -172,10 +162,7 @@ export function Projects() {
           </div>
 
           <div className="mt-1 flex items-start gap-4">
-            {/* Responsibilities list */}
-            <ul className="flex-1 list-disc pl-5 text-sm text-zinc-600 dark:text-zinc-300">
-              {project.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
-            </ul>
+            {project.responsibilities}
 
             {/* Image */}
             {project.image && (
