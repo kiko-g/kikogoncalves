@@ -78,12 +78,15 @@ export function Projects() {
       responsibilities: (
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
-            Beautiful collection of copy pasteable, reusable and customizable React (Typescript, .tsx) components
-            collected from various projects. Designed to address common UI patterns while expanding the library and
-            minimizing the need to recode similar things.
+            Beautiful collection of copy pasteable, reusable and customizable React (Typescript, .tsx) components and
+            snippets collected and curated from various projects.
           </li>
           <li>
-            You own the code, take it and build the project of your dreams with a fitting design. Inspired by Shadcn,
+            Designed to address common UI patterns with the goal of continously expanding the library and minimizing the
+            need to recode similar things.
+          </li>
+          <li>
+            The code is yours, take it and build the project of your dreams with a fitting design. Inspired by Shadcn,
             TailwindUI and HyperUI.
           </li>
         </ul>
