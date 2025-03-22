@@ -3,9 +3,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Experience } from "./Experience"
-import { Education } from "./Education"
+import { Skills } from "./Skills"
 import { Projects } from "./Projects"
+import { Education } from "./Education"
+import { Experience } from "./Experience"
 
 import { cn } from "@/lib/utils"
 import { logoLinkedin } from "@/images/logos/resume"
@@ -19,6 +20,7 @@ export function ResumeCanvas() {
       <Projects />
       <Experience />
       <Education />
+      <Skills />
     </Wrapper>
   )
 }

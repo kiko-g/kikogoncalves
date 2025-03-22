@@ -113,7 +113,7 @@ export function Experience() {
     {
       title: "Freelance Web Developer",
       location: "Gaia, Porto, Portugal",
-      period: "Jan 2023 - Aug 2023",
+      period: "Jan 2023 - Jun 2023",
       companyLink: "https://guerner.pt",
       companyLinkType: "external",
       image: media.guerner.screenshot1,
@@ -127,9 +127,9 @@ export function Experience() {
       title: "Active Member at Informatics Engineering Student Branch (NIAEFEUP, FEUP)",
       location: "Porto, Portugal",
       period: "Nov 2020 - Jun 2023",
-      companyLink: "https://tts.niaefeup.pt",
-      companyLogo: <Image src={logoNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-1" />,
-      companyLinkType: "external",
+      companyLink: "https://github.com/NIAEFEUP",
+      companyLogo: <Image src={logoNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-0" />,
+      companyLinkType: "github",
       image: media.tts.screenshot1,
       stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],
       responsibilities: [
@@ -188,14 +188,14 @@ export function Experience() {
         <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
           <div className="flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-center">
             <a
-              className="flex items-center gap-1"
+              className="inline-flex items-center gap-1 hover:opacity-70"
               target="_blank"
               rel="noopener noreferrer"
               href={experience.companyLink}
             >
               {experience.companyLogo}
               <h3 className="text-lg font-semibold tracking-tight">{experience.title}</h3>
-              <span className="inline-flex items-center gap-1 hover:opacity-70">
+              <span className="inline-flex items-center gap-1">
                 {experience.companyLinkType === "external" && <LinkIcon className="size-4" />}
                 {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
               </span>

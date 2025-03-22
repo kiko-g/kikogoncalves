@@ -56,7 +56,7 @@ export function Education() {
       period: "Sep 2018 - Jul 2023",
       institutionLink: "https://fe.up.pt",
       institutionLinkType: "external",
-      institutionLogo: <Image src={logoFeup} alt="FEUP" width={20} height={20} className="mr-1" />,
+      institutionLogo: <Image src={logoFeup} alt="FEUP" width={20} height={20} className="mr-0" />,
       details: [
         "Completed both the bachelor and master degrees, finishing the masters' averaging 18/20",
         "Relevant coursework: Full Stack Development, Algorithms and Data Structures, Databases, Artificial Intelligence, P2P Timeline",
@@ -69,7 +69,7 @@ export function Education() {
       period: "Aug 2022 - Dec 2022",
       institutionLink: "https://www.aalto.fi/en/school-of-science",
       institutionLinkType: "external",
-      institutionLogo: <Image src={logoAalto} alt="Aalto University" width={20} height={20} className="mr-1" />,
+      institutionLogo: <Image src={logoAalto} alt="Aalto University" width={20} height={20} className="mr-0" />,
       details: [
         "Studied computer science abroad at Aalto University, in Espoo, Finland as an exchange student part of the Erasmus program",
       ],

@@ -45,7 +45,7 @@ export function Projects() {
   const projectsData: Project[] = [
     {
       title: "Price Lens - See Through Prices",
-      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-1" />,
+      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-0" />,
       repo: "https://github.com/kiko-g/price-lens",
       deployment: "https://price-lens.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
@@ -54,8 +54,8 @@ export function Projects() {
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
             Developed an app that tracks supermarket prices over time, bringing{" "}
-            <strong>transparency to consumer goods inflation</strong>
-            in Portugal and helping shoppers understand price changes beyond what appears on shelf labels.
+            <strong>transparency to consumer goods inflation</strong> in Portugal and helping shoppers understand price
+            changes beyond what appears on shelf labels.
           </li>
           <li>
             Created effective <strong>scheduled scrapers that automatically collect</strong> and update pricing data
@@ -70,7 +70,7 @@ export function Projects() {
     },
     {
       title: "Bagger UI - Components and snippets library for React",
-      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-1" />,
+      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-0" />,
       repo: "https://github.com/kiko-g/bagger-ui",
       deployment: "https://bagger-ui.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
@@ -78,23 +78,30 @@ export function Projects() {
       responsibilities: (
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
-            Beautiful collection of copy pasteable, reusable and customizable React (Typescript, .tsx) components and
-            snippets collected and curated from various projects.
-          </li>
-          <li>
-            Designed to address common UI patterns with the goal of continously expanding the library and minimizing the
+            A beautiful collection of copy pasteable and reusable React (Typescript, .tsx) components and snippets.
+            Created to address common UI patterns with the goal of continously expanding the library and minimizing the
             need to recode similar things.
           </li>
           <li>
-            The code is yours, take it and build the project of your dreams with a fitting design. Inspired by Shadcn,
-            TailwindUI and HyperUI.
+            The code is yours, take it, adapt it and build the project of your dreams with a fitting design. Inspired by
+            Shadcn, TailwindUI and HyperUI and Flowbite.{" "}
+            <strong>
+              <a
+                href="https://bagger-ui.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80"
+              >
+                Available on Vercel.
+              </a>
+            </strong>
           </li>
         </ul>
       ),
     },
     {
       title: "Bagger Flow - VS Code Theme ",
-      logo: <Image src={logoBaggerFlow} alt="Bagger Flow" width={18} height={18} className="mr-1 rounded-full" />,
+      logo: <Image src={logoBaggerFlow} alt="Bagger Flow" width={18} height={18} className="mr-0 rounded-full" />,
       repo: "https://github.com/kiko-g/bagger-flow-vscode",
       deployment: "https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow",
       stack: ["Node.js", "JSON"],
@@ -129,7 +136,7 @@ export function Projects() {
               >
                 {project.logo}
                 <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
-                <LinkIcon className="size-4" />
+                <LinkIcon className="size-4 flex-shrink-0" />
               </a>
               <a
                 href={project.repo}
@@ -137,7 +144,7 @@ export function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GithubIcon className="size-4" />
+                <GithubIcon className="size-4 flex-shrink-0" />
               </a>
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -174,7 +181,7 @@ export function Projects() {
               <a
                 href={project.deployment}
                 target="_blank"
-                className="mb-2 inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80 lg:mb-0 lg:w-[115px]"
+                className="mb-2 inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[115px]"
                 rel="noopener noreferrer"
               >
                 <Image
@@ -182,7 +189,7 @@ export function Projects() {
                   alt={project.title}
                   width={1600}
                   height={900}
-                  className="aspect-video object-cover"
+                  className="aspect-video rounded-md border object-cover"
                 />
               </a>
             )}
