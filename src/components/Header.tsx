@@ -151,7 +151,7 @@ function Avatar({
   return (
     <Link href="/" aria-label="Home" className={cn(className, "pointer-events-auto")} {...props}>
       <Image
-        src="/profile.svg"
+        src="/profile.png"
         alt="Description"
         width={large ? 640 : 360}
         height={large ? 640 : 360}

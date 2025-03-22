@@ -8,7 +8,7 @@ import { calculateAge, techStackIcons } from "@/lib/utilities"
 
 import portraitImage from "@/images/portrait.jpg"
 import { logoJumpseller } from "@/images/logos/resume"
-import { image1, image2, image3, image4, image5 } from "@/images/photos"
+import { image0, image1, image2, image3, image4, image5 } from "@/images/photos"
 
 import { Container } from "@/components/Container"
 import { LinkedinLogoLink } from "@/components/about/LinkedinLogoLink"
@@ -330,7 +330,7 @@ function CurriculumVitae() {
 }
 
 function Photos() {
-  let images = [image1, image2, image3, image4, image5]
+  let images = [image0, image1, image2, image3, image4, image5]
 
   return (
     <section id="photos" className="mt-6 pt-12 sm:mt-12">
