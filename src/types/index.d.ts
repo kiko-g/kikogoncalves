@@ -4,6 +4,7 @@ export interface Skill {
   color: string
   experience: string
   score: number
+  category: string
 }
 
 export interface Role {
