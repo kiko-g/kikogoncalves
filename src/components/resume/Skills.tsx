@@ -1,27 +1,9 @@
+import Image from "next/image"
 import { ExternalLinkIcon } from "lucide-react"
+import { skills } from "@/lib/data"
+import { techStackIcons } from "@/lib/utilities"
 
 export function Skills() {
-  const technicalSkills = [
-    { name: "Git", years: "5y" },
-    { name: "HTML/CSS/JS", years: "4y" },
-    { name: "ReactJS", years: "4y" },
-    { name: "NodeJS", years: "4y" },
-    { name: "TypeScript", years: "3y" },
-    { name: "TailwindCSS", years: "3y" },
-    { name: "SQL", years: "3y" },
-    { name: "Redux", years: "1y" },
-    { name: "Next.js", years: "3y" },
-    { name: "Ruby/Rails", years: "1.5y" },
-    { name: "Gatsby.js", years: "1y" },
-    { name: "Vue.js", years: "1y" },
-    { name: "PHP", years: "1y" },
-    { name: "Python", years: "3y" },
-    { name: "Java", years: "2y" },
-    { name: "C/C++", years: "2y" },
-    { name: "Docker", years: "2y" },
-    { name: "Scala, Rust, C#, Angular, GraphQL", years: "0.5y" },
-  ]
-
   const languages = [
     { name: "Portuguese", level: "Native" },
     { name: "English", level: "Proficient | CAE C1 Level, 2016" },
@@ -39,12 +21,23 @@ export function Skills() {
             <ExternalLinkIcon className="size-4" />
           </a>
           <div className="flex flex-wrap gap-x-2">
-            {technicalSkills.map((skill, index) => (
-              <div key={index} className="text-xs">
-                <span className="font-medium">{skill.name}</span>
-                <span className="ml-1 text-gray-500 dark:text-gray-300">{skill.years}</span>
-              </div>
-            ))}
+            {skills.map((skill, index) => {
+              const techIcon = techStackIcons[skill.name.toLowerCase()]
+              return (
+                <div key={index} className="inline-flex items-center gap-0.5 text-xs">
+                  {techIcon && (
+                    <Image
+                      src={techIcon}
+                      alt={skill.name}
+                      width={11}
+                      height={11}
+                      className="size-[11px] rounded-sm grayscale-[0.8] dark:grayscale-0"
+                    />
+                  )}
+                  <span className="font-medium">{skill.name}</span>
+                </div>
+              )
+            })}
           </div>
         </div>
 
