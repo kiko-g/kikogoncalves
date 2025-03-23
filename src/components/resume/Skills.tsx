@@ -1,4 +1,4 @@
-import { LinkIcon } from "lucide-react"
+import { ExternalLinkIcon } from "lucide-react"
 
 export function Skills() {
   const technicalSkills = [
@@ -36,7 +36,7 @@ export function Skills() {
         <div className="flex items-center gap-2">
           <a className="flex w-[100px] flex-shrink-0 items-center gap-1 hover:opacity-70" href="/about#skills">
             <h2 className="text-base font-semibold">Technical</h2>
-            <LinkIcon className="size-4" />
+            <ExternalLinkIcon className="size-4" />
           </a>
           <div className="flex flex-wrap gap-x-2">
             {technicalSkills.map((skill, index) => (

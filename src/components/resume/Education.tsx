@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { StaticImageData } from "next/image"
 
-import { LinkIcon } from "lucide-react"
+import { ExternalLinkIcon } from "lucide-react"
 import { logoFeup, logoAalto } from "@/images/logos/resume" // You'll need to add these logo images
 import { cn } from "@/lib/utils"
 
@@ -106,7 +106,7 @@ export function Education() {
               >
                 {education.institutionLogo}
                 <span className="mr-0.5 font-semibold tracking-tight">{education.institution}</span>
-                {education.institutionLinkType === "external" && <LinkIcon className="size-4" />}
+                {education.institutionLinkType === "external" && <ExternalLinkIcon className="size-4" />}
               </a>
             </div>
           </div>

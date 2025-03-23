@@ -6,7 +6,7 @@ import { techStackIcons } from "@/lib/utilities"
 
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
-import { ExternalLinkIcon, LinkIcon } from "lucide-react"
+import { ExternalLinkIcon } from "lucide-react"
 import {
   logoBaggerFlow,
   logoBaggerUi,
@@ -136,7 +136,7 @@ export function Projects() {
               >
                 {project.logo}
                 <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
-                <LinkIcon className="size-4 flex-shrink-0" />
+                <ExternalLinkIcon className="size-4 flex-shrink-0" />
               </a>
               <a
                 href={project.repo}
@@ -154,7 +154,7 @@ export function Projects() {
                   <span
                     key={tech}
                     className={cn(
-                      "text-2xs flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
+                      "flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] text-2xs font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
                     )}
                   >
                     {techIcon && (

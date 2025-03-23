@@ -5,7 +5,7 @@ import { techStackIcons } from "@/lib/utilities"
 
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
-import { ExternalLinkIcon, LinkIcon } from "lucide-react"
+import { ExternalLinkIcon } from "lucide-react"
 import { logoCriticalManufacturing, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
@@ -196,7 +196,7 @@ export function Experience() {
               {experience.companyLogo}
               <h3 className="text-lg font-semibold tracking-tight">{experience.title}</h3>
               <span className="inline-flex items-center gap-1">
-                {experience.companyLinkType === "external" && <LinkIcon className="size-4" />}
+                {experience.companyLinkType === "external" && <ExternalLinkIcon className="size-4" />}
                 {experience.companyLinkType === "github" && <GithubIcon className="size-4" />}
               </span>
             </a>
@@ -220,7 +220,7 @@ export function Experience() {
                     <span
                       key={tech}
                       className={cn(
-                        "text-2xs flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
+                        "flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] text-2xs font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
                       )}
                     >
                       {techIcon && (
