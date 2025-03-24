@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useMemo, useState } from "react"
+import React, { useMemo, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { type Technology } from "@/types"
@@ -53,6 +53,10 @@ export function ProjectsShowcase() {
       return isTagPresent ? prev.filter((t) => t.name !== tag.name) : [...prev, tag]
     })
   }
+
+  useEffect(() => {
+    if (query.length > 0) setShowLess(false)
+  }, [query])
 
   return (
     <>
@@ -172,7 +176,11 @@ export function ProjectsShowcase() {
       </ul>
 
       <div className="mb-6 mt-4 flex items-center justify-center gap-2">
-        <Button variant="outline" onClick={() => setShowLess((prev) => !prev)}>
+        <Button
+          variant="outline"
+          onClick={() => setShowLess((prev) => !prev)}
+          className={cn(filteredProjects.length === 0 && "hidden")}
+        >
           {showLess ? "Show more projects" : "Show less projects"}
           <PlusCircleIcon className="size-4" />
         </Button>
