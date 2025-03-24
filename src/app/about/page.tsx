@@ -21,6 +21,7 @@ import { GithubIcon, InstagramIcon, LinkedinIcon, XTwitterIcon } from "@/compone
 import { FeupLogoLink } from "@/components/about/FeupLogoLink"
 import { Button } from "@/components/ui/button"
 import { TweetCard } from "@/components/Twitter"
+import { ExternalResource } from "@/components/ExternalResource"
 
 export const metadata: Metadata = {
   title: "About",
@@ -117,8 +118,6 @@ export default function About() {
 
       <Skillset />
       <CurriculumVitae />
-      <Photos />
-      <Moments />
     </Container>
   )
 }
@@ -188,8 +187,8 @@ function Skillset({ useProgressBarColor = true }) {
 function CurriculumVitae() {
   return (
     <section id="cv" className="mt-6 pt-12 sm:mt-12">
-      <SectionHeading noMargin slideTo="resume">
-        Resume
+      <SectionHeading noMargin slideTo="curriculum">
+        Curriculum
       </SectionHeading>
       <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">
         Here’s a brief overview of my professional experience and education. I’m always looking for new opportunities
@@ -250,14 +249,19 @@ function CurriculumVitae() {
         </p>
 
         <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
-          <li>Completed both the bachelor and master degrees, finishing the masters’ averaging 18/20</li>
+          <li>Completed both the bachelor and master degrees, finishing the masters’ averaging 18/20.</li>
+          <li>
+            Member of <strong>NIAEFEUP</strong>, the Student Branch of the Computer Engineering and Informatics
+            Association of the University of Porto. Active participant in relevant projects of the association like the{" "}
+            <ExternalResource href="https://tts.niaefeup.pt">Timetable Selector</ExternalResource>
+          </li>
           <li>
             Relevant <strong>bachelor coursework</strong>: Web App Development, Algorithms and Data Structures,
             Databases, Artificial Intelligence.
           </li>
           <li>
             Relevant <strong>master coursework</strong>: Full Stack Development, IOT factory management, AI Assistant
-            Web Navigator, P2P Timeline, Semantic Web App Development
+            Web Navigator, P2P Timeline, Semantic Web App Development.
           </li>
         </ul>
       </div>
@@ -279,13 +283,15 @@ function CurriculumVitae() {
             <p className="text-base font-normal text-zinc-700 dark:text-zinc-200">Full-stack Engineer</p>
 
             <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
+              <li>Contributed and developed customizable e-commerce storefront themes.</li>
               <li>
-                Collaborated on <strong>storefront themes</strong>, and developed a <strong>Visual Editor</strong> and{" "}
-                <strong>Code Editor</strong> for seamless customization as part of the Themes Team.
+                Developed and improved both a Visual Editor and Code Editor for Jumpseller customers to deeply
+                personalize their stores.
               </li>
               <li>
-                Enhanced storefront themes architecture, driving e-commerce innovation with an adaptable system for
-                theme creation and detailed customization.
+                Streamlined storefront theme implementation by consolidating themes into a centralized base theme with
+                extensive customizable JSON options, significantly improving maintainability and enabling faster
+                customization.
               </li>
             </ul>
           </li>
@@ -324,6 +330,22 @@ function CurriculumVitae() {
             </ul>
           </li>
         </ul>
+      </div>
+    </section>
+  )
+}
+
+function Moments() {
+  return (
+    <section id="moments" className="mt-6 pt-12 sm:mt-12">
+      <SectionHeading noMargin slideTo="moments">
+        Moments
+      </SectionHeading>
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Highlights of exquisite yapping tendencies</p>
+
+      <div className="grid grid-cols-2 gap-4">
+        <TweetCard id="1876986582739062807" />
+        <TweetCard id="1886775379852931413" />
       </div>
     </section>
   )
@@ -384,22 +406,6 @@ function PhotosAlt() {
             />
           </div>
         ))}
-      </div>
-    </section>
-  )
-}
-
-function Moments() {
-  return (
-    <section id="moments" className="mt-6 pt-12 sm:mt-12">
-      <SectionHeading noMargin slideTo="moments">
-        Moments
-      </SectionHeading>
-      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">Highlights of exquisite yapping tendencies</p>
-
-      <div className="grid grid-cols-2 gap-4">
-        <TweetCard id="1876986582739062807" />
-        <TweetCard id="1886775379852931413" />
       </div>
     </section>
   )

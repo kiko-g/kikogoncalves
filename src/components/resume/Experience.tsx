@@ -106,7 +106,7 @@ export function Experience() {
             type: "external",
           },
           extraText:
-            " with organized data and KPIs from CMF's MES, offering usability insights for its components, which democratizes the UX improvement process by attributing scores to components and workflows with varying heuristics.",
+            " with organized data and KPIs from CMF MES, offering usability insights for its components, which democratizes the UX improvement process by attributing scores to components and workflows with varying heuristics.",
         },
       ],
     },
@@ -182,7 +182,7 @@ export function Experience() {
 
   return (
     <div id="experience">
-      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">Professional & Other Experiences</h2>
+      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">Professional Experience</h2>
 
       {experienceData.map((experience, index) => (
         <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>

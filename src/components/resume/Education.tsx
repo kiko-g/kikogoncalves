@@ -1,9 +1,9 @@
+import { ReactElement } from "react"
 import Image from "next/image"
-import { StaticImageData } from "next/image"
+import { cn } from "@/lib/utils"
 
 import { ExternalLinkIcon } from "lucide-react"
-import { logoAalto, pngFeup } from "@/images/logos/resume" // You'll need to add these logo images
-import { cn } from "@/lib/utils"
+import { logoAalto, pngFeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -19,7 +19,7 @@ interface Education {
   period: string
   institutionLink: string
   institutionLinkType: LinkType
-  details: string[]
+  details: ReactElement
   institutionLogo?: React.ReactNode
   courses?: Course[]
 }
@@ -57,10 +57,15 @@ export function Education() {
       institutionLink: "https://fe.up.pt",
       institutionLinkType: "external",
       institutionLogo: <Image src={pngFeup} alt="FEUP" width={20} height={20} className="mr-0" />,
-      details: [
-        "Completed both the bachelor and master degrees, finishing the masters' averaging 18/20",
-        "Relevant coursework: Full Stack Development, Algorithms and Data Structures, Databases, Artificial Intelligence, P2P Timeline",
-      ],
+      details: (
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>Completed both the bachelor and master degrees, finishing the masters' averaging 18/20</li>
+          <li>
+            Relevant coursework: Full Stack Development, Algorithms and Data Structures, Databases, Artificial
+            Intelligence, P2P Timeline
+          </li>
+        </ul>
+      ),
     },
     {
       institution: "Aalto University School of Science",
@@ -70,9 +75,14 @@ export function Education() {
       institutionLink: "https://www.aalto.fi/en/school-of-science",
       institutionLinkType: "external",
       institutionLogo: <Image src={logoAalto} alt="Aalto University" width={20} height={20} className="mr-0" />,
-      details: [
-        "Studied computer science abroad at Aalto University, in Espoo, Finland as an exchange student part of the Erasmus program",
-      ],
+      details: (
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>
+            Studied computer science abroad at Aalto University, in Espoo, Finland as an exchange student part of the
+            Erasmus program
+          </li>
+        </ul>
+      ),
     },
   ]
 
@@ -95,7 +105,6 @@ export function Education() {
             </div>
           </div>
 
-          {/* Subheader with institution and location */}
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <a
@@ -111,14 +120,7 @@ export function Education() {
             </div>
           </div>
 
-          <div className="mt-1 flex items-start gap-4">
-            {/* Details list */}
-            <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
-              {education.details.map((detail, detailIndex) => (
-                <li key={detailIndex}>{detail}</li>
-              ))}
-            </ul>
-          </div>
+          <div className="mt-1 flex items-start gap-4">{education.details}</div>
         </div>
       ))}
     </div>

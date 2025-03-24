@@ -4,17 +4,12 @@ import { StaticImageData } from "next/image"
 import { cn } from "@/lib/utils"
 import { techStackIcons } from "@/lib/utilities"
 
+import { ExternalResource } from "@/components/ExternalResource"
+
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
 import { ExternalLinkIcon } from "lucide-react"
-import {
-  logoBaggerFlow,
-  logoBaggerUi,
-  logoCriticalManufacturing,
-  logoFeup,
-  logoJumpseller,
-  logoNiaefeup,
-} from "@/images/logos/resume"
+import { logoBaggerFlow, logoBaggerUi } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -22,13 +17,6 @@ interface Link {
   text: string
   url: string
   type: LinkType
-}
-
-interface ResponsibilityItem {
-  text: string
-  bold?: boolean
-  extraText?: string
-  link?: Link
 }
 
 interface Project {
@@ -54,16 +42,16 @@ export function Projects() {
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
             Developed an app that tracks supermarket prices over time, bringing{" "}
-            <strong>transparency to consumer goods inflation</strong> in Portugal and helping shoppers understand price
-            changes beyond what appears on shelf labels.
+            <span className="font-semibold">transparency to consumer goods inflation</span> in Portugal and helping
+            shoppers understand price changes beyond what appears on shelf labels.
           </li>
           <li>
-            Created effective <strong>scheduled scrapers that automatically collect</strong> and update pricing data
-            from multiple supermarkets, enabling price trend analysis and historical comparisons.
+            Created effective <span className="font-semibold">scheduled scrapers</span> that automatically collect and
+            update pricing data from multiple supermarkets, enabling price trend analysis and historical comparisons.
           </li>
           <li>
             User-friendly data visualization system to present pricing data in an accessible way.{" "}
-            <strong>Free and premium plans available.</strong>
+            <ExternalResource href="https://price-lens.vercel.app">Free and premium plans available</ExternalResource>
           </li>
         </ul>
       ),
@@ -85,16 +73,7 @@ export function Projects() {
           <li>
             The code is yours, take it, adapt it and build the project of your dreams with a fitting design. Inspired by
             Shadcn, TailwindUI and HyperUI and Flowbite.{" "}
-            <strong>
-              <a
-                href="https://bagger-ui.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:opacity-80"
-              >
-                Available on Vercel.
-              </a>
-            </strong>
+            <ExternalResource href="https://bagger-ui.vercel.app">Available on Vercel</ExternalResource>
           </li>
         </ul>
       ),
@@ -111,7 +90,13 @@ export function Projects() {
           <li>
             A Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with
             a clean and minimal feel. Contains carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS
-            and Ruby. <strong>Available on the VSCode Marketplace.</strong>
+            and Ruby.{" "}
+          </li>
+          <li>
+            Give it a try.{" "}
+            <ExternalResource href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow">
+              Available on the VSCode Marketplace
+            </ExternalResource>
           </li>
         </ul>
       ),

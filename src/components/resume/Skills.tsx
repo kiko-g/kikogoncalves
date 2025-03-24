@@ -16,7 +16,7 @@ export function Skills() {
       <h2 className="mb-1 mt-2 border-b pb-0.5 text-2xl font-bold leading-none">Skills</h2>
       <div className="flex flex-col gap-3 lg:gap-0.5">
         <div className="flex flex-col items-start gap-1 lg:flex-row lg:items-center lg:gap-2">
-          <a className="flex w-[100px] flex-shrink-0 items-center gap-1 hover:opacity-70" href="/about#skills">
+          <a className="flex w-[100px] flex-shrink-0 items-center gap-1 hover:opacity-70" href="/projects">
             <h2 className="text-base font-semibold">Technical</h2>
             <ExternalLinkIcon className="size-4" />
           </a>

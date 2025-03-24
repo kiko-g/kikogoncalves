@@ -63,7 +63,7 @@ export function ProjectsShowcase() {
         </button>
       </div>
 
-      <div className="mb-4 flex w-full items-center justify-center gap-3">
+      <div className="flex w-full items-center justify-center gap-3">
         <input
           type="search"
           value={query}
@@ -165,8 +165,12 @@ export function ProjectsShowcase() {
       </div>
 
       <ul
+        id="list"
         role="list"
-        className={cn("grid", compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10")}
+        className={cn(
+          "grid pt-4",
+          compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10",
+        )}
       >
         {filteredProjects.map((project, projectIndex) => (
           <ProjectCard

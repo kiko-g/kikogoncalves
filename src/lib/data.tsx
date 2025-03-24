@@ -177,7 +177,7 @@ export const projectsData: Project[] = [
     relevant: true,
     status: null,
     feup: true,
-    name: "Analytics and UX Dashboard for CMF's MES",
+    name: "Analytics and UX Dashboard for CMF MES",
     description: (
       <section className="project-card-description">
         Dashboard with customized analyitical insights for web components inside Critical Manufacturing&apos;s MES, an
