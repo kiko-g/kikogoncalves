@@ -227,12 +227,12 @@ export function Experience() {
                         <Image
                           src={techIcon}
                           alt={tech}
-                          width={12}
-                          height={12}
-                          className="size-[12px] rounded-sm grayscale-[0.8] dark:grayscale-0"
+                          width={11}
+                          height={11}
+                          className="size-[11px] rounded-sm grayscale-[0.8] dark:grayscale-0"
                         />
                       )}
-                      <span className="-mt-[2px]">{tech}</span>
+                      <span>{tech}</span>
                     </span>
                   )
                 })}
