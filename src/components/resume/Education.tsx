@@ -62,7 +62,7 @@ export function Education() {
           <li>Completed both the bachelor and master degrees, finishing the masters' averaging 18/20</li>
           <li>
             Relevant coursework: Full Stack Development, Algorithms and Data Structures, Databases, Artificial
-            Intelligence, P2P Timeline
+            Intelligence, P2P Timeline, Agile Methods
           </li>
         </ul>
       ),

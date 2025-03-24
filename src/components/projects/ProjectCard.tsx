@@ -1,12 +1,13 @@
 "use client"
 
-import React, { useEffect, useMemo, useState } from "react"
+import React, { useEffect } from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import type { Project } from "@/types"
 
 import { resolveProjectCardColors, getDatespan, techStackIcons } from "@/lib/utilities"
 
+import { ExpandableText } from "@/components/ExpandableText"
 import { VideoComponent } from "@/components/projects/Video"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
@@ -86,9 +87,12 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
         </div>
 
         <p className="mt-0.5 text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
-        <div className={cn("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
-          {project.description}
-        </div>
+
+        <ExpandableText>
+          <div className={cn("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
+            {project.description}
+          </div>
+        </ExpandableText>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => {
