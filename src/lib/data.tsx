@@ -176,7 +176,7 @@ export const projectsData: Project[] = [
     pinned: false,
     relevant: true,
     status: null,
-    feup: true,
+    feup: false,
     name: "Analytics and UX Dashboard for CMF MES",
     description: (
       <section className="project-card-description">
@@ -286,7 +286,7 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    pinned: false,
+    pinned: true,
     relevant: true,
     status: null,
     feup: false,

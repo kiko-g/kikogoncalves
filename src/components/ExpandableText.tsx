@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp, EllipsisIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
@@ -30,9 +30,20 @@ export function ExpandableText({
 
   useEffect(() => {
     if (contentRef.current) {
+      // Check if content height exceeds maxHeight
       setNeedsExpansion(contentRef.current.scrollHeight > maxHeight)
     }
   }, [children, maxHeight])
+
+  useEffect(() => {
+    if (!isExpanded && contentRef.current) {
+      // When collapsing, scroll the content to the top after transition
+      const timer = setTimeout(() => {
+        if (contentRef.current) contentRef.current.scrollTop = 0
+      }, 200) // Match this with the transition duration
+      return () => clearTimeout(timer)
+    }
+  }, [isExpanded])
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded)
@@ -40,21 +51,29 @@ export function ExpandableText({
 
   return (
     <div className={cn("space-y-0.5", className)}>
-      <div
-        ref={contentRef}
-        className={cn(
-          "overflow-hidden text-base transition-all duration-300",
-          !isExpanded && needsExpansion && "max-h-[var(--max-height)]",
-        )}
-        style={{ "--max-height": `${maxHeight}px` } as React.CSSProperties}
-      >
-        {children}
+      <div className="relative">
+        <div
+          ref={contentRef}
+          className={cn(
+            "duration-50 overflow-hidden text-base transition-all ease-in-out",
+            !isExpanded && needsExpansion && "max-h-[var(--max-height)]",
+            isExpanded && "max-h-[2000px]", // Use a value larger than content would ever be
+          )}
+          style={{ "--max-height": `${maxHeight}px` } as React.CSSProperties}
+        >
+          {children}
+        </div>
       </div>
 
       {needsExpansion && (
-        <Button variant="link" size="sm" onClick={toggleExpand} className="p-0">
+        <Button
+          variant="link"
+          size="2xs"
+          onClick={toggleExpand}
+          className={cn("p-0", !isExpanded && "text-muted-foreground")}
+        >
           {isExpanded ? collapseButtonText : expandButtonText}
-          {showIcon && (isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />)}
+          {showIcon && (isExpanded ? <ChevronUp /> : <EllipsisIcon />)}
         </Button>
       )}
     </div>

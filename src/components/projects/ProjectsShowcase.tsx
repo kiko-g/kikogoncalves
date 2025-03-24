@@ -41,6 +41,7 @@ export function ProjectsShowcase() {
   }
 
   function onTagClickToggle(tagName: string) {
+    setShowLess(false)
     setSelectedTags((prev) => {
       let isTagPresent = false
       for (let i = 0; i < prev.length; i++) {
@@ -156,7 +157,7 @@ export function ProjectsShowcase() {
         role="list"
         className={cn(
           "grid pt-4",
-          compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-2" : "grid-cols-1 gap-x-6 gap-y-10",
+          compact ? "grid-cols-1 gap-x-5 gap-y-5 lg:grid-cols-3 lg:gap-x-3 lg:gap-y-3" : "grid-cols-1 gap-x-6 gap-y-10",
         )}
       >
         {filteredProjects.map((project, projectIndex) => (

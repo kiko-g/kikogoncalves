@@ -12,7 +12,7 @@ import { VideoComponent } from "@/components/projects/Video"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 import { GithubIcon } from "@/components/icons"
-import { BookCheckIcon, LinkIcon } from "lucide-react"
+import { BookCheckIcon, ExternalLinkIcon, LinkIcon } from "lucide-react"
 
 type Props = {
   project: Project
@@ -23,6 +23,7 @@ type Props = {
 
 export function ProjectCard({ project, tagClickCallback, compact = false, projectIndex }: Props) {
   const cx = resolveProjectCardColors(project.color)
+
   const datespan = getDatespan(project.startDate, project.endDate)
   const nextButtonRef = React.useRef<HTMLButtonElement>(null)
   const showPinnedBadge = false
@@ -32,6 +33,11 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
 
     const nextButton = nextButtonRef.current
     if (nextButton && !nextButton.disabled) nextButton.click()
+  }
+
+  function handleTagClick(tech: string) {
+    if (typeof tagClickCallback !== "function") return
+    tagClickCallback(tech)
   }
 
   useEffect(() => {
@@ -45,12 +51,20 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
 
   return (
     <li
-      className={cn("relative flex flex-col gap-4 rounded-lg border p-4 lg:flex-row lg:p-6", cx.background, cx.border)}
+      className={cn(
+        "relative flex flex-col rounded-lg border lg:flex-row",
+        compact ? "gap-3 p-3 lg:p-4" : "gap-4 p-4 lg:p-6",
+        compact ? "bg-white dark:bg-black/30" : [cx.background, cx.border],
+      )}
     >
       <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
         <div className="flex flex-wrap items-center justify-between gap-1">
           <div className="flex items-center gap-2">
-            <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
+            <h3
+              className={cn("flex-1 leading-7", compact ? "text-lg font-semibold tracking-tight" : "text-xl font-bold")}
+            >
+              {project.name}
+            </h3>
           </div>
 
           <div className="flex items-start gap-2">
@@ -88,40 +102,26 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
 
         <p className="mt-0.5 text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
 
-        <ExpandableText>
+        <ExpandableText maxHeight={compact ? 85 : 100}>
           <div className={cn("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
             {project.description}
           </div>
         </ExpandableText>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className={cn("flex flex-wrap", compact ? "mt-2 gap-2" : "mt-4 gap-2")}>
           {project.stack.map((tech) => {
-            const techIcon = techStackIcons[tech.toLowerCase()]
-            return (
-              <button
-                key={tech}
-                onClick={() => typeof tagClickCallback === "function" && tagClickCallback(tech)}
-                className={cn(
-                  tech === "FEUP" ? "bg-feup/80 text-white dark:bg-feup/50" : cx.bubble,
-                  "flex items-center gap-1 rounded-sm px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80",
-                )}
-              >
-                {techIcon && (
-                  <Image src={techIcon} alt={tech} width={15} height={15} className="size-[15px] rounded-sm" />
-                )}
-                <span className="-mt-[2px]">{tech}</span>
-              </button>
-            )
+            const TechStackBadge = compact ? TechStackBadgeSmall : TechStackBadgeNormal
+            return <TechStackBadge key={tech} tech={tech} handleTagClick={handleTagClick} className={cx.bubble} />
           })}
         </div>
 
-        <div className="mt-4 flex flex-col items-start justify-start gap-2">
+        <div className={cn("flex flex-col items-start justify-start", compact ? "mt-auto gap-1.5 pt-4" : "mt-4 gap-2")}>
           {project.attachment && (
             <a
               href={project.attachment}
               target="_blank"
               className={cn(
-                cx.textHover,
+                compact ? "" : cx.textHover,
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
@@ -135,12 +135,12 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
               href={project.deployment}
               target="_blank"
               className={cn(
-                cx.textHover,
+                compact ? "" : cx.textHover,
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <LinkIcon className="size-4 text-gray-700 dark:text-white" strokeWidth={1.5} />
-              <span>{project.deployment}</span>
+              <ExternalLinkIcon className="size-4 flex-shrink-0 text-gray-700 dark:text-white" strokeWidth={1.5} />
+              <span className="line-clamp-1">{project.deployment}</span>
             </a>
           )}
           {project.repo && (
@@ -148,12 +148,12 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
               href={project.repo}
               target="_blank"
               className={cn(
-                cx.textHover,
+                compact ? "" : cx.textHover,
                 "flex items-center justify-center gap-2 text-sm font-medium lowercase leading-4 tracking-tight transition hover:underline hover:opacity-80",
               )}
             >
-              <GithubIcon className="size-4 fill-[#333333] dark:fill-white" />
-              <span>{project.repo}</span>
+              <GithubIcon className="size-4 flex-shrink-0 fill-[#333333] dark:fill-white" />
+              <span className="line-clamp-1">{project.repo}</span>
             </a>
           )}
         </div>
@@ -197,5 +197,58 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
         </Carousel>
       </div>
     </li>
+  )
+}
+
+const TechStackBadgeNormal = ({
+  tech,
+  handleTagClick,
+  className,
+}: {
+  tech: string
+  handleTagClick: (tech: string) => void
+  className?: string
+}) => {
+  const techIcon = techStackIcons[tech.toLowerCase()]
+  return (
+    <button
+      key={tech}
+      onClick={() => {
+        handleTagClick(tech)
+      }}
+      className={cn(
+        tech === "FEUP" ? "bg-feup/80 text-white dark:bg-feup/50" : className,
+        "flex items-center gap-1 rounded-sm px-1.5 py-[5px] text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80",
+      )}
+    >
+      {techIcon && <Image src={techIcon} alt={tech} width={15} height={15} className="size-[15px] rounded-sm" />}
+      <span className="-mt-[2px]">{tech}</span>
+    </button>
+  )
+}
+
+const TechStackBadgeSmall = ({
+  tech,
+  handleTagClick,
+  className,
+}: {
+  tech: string
+  handleTagClick: (tech: string) => void
+  className?: string
+}) => {
+  const techIcon = techStackIcons[tech.toLowerCase()]
+  return (
+    <button
+      key={tech}
+      onClick={() => {
+        handleTagClick(tech)
+      }}
+      className={cn(
+        "flex items-center gap-1 rounded-sm text-xs font-normal lowercase leading-tight tracking-tight hover:opacity-80",
+      )}
+    >
+      {techIcon && <Image src={techIcon} alt={tech} width={14} height={14} className="size-[14px] rounded-sm" />}
+      <span className="-mt-[2px]">{tech}</span>
+    </button>
   )
 }

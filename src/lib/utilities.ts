@@ -169,8 +169,8 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
       }
     case "highlight":
       return {
-        background: "bg-gradient-to-br from-zinc-50 to-zinc-200 dark:from-zinc-100/20 dark:to-zinc-50/10",
-        border: "border-zinc-500/10 dark:border-zinc-400/10",
+        background: "bg-gradient-to-br from-zinc-50 to-zinc-200 dark:from-zinc-100/10 dark:to-zinc-50/5",
+        border: "border-zinc-500/20 dark:border-zinc-200/20",
         badge: "bg-zinc-700 dark:bg-zinc-300",
         bubble: "bg-zinc-900/70 text-white dark:bg-zinc-900/80",
         textHover: "hover:text-zinc-700 dark:hover:text-zinc-300",

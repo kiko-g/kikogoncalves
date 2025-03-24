@@ -27,6 +27,7 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
       },
       size: {
         default: `px-3.5 py-1.5`,
+        "2xs": `px-1.5 py-0.5 gap-1 text-2xs [&_svg]:size-3`,
         xs: `px-1.5 py-0.5 text-xs`,
         sm: `px-2.5 py-1`,
         md: `px-3 py-1.5`,
