@@ -5,15 +5,15 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { type Technology } from "@/types"
 
-import { useLocalStorageBoolean } from "@/lib/hooks"
 import { projectsData } from "@/lib/data"
 import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from "@/lib/utilities"
 
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { ProjectCard } from "@/components/projects/ProjectCard"
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
 
-import { CheckIcon, ChevronDownIcon, LayoutGrid, PlusCircleIcon, StarIcon, Tally4Icon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon, LayoutGrid, MinusCircleIcon, PlusCircleIcon, Tally4Icon } from "lucide-react"
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
@@ -70,21 +70,21 @@ export function ProjectsShowcase() {
       </div>
 
       <div className="flex w-full items-center justify-center gap-3">
-        <input
+        <Input
           type="search"
           value={query}
           placeholder="Search by project name"
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full flex-1 rounded-md border border-zinc-300 bg-zinc-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-zinc-400/80 hover:bg-zinc-400/10 focus:border-zinc-400 focus:bg-zinc-400/10 focus:accent-zinc-400 focus:ring-0 focus:ring-zinc-400 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-200 dark:hover:border-zinc-400/70 dark:hover:bg-zinc-200/10 dark:focus:border-zinc-200/50 dark:focus:bg-zinc-100/10 dark:focus:ring-0 dark:focus:ring-zinc-400 lg:px-3 lg:py-2 lg:text-sm"
+          className="h-[42px] w-full flex-1"
         />
 
         <Listbox value={selectedTags} onChange={setSelectedTags} multiple>
           <ListboxButton
             className={cn(
-              "flex items-center gap-1 self-stretch rounded-md border px-3 text-sm font-medium transition hover:opacity-80 dark:text-zinc-300",
+              "flex items-center gap-1 self-stretch rounded-md border px-3 text-sm font-medium transition hover:opacity-80",
               selectedTags.length > 0
-                ? "border-zinc-600 bg-zinc-600/60 text-white dark:border-zinc-100/60 dark:bg-zinc-100/20"
-                : "border-zinc-300 bg-zinc-50 text-zinc-700 dark:border-zinc-200/10 dark:bg-zinc-100/5",
+                ? "border-zinc-800 bg-zinc-800 text-white dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-800"
+                : "border-zinc-300 bg-transparent dark:border-zinc-200/10",
             )}
           >
             <span>Tags</span>
@@ -141,19 +141,14 @@ export function ProjectsShowcase() {
           </Transition>
         </Listbox>
 
-        <button
-          type="button"
+        <Button
+          size="icon-lg"
+          variant={compact ? "default" : "outline"}
           title="Toggle compact view"
           onClick={() => setCompact((prev) => !prev)}
-          className={cn(
-            "hidden items-center gap-2 self-stretch rounded-md border px-2.5 text-sm transition hover:opacity-80 lg:flex",
-            compact
-              ? "border-zinc-600 bg-zinc-600/60 text-white dark:border-zinc-400/60 dark:bg-zinc-400/20"
-              : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
-          )}
         >
           {compact ? <LayoutGrid className="size-5 stroke-2" /> : <Tally4Icon className="size-5 rotate-90 stroke-2" />}
-        </button>
+        </Button>
       </div>
 
       <ul
@@ -182,7 +177,7 @@ export function ProjectsShowcase() {
           className={cn(filteredProjects.length === 0 && "hidden")}
         >
           {showLess ? "Show more projects" : "Show less projects"}
-          <PlusCircleIcon className="size-4" />
+          {showLess ? <PlusCircleIcon className="size-4" /> : <MinusCircleIcon className="size-4" />}
         </Button>
       </div>
     </>

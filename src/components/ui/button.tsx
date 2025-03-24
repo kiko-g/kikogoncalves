@@ -33,6 +33,7 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
         lg: `px-3.5 py-2`,
         xl: `px-6 py-4`,
         icon: `p-2`,
+        "icon-lg": `p-3`,
         "icon-sm": `p-1.5`,
         "icon-xs": `p-0.5`,
       },
