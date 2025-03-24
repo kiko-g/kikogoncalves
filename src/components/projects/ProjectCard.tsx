@@ -53,7 +53,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
     <li
       className={cn(
         "relative flex flex-col rounded-lg border lg:flex-row",
-        compact ? "gap-3 p-3 lg:p-4" : "gap-4 p-4 lg:p-6",
+        compact ? "gap-3 p-3 lg:p-4" : "gap-4 p-4 lg:p-5",
         compact ? "bg-white dark:bg-black/30" : [cx.background, cx.border],
       )}
     >
@@ -61,7 +61,10 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
         <div className="flex flex-wrap items-center justify-between gap-1">
           <div className="flex items-center gap-2">
             <h3
-              className={cn("flex-1 leading-7", compact ? "text-lg font-semibold tracking-tight" : "text-xl font-bold")}
+              className={cn(
+                "flex-1 leading-7",
+                compact ? "text-base font-semibold tracking-tight" : "text-xl font-bold",
+              )}
             >
               {project.name}
             </h3>
@@ -102,13 +105,13 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
 
         <p className="mt-0.5 text-sm font-normal text-zinc-700 dark:text-white/50">{datespan}</p>
 
-        <ExpandableText maxHeight={compact ? 85 : 100}>
+        <ExpandableText maxHeight={compact ? 85 : 95}>
           <div className={cn("mt-2", compact ? "text-sm leading-snug" : "text-base leading-normal")}>
             {project.description}
           </div>
         </ExpandableText>
 
-        <div className={cn("flex flex-wrap", compact ? "mt-2 gap-2" : "mt-4 gap-2")}>
+        <div className={cn("flex flex-wrap", compact ? "mt-2 gap-2" : "mt-3 gap-1.5")}>
           {project.stack.map((tech) => {
             const TechStackBadge = compact ? TechStackBadgeSmall : TechStackBadgeNormal
             return <TechStackBadge key={tech} tech={tech} handleTagClick={handleTagClick} className={cx.bubble} />
@@ -165,7 +168,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
           "group relative order-2 max-w-full lg:order-2 lg:max-w-md",
         )}
       >
-        <Carousel className="flex w-full max-w-md flex-col gap-2" opts={{ loop: true }}>
+        <Carousel className="flex w-full max-w-full flex-col gap-2 lg:max-w-lg" opts={{ loop: true }}>
           <CarouselContent>
             {project.media.map((media, mediaIdx) => (
               <CarouselItem key={mediaIdx}>

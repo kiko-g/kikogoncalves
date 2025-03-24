@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import Image from "next/image"
 import { StaticImageData } from "next/image"
 import { cn } from "@/lib/utils"
@@ -7,6 +8,7 @@ import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
 import { ExternalLinkIcon } from "lucide-react"
 import { pngCriticalManufacturing, pngJumpseller, pngNiaefeup } from "@/images/logos/resume"
+import { ExternalResource } from "../ExternalResource"
 
 type LinkType = "external" | "github"
 
@@ -29,7 +31,7 @@ interface Experience {
   period: string
   companyLink: string
   companyLinkType: LinkType
-  responsibilities: (string | ResponsibilityItem)[]
+  responsibilities: ReactElement
   stack: string[]
   image?: StaticImageData
   companyLogo?: React.ReactNode
@@ -69,16 +71,20 @@ export function Experience() {
       companyLinkType: "external",
       image: media.jumpseller.screenshot1,
       stack: ["React.js", "Javascript", "Ruby", "Ruby on Rails", "Redux", "SQL", "Liquid", "AWS S3"],
-      responsibilities: [
-        "Contributed and developed customizable e-commerce storefront themes.",
-        "Developed and improved both a Visual Editor and Code Editor for Jumpseller customers to deeply personalize their stores.",
-        {
-          text: "Streamlined storefront theme implementation",
-          bold: true,
-          extraText:
-            " by consolidating themes into a centralized base theme with extensive customizable JSON options, significantly improving maintainability and enabling faster customization.",
-        },
-      ],
+      responsibilities: (
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>Contributed and developed customizable e-commerce storefront themes.</li>
+          <li>
+            Developed and improved both a Visual Editor and Code Editor for Jumpseller customers to deeply personalize
+            their stores.
+          </li>
+          <li>
+            <span className="font-bold">Streamlined storefront theme implementation</span> by consolidating themes into
+            a centralized base theme with extensive customizable JSON options, significantly improving maintainability
+            and enabling faster customization.
+          </li>
+        </ul>
+      ),
     },
     {
       title: "Software Engineer Intern at Critical Manufacturing",
@@ -89,26 +95,21 @@ export function Experience() {
       companyLinkType: "external",
       image: media.cmfUx.screenshot2,
       stack: ["React.js", "Next.js", "Typescript", "Tailwind", "Angular", "Docker", "SQL"],
-      responsibilities: [
-        {
-          text: "Gathered analytics and usability metrics for CMF's Manufacturing Execution System (MES) to enhance UI/UX",
-          link: {
-            text: "(dissertation",
-            url: "https://kikogoncalves.com/dissertation.pdf",
-            type: "external",
-          },
-        },
-        {
-          text: "Developed a ",
-          link: {
-            text: "custom dashboard",
-            url: "#",
-            type: "external",
-          },
-          extraText:
-            " with organized data and KPIs from CMF MES, offering usability insights for its components, which democratizes the UX improvement process by attributing scores to components and workflows with varying heuristics.",
-        },
-      ],
+      responsibilities: (
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>
+            Gathered analytics and usability metrics for CMF's Manufacturing Execution System (MES) to enhance UI/UX{" "}
+            <ExternalResource href="https://kikogoncalves.com/dissertation.pdf">(dissertation)</ExternalResource>
+          </li>
+          <li>
+            Developed a{" "}
+            <ExternalResource href="https://usability-dashboard-mes.vercel.app">custom dashboard</ExternalResource>
+            with organized data and KPIs from CMF MES, offering usability insights for its components, which
+            democratizes the UX improvement process by attributing scores to components and workflows with varying
+            heuristics.
+          </li>
+        </ul>
+      ),
     },
     {
       title: "Freelance Web Developer",
@@ -118,38 +119,19 @@ export function Experience() {
       companyLinkType: "external",
       image: media.guerner.screenshot1,
       stack: ["React.js", "Typescript", "Tailwind", "Gatsby.js", "MDX", "GraphQL"],
-      responsibilities: [
-        "Designed and developed a modern, responsive marketing website for Guerner & Irmãos from scratch using Gatsby.js and MDX, transforming their digital presence and enabling effective showcasing of their products.",
-        "Collaborated closely with stakeholders to create an intuitive, SEO-optimized platform that significantly improved market reach and streamlined the sales process, resulting in enhanced customer engagement and business growth.",
-      ],
-    },
-    {
-      title: "Active Member at Informatics Engineering Student Branch (NIAEFEUP, FEUP)",
-      location: "Porto, Portugal",
-      period: "Nov 2020 - Jun 2023",
-      companyLink: "https://github.com/NIAEFEUP",
-      companyLogo: <Image src={pngNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-0" />,
-      companyLinkType: "github",
-      image: media.tts.screenshot1,
-      stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],
-      responsibilities: [
-        {
-          text: "Initiated and led development for the ",
-          link: {
-            text: "Time Table Scheduler for the University of Porto",
-            url: "https://tts.niaefeup.pt",
-            type: "external",
-          },
-          extraText:
-            ": a web application helping students optimize class schedules, form work groups, and share timetables. Built with React, TypeScript, Tailwind, and SQL.",
-        },
-        {
-          text: "Established the core architecture and UI framework",
-          bold: true,
-          extraText:
-            " that continues to serve as the foundation for the platform, creating a maintainable codebase that facilitated smooth collaboration and ongoing development by the team.",
-        },
-      ],
+      responsibilities: (
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>
+            Designed and developed a modern, responsive marketing website for Guerner & Irmãos from scratch using
+            Gatsby.js and MDX, transforming their digital presence and enabling effective showcasing of their products.
+          </li>
+          <li>
+            Collaborated closely with stakeholders to create an intuitive, SEO-optimized platform that significantly
+            improved market reach and streamlined the sales process, resulting in enhanced customer engagement and
+            business growth. Available at <ExternalResource href="https://guerner.pt"> guerner.pt</ExternalResource>
+          </li>
+        </ul>
+      ),
     },
   ]
 
@@ -238,9 +220,7 @@ export function Experience() {
                 })}
               </div>
 
-              <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
-                {experience.responsibilities.map((resp, respIndex) => renderResponsibility(resp, respIndex))}
-              </ul>
+              {experience.responsibilities}
             </div>
 
             {experience.image && (

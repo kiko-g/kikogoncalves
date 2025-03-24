@@ -2,6 +2,8 @@ import { ReactElement } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
+import { ExternalResource } from "@/components/ExternalResource"
+
 import { ExternalLinkIcon } from "lucide-react"
 import { logoAalto, pngFeup } from "@/images/logos/resume"
 
@@ -59,6 +61,10 @@ export function Education() {
       institutionLogo: <Image src={pngFeup} alt="FEUP" width={20} height={20} className="mr-0" />,
       details: (
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>
+            Member of NIAEFEUP, student branch of the Computer Engineering major. Active participant in events and
+            projects like <ExternalResource href="https://tts.niaefeup.pt">Timetable Selector</ExternalResource>
+          </li>
           <li>Completed both the bachelor and master degrees, finishing the masters' averaging 18/20</li>
           <li>
             Relevant coursework: Full Stack Development, Algorithms and Data Structures, Databases, Artificial

@@ -50,7 +50,7 @@ export function ExpandableText({
   }
 
   return (
-    <div className={cn("space-y-0.5", className)}>
+    <div className={cn("space-y-0", className)}>
       <div className="relative">
         <div
           ref={contentRef}

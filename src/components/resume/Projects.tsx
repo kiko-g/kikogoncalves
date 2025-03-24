@@ -9,7 +9,7 @@ import { ExternalResource } from "@/components/ExternalResource"
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
 import { ExternalLinkIcon } from "lucide-react"
-import { logoBaggerFlow, logoBaggerUi } from "@/images/logos/resume"
+import { logoBaggerFlow, logoBaggerUi, logoPriceLens, pngNiaefeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -33,7 +33,7 @@ export function Projects() {
   const projectsData: Project[] = [
     {
       title: "Price Lens - See Through Prices",
-      logo: <Image src={logoBaggerUi} alt="Bagger UI" width={18} height={18} className="mr-0" />,
+      logo: <Image src={logoPriceLens} alt="Price Lens" width={18} height={18} className="mr-0" />,
       repo: "https://github.com/kiko-g/price-lens",
       deployment: "https://price-lens.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
@@ -66,14 +66,36 @@ export function Projects() {
       responsibilities: (
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>
-            A beautiful collection of copy pasteable and reusable React (Typescript, .tsx) components and snippets.
-            Created to address common UI patterns with the goal of continously expanding the library and minimizing the
-            need to recode similar things.
+            A collection of copy pasteable and reusable React (Typescript, .tsx) components and snippets. Created to
+            address common UI patterns with the goal of continously expanding the library and minimizing the need to
+            recode similar things.
           </li>
           <li>
             The code is yours, take it, adapt it and build the project of your dreams with a fitting design. Inspired by
             Shadcn, TailwindUI and HyperUI and Flowbite.{" "}
             <ExternalResource href="https://bagger-ui.vercel.app">Available on Vercel</ExternalResource>
+          </li>
+        </ul>
+      ),
+    },
+    {
+      title: "Time Table Selecyor for the University of Porto",
+      logo: <Image src={pngNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-0" />,
+      repo: "https://github.com/NIAEFEUP/tts",
+      deployment: "https://tts.niaefeup.pt",
+      stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],
+      image: media.tts.screenshot1,
+      responsibilities: (
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+          <li>
+            Initiated and led development for the web app that allows students to optimize class schedules, form work
+            groups, share timetables and land the best schedule depending on their interests, often crucial to the
+            semester's success.
+          </li>
+          <li>
+            Established the core architecture and UI framework that continues to serve as the foundation for the
+            platform, which now has more features, including a schedule exchanger using the university's authentication
+            API. <ExternalResource href="https://tts.niaefeup.pt">Available online here</ExternalResource>
           </li>
         </ul>
       ),

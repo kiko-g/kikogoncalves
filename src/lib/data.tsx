@@ -137,9 +137,10 @@ export const projectsData: Project[] = [
     description: (
       <section className="project-card-description">
         <p>
-          Beautiful collection of copy pasteable, reusable and customizable React Typescript components combined and
-          saved from different projects. Take the code and build the project of your dreams. Inspired by RadixUI,
-          Shadcn, TailwindUI and HyperUI. BaggerUI is still under development.
+          A beautiful collection of copy pasteable and reusable React (Typescript, .tsx) components and snippets.
+          Created to address common UI patterns with the goal of continously expanding the library and minimizing the
+          need to recode similar things. The code is yours, take it, adapt it and build the project of your dreams with
+          a fitting design. Inspired by Shadcn, TailwindUI and HyperUI and Flowbite.
         </p>
       </section>
     ),
@@ -177,7 +178,7 @@ export const projectsData: Project[] = [
     relevant: true,
     status: null,
     feup: false,
-    name: "Analytics and UX Dashboard for CMF MES",
+    name: "Analytics & UX Dashboard CMF MES",
     description: (
       <section className="project-card-description">
         Dashboard with customized analyitical insights for web components inside Critical Manufacturing&apos;s MES, an
