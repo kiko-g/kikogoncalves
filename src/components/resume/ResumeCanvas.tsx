@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
-import { jsPDF } from "jspdf"
+import { useRef } from "react"
+import { useReactToPrint } from "react-to-print"
 import html2canvas from "html2canvas"
 
 import { Button } from "@/components/ui/button"
@@ -26,42 +26,15 @@ export function ResumeCanvas() {
 }
 
 function Wrapper({ children }: { children: React.ReactNode }) {
-  const resumeRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
 
-  const downloadResumeAsPdf = async () => {
-    if (!resumeRef.current) return
-
-    try {
-      const canvas = await html2canvas(resumeRef.current, {
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        logging: false,
-        backgroundColor: "#FFFFFF",
-      })
-
-      const imgData = canvas.toDataURL("image/png")
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-      })
-
-      // Calculate dimensions to maintain aspect ratio
-      const imgWidth = 210 // A4 width in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width
-
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight)
-      pdf.save("resume.pdf")
-    } catch (error) {
-      console.error("Error generating PDF:", error)
-    }
-  }
+  const downloadResumeAsPdf = useReactToPrint({ contentRef })
 
   const downloadResumeAsPng = async () => {
-    if (!resumeRef.current) return
+    if (!contentRef.current) return
 
     try {
-      const canvas = await html2canvas(resumeRef.current, {
+      const canvas = await html2canvas(contentRef.current, {
         scale: 2, // Higher scale for better quality
         useCORS: true,
         logging: false,
@@ -78,12 +51,12 @@ function Wrapper({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div id="resume" ref={resumeRef} className="group relative mx-auto aspect-[0.1] w-full lg:aspect-[1/1.4142]">
+    <div id="resume" ref={contentRef} className="group relative mx-auto aspect-[0.1] w-full lg:aspect-[1/1.4142]">
       <div className="absolute right-4 top-4 z-50 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
         <Button variant="outline" size="icon-sm" onClick={downloadResumeAsPng} title="Download as PNG">
           <ImageDown size={16} />
         </Button>
-        <Button variant="default" size="icon-sm" onClick={downloadResumeAsPdf} title="Download as PDF">
+        <Button variant="default" size="icon-sm" onClick={() => downloadResumeAsPdf()} title="Download as PDF">
           <FileDown size={16} />
         </Button>
       </div>
