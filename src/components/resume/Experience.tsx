@@ -227,8 +227,8 @@ export function Experience() {
                         <Image
                           src={techIcon}
                           alt={tech}
-                          width={11}
-                          height={11}
+                          width={12}
+                          height={12}
                           className="size-[11px] rounded-sm grayscale-[0.8] dark:grayscale-0"
                         />
                       )}

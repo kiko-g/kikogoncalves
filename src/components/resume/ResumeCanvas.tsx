@@ -30,33 +30,10 @@ function Wrapper({ children }: { children: React.ReactNode }) {
 
   const downloadResumeAsPdf = useReactToPrint({ contentRef })
 
-  const downloadResumeAsPng = async () => {
-    if (!contentRef.current) return
-
-    try {
-      const canvas = await html2canvas(contentRef.current, {
-        scale: 2, // Higher scale for better quality
-        useCORS: true,
-        logging: false,
-        backgroundColor: "#FFFFFF",
-      })
-
-      const link = document.createElement("a")
-      link.download = "resume.png"
-      link.href = canvas.toDataURL("image/png")
-      link.click()
-    } catch (error) {
-      console.error("Error generating PNG:", error)
-    }
-  }
-
   return (
     <div id="resume" ref={contentRef} className="group relative mx-auto aspect-[0.1] w-full lg:aspect-[1/1.4142]">
       <div className="absolute right-4 top-4 z-50 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
-        <Button variant="outline" size="icon-sm" onClick={downloadResumeAsPng} title="Download as PNG">
-          <ImageDown size={16} />
-        </Button>
-        <Button variant="default" size="icon-sm" onClick={() => downloadResumeAsPdf()} title="Download as PDF">
+        <Button variant="outline" size="icon-sm" onClick={() => downloadResumeAsPdf()} title="Download as PDF">
           <FileDown size={16} />
         </Button>
       </div>
