@@ -9,33 +9,35 @@ import { useLocalStorageBoolean } from "@/lib/hooks"
 import { projectsData } from "@/lib/data"
 import { extractTechStackAndSortByFrequency, sortByPinned, techStackIcons } from "@/lib/utilities"
 
+import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/projects/ProjectCard"
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
 
-import { CheckIcon, ChevronDownIcon, LayoutGrid, StarIcon, Tally4Icon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon, LayoutGrid, PlusCircleIcon, StarIcon, Tally4Icon } from "lucide-react"
 
 export function ProjectsShowcase() {
   const tags = useMemo(() => extractTechStackAndSortByFrequency(projectsData), [])
   const [selectedTags, setSelectedTags] = useState<Technology[]>([])
 
   const [query, setQuery] = useState("")
-  const [compact, setCompact] = useLocalStorageBoolean("kikogoncalves.projects.compact", false)
-  const [showOnlyStarred, setShowOnlyStarred] = useLocalStorageBoolean("kikogoncalves.projects.starred", false)
+  const [compact, setCompact] = useState(false)
+  const [showLess, setShowLess] = useState(true)
+
   const filteredProjects = useMemo(
     () =>
       projectsData
-        .filter((p) => (showOnlyStarred ? p.relevant : true))
+        .filter((p) => (showLess ? p.relevant : true))
         .filter((x) => x.name.toLowerCase().includes(query.toLowerCase()))
         .filter((p) => (selectedTags.length > 0 ? selectedTags.every((tag) => p.stack.includes(tag.name)) : true))
         .sort(sortByPinned),
-    [query, showOnlyStarred, selectedTags],
+    [query, showLess, selectedTags],
   )
 
   function clearFilters() {
     setQuery("")
     setSelectedTags([])
     setCompact(false)
-    setShowOnlyStarred(false)
+    setShowLess(false)
   }
 
   function onTagClickToggle(tagName: string) {
@@ -148,20 +150,6 @@ export function ProjectsShowcase() {
         >
           {compact ? <LayoutGrid className="size-5 stroke-2" /> : <Tally4Icon className="size-5 rotate-90 stroke-2" />}
         </button>
-
-        <button
-          type="button"
-          title="Toggle starred projects"
-          onClick={() => setShowOnlyStarred((prev) => !prev)}
-          className={cn(
-            "flex items-center gap-2 self-stretch rounded-md border px-2.5 text-sm transition hover:opacity-80",
-            showOnlyStarred
-              ? "text border-amber-600 bg-amber-600/70 text-white dark:border-amber-500/50 dark:bg-amber-600/30 dark:text-zinc-300"
-              : "border-zinc-300 bg-zinc-50 text-zinc-600 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:text-zinc-300",
-          )}
-        >
-          {showOnlyStarred ? <StarIcon className="size-5" /> : <StarIcon className="size-5" />}
-        </button>
       </div>
 
       <ul
@@ -183,7 +171,12 @@ export function ProjectsShowcase() {
         ))}
       </ul>
 
-      <div className="mt-6 flex w-full items-center justify-center"></div>
+      <div className="mb-6 mt-4 flex items-center justify-center gap-2">
+        <Button variant="outline" onClick={() => setShowLess((prev) => !prev)}>
+          {showLess ? "Show more projects" : "Show less projects"}
+          <PlusCircleIcon className="size-4" />
+        </Button>
+      </div>
     </>
   )
 }

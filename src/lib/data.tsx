@@ -8,13 +8,13 @@ export const projectsData: Project[] = [
     relevant: true,
     status: "early-access",
     feup: false,
-    name: "Price Lens - See Through Prices",
+    name: "Price Lens",
     description: (
       <section className="project-card-description">
         <p>
-          A (early access) app for tracking supermarket prices over the years, promoting transparency in{" "}
-          <strong>consumer goods inflation</strong>, namely in Portugal. See through what shelf labels are hiding from
-          you.
+          <span className="font-semibold">See through prices</span>. Price Lens is a tracking platform for supermarket
+          prices over the years, promoting transparency in <strong>consumer goods inflation</strong>, namely in
+          Portugal. See beyond what shelf labels tell you.
         </p>
         <p>
           Via scraping we periodically collect prices from supermarkets and analyze them to provide a clear and

@@ -24,6 +24,7 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
   const cx = resolveProjectCardColors(project.color)
   const datespan = getDatespan(project.startDate, project.endDate)
   const nextButtonRef = React.useRef<HTMLButtonElement>(null)
+  const showPinnedBadge = false
 
   const handleNextSlide = () => {
     if (!nextButtonRef.current) return
@@ -48,27 +49,26 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
       <div className="order-1 flex flex-1 flex-col self-stretch lg:order-1">
         <div className="flex flex-wrap items-center justify-between gap-1">
           <div className="flex items-center gap-2">
-            <span className={cn("h-2.5 w-2.5 rounded-full", cx.badge)} />
             <h3 className="flex-1 text-xl font-bold leading-7">{project.name}</h3>
           </div>
 
           <div className="flex items-start gap-2">
             {project.feup && (
-              <span className="inline-flex items-center rounded-sm bg-feup px-1.5 py-1 text-xs font-bold uppercase leading-4 tracking-tight text-white">
+              <span className="inline-flex items-center rounded-sm bg-feup px-1.5 py-1 text-xs font-bold uppercase leading-4 tracking-tighter text-white">
                 FEUP
               </span>
             )}
             {project.status === "beta" && (
-              <span className="inline-flex items-center rounded-sm bg-gradient-to-br from-amber-500 to-amber-600 px-1.5 py-1 text-xs font-semibold leading-4 tracking-tight text-white">
+              <span className="inline-flex items-center rounded-sm bg-gradient-to-br from-amber-500 to-amber-600 px-1.5 py-1 text-xs font-semibold leading-4 tracking-tighter text-white">
                 Beta
               </span>
             )}
             {project.status === "early-access" && (
-              <span className="inline-flex items-center rounded-sm bg-gradient-to-br from-indigo-400 to-indigo-600 px-1.5 py-1 text-xs font-semibold leading-4 tracking-tight text-white">
+              <span className="inline-flex items-center rounded-sm bg-gradient-to-br from-indigo-400 to-indigo-600 px-1.5 py-1 text-xs font-semibold leading-4 tracking-tighter text-white">
                 Early Access
               </span>
             )}
-            {project.pinned && (
+            {showPinnedBadge && project.pinned && (
               <div className="inline-flex items-center rounded-sm bg-gradient-to-br from-rose-500 to-rose-600 px-1 py-1 text-xs">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
