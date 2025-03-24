@@ -2,7 +2,7 @@ import Image from "next/image"
 import { StaticImageData } from "next/image"
 
 import { ExternalLinkIcon } from "lucide-react"
-import { logoFeup, logoAalto } from "@/images/logos/resume" // You'll need to add these logo images
+import { logoAalto, pngFeup } from "@/images/logos/resume" // You'll need to add these logo images
 import { cn } from "@/lib/utils"
 
 type LinkType = "external" | "github"
@@ -56,7 +56,7 @@ export function Education() {
       period: "Sep 2018 - Jul 2023",
       institutionLink: "https://fe.up.pt",
       institutionLinkType: "external",
-      institutionLogo: <Image src={logoFeup} alt="FEUP" width={20} height={20} className="mr-0" />,
+      institutionLogo: <Image src={pngFeup} alt="FEUP" width={20} height={20} className="mr-0" />,
       details: [
         "Completed both the bachelor and master degrees, finishing the masters' averaging 18/20",
         "Relevant coursework: Full Stack Development, Algorithms and Data Structures, Databases, Artificial Intelligence, P2P Timeline",

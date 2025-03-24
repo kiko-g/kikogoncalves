@@ -5,7 +5,7 @@ import Image from "next/image"
 
 import { cn } from "@/lib/utils"
 import { logoLinkedin } from "@/images/logos/resume"
-import { XTwitterIcon, GithubIcon } from "../icons"
+import { GithubIcon } from "../icons"
 import { CodeIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react"
 
 function Bubble({ children, className }: { children: React.ReactNode; className?: string }) {
@@ -47,11 +47,6 @@ export function Headline() {
           <MailIcon className="size-4" />
           <span>kikojpgoncalves@gmail.com</span>
         </Link>
-
-        {/* <Link href="https://x.com/kikogoncalves_" className="flex items-center gap-2 lg:gap-1 hover:underline">
-            <XTwitterIcon className="size-4" />
-            <span>kikogoncalves_</span>
-          </Link> */}
 
         <Link href="https://kikogoncalves.com/projects" className="flex items-center gap-2 hover:underline lg:gap-1">
           <CodeIcon className="size-4" />

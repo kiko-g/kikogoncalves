@@ -1,7 +1,7 @@
 import Image from "next/image"
-import { ExternalLinkIcon } from "lucide-react"
 import { skills } from "@/lib/data"
 import { techStackIcons } from "@/lib/utilities"
+import { ExternalLinkIcon } from "lucide-react"
 
 export function Skills() {
   const languages = [

@@ -6,7 +6,7 @@ import { techStackIcons } from "@/lib/utilities"
 import { media } from "@/images/portfolio"
 import { GithubIcon } from "@/components/icons"
 import { ExternalLinkIcon } from "lucide-react"
-import { logoCriticalManufacturing, logoJumpseller, logoNiaefeup } from "@/images/logos/resume"
+import { pngCriticalManufacturing, pngJumpseller, pngNiaefeup } from "@/images/logos/resume"
 
 type LinkType = "external" | "github"
 
@@ -65,7 +65,7 @@ export function Experience() {
       location: "Porto, Porto, Portugal",
       period: "Oct 2023 - Present",
       companyLink: "https://jumpseller.com/themes",
-      companyLogo: <Image src={logoJumpseller} alt="Jumpseller" width={15} height={20} />,
+      companyLogo: <Image src={pngJumpseller} alt="Jumpseller" width={15} height={20} />,
       companyLinkType: "external",
       image: media.jumpseller.screenshot1,
       stack: ["React.js", "Javascript", "Ruby", "Ruby on Rails", "Redux", "SQL", "Liquid", "AWS S3"],
@@ -85,7 +85,7 @@ export function Experience() {
       location: "Maia, Porto, Portugal",
       period: "Feb 2023 - Jul 2023",
       companyLink: "https://usability-dashboard-mes.vercel.app",
-      companyLogo: <Image src={logoCriticalManufacturing} alt="Critical Manufacturing" width={20} height={20} />,
+      companyLogo: <Image src={pngCriticalManufacturing} alt="Critical Manufacturing" width={20} height={20} />,
       companyLinkType: "external",
       image: media.cmfUx.screenshot2,
       stack: ["React.js", "Next.js", "Typescript", "Tailwind", "Angular", "Docker", "SQL"],
@@ -128,7 +128,7 @@ export function Experience() {
       location: "Porto, Portugal",
       period: "Nov 2020 - Jun 2023",
       companyLink: "https://github.com/NIAEFEUP",
-      companyLogo: <Image src={logoNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-0" />,
+      companyLogo: <Image src={pngNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-0" />,
       companyLinkType: "github",
       image: media.tts.screenshot1,
       stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],

@@ -2,7 +2,6 @@
 
 import { useRef } from "react"
 import { useReactToPrint } from "react-to-print"
-import html2canvas from "html2canvas"
 
 import { Button } from "@/components/ui/button"
 import { Skills } from "./Skills"
@@ -11,7 +10,7 @@ import { Projects } from "./Projects"
 import { Education } from "./Education"
 import { Experience } from "./Experience"
 
-import { FileDown, ImageDown } from "lucide-react"
+import { FileDown } from "lucide-react"
 
 export function ResumeCanvas() {
   return (
