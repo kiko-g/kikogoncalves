@@ -14,3 +14,10 @@ export const navigation = [
   { name: "Uses", href: "/uses", shown: false },
   { name: "Speaking", href: "/speaking", shown: false },
 ].filter((item) => item.shown)
+
+export function getDateTimestamp() {
+  const now = new Date()
+  return `${now.getDate().toString().padStart(2, "0")}-${(now.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}-${now.getFullYear().toString().slice(-2)}`
+}
