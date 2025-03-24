@@ -31,7 +31,7 @@ export function Skills() {
                       alt={skill.name}
                       width={11}
                       height={11}
-                      className="size-[11px] rounded-sm grayscale-[0.8] dark:grayscale-0"
+                      className="size-[11px] rounded-sm grayscale-[0.5] dark:grayscale-0"
                     />
                   )}
                   <span className="font-medium">{skill.name}</span>

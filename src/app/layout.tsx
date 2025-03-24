@@ -9,11 +9,11 @@ import { Layout } from "@/components/Layout"
 
 export const metadata: Metadata = {
   title: {
-    template: "%s - Francisco Gonçalves",
+    template: "Francisco Gonçalves - %s",
     default: "Francisco Gonçalves",
   },
   description:
-    "I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a full-stack engineer, where we develop a platform for clients to create and deeply customize online stores.",
+    "I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a full-stack engineer, where we develop an e-commerce store platform for customers to create and deeply customize online stores.",
   alternates: {
     types: {
       "application/rss+xml": `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,

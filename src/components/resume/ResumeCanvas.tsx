@@ -31,7 +31,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <div id="resume" ref={contentRef} className="group relative mx-auto aspect-[0.1] w-full lg:aspect-[1/1.4142]">
-      <div className="absolute right-4 top-4 z-50 flex gap-2 opacity-100 transition-opacity group-hover:opacity-100 lg:opacity-0">
+      <div className="absolute right-0 top-0 z-50 flex gap-2 opacity-100 transition-opacity group-hover:opacity-100 lg:right-4 lg:top-4 lg:opacity-0">
         <Button variant="outline" size="icon-sm" onClick={() => downloadResumeAsPdf()} title="Download as PDF">
           <FileDown size={16} />
         </Button>

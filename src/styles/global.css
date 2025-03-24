@@ -86,7 +86,7 @@
   }
 
   .internal-link {
-    @apply text-zinc-800 hover:underline dark:text-zinc-300;
+    @apply text-zinc-900 hover:underline dark:text-zinc-200 font-medium;
   }
 
   .internal-link.highlight {

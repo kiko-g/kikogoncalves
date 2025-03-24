@@ -163,7 +163,7 @@ export function Projects() {
                         alt={tech}
                         width={12}
                         height={12}
-                        className="size-[12px] rounded-sm grayscale dark:grayscale-0"
+                        className="size-[12px] rounded-sm grayscale-[0.5] dark:grayscale-0"
                       />
                     )}
                     <span className="-mt-[2px]">{tech}</span>
