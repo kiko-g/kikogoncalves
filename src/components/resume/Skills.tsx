@@ -14,8 +14,8 @@ export function Skills() {
   return (
     <div id="skills">
       <h2 className="mb-1 mt-2 border-b pb-0.5 text-2xl font-bold leading-none">Skills</h2>
-      <div className="flex flex-col gap-0.5">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col gap-3 lg:gap-0.5">
+        <div className="flex flex-col items-start gap-1 lg:flex-row lg:items-center lg:gap-2">
           <a className="flex w-[100px] flex-shrink-0 items-center gap-1 hover:opacity-70" href="/about#skills">
             <h2 className="text-base font-semibold">Technical</h2>
             <ExternalLinkIcon className="size-4" />
@@ -41,7 +41,7 @@ export function Skills() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col items-start gap-1 lg:flex-row lg:items-center lg:gap-2">
           <a
             className="flex w-[100px] flex-shrink-0 items-center gap-1 hover:opacity-70"
             href="https://linkedin.com/kikogoncalves_"
@@ -49,7 +49,7 @@ export function Skills() {
             <h2 className="text-base font-semibold">Languages</h2>
           </a>
 
-          <div className="flex flex-wrap gap-x-4">
+          <div className="flex flex-col flex-wrap gap-x-4 gap-y-0 lg:flex-row">
             {languages.map((language, index) => (
               <div key={index} className="text-xs">
                 <span className="font-medium">{language.name}</span>

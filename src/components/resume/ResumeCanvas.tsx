@@ -40,7 +40,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
 
       <Overlay />
 
-      <article className="absolute left-0 top-0 z-20 flex h-full w-full flex-col px-4 py-3 text-zinc-800 dark:text-zinc-50">
+      <article className="absolute left-0 top-0 z-20 flex h-full w-full flex-col px-0 py-0 text-zinc-800 dark:text-zinc-50 md:px-4 md:py-3">
         {children}
       </article>
     </div>
@@ -48,5 +48,5 @@ function Wrapper({ children }: { children: React.ReactNode }) {
 }
 
 function Overlay() {
-  return <div className="absolute inset-0 border bg-white dark:bg-black/30"></div>
+  return <div className="absolute inset-0 border border-transparent bg-white dark:bg-black/30"></div>
 }
