@@ -73,7 +73,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-blue-600/5 dark:bg-blue-600/5",
         border: "border-blue-600/20 dark:border-blue-600/20",
         badge: "bg-blue-600 dark:bg-blue-500",
-        bubble: "bg-blue-600/60 text-white dark:bg-blue-500/20",
+        bubble: "bg-blue-600/10 dark:bg-blue-500/20",
         textHover: "hover:text-blue-600 dark:hover:text-blue-300",
         ring: "ring-1 ring-offset-2 ring-blue-600 dark:ring-blue-500",
       }
@@ -82,43 +82,43 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-teal-600/5 dark:bg-teal-600/5",
         border: "border-teal-600/20 dark:border-teal-600/20",
         badge: "bg-teal-600 dark:bg-teal-500",
-        bubble: "bg-teal-800/20 text-white dark:bg-teal-600/20",
+        bubble: "bg-teal-600/10 dark:bg-teal-600/20",
         textHover: "hover:text-teal-600 dark:hover:text-teal-400",
         ring: "ring-1 ring-offset-2 ring-teal-600 dark:ring-teal-500",
       }
     case "purple":
       return {
-        background: "bg-purple-600/5 dark:bg-purple-400/5",
-        border: "border-purple-600/20 dark:border-purple-400/20",
-        badge: "bg-purple-600 dark:bg-purple-400",
-        bubble: "bg-purple-700/40 text-white dark:bg-purple-400/20",
-        textHover: "hover:text-purple-600 dark:hover:text-purple-400",
-        ring: "ring-1 ring-offset-2 ring-purple-600 dark:ring-purple-400",
+        background: "bg-purple-600/5 dark:bg-purple-500/5",
+        border: "border-purple-600/20 dark:border-purple-500/20",
+        badge: "bg-purple-600 dark:bg-purple-500",
+        bubble: "bg-purple-600/10 dark:bg-purple-500/20",
+        textHover: "hover:text-purple-600 dark:hover:text-purple-500",
+        ring: "ring-1 ring-offset-2 ring-purple-600 dark:ring-purple-500",
       }
     case "indigo":
       return {
         background: "bg-indigo-500/5 dark:bg-indigo-400/5",
         border: "border-indigo-500/20 dark:border-indigo-400/20",
         badge: "bg-indigo-500 dark:bg-indigo-400",
-        bubble: "bg-indigo-500/60 text-white dark:bg-indigo-400/20",
+        bubble: "bg-indigo-600/10 dark:bg-indigo-400/20",
         textHover: "hover:text-indigo-500 dark:hover:text-indigo-400",
         ring: "ring-1 ring-offset-2 ring-indigo-500 dark:ring-indigo-400",
       }
     case "pink":
       return {
-        background: "bg-pink-600/5 dark:bg-pink-600/5",
-        border: "border-pink-600/20 dark:border-pink-600/20",
+        background: "bg-pink-600/5 dark:bg-pink-500/5",
+        border: "border-pink-600/20 dark:border-pink-500/20",
         badge: "bg-pink-600 dark:bg-pink-500",
-        bubble: "bg-pink-600/60 text-white dark:bg-pink-500/20",
-        textHover: "hover:text-pink-600 dark:hover:text-pink-600",
+        bubble: "bg-pink-600/10 dark:bg-pink-500/20",
+        textHover: "hover:text-pink-600 dark:hover:text-pink-500",
         ring: "ring-1 ring-offset-2 ring-pink-600 dark:ring-pink-500",
       }
     case "orange":
       return {
-        background: "bg-orange-600/5 dark:bg-orange-600/5",
+        background: "bg-orange-600/5 dark:bg-orange-500/5",
         border: "border-orange-600/20 dark:border-orange-600/20",
         badge: "bg-orange-500 dark:bg-orange-400",
-        bubble: "bg-orange-500/60 text-white dark:bg-orange-400/20",
+        bubble: "bg-orange-500/10 dark:bg-orange-500/20",
         textHover: "hover:text-orange-600 dark:hover:text-orange-600",
         ring: "ring-1 ring-offset-2 ring-orange-600 dark:ring-orange-500",
       }
@@ -127,7 +127,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-amber-600/5 dark:bg-amber-500/5",
         border: "border-amber-600/20 dark:border-amber-500/20",
         badge: "bg-amber-600 dark:bg-amber-500",
-        bubble: "bg-amber-600/60 text-white dark:bg-amber-500/20",
+        bubble: "bg-amber-600/10 dark:bg-amber-500/20",
         textHover: "hover:text-amber-600 dark:hover:text-amber-500",
         ring: "ring-1 ring-offset-2 ring-amber-600 dark:ring-amber-500",
       }
@@ -136,7 +136,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-red-600/5 dark:bg-red-500/10",
         border: "border-red-600/20 dark:border-red-600/20",
         badge: "bg-red-600 dark:bg-red-500",
-        bubble: "bg-red-600/60 text-white dark:bg-red-600/40",
+        bubble: "bg-red-600/20 dark:bg-red-500/20",
         textHover: "hover:text-red-600 dark:hover:text-red-600",
         ring: "ring-1 ring-offset-2 ring-red-600 dark:ring-red-500",
       }
@@ -145,7 +145,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-rose-700/5 dark:bg-rose-600/5",
         border: "border-rose-700/20 dark:border-rose-600/20",
         badge: "bg-rose-700 dark:bg-rose-600",
-        bubble: "bg-rose-700/60 text-white dark:bg-rose-600/40",
+        bubble: "bg-rose-700/10 dark:bg-rose-600/20",
         textHover: "hover:text-rose-700 dark:hover:text-rose-600",
         ring: "ring-1 ring-offset-2 ring-rose-700 dark:ring-rose-600",
       }
@@ -154,25 +154,25 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-emerald-700/5 dark:bg-emerald-700/5",
         border: "border-emerald-700/20 dark:border-emerald-700/20",
         badge: "bg-emerald-700 dark:bg-emerald-600",
-        bubble: "bg-emerald-700/60 text-white dark:bg-emerald-600/20",
+        bubble: "bg-emerald-700/10 dark:bg-emerald-600/20",
         textHover: "hover:text-emerald-700 dark:hover:text-emerald-700",
         ring: "ring-1 ring-offset-2 ring-emerald-700 dark:ring-emerald-600",
       }
     case "jumpseller":
       return {
-        background: "bg-lime-800/5 dark:bg-lime-800/5",
-        border: "border-lime-800/20 dark:border-lime-800/40",
-        badge: "bg-lime-800 dark:bg-lime-700",
-        bubble: "bg-lime-800/60 text-white dark:bg-lime-700/20",
-        textHover: "hover:text-lime-800 dark:hover:text-lime-800",
-        ring: "ring-1 ring-offset-2 ring-lime-800 dark:ring-lime-700",
+        background: "bg-lime-600/5 dark:bg-lime-500/5",
+        border: "border-lime-600/20 dark:border-lime-500/20",
+        badge: "bg-lime-600 dark:bg-lime-500",
+        bubble: "bg-lime-600/10 dark:bg-lime-500/20",
+        textHover: "hover:text-lime-600 dark:hover:text-lime-500",
+        ring: "ring-1 ring-offset-2 ring-lime-600 dark:ring-lime-500",
       }
     case "highlight":
       return {
         background: "bg-gradient-to-br from-zinc-50 to-zinc-200 dark:from-zinc-100/5 dark:to-zinc-50/5",
         border: "border-zinc-500/20 dark:border-zinc-200/20",
         badge: "bg-zinc-700 dark:bg-zinc-300",
-        bubble: "bg-zinc-900/70 text-white dark:bg-zinc-900/80",
+        bubble: "bg-zinc-600/10 dark:bg-black/30",
         textHover: "hover:text-zinc-700 dark:hover:text-zinc-300",
         ring: "ring-1 ring-offset-2 ring-zinc-400 dark:ring-zinc-300",
       }
@@ -182,7 +182,7 @@ export function resolveProjectCardColors(color: ProjectColor): ProjectCardColor 
         background: "bg-slate-50 dark:bg-slate-500/10",
         border: "border-slate-200 dark:border-slate-500/20",
         badge: "bg-slate-700 dark:bg-slate-300",
-        bubble: "bg-slate-600/60 text-white dark:bg-slate-400/20",
+        bubble: "bg-slate-600/10 dark:bg-slate-500/30",
         textHover: "hover:text-slate-600 dark:hover:text-slate-500",
         ring: "ring-1 ring-offset-2 ring-slate-400 dark:ring-slate-700",
       }

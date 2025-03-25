@@ -44,40 +44,33 @@ export default function About() {
 
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m Francisco. I live in Porto, Portugal where I’m busy building cool software.
+            Hey, I’m Francisco — building cool software from Porto, Portugal.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-700 dark:text-zinc-400">
             <p>
-              My name is Francisco Gonçalves. I’m a {calculateAge()} year old Software Engineer based in Porto. I have a
-              Masters Degree in Informatics and Computer Engineering, from FEUP, the Factulty of Engineering of the
-              University of Porto (
-              <Link
-                className="external-link"
-                href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
-                target="_blank"
-              >
-                FEUP-MEIC
-              </Link>
-              ).
+              My name is Francisco Gonçalves. I’m a {calculateAge()} software engineer based in Porto. I hold a Master’s
+              degree in Computer Science and Engineering from{" "}
+              <ExternalResource href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023">
+                FEUP
+              </ExternalResource>{" "}
+              — the Faculty of Engineering at the University of Porto.
             </p>
-
             <p>
-              I have a passion for software engineering as a whole with a fond interest in web full-stack development.
-              Right now I am working as a full-stack developer at{" "}
-              <Link href="https://jumpseller.com" target="_blank" className="external-link inline-flex gap-0.5">
+              I enjoy all things software, with a strong focus on full-stack web development. Currently, I’m working at{" "}
+              <ExternalResource href="https://jumpseller.com" useIcon={false}>
                 <span>Jumpseller</span>
-                <Image src={logoJumpseller} alt="Jumpseller" width={20} height={20} />
-              </Link>
-              where I am working to improve the storefront themes of e-commerce platforms and their customization and
-              configuration, as well as improving the Visual and Code Editors for store personalization.
+                <Image src={logoJumpseller} alt="Jumpseller" width={16} height={16} />
+              </ExternalResource>
+              , where I help build and improve storefront themes under our e-commerce platform, which is equipped with
+              tools like a Visual and Code Editors that power store customization.
             </p>
-
             <p>
-              If you’re interested in my profile reach me on{" "}
-              <Link href="https://linkedin.com/in/kikogoncalves" className="external-link" target="_blank">
-                LinkedIn
-              </Link>
-              , as I’m always interested in hearing about opportunities for a full-stack or frontend position.
+              Beyond work, I’ve launched indie projects like{" "}
+              <ExternalResource href="https://price-lens.vercel.app">Price Lens</ExternalResource> and{" "}
+              <ExternalResource href="https://bagger-ui.vercel.app">Bagger UI</ExternalResource> — blending my interests
+              and packing them into hopefully useful tools. I’m always open to chatting about new opportunities, so feel
+              free to connect with me on{" "}
+              <ExternalResource href="https://linkedin.com/in/kikogoncalves">LinkedIn</ExternalResource>.
             </p>
           </div>
         </div>

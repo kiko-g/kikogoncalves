@@ -1,6 +1,14 @@
 import { ExternalLinkIcon } from "lucide-react"
 
-export function ExternalResource({ href, children }: { href: string; children: React.ReactNode }) {
+export function ExternalResource({
+  href,
+  useIcon = true,
+  children,
+}: {
+  href: string
+  useIcon?: boolean
+  children: React.ReactNode
+}) {
   return (
     <a
       href={href}
@@ -9,7 +17,7 @@ export function ExternalResource({ href, children }: { href: string; children: R
       className="inline-flex items-center gap-0.5 font-bold hover:opacity-80"
     >
       {children}
-      <ExternalLinkIcon className="mt-[-2px] size-4" />
+      {useIcon && <ExternalLinkIcon className="mt-[-2px] size-4" />}
     </a>
   )
 }

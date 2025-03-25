@@ -301,7 +301,7 @@ export const projectsData: Project[] = [
         scraper.
       </section>
     ),
-    color: "red",
+    color: "rose",
     stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL"],
     repo: "https://github.com/NIAEFEUP/tts-fe",
     deployment: "https://tts.niaefeup.pt/planner",
