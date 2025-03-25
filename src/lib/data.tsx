@@ -248,8 +248,8 @@ export const projectsData: Project[] = [
     stack: ["React.js", "Next.js", "Typescript", "Tailwind", "AWS S3", "Mongo DB"],
     media: [
       {
-        type: "video",
-        src: "https://github.com/user-attachments/assets/106d13ef-adb0-466b-a49f-0b77bf817937",
+        type: "gif",
+        src: media.finishersHub.gif1,
       },
       {
         type: "image",

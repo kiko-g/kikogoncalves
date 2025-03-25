@@ -10,10 +10,15 @@ import BaggerUIScreenshot5 from "./bagger-ui/bagger-ui-5.png"
 import CMFUXScreenshot1 from "./cmf-ux/screenshot-1.png"
 import CMFUXScreenshot2 from "./cmf-ux/screenshot-2.png"
 import CMFUXScreenshot3 from "./cmf-ux/screenshot-3.png"
+
+import FinishersHubGif1 from "./finishers-hub/gif-1.gif"
 import FinishersHubScreenshot1 from "./finishers-hub/screenshot-1.png"
 import FinishersHubScreenshot2 from "./finishers-hub/screenshot-2.png"
+
 import Fuse3DScreenshot1 from "./laig/screenshot-1.png"
+
 import GuernerScreenshot1 from "./guerner/screenshot.jpg"
+
 import HealthCheckerScreenshot1 from "./health-checker/screenshot-1.png"
 import HealthCheckerScreenshot2 from "./health-checker/screenshot-2.png"
 import HealthCheckerScreenshot3 from "./health-checker/screenshot-3.png"
@@ -77,6 +82,7 @@ export const media = {
     screenshot3: CMFUXScreenshot3,
   },
   finishersHub: {
+    gif1: FinishersHubGif1,
     screenshot1: FinishersHubScreenshot1,
     screenshot2: FinishersHubScreenshot2,
   },
