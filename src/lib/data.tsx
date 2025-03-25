@@ -149,7 +149,7 @@ export const projectsData: Project[] = [
     repo: "https://github.com/kiko-g/bagger-ui",
     deployment: "https://bagger-ui.vercel.app",
     color: "teal",
-    stack: ["React.js", "Next.js", "Typescript", "Tailwind"],
+    stack: ["React.js", "Next.js", "Typescript", "Tailwind", "Node.js"],
     media: [
       {
         type: "image",

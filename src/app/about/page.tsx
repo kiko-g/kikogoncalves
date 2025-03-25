@@ -7,7 +7,7 @@ import { skills } from "@/lib/data"
 import { calculateAge, techStackIcons } from "@/lib/utilities"
 
 import portraitImage from "@/images/portrait.jpg"
-import { logoJumpseller } from "@/images/logos/resume"
+import { logoJumpseller, logoPriceLens, logoBaggerUi, logoLinkedin } from "@/images/logos/resume"
 import { image0, image1, image2, image3, image4, image5 } from "@/images/photos"
 
 import { Container } from "@/components/Container"
@@ -15,13 +15,15 @@ import { LinkedinLogoLink } from "@/components/about/LinkedinLogoLink"
 import { CriticalLogoLink } from "@/components/about/CriticalLogoLink"
 import { SectionHeading } from "@/components/SectionHeading"
 
-import { MailIcon } from "lucide-react"
+import { ArrowRightIcon, MailIcon } from "lucide-react"
 import { JumpsellerLogoLink } from "@/components/about/JumpsellerLogoLink"
 import { GithubIcon, InstagramIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons"
 import { FeupLogoLink } from "@/components/about/FeupLogoLink"
 import { Button } from "@/components/ui/button"
 import { TweetCard } from "@/components/Twitter"
 import { ExternalResource } from "@/components/ExternalResource"
+import { projectsData } from "../../lib/data"
+import { ProjectCard } from "@/components/projects/ProjectCard"
 
 export const metadata: Metadata = {
   title: "About",
@@ -65,12 +67,22 @@ export default function About() {
               tools like a Visual and Code Editors that power store customization.
             </p>
             <p>
-              Beyond work, I’ve launched indie projects like{" "}
-              <ExternalResource href="https://price-lens.vercel.app">Price Lens</ExternalResource> and{" "}
-              <ExternalResource href="https://bagger-ui.vercel.app">Bagger UI</ExternalResource> — blending my interests
-              and packing them into hopefully useful tools. I’m always open to chatting about new opportunities, so feel
-              free to connect with me on{" "}
-              <ExternalResource href="https://linkedin.com/in/kikogoncalves">LinkedIn</ExternalResource>.
+              Beyond work, I've launched indie projects like{" "}
+              <ExternalResource href="https://price-lens.vercel.app" useIcon={false}>
+                <span>Price Lens</span>
+                <Image width={14} height={14} src={logoPriceLens} alt="Price Lens" />
+              </ExternalResource>{" "}
+              and{" "}
+              <ExternalResource href="https://bagger-ui.vercel.app" useIcon={false}>
+                <span>Bagger UI</span>
+                <Image width={14} height={14} src={logoBaggerUi} alt="Bagger UI" />
+              </ExternalResource>{" "}
+              — blending my interests and packing them into hopefully useful tools. I'm always open to chatting about
+              new opportunities, so feel free to connect with me on{" "}
+              <ExternalResource href="https://linkedin.com/in/kikogoncalves" useIcon={false}>
+                LinkedIn
+                <Image width={14} height={14} src={logoLinkedin} alt="LinkedIn" />
+              </ExternalResource>
             </p>
           </div>
         </div>
@@ -111,6 +123,7 @@ export default function About() {
 
       <Skillset />
       <CurriculumVitae />
+      <PinnedProjects />
     </Container>
   )
 }
@@ -323,6 +336,36 @@ function CurriculumVitae() {
             </ul>
           </li>
         </ul>
+      </div>
+    </section>
+  )
+}
+
+function PinnedProjects() {
+  const pinnedProjects = projectsData.filter((project) => project.pinned).slice(0, 3)
+
+  return (
+    <section id="projects" className="mt-6 pt-12 sm:mt-12">
+      <SectionHeading noMargin slideTo="projects">
+        Projects
+      </SectionHeading>
+      <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">
+        Here are 3 relevant projects I've worked on outside of regular professional work.
+      </p>
+
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {pinnedProjects.map((project) => (
+          <ProjectCard key={project.name} project={project} compact />
+        ))}
+      </ul>
+
+      <div className="mt-6 flex justify-end">
+        <Button variant="ghost" size="sm" asChild>
+          <Link href="/projects">
+            View all projects
+            <ArrowRightIcon />
+          </Link>
+        </Button>
       </div>
     </section>
   )
