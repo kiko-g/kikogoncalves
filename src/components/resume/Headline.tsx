@@ -37,7 +37,7 @@ export function Headline() {
         </Bubble>
       </div>
 
-      <div className="mt-2 flex w-full flex-col flex-wrap gap-1 border-t pt-2 text-sm opacity-80 lg:mt-1 lg:flex-row lg:gap-4 lg:border-t-0 lg:pt-0">
+      <div className="mt-2 flex w-full flex-col flex-wrap gap-1 border-t pt-2 text-sm opacity-80 lg:mt-2 lg:flex-row lg:gap-4 lg:border-t-0 lg:pt-0">
         <Link href="tel:+351918271105" className="flex items-center gap-2 hover:underline lg:gap-1">
           <PhoneIcon className="size-4" />
           <span>+351 91 827 11 05</span>
