@@ -63,7 +63,7 @@ function Bubble({
 export function Experience() {
   const experienceData: Experience[] = [
     {
-      title: "Full-stack Engineer at Jumpseller",
+      title: "Full-stack Engineer @ Jumpseller",
       location: "Porto, Porto, Portugal",
       period: "Oct 2023 - Present",
       companyLink: "https://jumpseller.com/themes",
@@ -87,7 +87,7 @@ export function Experience() {
       ),
     },
     {
-      title: "Software Engineer Intern at Critical Manufacturing",
+      title: "Software Engineer Intern @ Critical Manufacturing",
       location: "Maia, Porto, Portugal",
       period: "Feb 2023 - Jul 2023",
       companyLink: "https://usability-dashboard-mes.vercel.app",
@@ -202,7 +202,7 @@ export function Experience() {
                     <span
                       key={tech}
                       className={cn(
-                        "flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] text-2xs font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
+                        "flex items-center gap-[3px] rounded-sm bg-zinc-100 px-1 py-[4px] text-2xs font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
                       )}
                     >
                       {techIcon && (
@@ -211,10 +211,10 @@ export function Experience() {
                           alt={tech}
                           width={12}
                           height={12}
-                          className="size-[11px] rounded-sm grayscale-[0.5] dark:grayscale-0"
+                          className="size-[12px] rounded-sm grayscale-[0.5] dark:grayscale-0"
                         />
                       )}
-                      <span>{tech}</span>
+                      <span className="-mt-[1px]">{tech}</span>
                     </span>
                   )
                 })}

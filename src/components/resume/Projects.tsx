@@ -128,7 +128,7 @@ export function Projects() {
   return (
     <div id="experience">
       <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none text-zinc-900 dark:text-white">
-        Projects and Indie Ventures
+        Projects & Indie Ventures
       </h2>
 
       {projectsData.map((project, index) => (
@@ -161,7 +161,7 @@ export function Projects() {
                   <span
                     key={tech}
                     className={cn(
-                      "flex items-center gap-1 rounded-sm bg-zinc-100 px-1 py-[4px] text-2xs font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
+                      "flex items-center gap-[3px] rounded-sm bg-zinc-100 px-1 py-[4px] text-2xs font-normal lowercase leading-tight tracking-tight text-zinc-600 dark:bg-zinc-700/40 dark:text-zinc-300",
                     )}
                   >
                     {techIcon && (

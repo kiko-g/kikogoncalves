@@ -30,7 +30,7 @@ export function Headline() {
       </h1>
 
       <div className="flex flex-col gap-1 text-sm lg:flex-row lg:gap-3 lg:text-base">
-        <Bubble className="w-fit text-xs font-medium">Software Development Engineer at Jumpseller</Bubble>
+        <Bubble className="w-fit text-xs font-medium">Software Development Engineer @ Jumpseller</Bubble>
         <Bubble className="w-fit text-xs font-medium">MSc in Computer Science and Engineering</Bubble>
         <Bubble className="w-fit text-xs font-medium">
           <MapPinIcon className="h-3 w-3" /> Porto, Portugal
