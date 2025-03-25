@@ -55,6 +55,7 @@ import TimeHopperScreenshot1 from "./time-hopper/screenshot-1.png"
 import TimeHopperScreenshot2 from "./time-hopper/screenshot-2.png"
 import TimeHopperScreenshot3 from "./time-hopper/screenshot-3.png"
 
+import TimeTableSchedulerGif1 from "./tts/gif-1.gif"
 import TimeTableSchedulerScreenshot1 from "./tts/screenshot-1.png"
 import TimeTableSchedulerScreenshot2 from "./tts/screenshot-2.png"
 
@@ -134,6 +135,7 @@ export const media = {
   tts: {
     screenshot1: TimeTableSchedulerScreenshot1,
     screenshot2: TimeTableSchedulerScreenshot2,
+    gif1: TimeTableSchedulerGif1,
   },
   priceLens: {
     screenshot1: PriceLensScreenshot1,

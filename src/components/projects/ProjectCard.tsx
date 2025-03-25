@@ -180,6 +180,13 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
                     placeholder="blur"
                   />
                 )}
+                {media.type === "gif" && (
+                  <Image
+                    src={media.src}
+                    alt={`${project.name}: Media ${mediaIdx + 1}`}
+                    className="h-full rounded-md object-cover shadow transition-all"
+                  />
+                )}
                 {media.type === "video" && <VideoComponent media={media} additionalClassnames={cx.border} />}
               </CarouselItem>
             ))}

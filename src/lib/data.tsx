@@ -304,11 +304,11 @@ export const projectsData: Project[] = [
     color: "rose",
     stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL"],
     repo: "https://github.com/NIAEFEUP/tts-fe",
-    deployment: "https://tts.niaefeup.pt/planner",
+    deployment: "https://tts.niaefeup.pt",
     media: [
       {
-        type: "video",
-        src: "https://github.com/user-attachments/assets/c303455b-b540-423f-ac2c-a78db2fef3c6",
+        type: "gif",
+        src: media.tts.gif1,
       },
       {
         type: "image",

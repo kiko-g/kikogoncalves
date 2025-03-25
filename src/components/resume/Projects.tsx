@@ -81,7 +81,7 @@ export function Projects() {
     {
       title: "Time Table Selector for the University of Porto",
       logo: <Image src={pngNiaefeup} alt="NIAEFEUP" width={20} height={20} className="mr-0" />,
-      repo: "https://github.com/NIAEFEUP/tts",
+      repo: "https://github.com/NIAEFEUP/tts-fe",
       deployment: "https://tts.niaefeup.pt",
       stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],
       image: media.tts.screenshot1,
