@@ -47,5 +47,7 @@ function Wrapper({ children }: { children: React.ReactNode }) {
 }
 
 function Overlay() {
-  return <div className="absolute inset-0 border border-transparent bg-[#fcfcfc] dark:bg-black/30"></div>
+  return (
+    <div className="absolute inset-0 border border-transparent bg-transparent dark:bg-transparent md:bg-[#fcfcfc] md:dark:bg-black/30"></div>
+  )
 }
