@@ -127,12 +127,10 @@ export function Projects() {
 
   return (
     <div id="experience">
-      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none text-zinc-900 dark:text-white">
-        Projects & Indie Ventures
-      </h2>
+      <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">Projects & Indie Ventures</h2>
 
       {projectsData.map((project, index) => (
-        <div key={index} className={cn("mb-3", index === projectsData.length - 1 && "mb-2")}>
+        <div key={index} className={cn("mb-3", index === projectsData.length - 1 && "mb-0")}>
           <div className="flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-center">
             <div className="flex items-center gap-2">
               <a

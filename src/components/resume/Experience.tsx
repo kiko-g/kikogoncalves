@@ -167,7 +167,7 @@ export function Experience() {
       <h2 className="mb-1 border-b pb-0.5 text-2xl font-bold leading-none">Professional Experience</h2>
 
       {experienceData.map((experience, index) => (
-        <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-2")}>
+        <div key={index} className={cn("mb-3", index === experienceData.length - 1 && "mb-0")}>
           <div className="flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-center">
             <a
               className="inline-flex items-center gap-1 hover:opacity-70"

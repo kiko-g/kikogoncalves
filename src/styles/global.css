@@ -81,12 +81,16 @@
     @apply leading-snug;
   }
 
+  #resume article header + div {
+    margin-top: -0.125rem;
+  }
+
   .external-link {
     @apply text-blue-500 hover:text-blue-600 hover:underline dark:text-blue-500 dark:hover:text-blue-400;
   }
 
   .internal-link {
-    @apply text-zinc-900 hover:underline dark:text-zinc-200 font-medium;
+    @apply font-medium text-zinc-900 hover:underline dark:text-zinc-200;
   }
 
   .internal-link.highlight {
