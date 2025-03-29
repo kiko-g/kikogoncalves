@@ -83,6 +83,10 @@ export function Experience() {
             a centralized base theme with extensive customizable JSON options, significantly improving maintainability
             and enabling faster customization.
           </li>
+          <li>
+            Created an AI-based storefront theme generator using Langchain to generate user-request compliant theme
+            options JSONs.
+          </li>
         </ul>
       ),
     },

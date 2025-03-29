@@ -135,9 +135,8 @@ function Skillset({ useProgressBarColor = true }) {
         Skillset
       </SectionHeading>
       <p className="mb-8 text-base text-zinc-600 dark:text-zinc-400">
-        Here’s a breakdown of my skills and experience in the tech field. I’m always learning new things and
-        experimenting with new technologies, so this list is always changing. The progress bars are a rough estimate of
-        my experience and familiriaty with each technology.
+        This is a layout of all the major technologies I've worked with over the years. The progress bars show how
+        comfortable I am with each technology and how often I use them in projects.
       </p>
       <ul className="grid grid-cols-3 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-6 xl:grid-cols-5 xl:gap-6">
         {skills.map((skill, skillIdx) => {
@@ -298,6 +297,10 @@ function CurriculumVitae() {
                 Streamlined storefront theme implementation by consolidating themes into a centralized base theme with
                 extensive customizable JSON options, significantly improving maintainability and enabling faster
                 customization.
+              </li>
+              <li>
+                Created an AI-based storefront theme generator using Langchain to generate user-request compliant theme
+                options JSONs.
               </li>
             </ul>
           </li>
