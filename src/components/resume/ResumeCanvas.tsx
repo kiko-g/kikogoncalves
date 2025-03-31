@@ -11,7 +11,7 @@ import { Projects } from "./Projects"
 import { Education } from "./Education"
 import { Experience } from "./Experience"
 
-import { FileArchiveIcon, FileDownIcon } from "lucide-react"
+import { FileArchiveIcon, PrinterIcon } from "lucide-react"
 
 export function ResumeCanvas() {
   return (
@@ -41,20 +41,20 @@ function Wrapper({ children }: { children: React.ReactNode }) {
       className="group relative mx-auto aspect-[0.1] w-full md:aspect-[1/1.41421356237]"
     >
       <div className="absolute right-2 top-2 z-50 flex gap-2 opacity-100 transition-opacity group-hover:opacity-100 md:right-4 md:top-4 md:opacity-0">
-        <Button asChild variant="outline" size="icon-sm" title="See PDF version">
-          <Link href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+        <Button asChild variant="outline" size="icon-sm" title="See static PDF version">
+          <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
             <FileArchiveIcon size={16} />
-          </Link>
+          </a>
         </Button>
 
         <Button
           variant="outline"
           size="icon-sm"
           onClick={() => downloadResumeAsPdf()}
-          title="Download as PDF"
+          title="Print as PDF"
           className="hidden md:flex"
         >
-          <FileDownIcon size={16} />
+          <PrinterIcon size={16} />
         </Button>
       </div>
 
