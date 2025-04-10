@@ -70,7 +70,7 @@ export function Experience() {
       companyLogo: <Image src={pngJumpseller} alt="Jumpseller" width={15} height={20} />,
       companyLinkType: "external",
       image: media.jumpseller.screenshot1,
-      stack: ["React.js", "Javascript", "Ruby", "Ruby on Rails", "Redux", "SQL", "Liquid", "AWS S3"],
+      stack: ["React.js", "Javascript", "Ruby", "Ruby on Rails", "Redux", "SQL", "Liquid", "AWS S3", "Cypress"],
       responsibilities: (
         <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
           <li>Contributed and developed customizable e-commerce storefront themes.</li>
@@ -84,8 +84,8 @@ export function Experience() {
             and enabling faster customization.
           </li>
           <li>
-            Created an AI-based storefront theme generator using Langchain to generate user-request compliant theme
-            options JSONs.
+            Developed an <strong>AI-powered theme engine</strong> using Langchain to generate tailored storefront
+            configs from user prompts.
           </li>
         </ul>
       ),
