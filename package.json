@@ -9,6 +9,9 @@
     "lint": "next lint",
     "format": "prettier --write 'src/**/*.{html,css,js,jsx,ts,tsx}'"
   },
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^2.0.3",
