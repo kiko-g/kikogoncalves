@@ -1,12 +1,16 @@
 import { ArticleLayout } from "@/components/ArticleLayout"
 import Image from "next/image"
 
+import continenteLogo from "@/images/logos/brands/continente.svg"
+import auchanLogo from "@/images/logos/brands/auchan.svg"
+import pingodoceLogo from "@/images/logos/brands/pingo-doce.svg"
+
 export const article = {
   author: "Francisco Gonçalves",
   date: "2024-12-30",
   title: "Developing a Supermarket Price Awareness Tool",
   description:
-    "Price Lens is my latest solo endeavour. A tool that helps you see through shelf prices and understand what the real inflation is over time for the products you love and buy most often.",
+    "Price Lens is my latest solo endeavour. A tool that tracks daily prices across Portugal's three biggest supermarket chains so you can see through shelf prices, understand real inflation, and make smarter buying decisions.",
 }
 
 export const metadata = {
@@ -16,26 +20,116 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Price Lens is my latest solo endeavour. A tool that helps you see through shelf prices and understand what the real
-inflation is over time for the products you love and buy most often.
+Price Lens is my latest solo endeavour. A tool that tracks daily prices across Portugal's three biggest supermarket chains (Continente, Auchan, and Pingo Doce) so you can see through shelf prices, understand real inflation, and make smarter buying decisions.
+
+<div className="flex items-center gap-4">
+  <Image src={continenteLogo} alt="Continente" width={200} height={100} className="bg-transparent" />
+  <Image src={auchanLogo} alt="Auchan" width={200} height={100} className="bg-transparent" />
+  <Image src={pingodoceLogo} alt="Pingo Doce" width={200} height={100} className="bg-transparent" />
+</div>
 
 ## Why this idea?
 
-The idea for this projects came about when I was just casually walking around the supermarket and my solid visual memory noticed an outrageous price for something I absolutely remember the price of 10 years ago. If you visit the supermarket often enough, you'll start to notice these things too. However not everyone will or should be paying attention to these things and we all just get slowly used to new prices and we accept them as normal.
+The idea came about when I was casually walking around the supermarket and my solid visual memory noticed an outrageous price for something I absolutely remember the price of ten years ago. If you visit the supermarket often enough, you'll start to notice these things too. However not everyone will or should be paying attention to these things, and we all just get slowly used to new prices and accept them as normal.
 
-While I'm not saying that it is not normal or expected to see inflation over time on at least some products, I firmly believe most people are unaware of price dynamics, changes and how they are affected by them. I often say that one thing that is immediately changeable to be more transparent and non manipulative with prices is making the price per unit a much more important metric to display.
+While I'm not saying it's unexpected to see inflation over time on at least some products, I firmly believe most people are unaware of price dynamics, changes, and how they are affected by them. One thing that could immediately make pricing more transparent and less manipulative is making the **price per unit** a much more important metric to display.
 
 Price tracking is not a new thing, but I thought I should delve into this anyway. The goal is twofold:
 
-1. Make people more aware of price changes, whether it is fluctuations between price points or inflation.
+1. Make people more aware of price changes -- whether it's fluctuations between price points or long-term inflation.
 2. Provide a clear and simple tool that keeps growing as more data arrives and more features can be added on top of it.
 
-Obivously we can do price alerts, and we will get to that, but the cooler vision for this is to tie in data about consumer price indexes and how much you are saving or losing per product.
+Cases immediately covered by Price Lens:
 
-Cases immediatly covered by Price Lens' availability:
+1. **Preventing buying at the wrong time.** Many products spend 50% of their time at a price that's 20-30% lower than their "normal" price. Price patterns are a thing, and supermarkets use them to their advantage.
+2. **Realising what actually is a discount.** It's only a discount if it's temporary, right? But that's not what the labels always say. A permanent price reduction quietly becomes the new baseline -- the "discount" label vanishes and nobody notices.
+3. **Measuring real inflation over time.** By collecting data year after year on intertemporal products like bread, milk, eggs, and chicken, we can build an honest picture of what everyday life actually costs.
 
-1. Preventing people from buying a product that spends 50% of the time at a much lower price (like 20% less). Price patterns are a thing and the chains use that to their advantage.
-2. Realizing what actually is a discount and what is just a permanent price write-off. I mean it's only a discount if it's temporary, right? Pretty much but that's not what the labels say.
-3. Collecting data over the years to actually measure direct inflation on intemporal products like bread, milk, eggs, chicken etc.
+## The scale of the problem
 
-As of today, **18/Mar/2025**, Price Lens is still in Early Access but stay tuned, because as a true indie developer we want to discover the way as we go.
+To track prices meaningfully across Portugal's three biggest chains, you need to go wide. As of early 2026, Price Lens monitors:
+
+- **126,000+ products** across Continente, Auchan, and Pingo Doce -- checked every single day
+- **~29,000 automated price checks** processed per day by the infrastructure
+- **2,000+ price changes detected** every single day across the catalog
+- **17,500+ products on discount** at any given moment
+- **192,000+ price data points** collected and stored since launch
+- **€78,000+** in aggregate discounts tracked across the full catalog
+
+These aren't vanity numbers. They represent the raw material for every feature in the app: the price history charts, the daily deal detection, the cross-store comparisons.
+
+## What Price Lens can do
+
+### Cross-Store Price Comparison
+
+The most fundamental question a shopper has is: _am I paying a fair price for this right now?_ Price Lens answers it by matching the same product across all three chains and showing:
+
+- Which chain has it cheapest **right now**
+- Whether the current price is at a **historical low**
+- How it compares to the **all-time average**
+
+Cross-store product matching is harder than it sounds. Chains use different SKU systems, different naming conventions, and sometimes different packaging sizes for the same product. Price Lens uses a combination of barcode matching and canonical product mapping to link the same physical product across retailers.
+
+### Barcode Scanner
+
+The most practical feature for real-world shopping: scan any product's barcode while you're standing in the aisle -- using your camera, a photo from your gallery, or by typing the barcode manually -- and instantly see how that product's price compares across all three chains.
+
+The scenario it solves: _"I'm in Continente about to buy this olive oil. Should I walk across the street to Pingo Doce?"_ Price Lens tells you immediately, including whether either price is actually good relative to history.
+
+### Price History Charts
+
+Full visual price history from one week to the maximum available range. You can see trends, seasonal patterns, and promotional cycles. The question "is now actually a good time to buy this?" has a real answer.
+
+### Best Deals & Daily Price Drops
+
+Every day the infrastructure detects hundreds of price decreases across all chains. The Best Deals section surfaces the most significant ones, filterable and sortable, so you can browse what's actually worth buying today.
+
+### Product Favorites
+
+Save your regular purchases to a personal watchlist. Filter by chain, filter by discount-only, and keep an eye on the products that matter to you without having to search every time.
+
+### Installable PWA
+
+Price Lens works like a native app on Android, iOS, and desktop -- no app store needed. Install it to your home screen, get offline support, and use it in-store just like you would any app. The decision to build it as a PWA was deliberate: zero distribution friction, works on every device, and no app store approval cycle.
+
+## How it works technically
+
+### Data collection
+
+The backbone of Price Lens is a scraping infrastructure that runs on a daily schedule. It hits all three chains, collects raw pricing data, and normalises it into a consistent format before writing to the database. The infrastructure processes around 29,000 price checks per day automatically -- no manual intervention needed.
+
+One interesting challenge is **product prioritisation**. Not all 126k+ products are equally worth tracking. A supermarket catalog includes books, seasonal items, promotional one-offs, and products that disappear after a few weeks. Price Lens uses an AI-assisted classification step to phase out products that aren't worth long-term tracking (books being the canonical example), keeping the dataset clean and focused on consumables.
+
+### Stack
+
+The full stack is deliberately lean for a solo-built product:
+
+- **Next.js + React** -- frontend and API routes
+- **TypeScript** -- throughout
+- **Supabase** -- PostgreSQL database and auth
+- **TailwindCSS + ShadCN** -- UI
+- **Vercel** -- deployment and edge functions
+
+The UI philosophy is density over decoration. Supermarket price data is inherently tabular and comparative -- you need to see multiple data points at once without scrolling. A lot of attention went into how much information can be packed into a single card or row without feeling cluttered.
+
+### Cross-store product matching
+
+Matching the same product across three different retailer catalogs is one of the more interesting technical problems in this project. Continente, Auchan, and Pingo Doce each have their own internal product IDs, naming conventions, and classification systems. The barcode (EAN) is the most reliable join key -- if all three chains carry a product with the same barcode, matching is straightforward.
+
+The harder cases are products that have barcodes only on some chains, or where the same physical product is sold under different store-brand names. Canonical product mapping handles these cases by normalising product names and attributes to create a stable cross-chain identity for each product.
+
+## What's coming
+
+**Money Saving Tally** -- A personal savings tracker that tallies exactly how much you've saved by making smarter buying decisions over time. Instead of the aggregate catalog number, this is your number: the actual euros you kept in your pocket by buying at the right chain or at the right time.
+
+**In-store mode** -- _"I'm at Continente right now -- what should I buy today?"_ An in-store discovery mode that surfaces products at your current store that are at unusually good prices compared to their history and competitors. Starting with Continente.
+
+**Price alerts** -- Get notified when a product you're watching drops below a threshold or hits a new historical low.
+
+## The bigger picture
+
+The vision for Price Lens goes beyond individual product prices. With enough historical data across enough products, it becomes possible to build an honest, ground-level consumer price index -- not based on statistical samples, but on actual retail prices of actual products that actual Portuguese families buy every week.
+
+25+ years of accumulated inflation in Portugal has quietly eroded purchasing power. Supermarket shelves tell you nothing about price history. Price Lens is a small tool built to give consumers the transparency they deserve.
+
+It's available now at [pricelens.pt](https://pricelens.pt) -- free, no sign-up required for browsing, installable as a PWA.

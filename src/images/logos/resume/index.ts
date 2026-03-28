@@ -3,6 +3,7 @@ import logoBaggerFlow from "@/images/logos/resume/baggerflow.png"
 import logoBaggerUi from "@/images/logos/resume/baggerui.svg"
 import logoCriticalManufacturing from "@/images/logos/resume/cmf.svg"
 import logoFeup from "@/images/logos/resume/feup.svg"
+import logoFeedzai from "@/images/logos/resume/feedzai.svg"
 import logoJumpsellerAlt from "@/images/logos/resume/jumpseller-alt.svg"
 import logoJumpseller from "@/images/logos/resume/jumpseller.svg"
 import logoLinkedin from "@/images/logos/resume/linkedin.svg"
@@ -20,6 +21,7 @@ export {
   logoBaggerUi,
   logoCriticalManufacturing,
   logoFeup,
+  logoFeedzai,
   logoJumpseller,
   logoJumpsellerAlt,
   logoLinkedin,

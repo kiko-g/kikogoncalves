@@ -26,7 +26,7 @@ export function ResumeCanvas() {
 }
 
 function Overlay() {
-  return <div className="absolute inset-0 border border-transparent"></div>
+  return <div className="absolute inset-0 rounded border border-border"></div>
 }
 
 function Wrapper({ children }: { children: React.ReactNode }) {

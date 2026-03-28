@@ -1,21 +1,28 @@
 import Image from "next/image"
 import { type Role } from "@/types"
 import { Button } from "@/components/ui/button"
-import { logoJumpsellerAlt, logoCriticalManufacturing, logoFeup } from "@/images/logos/resume"
+import { logoJumpsellerAlt, logoCriticalManufacturing, logoFeup, logoFeedzai } from "@/images/logos/resume"
 import { ArrowDownIcon, BriefcaseBusinessIcon } from "lucide-react"
 import Link from "next/link"
 
 export function Resume() {
   let resume: Array<Role> = [
     {
-      company: "Jumpseller",
-      title: "Fullstack Engineer",
-      logo: logoJumpsellerAlt,
-      start: "10/2023",
+      company: "Feedzai",
+      title: "Frontend Engineer",
+      logo: logoFeedzai,
+      start: "09/2025",
       end: {
         label: "Present",
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+    {
+      company: "Jumpseller",
+      title: "Fullstack Engineer",
+      logo: logoJumpsellerAlt,
+      start: "10/2023",
+      end: "09/2025",
     },
     {
       company: "Critical Manufacturing",
@@ -66,7 +73,7 @@ function Role({ role }: { role: Role }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-full bg-white p-[1px] shadow-md ring-1 ring-zinc-900/5 dark:border dark:border-zinc-500/40 dark:bg-white/10 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-8 w-8" unoptimized />
+        <Image src={role.logo} alt="" className="h-8 w-8 rounded-full" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
