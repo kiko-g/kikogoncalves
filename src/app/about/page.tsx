@@ -7,7 +7,7 @@ import { skills } from "@/lib/data"
 import { calculateAge, techStackIcons } from "@/lib/utilities"
 
 import portraitImage from "@/images/portrait.jpg"
-import { logoJumpseller, logoPriceLens, logoBaggerUi, logoLinkedin } from "@/images/logos/resume"
+import { logoFeedzai, logoPriceLens, logoBaggerUi, logoLinkedin } from "@/images/logos/resume"
 import { image0, image1, image2, image3, image4, image5 } from "@/images/photos"
 
 import { Container } from "@/components/Container"
@@ -45,40 +45,45 @@ export default function About() {
         </div>
 
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Hey, I’m Francisco — building cool software from Porto, Portugal.
-          </h1>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">About me</h1>
           <div className="mt-6 space-y-7 text-base text-zinc-700 dark:text-zinc-400">
             <p>
               My name is Francisco Gonçalves. I’m a {calculateAge()} software engineer based in Porto. I hold a Master’s
               degree in Computer Science and Engineering from{" "}
-              <ExternalResource href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023">
+              <ExternalResource
+                href="https://sigarra.up.pt/feup/en/cur_geral.cur_planos_estudos_view?pv_plano_id=31204&pv_tipo_cur_sigla=&pv_origem=CUR&pv_ano_lectivo=2023"
+                underline
+                emphasize
+              >
                 FEUP
               </ExternalResource>{" "}
-              — the Faculty of Engineering at the University of Porto.
+              (Faculty of Engineering at the University of Porto).
             </p>
             <p>
               I enjoy all things software, with a strong focus on full-stack web development. Currently, I’m working at{" "}
-              <ExternalResource href="https://jumpseller.com" useIcon={false}>
-                <span>Jumpseller</span>
-                <Image src={logoJumpseller} alt="Jumpseller" width={16} height={16} />
+              <ExternalResource href="https://feedzai.com" useIcon={false}>
+                <span>Feedzai</span>
+                <Image src={logoFeedzai} alt="Feedzai" width={16} height={16} className="rounded" />
               </ExternalResource>
-              , where I help build and improve storefront themes under our e-commerce platform, which is equipped with
-              tools like a Visual and Code Editors that power store customization.
+              , where I have been contributing to complex platforms such as Case Manager supporting Feedzai's Anti Money
+              Laundering (AML) solutions and building features for managing high-volume transaction screening alerts and
+              their relationships for large financial institutions.
             </p>
             <p>
-              Beyond work, I've launched indie projects like{" "}
+              Beyond full time work, I have in the recent years dedicated some time to a project I named{" "}
               <ExternalResource href="https://price-lens.vercel.app" useIcon={false}>
                 <span>Price Lens</span>
-                <Image width={14} height={14} src={logoPriceLens} alt="Price Lens" />
+                <Image width={15} height={15} src={logoPriceLens} alt="Price Lens" />
               </ExternalResource>{" "}
-              and{" "}
-              <ExternalResource href="https://bagger-ui.vercel.app" useIcon={false}>
-                <span>Bagger UI</span>
-                <Image width={14} height={14} src={logoBaggerUi} alt="Bagger UI" />
-              </ExternalResource>{" "}
-              — blending my interests and packing them into hopefully useful tools. I'm always open to chatting about
-              new opportunities, so feel free to connect with me on{" "}
+              -- a price tracking platform for Portuguese supermarkets, with the mission of{" "}
+              <strong>saving consumers money</strong> and raising awareness about <strong>purchasing power</strong> and
+              price hikes over the years. You would be surprised how much money you can save just from buying at the
+              right time and seeing beyond what shelf labels tell you.
+            </p>
+
+            <p>
+              I've been blending my interests and packing them into hopefully useful tools. I'm always open to chatting
+              about new opportunities, so feel free to connect with me on{" "}
               <ExternalResource href="https://linkedin.com/in/kikogoncalves" useIcon={false}>
                 LinkedIn
                 <Image width={14} height={14} src={logoLinkedin} alt="LinkedIn" />
@@ -278,6 +283,32 @@ function CurriculumVitae() {
         </h4>
 
         <ul className="flex flex-col gap-y-8">
+          {/* Feedzai */}
+          <li>
+            <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-lg">
+              <span>Feedzai</span>
+              <Link href="https://feedzai.com" target="_blank" rel="noopener noreferrer">
+                <Image src={logoFeedzai} alt="Feedzai" width={16} height={16} className="rounded" />
+              </Link>
+              <LinkedinLogoLink href="https://www.linkedin.com/company/feedzai/" className="mt-[3px]" />
+            </h5>
+            <p className="text-base font-normal text-zinc-700 dark:text-zinc-200">Frontend Engineer</p>
+
+            <ul className="ml-4 mt-1 list-disc text-sm text-zinc-600 dark:text-zinc-300">
+              <li>
+                Developed the Screening Service UI for RiskOps Studio: a central hub used by financial analysts to
+                configure and orchestrate transaction screening workflows within the Watchlist Transaction Screening
+                solution; enabled transaction screening configurations management, sanction list operations, and
+                exception handling at bank-grade scale.
+              </li>
+              <li>
+                Contributed to complex platforms such as Case Manager supporting Feedzai's Anti Money Laundering (AML)
+                solutions by building features for managing high-volume transaction screening alerts and their
+                relationships for large financial institutions.
+              </li>
+            </ul>
+          </li>
+
           {/* Jumpseller */}
           <li>
             <h5 className="mb-0 flex flex-1 items-center gap-1 text-base font-bold leading-7 text-zinc-700 dark:text-zinc-200 sm:text-lg">

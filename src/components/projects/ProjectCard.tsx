@@ -9,7 +9,14 @@ import { resolveProjectCardColors, getDatespan, techStackIcons } from "@/lib/uti
 
 import { ExpandableText } from "@/components/ExpandableText"
 import { VideoComponent } from "@/components/projects/Video"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 
 import { GithubIcon } from "@/components/icons"
 import { BookCheckIcon, ExternalLinkIcon, LinkIcon } from "lucide-react"
@@ -21,11 +28,15 @@ type Props = {
   projectIndex?: number
 }
 
+const CAROUSEL_MEDIA_SIZES = "(max-width: 1024px) 100vw, min(28rem, 100vw)"
+
 export function ProjectCard({ project, tagClickCallback, compact = false, projectIndex }: Props) {
   const cx = resolveProjectCardColors(project.color)
 
   const datespan = getDatespan(project.startDate, project.endDate)
   const nextButtonRef = React.useRef<HTMLButtonElement>(null)
+  const [carouselApi, setCarouselApi] = React.useState<CarouselApi | null>(null)
+  const [mediaIndex, setMediaIndex] = React.useState(0)
   const showPinnedBadge = false
 
   const handleNextSlide = () => {
@@ -48,6 +59,20 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
     }, 5000)
     return () => clearInterval(interval)
   }, [])
+
+  useEffect(() => {
+    if (!carouselApi) return
+
+    const syncIndex = () => setMediaIndex(carouselApi.selectedScrollSnap())
+
+    syncIndex()
+    carouselApi.on("select", syncIndex)
+    carouselApi.on("reInit", syncIndex)
+    return () => {
+      carouselApi.off("select", syncIndex)
+      carouselApi.off("reInit", syncIndex)
+    }
+  }, [carouselApi])
 
   return (
     <li
@@ -165,31 +190,64 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
       <div
         className={cn(
           compact ? "block lg:hidden" : "block",
-          "group relative order-2 max-w-full lg:order-2 lg:max-w-md",
+          "group relative order-2 max-w-full shrink-0 lg:order-2 lg:max-w-md lg:basis-[min(100%,28rem)]",
         )}
       >
-        <Carousel className="flex w-full max-w-full flex-col gap-2 lg:max-w-lg" opts={{ loop: true }}>
+        <Carousel
+          setApi={setCarouselApi}
+          className="flex w-full max-w-full flex-col gap-2 lg:max-w-lg"
+          opts={{ loop: true }}
+        >
           <CarouselContent>
-            {project.media.map((media, mediaIdx) => (
-              <CarouselItem key={mediaIdx}>
-                {media.type === "image" && (
-                  <Image
-                    src={media.src}
-                    alt={`${project.name}: Media ${mediaIdx + 1}`}
-                    className="h-full rounded-md object-cover shadow transition-all"
-                    placeholder="blur"
-                  />
-                )}
-                {media.type === "gif" && (
-                  <Image
-                    src={media.src}
-                    alt={`${project.name}: Media ${mediaIdx + 1}`}
-                    className="h-full rounded-md object-cover shadow transition-all"
-                  />
-                )}
-                {media.type === "video" && <VideoComponent media={media} additionalClassnames={cx.border} />}
-              </CarouselItem>
-            ))}
+            {project.media.map((media, mediaIdx) => {
+              const isMobile = media.kind === "mobile"
+              const alt = `${project.name}: Media ${mediaIdx + 1}`
+
+              return (
+                <CarouselItem key={mediaIdx} className="min-w-full">
+                  {(media.type === "image" || media.type === "gif") &&
+                    (isMobile ? (
+                      <div className="relative aspect-[1.6] w-full min-w-full overflow-hidden rounded-md shadow transition-all">
+                        <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 px-6 dark:bg-zinc-900 sm:px-10">
+                          <div className="relative h-full w-full min-h-0">
+                            <Image
+                              src={media.src!}
+                              alt={alt}
+                              fill
+                              className="object-contain object-center"
+                              placeholder={media.type === "image" ? "blur" : undefined}
+                              sizes={CAROUSEL_MEDIA_SIZES}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <Image
+                        src={media.src!}
+                        alt={alt}
+                        className="aspect-[1.6] w-full rounded-md object-cover object-top shadow transition-all"
+                        placeholder={media.type === "image" ? "blur" : undefined}
+                        sizes={CAROUSEL_MEDIA_SIZES}
+                      />
+                    ))}
+                  {media.type === "video" && (
+                    <div className="relative aspect-[1.6] w-full min-w-full overflow-hidden rounded-md shadow transition-all">
+                      {isMobile ? (
+                        <div className="absolute inset-0 flex items-center justify-center bg-zinc-100 px-6 dark:bg-zinc-900 sm:px-10">
+                          <div className="relative h-full w-full min-h-0 [&_video]:h-full [&_video]:w-full [&_video]:object-contain">
+                            <VideoComponent media={media} additionalClassnames={cx.border} />
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="absolute inset-0 [&_video]:h-full [&_video]:w-full [&_video]:object-cover">
+                          <VideoComponent media={media} additionalClassnames={cx.border} />
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </CarouselItem>
+              )
+            })}
           </CarouselContent>
 
           <div className="flex items-center justify-between gap-2">
@@ -197,6 +255,10 @@ export function ProjectCard({ project, tagClickCallback, compact = false, projec
               variant="ghost"
               className="transition-all hover:scale-125 hover:bg-black/0 dark:hover:bg-white/0 [&_svg]:size-5"
             />
+
+            <span className="text-sm font-medium text-zinc-700 dark:text-white">
+              {mediaIndex + 1} / {project.media.length}
+            </span>
 
             <CarouselNext
               ref={nextButtonRef}

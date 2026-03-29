@@ -6,25 +6,24 @@ export const projectsData: Project[] = [
   {
     pinned: true,
     relevant: true,
-    status: "early-access",
     feup: false,
     name: "Price Lens",
     description: (
       <section className="project-card-description">
+        Price tracking for Portuguese supermarkets. Helping consumers save money by buying at the right time.
         <p>
-          <span className="font-semibold">See through prices</span>. Price Lens is a tracking platform for supermarket
-          prices over the years, promoting transparency in <strong>consumer goods inflation</strong>, namely in
-          Portugal. See beyond what shelf labels tell you.
+          Consumers can save plenty of money at the supermarket by buying at the right time. Price Lens helps with that:
+          a free web and mobile app that monitors daily supermarket prices across Portugal's three biggest chains:
+          Continente, Auchan, and Pingo Doce.
         </p>
-        <p>
-          Via scraping we periodically collect prices from supermarkets and analyze them to provide a clear and
-          transparent view of the prices. As of December 2024 only supporting the{" "}
-          <Link href="https://www.continente.pt" target="_blank">
-            <strong>Continente</strong>
-          </Link>{" "}
-          chain.
-        </p>
-        <p>This project is still under development and the prototype is only a preview of the final product.</p>
+        . Key indicators from Price Lens as of soft launch date (early 2026): • 126,000+ products monitored daily across
+        3 chains • ~29,000 automated price checks processed per day • 2,000+ price changes detected every single day
+        Core functionality: • Barcode scanner (camera, photo, or manual) for instant in-store price comparison •
+        Automated scraping infrastructure collecting and normalizing pricing data from 3 chains daily • Cross-store
+        product matching (barcode + canonical product mapping) across 126k+ products • Price history charts (1 week, 1
+        month, etc. to full historical range) with trend visualization • Daily price drop detection; hundreds of
+        decreases surfaced every day • PWA with offline support and home screen install; works like a native app on
+        Android, iOS, and desktop • Product favorites/watchlist with chain and discount filters
       </section>
     ),
     startDate: "2024-12-26",
@@ -49,6 +48,25 @@ export const projectsData: Project[] = [
       {
         type: "image",
         src: media.priceLens.screenshot4,
+      },
+      {
+        type: "image",
+        src: media.priceLens.screenshot5,
+      },
+      {
+        type: "image",
+        kind: "mobile",
+        src: media.priceLens.screenshot6,
+      },
+      {
+        type: "image",
+        kind: "mobile",
+        src: media.priceLens.screenshot7,
+      },
+      {
+        type: "image",
+        kind: "mobile",
+        src: media.priceLens.screenshot8,
       },
     ],
   },

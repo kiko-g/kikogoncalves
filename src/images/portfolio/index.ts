@@ -41,10 +41,17 @@ import P2PTwitterCloneScreenshot1 from "./p2p-twitter-clone/screenshot-1.png"
 
 import PetNexusScreenshot1 from "./pet-nexus/screenshot.png"
 
+import PriceLensScreenshotCV1 from "./price-lens/screenshot-cv-1.png"
+import PriceLensScreenshotCV2 from "./price-lens/screenshot-cv-2.png"
+
 import PriceLensScreenshot1 from "./price-lens/screenshot-1.png"
 import PriceLensScreenshot2 from "./price-lens/screenshot-2.png"
 import PriceLensScreenshot3 from "./price-lens/screenshot-3.png"
 import PriceLensScreenshot4 from "./price-lens/screenshot-4.png"
+import PriceLensScreenshot5 from "./price-lens/screenshot-5.png"
+import PriceLensScreenshot6 from "./price-lens/screenshot-6.png"
+import PriceLensScreenshot7 from "./price-lens/screenshot-7.png"
+import PriceLensScreenshot8 from "./price-lens/screenshot-8.png"
 
 import RobinScreenshot1 from "./robin/screenshot-1.png"
 import RobinScreenshot2 from "./robin/screenshot-2.png"
@@ -149,9 +156,15 @@ export const media = {
     gif1: TimeTableSchedulerGif1,
   },
   priceLens: {
+    cvScreenshot1: PriceLensScreenshotCV1,
+    cvScreenshot2: PriceLensScreenshotCV2,
     screenshot1: PriceLensScreenshot1,
     screenshot2: PriceLensScreenshot2,
     screenshot3: PriceLensScreenshot3,
     screenshot4: PriceLensScreenshot4,
+    screenshot5: PriceLensScreenshot5,
+    screenshot6: PriceLensScreenshot6,
+    screenshot7: PriceLensScreenshot7,
+    screenshot8: PriceLensScreenshot8,
   },
 }

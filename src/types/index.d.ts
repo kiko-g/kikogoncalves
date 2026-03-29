@@ -38,6 +38,7 @@ export type ProjectColor =
 
 type Media = {
   type: "image" | "video" | "gif"
+  kind?: "mobile" | "desktop"
   src: StaticImageData | string | null
 }
 type ISODateString = `${number}-${number}-${number}`
