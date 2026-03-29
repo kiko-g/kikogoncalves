@@ -22,10 +22,10 @@ export default async function Home() {
             Francisco Gonçalves
           </h1>
           <p className="mt-6 text-base text-zinc-500 dark:text-zinc-400">
-            I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Jumpseller as a
-            full-stack engineer, where we develop an e-commerce store platform for customers to create and deeply
-            customize online stores. I also dedicate time to working as a freelancer or solopreneur, developing websites
-            for clients or indie projects.{" "}
+            I’m Francisco, a software engineer based in Porto, Portugal. I am currently working at Feedzai as a Frontend
+            Engineer, where I have been developing and contributing to solutions for financial institutions to configure
+            and orchestrate transaction screening workflows within the Watchlist Transaction Screening solution; I also
+            dedicate time to working as a freelancer or solopreneur, developing websites for clients or indie projects.{" "}
             <Link href="/about" className="internal-link">
               Read more about me
             </Link>{" "}

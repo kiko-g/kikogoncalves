@@ -33,7 +33,7 @@ interface Project {
 export function Projects() {
   const projectsData: Project[] = [
     {
-      title: "Price Lens - Save consumer's money",
+      title: "Price Lens",
       logo: <Image src={logoPriceLens} alt="Price Lens" width={18} height={18} className="mr-0" />,
       repo: "https://github.com/kiko-g/price-lens",
       deployment: "https://price-lens.vercel.app",
