@@ -2,24 +2,12 @@
 
 import Link from "next/link"
 import Image from "next/image"
-
 import { cn } from "@/lib/utils"
-import { logoLinkedin } from "@/images/logos/resume"
-import { GithubIcon } from "../icons"
-import { CodeIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react"
+import { Bubble } from "@/components/resume/_components/Bubble"
 
-function Bubble({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <span
-      className={cn(
-        "flex items-center gap-1 rounded-full border-0 border-teal-600/10 bg-teal-600/10 px-1.5 py-0.5 leading-none dark:border-teal-500/20 dark:bg-teal-500/20",
-        className,
-      )}
-    >
-      {children}
-    </span>
-  )
-}
+import { logoLinkedin, logoFeedzai } from "@/images/logos/resume"
+import { GithubIcon } from "@/components/icons"
+import { CodeIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react"
 
 export function Headline() {
   return (
@@ -29,9 +17,14 @@ export function Headline() {
         <span className="ml-1.5 font-bold">Gonçalves</span>
       </h1>
       <div className="flex flex-col gap-1 text-sm lg:flex-row lg:gap-3 lg:text-base">
-        <Bubble className="w-fit text-xs font-medium">Software Development Engineer @ Jumpseller</Bubble>
-        <Bubble className="w-fit text-xs font-medium">MSc in Computer Science and Engineering</Bubble>
-        <Bubble className="w-fit text-xs font-medium">
+        <Bubble className="w-fit text-xs font-semibold" variant="outline">
+          Frontend Engineer @ Feedzai
+          <Image src={logoFeedzai} alt="Feedzai" width={15} height={15} className="rounded-full" />
+        </Bubble>
+        <Bubble className="w-fit text-xs font-semibold" variant="outline">
+          MSc in Computer Science and Engineering
+        </Bubble>
+        <Bubble className="w-fit text-xs font-semibold" variant="outline">
           <MapPinIcon className="h-3 w-3" /> Porto, Portugal
         </Bubble>
       </div>

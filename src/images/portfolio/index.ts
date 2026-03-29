@@ -11,6 +11,8 @@ import CMFUXScreenshot1 from "./cmf-ux/screenshot-1.png"
 import CMFUXScreenshot2 from "./cmf-ux/screenshot-2.png"
 import CMFUXScreenshot3 from "./cmf-ux/screenshot-3.png"
 
+import FeedzaiScreenshot1 from "./feedzai/screenshot-1.png"
+
 import FinishersHubGif1 from "./finishers-hub/gif-1.gif"
 import FinishersHubScreenshot1 from "./finishers-hub/screenshot-1.png"
 import FinishersHubScreenshot2 from "./finishers-hub/screenshot-2.png"
@@ -80,6 +82,9 @@ export const media = {
     screenshot1: CMFUXScreenshot1,
     screenshot2: CMFUXScreenshot2,
     screenshot3: CMFUXScreenshot3,
+  },
+  feedzai: {
+    screenshot1: FeedzaiScreenshot1,
   },
   finishersHub: {
     gif1: FinishersHubGif1,

@@ -23,6 +23,8 @@ import PhpSvg from "./php.svg"
 import PythonSvg from "./python.svg"
 import PostgresSvg from "./postgresql.svg"
 import ReduxSvg from "./redux.svg"
+import RedisSvg from "./redis.svg"
+import QStashSvg from "./qstash.svg"
 import RubyRailsSvg from "./rails.svg"
 import ReactJsSvg from "./react.js.svg"
 import RubySvg from "./ruby.svg"
@@ -30,8 +32,11 @@ import RustSvg from "./rust.svg"
 import ShopifySvg from "./shopify.svg"
 import SupabaseSvg from "./supabase.svg"
 import TailwindSvg from "./tailwind.svg"
+import TanstackPng from "./tanstack.png"
 import TypeScriptSvg from "./typescript.svg"
 import UnitySvg from "./unity.svg"
+import ViteSvg from "./vite.svg"
+import VitestSvg from "./vitest.svg"
 import VueJsSvg from "./vue.js.svg"
 
 export {
@@ -59,7 +64,9 @@ export {
   PhpSvg,
   PythonSvg,
   PostgresSvg,
+  QStashSvg,
   ReactJsSvg,
+  RedisSvg,
   ReduxSvg,
   RubyRailsSvg,
   RubySvg,
@@ -67,7 +74,10 @@ export {
   ShopifySvg,
   SupabaseSvg,
   TailwindSvg,
+  TanstackPng,
   TypeScriptSvg,
   UnitySvg,
   VueJsSvg,
+  VitestSvg,
+  ViteSvg,
 }

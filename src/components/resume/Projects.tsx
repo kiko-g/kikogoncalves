@@ -25,33 +25,45 @@ interface Project {
   repo: string
   deployment: string
   stack: string[]
-  image?: StaticImageData | null
+  image?: StaticImageData | StaticImageData[] | null
+  imageCompact?: boolean
   responsibilities: ReactElement
 }
 
 export function Projects() {
   const projectsData: Project[] = [
     {
-      title: "Price Lens - See Through Prices",
+      title: "Price Lens - Save consumer's money",
       logo: <Image src={logoPriceLens} alt="Price Lens" width={18} height={18} className="mr-0" />,
       repo: "https://github.com/kiko-g/price-lens",
       deployment: "https://price-lens.vercel.app",
-      stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
-      image: media.priceLens.screenshot1,
+      stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL", "Redis", "QStash"],
+      image: [media.priceLens.screenshot1, media.priceLens.screenshot2],
       responsibilities: (
-        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-4">
           <li>
-            Developed an app that tracks supermarket prices over time, bringing{" "}
-            <span className="font-semibold">transparency to consumer goods inflation</span> in Portugal and helping
-            shoppers understand price changes beyond what appears on shelf labels.
+            <span className="font-semibold">Founder / Sole Engineer</span>: Built a price intelligence platform for
+            portuguese supermarkets covering 126k+ products across Continente, Auchan, and Pingo Doce, processing ~29k
+            daily price checks. <span className="font-semibold">Save Money. Buy at the right time.</span>
           </li>
           <li>
-            Created effective <span className="font-semibold">scheduled scrapers</span> that automatically collect and
-            update pricing data from multiple supermarkets, enabling price trend analysis and historical comparisons.
+            Engineered cross-store product and category matching algorithms (barcode + canonical mapping) to normalise
+            and link the same product across retailer catalogs with different SKU systems and naming conventions.
           </li>
           <li>
-            User-friendly data visualization system to present pricing data in an accessible way.{" "}
-            <ExternalResource href="https://price-lens.vercel.app">Free and premium plans available</ExternalResource>
+            Focused on increasing consumer purchasing power awareness through price tracking and product
+            recommendations.
+          </li>
+          <li>
+            Key features:{" "}
+            <span className="font-semibold">
+              barcode scanner, price comparison across stores, price history charts, daily deal in-store detection,
+              money saving tally, price drop alerts
+            </span>{" "}
+            (~2k price changes/day). Available at{" "}
+            <ExternalResource underline href="https://price-lens.vercel.app">
+              price-lens.vercel.app
+            </ExternalResource>
           </li>
         </ul>
       ),
@@ -62,18 +74,17 @@ export function Projects() {
       repo: "https://github.com/kiko-g/bagger-ui",
       deployment: "https://bagger-ui.vercel.app",
       stack: ["React.js", "Typescript", "Tailwind", "Next.js", "Supabase", "PostgreSQL"],
-      image: media.baggerui.screenshot1,
+      image: media.baggerui.screenshot4,
+      imageCompact: true,
       responsibilities: (
-        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-4">
           <li>
-            A collection of copy pasteable and reusable React (Typescript, .tsx) components and snippets. Created to
-            address common UI patterns with the goal of continously expanding the library and minimizing the need to
-            recode similar things.
+            Built a React component library (TypeScript, Tailwind) evolving from custom components into a curated
+            repository of real-world UI patterns and snippets, extending shadcn/ui and TailwindUI.
           </li>
           <li>
-            The code is yours, take it, adapt it and build the project of your dreams with a fitting design. Inspired by
-            Shadcn, TailwindUI and HyperUI and Flowbite.{" "}
-            <ExternalResource href="https://bagger-ui.vercel.app">Available on Vercel</ExternalResource>
+            Captured recurring UI scenarios into reusable, composable components to accelerate development and reduce
+            duplication.
           </li>
         </ul>
       ),
@@ -85,17 +96,18 @@ export function Projects() {
       deployment: "https://tts.niaefeup.pt",
       stack: ["React.js", "Typescript", "Tailwind", "Docker", "SQL", "Python"],
       image: media.tts.screenshot1,
+      imageCompact: true,
       responsibilities: (
-        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-4">
           <li>
-            Initiated and led development for the web app that allows students to optimize class schedules, form work
-            groups, share timetables and land the best schedule depending on their interests, often crucial to the
-            semester's success.
+            Lead Developer: Built a timetable planning app used by university students; designed core scheduling logic
+            and interactive time-grid UI (conflict detection, multi-schedule support).
           </li>
           <li>
-            Established the core architecture and UI framework that continues to serve as the foundation for the
-            platform, which now has more features, including a schedule exchanger using the university's authentication
-            API. <ExternalResource href="https://tts.niaefeup.pt">Available online here</ExternalResource>
+            Established the architecture and UI framework that continues to power the platform. Available at{" "}
+            <ExternalResource underline href="https://tts.niaefeup.pt">
+              tts.niaefeup.pt
+            </ExternalResource>
           </li>
         </ul>
       ),
@@ -107,17 +119,14 @@ export function Projects() {
       deployment: "https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow",
       stack: ["Node.js", "JSON"],
       image: media.baggerFlow.screenshot1,
+      imageCompact: true,
       responsibilities: (
-        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-4">
           <li>
-            A Visual Studio Code Theme with a refined color palette combining elements of other popular themes and with
-            a clean and minimal feel. Contains carefully customized and exhaustive support for JS/TS, JSX/TSX, HTML/CSS
-            and Ruby.{" "}
-          </li>
-          <li>
-            Give it a try.{" "}
+            Designed and published a VS Code theme with custom syntax highlighting for JS/TS, JSX/TSX, HTML/CSS,
+            improving code readability and developer experience.{" "}
             <ExternalResource href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow">
-              Available on the VSCode Marketplace
+              Available on the VS Code Marketplace
             </ExternalResource>
           </li>
         </ul>
@@ -168,7 +177,7 @@ export function Projects() {
                         alt={tech}
                         width={12}
                         height={12}
-                        className="size-[12px] rounded-sm grayscale-[0.5] dark:grayscale-0"
+                        className="size-[12px] rounded-sm grayscale-[0.2] dark:grayscale-0"
                       />
                     )}
                     <span className="-mt-[2px]">{tech}</span>
@@ -178,15 +187,18 @@ export function Projects() {
             </div>
           </div>
 
-          <div className="mt-1 flex flex-col items-start gap-4 lg:flex-row lg:items-center">
+          <div className="mt-[5px] flex flex-col items-start gap-4 lg:flex-row lg:items-start">
             {project.responsibilities}
 
             {/* Image */}
-            {project.image && (
+            {project.image && !Array.isArray(project.image) && (
               <a
                 href={project.deployment}
                 target="_blank"
-                className="mb-2 inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[115px]"
+                className={cn(
+                  "mb-2 inline-flex aspect-video w-auto flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]",
+                  project.imageCompact && "h-[40px]",
+                )}
                 rel="noopener noreferrer"
               >
                 <Image
@@ -194,9 +206,34 @@ export function Projects() {
                   alt={project.title}
                   width={1600}
                   height={900}
-                  className="aspect-video rounded-md border object-cover"
+                  className={cn(
+                    "aspect-video rounded-md border-0",
+                    project.imageCompact ? "object-cover object-top" : "object-cover",
+                  )}
                 />
               </a>
+            )}
+
+            {project.image && Array.isArray(project.image) && (
+              <div className="flex flex-col gap-0.5">
+                {project.image.map((image) => (
+                  <a
+                    key={image.src}
+                    href={project.deployment}
+                    target="_blank"
+                    className="inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={image}
+                      alt={project.title}
+                      width={1600}
+                      height={900}
+                      className="aspect-video rounded-md border-0 object-cover"
+                    />
+                  </a>
+                ))}
+              </div>
             )}
           </div>
         </div>

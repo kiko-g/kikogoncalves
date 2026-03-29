@@ -3,9 +3,10 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 import { ExternalResource } from "@/components/ExternalResource"
+import { Bubble } from "@/components/resume/_components/Bubble"
 
-import { ExternalLinkIcon } from "lucide-react"
 import { logoAalto, pngFeup } from "@/images/logos/resume"
+import { ExternalLinkIcon } from "lucide-react"
 
 type LinkType = "external" | "github"
 
@@ -26,41 +27,18 @@ interface Education {
   courses?: Course[]
 }
 
-function Bubble({
-  children,
-  variant = "default",
-  className,
-}: {
-  children: React.ReactNode
-  variant?: "default" | "secondary"
-  className?: string
-}) {
-  return (
-    <span
-      className={cn(
-        "flex items-center gap-1 rounded-full border-0 bg-gradient-to-r px-1.5 py-[1px] leading-none",
-        variant === "default" && "border-teal-600/10 bg-teal-600/10 dark:border-teal-500/20 dark:bg-teal-500/20",
-        variant === "secondary" && "border-zinc-600/10 bg-zinc-600/10 dark:border-zinc-500/20 dark:bg-zinc-500/20",
-        className,
-      )}
-    >
-      {children}
-    </span>
-  )
-}
-
 export function Education() {
   const educationData: Education[] = [
     {
       institution: "Faculty of Engineering of the University of Porto (FEUP)",
       location: "Porto, Portugal",
       degree: "Bachelor and Master in Informatics and Computing Engineering",
-      period: "Sep 2018 - Jul 2023",
+      period: "Sep/2018 - Jul/2023",
       institutionLink: "https://fe.up.pt",
       institutionLinkType: "external",
       institutionLogo: <Image src={pngFeup} alt="FEUP" width={20} height={20} className="mr-0" />,
       details: (
-        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-4">
           <li>
             Member of NIAEFEUP, student branch of the Computer Engineering major. Active participant in events and
             projects like <ExternalResource href="https://tts.niaefeup.pt">Timetable Selector</ExternalResource>
@@ -77,12 +55,12 @@ export function Education() {
       institution: "Aalto University School of Science",
       location: "Espoo, Finland",
       degree: "Erasmus Student",
-      period: "Aug 2022 - Dec 2022",
+      period: "Aug/2022 - Dec/2022",
       institutionLink: "https://www.aalto.fi/en/school-of-science",
       institutionLinkType: "external",
       institutionLogo: <Image src={logoAalto} alt="Aalto University" width={20} height={20} className="mr-0" />,
       details: (
-        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-5">
+        <ul className="flex-1 p-0 text-sm text-zinc-600 dark:text-zinc-300 lg:list-disc lg:pl-4">
           <li>
             Studied computer science abroad at Aalto University, in Espoo, Finland as an exchange student part of the
             Erasmus program
@@ -102,11 +80,11 @@ export function Education() {
           <div className="flex flex-col items-start justify-between lg:flex-row lg:items-center">
             <h3 className="text-xl font-bold">{education.degree}</h3>
             <div className="flex items-center gap-1">
-              <Bubble variant="default" className="text-2xs font-medium">
-                {education.period}
-              </Bubble>
-              <Bubble variant="secondary" className="text-2xs font-medium">
+              <Bubble variant="muted" className="text-2xs font-medium">
                 {education.location}
+              </Bubble>
+              <Bubble variant="outline" className="text-2xs font-medium">
+                {education.period}
               </Bubble>
             </div>
           </div>
