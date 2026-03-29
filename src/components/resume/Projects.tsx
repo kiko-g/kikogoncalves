@@ -197,7 +197,7 @@ export function Projects() {
                 target="_blank"
                 className={cn(
                   "mb-2 inline-flex aspect-video w-auto flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]",
-                  project.imageCompact && "h-[40px]",
+                  project.imageCompact && "md:h-[40px]",
                 )}
                 rel="noopener noreferrer"
               >
@@ -215,13 +215,13 @@ export function Projects() {
             )}
 
             {project.image && Array.isArray(project.image) && (
-              <div className="flex flex-col gap-0.5">
+              <div className="grid grid-cols-2 gap-2 md:flex md:flex-col md:gap-0.5">
                 {project.image.map((image) => (
                   <a
                     key={image.src}
                     href={project.deployment}
                     target="_blank"
-                    className="inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]"
+                    className="inline-flex aspect-video w-full flex-shrink-0 overflow-hidden transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]"
                     rel="noopener noreferrer"
                   >
                     <Image

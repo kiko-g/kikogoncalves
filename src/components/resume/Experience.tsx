@@ -191,7 +191,7 @@ export function Experience() {
                 </span>
               </a>
 
-              <div className="flex flex-wrap items-end justify-center gap-1">
+              <div className="flex flex-wrap items-center justify-start gap-1 md:items-end md:justify-center">
                 {experience.stack.map((tech) => {
                   const techIcon = techStackIcons[tech.toLowerCase()]
                   return (
@@ -217,10 +217,10 @@ export function Experience() {
               </div>
             </div>
 
-            <div className="mt-1 flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-start">
+            <div className="mt-1 flex flex-col items-start justify-between gap-2 lg:flex-row lg:items-start lg:gap-4">
               <div className="flex flex-col gap-1">{experience.responsibilities}</div>
 
-              <div className="flex flex-col items-end justify-end gap-1">
+              <div className="order-first flex flex-col items-start justify-start gap-1 md:order-last md:items-end md:justify-end">
                 <Bubble
                   variant={isCurrentRole ? "active" : "outline"}
                   className="w-min whitespace-nowrap text-2xs font-medium tracking-tighter lg:w-min"
@@ -232,7 +232,7 @@ export function Experience() {
                   <a
                     href={experience.companyLink}
                     target="_blank"
-                    className="mb-4 inline-flex aspect-video w-[200px] flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]"
+                    className="mb-4 inline-flex aspect-video w-auto flex-shrink-0 overflow-hidden rounded-md transition-opacity hover:opacity-80 lg:mb-0 lg:w-[125px]"
                     rel="noopener noreferrer"
                   >
                     <Image

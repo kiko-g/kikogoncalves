@@ -126,6 +126,7 @@ export default {
           "950": "#0b0e18",
         },
         background: "hsl(var(--background))",
+        "background-tint": "hsl(var(--background-tint))",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
